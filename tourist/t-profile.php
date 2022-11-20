@@ -5,7 +5,7 @@ require_once('../inc/functions.php');
 
 //checking if the user is logged in
 if (!$_SESSION['user_id']) {
-    header('Location: t-login.php');
+    header('Location: login.php');
 }
 
 $errors = array();

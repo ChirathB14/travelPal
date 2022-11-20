@@ -10,5 +10,5 @@ if(isset($_COOKIE[session_name()])){
 
 session_destroy();
 
-header('Location: t-login.php?logout=yes')
+header('Location: login.php?logout=yes')
 ?>
