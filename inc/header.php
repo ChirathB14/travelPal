@@ -12,7 +12,7 @@ session_start();
     <title>
         <?php echo $title; ?>
     </title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/travelPal/css/main.css">
 </head>
 
 <body>
