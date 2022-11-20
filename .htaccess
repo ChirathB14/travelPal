@@ -1,0 +1,11 @@
+# RewriteEngine On
+
+# RewriteRule ^users$ users.php [NC,L]
+# RewriteRule ^modify-user/(\d+)$ modify-user.php?user_id=$1 [NC,L]
+# RewriteRule ^modify-user$ modify-user.php [NC,L]
+
+# Disabling directory browse
+Options -Indexes
+
+#custom error page
+ErrorDocument 404 /travelPal/404.php
