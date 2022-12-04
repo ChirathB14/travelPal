@@ -12,41 +12,52 @@
     <title>
         <?php echo $title; ?>
     </title>
-    <link rel="stylesheet" href="/travelPal/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/travelPal/css/styles.css">
 </head>
 
 <body>
     <?php 
     if(!isset($_SESSION['user_id'])){
-        echo 
-        "<div class=\"header\">
-            <a href=\"#landing\" class=\"logo\">CompanyLogo</a>
-            <div class=\"nav\">
-                <a class=\"active\" href=\"#home\">HOME</a>
-                <a href=\"#tour-plan.php\">TOUR PLAN</a>
-                <a href=\"#contact-us.php\">CONTACT US</a>
-                <a href=\"#blog.php\">BLOG</a>
+        echo "
+        <div class=\"header\">
+            <div class=\"navigationbar\">
+                <div class=\"nav-Logo\">
+                    <img src=\"/travelPal/assets/logo tpal.png\" alt=\"TRAVELPal\">
+                </div>
+                <div class=\"menu\">
+                    <button class=\"nav\">HOME</button>
+                    <button class=\"nav\">TOUR PLAN</button>
+                    <button class=\"nav\">CONTACT US</button>
+                    <button class=\"nav\">BLOGS</button>
+                    <button class=\"logout-btn\" onclick=\"location.href = '../tourist/registration.php';\" >REGISTER</button>
+                    <button class=\"logout-btn\" onclick=\"location.href = 'login.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>LOG IN</button>
+                </div>            
             </div>
-            <div class=\"header-right\">
-                <a href=\"#register.php\" class=\"register-btn\">REGISTER</a>
-                <a href=\"login.php\" class=\"login-btn\">LOGIN</a>
-            </div>
-        </div>";
+            <div class=\"navigationbarfoot\">
+                <hr>  
+            </div>    
+        </div> ";
     }else{
-        echo 
-        "<div class=\"header\">
-            <a href=\"#landing\" class=\"logo\">CompanyLogo</a>
-            <div class=\"nav\">
-                <a class=\"active\" href=\"#home\">HOME</a>
-                <a href=\"#tour-plan.php\">TOUR PLAN</a>
-                <a href=\"#contact-us.php\">CONTACT US</a>
-                <a href=\"#blog.php\">BLOG</a>
-                <a href=\"#profile.php\">PROFILE</a>
+        echo "
+        <div class=\"header\">
+            <div class=\"navigationbar\">
+                <div class=\"nav-Logo\">
+                    <img src=\"/travelPal/assets/logo tpal.png\" alt=\"TRAVELPal\">
+                </div>
+                <div class=\"menu\">
+                    <button class=\"nav\">HOME</button>
+                    <button class=\"nav\">TOUR PLAN</button>
+                    <button class=\"nav\">CONTACT US</button>
+                    <button class=\"nav\">BLOGS</button>
+                    <button class=\"nav-select\">PROFILE</button>
+                    <button class=\"logout-btn\" onclick=\"location.href = 'logout.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>LOG OUT</button>
+                </div>            
             </div>
-            <div class=\"header-right\">
-                <a href=\"logout.php\" class=\"logout-btn\">LOGOUT</a>
-            </div>
-        </div>";
-        
+            <div class=\"navigationbarfoot\">
+                <hr>  
+            </div>    
+        </div> ";        
     }
 ?>

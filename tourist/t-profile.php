@@ -50,7 +50,7 @@ $title = "Profile";
 require_once("../inc/header.php");
 ?>
 
-<main>
+<!-- <main>
     <h1>Welcome, <?php echo $_SESSION['full_name'];?></h1>
     <p>
         <a href="t-profile.php"> MY PROFILE</a>
@@ -92,7 +92,50 @@ require_once("../inc/header.php");
             <span>************</span> 
         </p>
     </form>
-</main>
+</main> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="body">
+        <div class="dashboard">
+            <img src="/travelPal/assets/profile.png" alt="">
+            <p><?php echo $_SESSION['full_name']; ?></p>
+            <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
+            <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
+            <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
+        </div>
+        <div class="content">
+            <h1>PROFILE</h1>
+            <table class="table">
+                <tr class="row">
+                    <td><?php echo "YOUR ID : " . $user_id;?></td>
+                </tr>
+                <tr class="row">
+                    <td><?php echo "FIRST NAME : " . $first_name;?></td>
+                </tr>
+                <tr class="row">
+                    <td><?php echo "LAST NAME : " . $last_name;?></td>
+                </tr>
+                <tr class="row">
+                    <td><?php echo "EMAIL : " . $email;?></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>
+
 <?php
 require_once("../inc/footer.php");
 ?>
