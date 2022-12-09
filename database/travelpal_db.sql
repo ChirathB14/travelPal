@@ -292,7 +292,6 @@ CREATE TABLE `Transport` (
 
 CREATE TABLE `Users` (
   `userID` int(11) NOT NULL,
-  `username` varchar(25) NOT NULL,
   `password` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `firstName` varchar(50) NOT NULL,
