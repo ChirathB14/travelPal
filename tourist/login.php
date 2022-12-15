@@ -61,37 +61,45 @@ if (isset($_POST['submit'])) {
 $title = "Login";
 require_once("../inc/header.php");
 ?>
-
 <div class="login">
     <form action="login.php" method="post">
         <fieldset>
-            <h1>Login</h1>
+            <legend>
+                <h1>LOGIN</h1>
+            </legend>
             <?php
             if (isset($errors) && !empty($errors)) {
-                echo '<p class="error"> Invalid Username or Password</p>';
+                echo '<p class="error">Invalid email or password</p>';
             }
             ?>
             <?php
             if (isset($_GET['logout'])) {
-                echo '<p class="info"> Logged out successfully!</p>';
+                echo '<p class="info">You have successfully logged out</p>';
             }
             ?>
-
             <p>
-                <label for="">Username:</label>
-                <input type="text" name="email" id="" placeholder="Email address">
+                <input class="textinput" type="text" name="email" id="" placeholder="Email Address">
             </p>
             <p>
-                <label for="">Password:</label>
-                <input type="password" name="password" id="" placeholder="Password">
+                <input class="textinput" type="password" name="password" id="" placeholder="Password">
             </p>
+            <div class="divl">
+                <P>
+                    <input class="checkbox" type="checkbox" name="remember" id="" value="yes">
+                    <label for="remember">show password</label>
+                </P>
+            </div>
+            <div class="divr">
+                <P>
+                    <a class="checkbox" href="reset-pw.php">Forgot password?</a>
+                </P>
+            </div>
             <p>
-                <button type="submit" name="submit">Log In</button>
+                <button type="submit" name="submit"> <b>LOGIN </b></button>
             </p>
         </fieldset>
     </form>
 </div>
-
 <?php
 require_once("../inc/footer.php");
 ?>

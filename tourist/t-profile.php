@@ -5,7 +5,7 @@ require_once('../inc/functions.php');
 
 //checking if the user is logged in
 if (!$_SESSION['user_id']) {
-    header('Location: t-login.php');
+    header('Location: login.php');
 }
 
 $errors = array();
@@ -50,49 +50,45 @@ $title = "Profile";
 require_once("../inc/header.php");
 ?>
 
-<main>
-    <h1>Welcome, <?php echo $_SESSION['full_name'];?></h1>
-    <p>
-        <a href="t-profile.php"> MY PROFILE</a>
-        <a href="t-update-profile.php"> UPDATE PROFILE</a>
-        <a href="#t-tours.php"> VIEW TOURS</a>
-    </p>
+<div class="body">
+    <div class="dashboard">
+        <img src="/travelPal/assets/profile.png" alt="">
+        <p>
+            <?php echo $_SESSION['full_name']; ?>
+        </p>
+        <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
+        <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
+        <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
+    </div>
+    <div class="content">
+        <h1>PROFILE</h1>
+        <table class="table">
+            <tr class="row">
+                <td>
+                    <?php echo "YOUR ID : " . $user_id; ?>
+                </td>
+            </tr>
+            <tr class="row">
+                <td>
+                    <?php echo "FIRST NAME : " . $first_name; ?>
+                </td>
+            </tr>
+            <tr class="row">
+                <td>
+                    <?php echo "LAST NAME : " . $last_name; ?>
+                </td>
+            </tr>
+            <tr class="row">
+                <td>
+                    <?php echo "EMAIL : " . $email; ?>
+                </td>
+            </tr>
+        </table>
 
-    <?php
-    if (!empty($errors)) {
-        display_errors($errors);
-    }
-    ?>
+    </div>
+</div>
 
-    <?php
-    if (isset($_GET['profile_updated'])) {
-            echo '<p class="info"> Profile updated successfully!</p>';
-    }
-    if (isset($_GET['pw_updated'])) {
-            echo '<p class="info"> Password updated successfully!</p>';
-    }
-    ?>
 
-    <form action="modify-user.php" class="userform" method='post'>
-        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-        <p>
-            <label for="">First name:</label>
-            <?php echo $first_name; ?>
-        </p>
-        <p>
-            <label for="">Last name:</label>
-            <?php echo $last_name; ?>
-        </p>
-        <p>
-            <label for="">Email address:</label>
-            <?php echo $email; ?>
-        </p>
-        <p>
-            <label for="">Password:</label>
-            <span>************</span> 
-        </p>
-    </form>
-</main>
 <?php
 require_once("../inc/footer.php");
 ?>

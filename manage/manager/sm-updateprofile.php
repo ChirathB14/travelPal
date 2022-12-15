@@ -1,13 +1,8 @@
-<?php
-session_start();
-require_once '../inc/connection.php';
-require_once '../inc/functions.php';
-
-//checking if the user is logged in
-if (!$_SESSION['user_id']) {
-    header('Location: t-login.php');
+<?php session_start();?>
+<?php require_once('../inc/connection.php')?>
+<?php if(!isset($_SESSION['userID'])){
+    header('Location: login.php');
 }
-
 $errors = array();
 $user_id = '';
 $first_name = '';
@@ -15,13 +10,13 @@ $last_name = '';
 $email = '';
 $password = '';
 
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['userID'])) {
     //getting the user information
-    $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
-    $query = "SELECT *
-              FROM Users u, Tourist t
-              WHERE u.userID = {$user_id}
-                    AND u.userID = t.userID
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['userID']);
+    $query = "SELECT * 
+              FROM users u, sitemanager s
+              WHERE u.userID = {$user_id} 
+                    AND u.userID = s.userID
               LIMIT 1";
 
     $result_set = mysqli_query($connection, $query);
@@ -35,11 +30,11 @@ if (isset($_SESSION['user_id'])) {
             $email = $result['email'];
         } else {
             //user not found
-            header('Location: t-update-profile.php?err=user_not_found');
+            header('Location: sm-updateprofile.php?err=user_not_found');
         }
     } else {
         //query unsuccessful
-        header('Location: t-update-profile.php?err=query_failed');
+        header('Location: sm-updateprofile.php?err=query_failed');
     }
 }
 
@@ -68,11 +63,11 @@ if (isset($_POST['submit'])) {
 
     //checking email is existing
     $email = mysqli_real_escape_string($connection, $_POST['email']);
-    $query = "SELECT *
-              FROM Users u, Tourist t
-              WHERE email = '{$email}'
-                    AND u.userID != {$user_id}
-                    AND u.userID = t.userID
+    $query = "SELECT * 
+              FROM users u, sitemanager s
+              WHERE email = '{$email}' 
+                    AND u.userID != {$user_id} 
+                    AND u.userID = s.userID
               LIMIT 1";
 
     $result_set = mysqli_query($connection, $query);
@@ -83,12 +78,13 @@ if (isset($_POST['submit'])) {
         $errors[] = "Email address already exists.";
     }
 
+
     if (empty($errors)) {
         //adding new record
         $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
         $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
 
-        $query = "UPDATE Users
+        $query = "UPDATE Users 
                   SET firstName = '{$first_name}',
                       lastName = '{$last_name}',
                       email = '{$email}'
@@ -98,19 +94,13 @@ if (isset($_POST['submit'])) {
 
         if ($result) {
             //query succes..redirecting to users page
-            header('Location: t-profile.php?profile_updated=true');
+            header('Location: sm-updateprofile.php?profile_updated=true');
         } else {
             $errors[] = 'Failed to update the profile.';
         }
     }
 
 }
-
-?>
-
-<?php
-$title = "Update Profile";
-require_once "../inc/header.php";
 ?>
 
 <!DOCTYPE html>
@@ -125,44 +115,61 @@ require_once "../inc/header.php";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="body">
-    <div class="dashboard">
-            <img src="/travelPal/assets/profile.png" alt="">
-            <p><?php echo $_SESSION['full_name']; ?></p>
-            <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
-            <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
-            <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
+    <div class="header">
+        <div class="navigationbar">
+            <div class="nav-Logo">
+                <img src="css/logo tpal.png" alt="TRAVELPal">
+            </div>
+            <div class="menu">
+                <button class="nav">HOME</button>
+                <button class="nav">TOUR PLAN</button>
+                <button class="nav">CONTACT US</button>
+                <button class="nav">BLOGS</button>
+                <button class="nav-select">PROFILE</button>
+                    <button class="logout-btn" onclick="location.href = 'logout.php';" ><i class="fa fa-user fa-lg" aria-hidden="true"></i>LOG OUT</button>
+            </div>            
         </div>
-        <?php
-if (!empty($errors)) {
-    display_errors($errors);
-}
-?>
-
+        <div class="navigationbarfoot">
+            <hr>  
+        </div>    
+    </div>
+    <div class="body">
+        <div class="dashboard">
+            <img src="css/profile.png" alt="">
+            <p><?php echo $_SESSION['firstName']; ?></p>
+            <button class="nav"onclick="location.href = 'sm-myprofile.php';">MY PROFILE</button>
+            <button class="select" onclick="location.href = 'sm-updateprofile.php';">UPDATE PROFILE</button>
+            <button class="nav">GENERATE REPORT</button>
+            <button class="nav">CREATE TOUR PLAN</button>
+            <button class="nav">ACCOMMODATION PROVIDER</button>
+            <button class="nav">VEHICLE PROVIDER</button>
+            <button class="nav">TOURIST GUIDE</button>
+        </div>
+        
         <div class="content">
         <h1>PROFILE</h1>
             <table class="table">
                 <tr class="row">
                     <td colspan="2">
-                        <?php echo "Your ID : " . $user_id; ?>
+                        <?php echo "Your ID : " . $user_id;?>
                     </td>
                 </tr>
                 <tr class="row">
                     <td>
                         <label for="">First name:</label>
-                        <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> >
+                        <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> > 
                     </td>
                     <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <img src="css/Frame.png" alt="TRAVELPal">
                     </td>
                 </tr>
-                <tr class="row">
+                <tr class="row"> 
                     <td>
                         <label for="">Last name:</label>
                         <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> >
                     </td>
                     <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <img src="css/Frame.png" alt="TRAVELPal">
                     </td>
                 </tr>
                 <tr class="row">
@@ -171,7 +178,7 @@ if (!empty($errors)) {
                         <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> >
                     </td>
                     <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <img src="css/Frame.png" alt="TRAVELPal">
                     </td>
                 </tr>
             </table>
@@ -185,51 +192,3 @@ if (!empty($errors)) {
     </div>
 </body>
 </html>
-
-
-
-<!-- <main>
-    <h1>Update Profile</h1>
-    <p>
-        <a href="t-profile.php"> MY PROFILE</a>
-        <a href="t-update-profile.php"> UPDATE PROFILE</a>
-        <a href="#t-tours.php"> VIEW TOURS</a>
-    </p>
-
-    <?php
-if (!empty($errors)) {
-    display_errors($errors);
-}
-?>
-
-    <form action="t-update-profile.php" class="userform" method='post'>
-        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-        <p>
-            <label for="">First name:</label>
-            <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Last name:</label>
-            <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Email address:</label>
-            <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Password:</label>
-            <span>************</span> | <a href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change
-                Password</a>
-        </p>
-        <p>
-            <label for="">&nbsp;</label>
-            <button type="submit" name="submit">Update</button>
-        </p>
-
-    </form>
-</main> -->
-<?php
-require_once "../inc/footer.php";
-?>
-
-<?php mysqli_close($connection);?>
