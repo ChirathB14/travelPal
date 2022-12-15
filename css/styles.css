@@ -19,16 +19,23 @@
 }
 fieldset{
     border: 0px;
-    position: fixed;
+    width: 90%;
+    margin: auto;
+    position: absolute;
 }
 
 .login{
-    width: 350px;
     margin: auto;
-    padding-top: 10%;
+    height: 600px;
+    padding-top: 40px;
     text-align: center;
     display: flex;
 }
+
+.login button{
+    cursor: pointer;
+}
+
 .divl{
     float: left;
     margin: 10px;
@@ -50,6 +57,15 @@ p.error{
     padding: 10px;
     margin: 10px;
 }
+
+div.error{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+}
+
 p.info{
     background-color: green;
     color: white;
@@ -75,6 +91,7 @@ p.info{
 .checkbox{
     margin: 10px;
     padding-top: 170px;
+    cursor: pointer;
 }
 
 button{
@@ -121,6 +138,7 @@ body{
     width: 30%;
     height: 100%;
     float: left;
+    cursor: pointer;
 }
 img{
     width: 100%;
@@ -136,6 +154,7 @@ img{
     margin: 0;
     border-radius: 0px;
     background-color: #0E064D;
+    cursor: pointer;
 }
 .menu .nav:hover{
     background-color: #00357A;
@@ -146,6 +165,7 @@ img{
     background-color: #00357A;;
 }
 .menu .logout-btn{
+    cursor: pointer;
     margin: auto;
     margin-right: 10px;
     margin-left: 10px;
@@ -200,6 +220,7 @@ img{
     background-color: #0E064D;
     border: 2px solid #327972;
     display: block;
+    cursor: pointer;
 
 }
 .dashboard .nav:hover{
@@ -291,7 +312,8 @@ img{
     width:40%;
     height: fit-content;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
     color: #000000;
 }
@@ -300,5 +322,18 @@ img{
     color: black;
 }
 
+.reg button{
+    cursor: pointer;
+}
 
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
 
+footer{
+    overflow: auto;
+    padding: 10px;
+    text-align: center;
+}

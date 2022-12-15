@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <?php 
-    if(!isset($_SESSION['user_id'])){
+    <?php
+    if (!isset($_SESSION['user_id'])) {
         echo "
         <div class=\"header\">
             <div class=\"navigationbar\">
@@ -31,7 +31,7 @@
                     <button class=\"nav\">TOUR PLAN</button>
                     <button class=\"nav\">CONTACT US</button>
                     <button class=\"nav\">BLOGS</button>
-                    <button class=\"logout-btn\" onclick=\"location.href = '../tourist/registration.php';\" >REGISTER</button>
+                    <button class=\"logout-btn\" onclick=\"location.href = '/travelPal/register.php';\" >REGISTER</button>
                     <button class=\"logout-btn\" onclick=\"location.href = 'login.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>LOG IN</button>
                 </div>            
             </div>
@@ -39,7 +39,7 @@
                 <hr>  
             </div>    
         </div> ";
-    }else{
+    } else {
         echo "
         <div class=\"header\">
             <div class=\"navigationbar\">
@@ -58,6 +58,6 @@
             <div class=\"navigationbarfoot\">
                 <hr>  
             </div>    
-        </div> ";        
+        </div> ";
     }
-?>
+    ?>

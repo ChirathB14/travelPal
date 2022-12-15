@@ -61,62 +61,45 @@ if (isset($_POST['submit'])) {
 $title = "Login";
 require_once("../inc/header.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In - User Management System</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="index">
-    <div class="login">
-        <form action="login.php" method="post">
-            <fieldset>
-                <legend>
-                    <h1>LOGIN</h1>
-                </legend>
-                <?php
-                    if (isset($errors)&& !empty($errors)){
-                        echo'<p class="error">Invalid user name or password</p>';
-                    }
-                ?>
-                <?php 
-                    if(isset($_GET['logout'])){
-                        echo'<p class="info">You have successfully logged out</p>';
-                    }               
-                ?>
-                <p>
-                    <input class="textinput" type="text" name="email" id="" placeholder="Email Address" >
-                </p>
-                <p>
-                    <input class="textinput" type="password" name="password" id="" placeholder="Password">
-                </p>
-                <div class="divl">
+<div class="login">
+    <form action="login.php" method="post">
+        <fieldset>
+            <legend>
+                <h1>LOGIN</h1>
+            </legend>
+            <?php
+            if (isset($errors) && !empty($errors)) {
+                echo '<p class="error">Invalid email or password</p>';
+            }
+            ?>
+            <?php
+            if (isset($_GET['logout'])) {
+                echo '<p class="info">You have successfully logged out</p>';
+            }
+            ?>
+            <p>
+                <input class="textinput" type="text" name="email" id="" placeholder="Email Address">
+            </p>
+            <p>
+                <input class="textinput" type="password" name="password" id="" placeholder="Password">
+            </p>
+            <div class="divl">
                 <P>
-                    <input class="checkbx" type="checkbox" name="remember" id="" value="yes">
-                    <label for="remember">REMEMBER ME</label>
+                    <input class="checkbox" type="checkbox" name="remember" id="" value="yes">
+                    <label for="remember">show password</label>
                 </P>
-                </div>
-                <div class="divr">
-                    <input type="button" value="FORGOT PASSWORD?" class="forgotpw" id="btnHome" 
-                    onClick="document.location.href='resetpw.php'" />
-                </div>
-                <p>
-                    <button type="submit" name="submit"> <b>LOGIN </b>                      
-
-                    </button>
-                </p>
-            </fieldset>
-        </form>    
-    </div>  
-</body>
-</html>
-
+            </div>
+            <div class="divr">
+                <P>
+                    <a class="checkbox" href="reset-pw.php">Forgot password?</a>
+                </P>
+            </div>
+            <p>
+                <button type="submit" name="submit"> <b>LOGIN </b></button>
+            </p>
+        </fieldset>
+    </form>
+</div>
 <?php
 require_once("../inc/footer.php");
 ?>

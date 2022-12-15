@@ -44,7 +44,7 @@ function is_email($email)
 
 function display_errors($errors)
 {   //format and display form errros
-    echo "<div class=\"errmsg\">";
+    echo "<div class=\"error\">";
     echo "<b>There were error(s) in your form:</b><br>";
     foreach ($errors as $error) {
         $error = ucfirst(str_replace("_", " ", $error));
