@@ -1,81 +1,109 @@
-<?php require_once('../inc/connection.php')?>
-<?php 
-    if(isset($_POST['submit'])){
-        $firstName= $_POST['firstName'];
-        $lastName=$_POST['lastName'];
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        $confirmPassword=$_POST['confirmPassword'];
-        $userType=$_POST['userType'];
+<?php
+require_once('../inc/connection.php');
+require_once('../inc/functions.php');
 
-        $passwordHash= password_hash($password,PASSWORD_DEFAULT);
+if (isset($_POST['submit'])) {
+    $firstName = mysqli_real_escape_string($connection, trim($_POST['firstName']));
+    $lastName = mysqli_real_escape_string($connection, trim($_POST['lastName']));
+    $email = mysqli_real_escape_string($connection, trim($_POST['email']));
+    $password = mysqli_real_escape_string($connection, trim($_POST['password']));
+    $confirmPassword = mysqli_real_escape_string($connection, trim($_POST['confirmPassword']));
+    $userType = mysqli_real_escape_string($connection, trim($_POST['userType']));
 
-        $errors= array();
+    $passwordHash = sha1($password);
 
-        if(empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($confirmPassword)){
-            array_push($errors,"All the fields are required");
-        }
+    $errors = array();
 
-        if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-            array_push($errors,"Email.is not valid");
-        }
-        if(strlen($password)<8){
-            array_push($errors,"Password must be at least 8 character long");
-        }
-        if($password!== $confirmPassword){
-            array_push($errors,"Password does not match");
-        }
-        
-        $sql= "SELECT * FROM users WHERE email ='$email'";
-        $result= mysqli_query($connection,$sql);
-        $rowCount=mysqli_num_rows($result);
-
-        if ($rowCount>0) {
-            array_push($errors,"Email already exists!");
-        }
-        if (count($errors)>0) {
-            foreach($errors as $error){
-                echo "<p class='error'> $error </p>";
-            }
-      
-        }else{
-            //insert data into database
-            $sql="INSERT INTO users(firstName,lastName,email,password)VALUES (?,?,?,?)";
-            $stmt=mysqli_stmt_init($connection);
-            $prepareStmt= mysqli_stmt_prepare($stmt,$sql);
-            if ($prepareStmt){
-                mysqli_stmt_bind_param($stmt,"ssss",$firstName,$lastName,$email,$passwordHash);
-                mysqli_stmt_execute($stmt);
-                echo "<p class='info'>You have successfully registered</p>";
-            }
-
-            //insert into tourist or service provider tables
-            $sql="SELECT userID FROM users WHERE email=$email";
-            $userId=mysqli_query($connection,$sql);
-            die($userId);
-        }
+    //checking required fields
+    if (empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($confirmPassword) ) {
+        array_push($errors, "All the fields are required");
+    }
+    
+    //checking user type is selected
+    if (empty($userType)  ) {
+        array_push($errors, "User type is not selected");
     }
 
+    //checking email address
+    if (!is_email($email)) {
+        array_push($errors, "Email address is invalid.");
+    }
 
+    //checking maxlength
+    $max_len_fields = array('firstName' => 50, 'lastName' => 50, 'email' => 50);
+
+    //checking max length fields
+    $errors = array_merge($errors, check_max_length($max_len_fields));
+
+    //checking minimum password length
+    if (strlen($password) < 8) {
+        array_push($errors, "Password must be at least 8 character long");
+    }
+
+    //checking password match
+    if ($password !== $confirmPassword) {
+        array_push($errors, "Password does not match");
+    }
+    
+    //checking email is existing
+    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    $query = "SELECT * FROM Users WHERE email = '{$email}' LIMIT 1";
+    
+    $result_set = mysqli_query($connection, $query);
+
+    verify_query($result_set);
+    
+    if (mysqli_num_rows($result_set) == 1) {
+        array_push($errors, "Password does not match");
+        $errors[] = "Email address already exists.";
+    }
+    
+    if (empty($errors)) {
+        $query = "INSERT INTO Users (
+                    `firstName`, `lastName`, `email`, `password`
+                  ) VALUES (
+                    '{$firstName}', '{$lastName}', '{$email}', '{$passwordHash}'
+                  )";
+
+        $result = mysqli_query($connection, $query);
+
+        if ($result) {
+            $last_id = mysqli_insert_id($connection);
+            if($userType == 'tourist'){
+                $query = "INSERT INTO Tourist(userID) VALUES ({$last_id})";
+                $result = mysqli_query($connection, $query);
+                verify_query($result);
+            }
+
+            echo "<p class='info'>You have successfully registered</p>";
+            $firstName = "";
+            $lastName = "";
+            $email = "";
+            
+        } else {
+            echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
+        }
+    }
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+
+<?php
+$title = "Login";
+require_once("../inc/header.php");
+?>
+
 <body class="registration">
     <div class="reg">
         <form action="registration.php" method="post">
             <h1>CREATE AN ACCOUNT</h1>
-            <input  class="textinput" type="text" name="firstName" id="" placeholder="FIRST NAME">
-            <input class="textinput" type="text" name="lastName" id="" placeholder="LAST NAME">
-            <input class="textinput" type="email" name="email" id="" placeholder="EMAIL">
+            <?php
+                if (!empty($errors)) {
+                    display_errors($errors);
+                }
+            ?>
+            <input class="textinput" type="text" name="firstName" id="" placeholder="FIRST NAME" <?php echo 'value="' . $firstName . '"'; ?>>
+            <input class="textinput" type="text" name="lastName" id="" placeholder="LAST NAME" <?php echo 'value="' . $lastName . '"'; ?> >
+            <input class="textinput" type="email" name="email" id="" placeholder="EMAIL" <?php echo 'value="' . $email . '"'; ?> >
             <input class="textinput" type="password" name="password" id="" placeholder="PASSWORD">
             <input class="textinput" type="password" name="confirmPassword" id="" placeholder="CONFIRM PASSWORD">
             <select class="textinput" id="" name="userType">
@@ -85,14 +113,14 @@
             </select>
             <button type="submit" name="submit">
                 REGISTER
-            </button >
+            </button>
             <P>
-                <a href="index.php">ALREADY HAVE AN ACCOUNT?</a>            
+                ALREADY HAVE AN ACCOUNT? <a href="login.php">Log in</a>
             </P>
         </form>
-
     </div>
-    
-    
-</body>
-</html>
+<?php
+require_once("../inc/footer.php");
+?>
+
+<?php mysqli_close($connection); ?>
