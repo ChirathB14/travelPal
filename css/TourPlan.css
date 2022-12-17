@@ -1,0 +1,94 @@
+.page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.Title-Tourplan {
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+}
+
+h1 {
+    margin-top: 15px;
+    margin-left: 30%;
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+
+.Title-Tourplan img {
+    width: 220px;
+    height: auto;
+}
+
+.Tourplan-image {
+    float: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.Tourplan-image img{
+    width: 60%;
+    height: 80%;
+}
+
+.Tourplan-image h3{
+    background-color: #F8EDDA;
+    opacity: 85%;
+    color: var(--primarycolor);
+    font-size: 32px;
+    padding: 130px 70px 130px 70px;
+    text-align: right;
+    letter-spacing: 8px;
+    line-height: 60px;
+}
+
+.Tourplan-image hr {
+    background-color: #F8EDDA;
+    opacity: 85%;
+    width: 8px;
+    margin-left: 25px;
+}
+
+p {
+    text-align: center;
+    margin: 50px 80px 0 80px;
+    font-size: 20px;
+}
+
+.features {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 100px 30px 100px;
+}
+
+.feature-content {
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #F8EDDA;
+    opacity: 85%;
+    padding: 20px;
+    margin: 10px 20px 10px 20px;
+}
+
+.feature-content h4 {
+    font-size: 20px;
+    color: var(--primarycolor);
+}
+
+.feature-content p {
+    font-size: 16px;
+    margin: 20px 40px 0 40px;
+    color: var(--primarycolor);
+}
+
+.TourPlan-buttons {
+    display: inline-block;
+    margin: 10px 160px 50px 150px;
+}
+
+.TourPlan-buttons button{
+    margin-left: 30px;
+    opacity: 75%;
+}
