@@ -10,70 +10,108 @@ if (!$_SESSION['user_id']) {
 
 $errors = array();
 $user_id = '';
-$first_name = '';
-$last_name = '';
+$firstName = '';
+$lastName = '';
 $email = '';
 $password = '';
+$confirmPassword = '';
+$location = '';
+$phoneNo = '';
+$nic = '';
 
 if (isset($_SESSION['user_id'])) {
     //getting the user information
     $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
-    $query = "SELECT *
-              FROM Users u, Tourist t
-              WHERE u.userID = {$user_id}
-                    AND u.userID = t.userID
+    $query1 = "SELECT * 
+              FROM Users u, serviceprovider sp 
+              WHERE u.userID = {$user_id} 
+                    AND u.userID = sp.userID
               LIMIT 1";
 
-    $result_set = mysqli_query($connection, $query);
+    $result_set1 = mysqli_query($connection, $query1);
 
-    if ($result_set) {
-        if (mysqli_num_rows($result_set) == 1) {
+    if ($result_set1) {
+        if (mysqli_num_rows($result_set1) == 1) {
             //user found
-            $result = mysqli_fetch_assoc($result_set);
+            $result = mysqli_fetch_assoc($result_set1);
             $first_name = $result['firstName'];
             $last_name = $result['lastName'];
             $email = $result['email'];
+            //retrieving rest of user details
+            $query2 = "SELECT * 
+                        FROM serviceprovider 
+                        WHERE userID = {$user_id} 
+                        LIMIT 1";
+            $result_set2 = mysqli_query($connection, $query2);
+
+            if ($result_set2) {
+                if (mysqli_num_rows($result_set2) == 1) {
+                    //user found
+                    $result = mysqli_fetch_assoc($result_set2);
+                    $location = $result['location'];
+                    $phoneNo = $result['phoneNo'];
+                    $nic = $result['NIC'];
+                } else {
+                    //user not found
+                    header('Location: sp-profile.php?err=user_details_not_found');
+                }
+            } else {
+                //query unsuccessful
+                header('Location: sp-profile.php?err=query_failed');
+            }
         } else {
             //user not found
-            header('Location: t-update-profile.php?err=user_not_found');
+            header('Location: sp-profile.php?err=user_not_found');
         }
     } else {
         //query unsuccessful
-        header('Location: t-update-profile.php?err=query_failed');
+        header('Location: sp-profile.php?err=query_failed');
     }
 }
 
 if (isset($_POST['submit'])) {
 
     $user_id = $_POST['user_id'];
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
     $email = $_POST['email'];
+    $phoneNo = $_POST['phoneNo'];
+    $nic = $_POST['NIC'];
 
-    $req_fields = array('user_id', 'first_name', 'last_name', 'email');
+    //function to undefined index error on location
+    $location = isset($_POST['location']) ? $_POST['location'] : $_POST['location_old'];
+
+    $passwordHash = sha1($password);
 
     //checking required fields
-    $errors = array_merge($errors, check_req_fields($req_fields));
+    if (empty($firstName) || empty($lastName) || empty($email) || empty($phoneNo) || empty($nic)) {
+        array_push($errors, "All the fields are required");
+    }
 
-    //checking maxlength
-    $max_len_fields = array('first_name' => 50, 'last_name' => 50, 'email' => 50);
-
-    //checking required fields
-    $errors = array_merge($errors, check_max_length($max_len_fields));
+    //checking user type is selected
+    if (empty($location)) {
+        array_push($errors, "Location is not selected");
+    }
 
     //checking email address
-    if (!is_email($_POST['email'])) {
-        $errors[] = 'Email address is invalid.';
+    if (!is_email($email)) {
+        array_push($errors, "Email address is invalid.");
     }
+
+    //checking nic
+    if (!is_nic($nic)) {
+        array_push($errors, "NIC is invalid.");
+    }
+
+    //checking maxlength
+    $max_len_fields = array('firstName' => 50, 'lastName' => 50, 'email' => 50, 'phoneNo' => 10);
+
+    //checking max length fields
+    $errors = array_merge($errors, check_max_length($max_len_fields));
 
     //checking email is existing
     $email = mysqli_real_escape_string($connection, $_POST['email']);
-    $query = "SELECT *
-              FROM Users u, Tourist t
-              WHERE email = '{$email}'
-                    AND u.userID != {$user_id}
-                    AND u.userID = t.userID
-              LIMIT 1";
+    $query = "SELECT * FROM Users WHERE email = '{$email}' AND userID != {$user_id} LIMIT 1";
 
     $result_set = mysqli_query($connection, $query);
 
@@ -83,22 +121,39 @@ if (isset($_POST['submit'])) {
         $errors[] = "Email address already exists.";
     }
 
-    if (empty($errors)) {
-        //adding new record
-        $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
-        $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
+    //function to clean user entered data
 
-        $query = "UPDATE Users
-                  SET firstName = '{$first_name}',
+
+    if (empty($errors)) {
+        //updating the record
+        $first_name = mysqli_real_escape_string($connection, $_POST['firstName']);
+        $last_name = mysqli_real_escape_string($connection, $_POST['lastName']);
+        $email = mysqli_real_escape_string($connection, $_POST['email']);
+        $phoneNo = mysqli_real_escape_string($connection, $_POST['phoneNo']);
+        $nic = mysqli_real_escape_string($connection, $_POST['NIC']);
+
+        $query1 = "UPDATE Users
+                    SET firstName = '{$first_name}',
                       lastName = '{$last_name}',
                       email = '{$email}'
-                   WHERE userID = {$user_id} LIMIT 1";
+                    WHERE userID = {$user_id} LIMIT 1";
 
-        $result = mysqli_query($connection, $query);
+        $result1 = mysqli_query($connection, $query1);
 
-        if ($result) {
-            //query succes..redirecting to users page
-            header('Location: t-profile.php?profile_updated=true');
+        if ($result1) {
+            $query2 = "UPDATE serviceprovider
+                    SET location = '{$location}',
+                      phoneNo = '{$phoneNo}',
+                      NIC = '{$nic}'
+                    WHERE userID = {$user_id} LIMIT 1";
+
+            $result2 = mysqli_query($connection, $query2);
+            if($result2){
+                //query success..redirecting to users page
+                header('Location: sp-profile.php?profile_updated=true');
+            }else{
+                $errors[] = 'Failed to update the profile.';
+            }
         } else {
             $errors[] = 'Failed to update the profile.';
         }
@@ -112,35 +167,24 @@ $title = "Update Profile";
 require_once "../inc/header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<div class="body">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <div class="dashboard">
+        <img src="/travelPal/assets/profile.png" alt="">
+        <p><?php echo $_SESSION['full_name']; ?></p>
+        <button class="nav" onclick="location.href = 'sp-profile.php';">MY PROFILE</button>
+        <button class="select" onclick="location.href = 'sp-update-profile.php';">UPDATE PROFILE</button>
+    </div>
 
-<body>
-    <div class="body">
-        <div class="dashboard">
-            <img src="/travelPal/assets/profile.png" alt="">
-            <p><?php echo $_SESSION['full_name']; ?></p>
-            <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
-            <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
-            <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
-        </div>
+    <div class="content">
         <?php
         if (!empty($errors)) {
             display_errors($errors);
         }
         ?>
-        <div class="content">
-            <h1>PROFILE</h1>
+        <h1>UPDATE PROFILE</h1>
+        <form action="sp-update-profile.php" class="" method='post'>
+            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
             <table class="table">
                 <tr class="row">
                     <td colspan="2">
@@ -150,19 +194,13 @@ require_once "../inc/header.php";
                 <tr class="row">
                     <td>
                         <label for="">First name:</label>
-                        <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?>>
-                    </td>
-                    <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <input type="text" name="firstName" id="" <?php echo 'value="' . $first_name . '"'; ?>>
                     </td>
                 </tr>
                 <tr class="row">
                     <td>
                         <label for="">Last name:</label>
-                        <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?>>
-                    </td>
-                    <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <input type="text" name="lastName" id="" <?php echo 'value="' . $last_name . '"'; ?>>
                     </td>
                 </tr>
                 <tr class="row">
@@ -170,65 +208,48 @@ require_once "../inc/header.php";
                         <label for="">Email address:</label>
                         <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?>>
                     </td>
+                </tr>
+                <tr class="row">
                     <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <label for="">Password:</label>
+                        <input type="text" value="************" disabled></input> <br><a style="color:black;" href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <label for="">Location:</label>
+                        <input type="text" name="location_old1" id="" <?php echo 'value="' . $location . '"'; ?> disabled>
+                        <input type="hidden" name="location_old" id="" <?php echo 'value="' . $location . '"'; ?> >
+                        <select class="textinput" id="" name="location">
+                            <option value="" disabled selected>PLEASE SELECT NEW LOCATION</option>
+                            <option value="Colombo">COLOMBO</option>
+                            <option value="Gampaha">GAMPAHA</option>
+                            <option value="Kalutara">KALUTARA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <label for="">Phone Number:</label>
+                        <input type="text" name="phoneNo" id="" <?php echo 'value="' . $phoneNo . '"'; ?>>
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <label for="">NIC:</label>
+                        <input type="text" name="NIC" id="" <?php echo 'value="' . $nic . '"'; ?>>
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <button type="submit" name="submit">Update</button>
                     </td>
                 </tr>
             </table>
-        </div>
-
-
+        </form>
     </div>
-    <div class="footer">
-        <hr>
-        <p>© 2022 TRAVEL PAL ALL RIGHTS RESERVED</p>
-    </div>
-</body>
+</div>
 
-</html>
-
-
-
-<!-- <main>
-    <h1>Update Profile</h1>
-    <p>
-        <a href="t-profile.php"> MY PROFILE</a>
-        <a href="t-update-profile.php"> UPDATE PROFILE</a>
-        <a href="#t-tours.php"> VIEW TOURS</a>
-    </p>
-
-    <?php
-    if (!empty($errors)) {
-        display_errors($errors);
-    }
-    ?>
-
-    <form action="t-update-profile.php" class="userform" method='post'>
-        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-        <p>
-            <label for="">First name:</label>
-            <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Last name:</label>
-            <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Email address:</label>
-            <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Password:</label>
-            <span>************</span> | <a href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change
-                Password</a>
-        </p>
-        <p>
-            <label for="">&nbsp;</label>
-            <button type="submit" name="submit">Update</button>
-        </p>
-
-    </form>
-</main> -->
 <?php
 require_once "../inc/footer.php";
 ?>

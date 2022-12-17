@@ -18,28 +18,51 @@ $password = '';
 if (isset($_SESSION['user_id'])) {
     //getting the user information
     $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
-    $query = "SELECT * 
-              FROM Users u, Tourist t 
+    $query1 = "SELECT * 
+              FROM Users u, serviceprovider sp 
               WHERE u.userID = {$user_id} 
-                    AND u.userID = t.userID
+                    AND u.userID = sp.userID
               LIMIT 1";
 
-    $result_set = mysqli_query($connection, $query);
+    $result_set1 = mysqli_query($connection, $query1);
 
-    if ($result_set) {
-        if (mysqli_num_rows($result_set) == 1) {
+    if ($result_set1) {
+        if (mysqli_num_rows($result_set1) == 1) {
             //user found
-            $result = mysqli_fetch_assoc($result_set);
+            $result = mysqli_fetch_assoc($result_set1);
             $first_name = $result['firstName'];
             $last_name = $result['lastName'];
             $email = $result['email'];
+
+            //retrieving rest of service-provider details
+            $query2 = "SELECT * 
+                        FROM serviceprovider 
+                        WHERE userID = {$user_id} 
+                        LIMIT 1";
+            $result_set2 = mysqli_query($connection, $query2);
+
+            if ($result_set2) {
+                if (mysqli_num_rows($result_set2) == 1) {
+                    //user found
+                    $result = mysqli_fetch_assoc($result_set2);
+                    $location = $result['location'];
+                    $phoneNo = $result['phoneNo'];
+                    $nic = $result['NIC'];
+                } else {
+                    //user not found
+                    header('Location: sp-profile.php?err=user_details_not_found');
+                }
+            } else {
+                //query unsuccessful
+                header('Location: sp-profile.php?err=query_failed');
+            }
         } else {
             //user not found
-            header('Location: t-profile.php?err=user_not_found');
+            header('Location: sp-profile.php?err=user_not_found');
         }
     } else {
         //query unsuccessful
-        header('Location: t-profile.php?err=query_failed');
+        header('Location: sp-profile.php?err=query_failed');
     }
 }
 
@@ -56,11 +79,15 @@ require_once("../inc/header.php");
         <p>
             <?php echo $_SESSION['full_name']; ?>
         </p>
-        <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
+        <button class="select" onclick="location.href = 'sp-profile.php';">MY PROFILE</button>
         <button class="nav" onclick="location.href = 'sp-update-profile.php';">UPDATE PROFILE</button>
-        <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
     </div>
     <div class="content">
+        <?php
+        if (isset($_GET['profile_updated'])) {
+            echo '<p class="info-1">Profile updated successfully</p>';
+        }
+        ?>
         <h1>PROFILE</h1>
         <table class="table">
             <tr class="row">
@@ -81,6 +108,21 @@ require_once("../inc/header.php");
             <tr class="row">
                 <td>
                     <?php echo "EMAIL : " . $email; ?>
+                </td>
+            </tr>
+            <tr class="row">
+                <td>
+                    <?php echo "LOCATION : " . $location; ?>
+                </td>
+            </tr>
+            <tr class="row">
+                <td>
+                    <?php echo "PHONE NUMBER : " . $phoneNo; ?>
+                </td>
+            </tr>
+            <tr class="row">
+                <td>
+                    <?php echo "NIC : " . $nic; ?>
                 </td>
             </tr>
         </table>

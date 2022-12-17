@@ -43,10 +43,8 @@ function is_email($email)
 
 function is_nic($nic)
 {
-    return (preg_match("/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/m", $nic));
+    return (preg_match("/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/i", $nic));
 }
-
-
 
 function display_errors($errors)
 {   //format and display form errros

@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <?php
-$title = "Login";
+$title = "Registration";
 require_once("../inc/header.php");
 ?>
 

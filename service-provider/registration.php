@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
     $errors = array();
 
     //checking required fields
-    if (empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($confirmPassword) ) {
+    if (empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($confirmPassword) || empty($phoneNo) || empty($nic) ) {
         array_push($errors, "All the fields are required");
     }
     
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
     }
 
     //checking maxlength
-    $max_len_fields = array('firstName' => 50, 'lastName' => 50, 'email' => 50, 'phoneNo'=> 10);
+    $max_len_fields = array('firstName' => 50, 'lastName' => 50, 'email' => 50, 'phoneNo'=> 10, 'nic' => 12);
 
     //checking max length fields
     $errors = array_merge($errors, check_max_length($max_len_fields));
@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
                 $query = "INSERT INTO serviceprovider(
                         `userID`, `location`, `phoneNo`, `NIC`, `availability`
                         ) VALUES (
-                            {$last_id},  '{$location}', '{$phoneNo}', '{$nic}', 0'
+                            {$last_id},  '{$location}', '{$phoneNo}', '{$nic}', 0
                         )";
                 $result = mysqli_query($connection, $query);
                 verify_query($result);

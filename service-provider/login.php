@@ -42,17 +42,15 @@ if (isset($_POST['submit'])) {
             $user = mysqli_fetch_assoc($result_set);
             $_SESSION['user_id'] = $user['userID'];
             $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
-            $_SESSION['user_type'] = "Tourist";
+            $_SESSION['user_type'] = "ServicerProvider";
 
             //redirect to users.php
-            header('Location: t-profile.php');
+            header('Location: sp-profile.php');
         } else {
             //username and password is invalid
             $errors[] = 'Invalid username/password';
         }
-
     }
-
 }
 
 ?>
@@ -64,9 +62,7 @@ require_once("../inc/header.php");
 <div class="login">
     <form action="login.php" method="post">
         <fieldset>
-            <legend>
-                <h1>LOGIN</h1>
-            </legend>
+            <h1>LOGIN</h1>
             <?php
             if (isset($errors) && !empty($errors)) {
                 echo '<p class="error">Invalid email or password</p>';
@@ -83,20 +79,19 @@ require_once("../inc/header.php");
             <p>
                 <input class="textinput" type="password" name="password" id="" placeholder="Password">
             </p>
-            <div class="divl">
-                <P>
+            <div class="password">
+                <div>
                     <input class="checkbox" type="checkbox" name="remember" id="" value="yes">
                     <label for="remember">show password</label>
-                </P>
-            </div>
-            <div class="divr">
-                <P>
-                    <a class="checkbox" href="reset-pw.php">Forgot password?</a>
-                </P>
+                    <a class="" href="reset-pw.php">Forgot password?</a>
+                </div>
             </div>
             <p>
                 <button type="submit" name="submit"> <b>LOGIN </b></button>
             </p>
+            <div class="new-user">
+                <a href="./registration.php">New user? Create an account</a>
+            </div>
         </fieldset>
     </form>
 </div>

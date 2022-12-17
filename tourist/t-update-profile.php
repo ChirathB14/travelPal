@@ -111,7 +111,6 @@ if (isset($_POST['submit'])) {
 $title = "Update Profile";
 require_once "../inc/header.php";
 // require_once "../inc/t-sidemenu.php";
-
 ?>
 <div class="body">
 
@@ -123,13 +122,13 @@ require_once "../inc/header.php";
         <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
     </div>
 
-    <?php
-    if (!empty($errors)) {
-        display_errors($errors);
-    }
-    ?>
 
     <div class="content">
+        <?php
+        if (!empty($errors)) {
+            display_errors($errors);
+        }
+        ?>
         <h1>UPDATE PROFILE</h1>
         <form action="t-update-profile.php" class="" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
