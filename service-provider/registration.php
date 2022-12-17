@@ -8,6 +8,9 @@ $email = '';
 $password = '';
 $confirmPassword = '';
 $userType = '';
+$location = '';
+$phoneNo = '';
+$nic = '';
 
 if (isset($_POST['submit'])) {
     $firstName = mysqli_real_escape_string($connection, trim($_POST['firstName']));
@@ -16,6 +19,9 @@ if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($connection, trim($_POST['password']));
     $confirmPassword = mysqli_real_escape_string($connection, trim($_POST['confirmPassword']));
     $userType = mysqli_real_escape_string($connection, trim($_POST['userType']));
+    $location = mysqli_real_escape_string($connection, trim($_POST['location']));
+    $phoneNo = mysqli_real_escape_string($connection, trim($_POST['phoneNo']));
+    $nic = mysqli_real_escape_string($connection, trim($_POST['NIC']));
 
     $passwordHash = sha1($password);
 
@@ -27,8 +33,8 @@ if (isset($_POST['submit'])) {
     }
     
     //checking user type is selected
-    if (empty($userType)  ) {
-        array_push($errors, "User type is not selected");
+    if (empty($location)  ) {
+        array_push($errors, "Location is not selected");
     }
 
     //checking email address
@@ -36,8 +42,13 @@ if (isset($_POST['submit'])) {
         array_push($errors, "Email address is invalid.");
     }
 
+    //checking nic
+    if (!is_nic($nic)) {
+        array_push($errors, "NIC is invalid.");
+    }
+
     //checking maxlength
-    $max_len_fields = array('firstName' => 50, 'lastName' => 50, 'email' => 50);
+    $max_len_fields = array('firstName' => 50, 'lastName' => 50, 'email' => 50, 'phoneNo'=> 10);
 
     //checking max length fields
     $errors = array_merge($errors, check_max_length($max_len_fields));
@@ -76,13 +87,16 @@ if (isset($_POST['submit'])) {
 
         if ($result) {
             $last_id = mysqli_insert_id($connection);
-            if($userType == 'tourist'){
-                $query = "INSERT INTO Tourist(userID) VALUES ({$last_id})";
+            if($userType == 'serviceProvider'){
+                $query = "INSERT INTO serviceprovider(
+                        `userID`, `location`, `phoneNo`, `NIC`, `availability`
+                        ) VALUES (
+                            {$last_id},  '{$location}', '{$phoneNo}', '{$nic}', 0'
+                        )";
                 $result = mysqli_query($connection, $query);
                 verify_query($result);
             }
 
-            // echo "<p class='info'>You have successfully registered</p>";
             header('Location: registration.php?success=yes');
             $firstName = "";
             $lastName = "";
@@ -90,7 +104,6 @@ if (isset($_POST['submit'])) {
             
         } else {
             header('Location: registration.php?failed=yes');
-            // echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
         }
     }
 }
@@ -125,12 +138,15 @@ require_once("../inc/header.php");
             <input class="textinput" type="email" name="email" id="" placeholder="EMAIL" <?php echo 'value="' . $email . '"'; ?> >
             <input class="textinput" type="password" name="password" id="" placeholder="PASSWORD">
             <input class="textinput" type="password" name="confirmPassword" id="" placeholder="CONFIRM PASSWORD">
-            <input type="hidden" value="tourist" name="userType">
-            <!-- <select class="textinput" id="" name="userType">
-                <option value="" disabled selected>REGISTER AS A</option>
-                <option value="tourist">TOURIST</option>
-                <option value="serviceProvider">SERVICE PROVIDER</option>
-            </select> -->
+            <input type="hidden" value="serviceProvider" name="userType">
+            <select class="textinput" id="" name="location">
+                <option value="" disabled selected>PLEASE SELECT THE LOCATION</option>
+                <option value="Colombo">COLOMBO</option>
+                <option value="Gampaha">GAMPAHA</option>
+                <option value="Kalutara">KALUTARA</option>
+            </select>
+            <input class="textinput" type="tel" name="phoneNo" id="" placeholder="ENTER PHONE NUMBER" <?php echo 'value="' . $phoneNo . '"'; ?> >
+            <input class="textinput" type="text" name="NIC" id="" placeholder="ENTER NIC" <?php echo 'value="' . $nic . '"'; ?> >
             <button type="submit" name="submit">
                 REGISTER
             </button>

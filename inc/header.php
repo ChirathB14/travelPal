@@ -32,7 +32,7 @@
                     <button class=\"nav\">CONTACT US</button>
                     <button class=\"nav\">BLOGS</button>
                     <button class=\"logout-btn\" onclick=\"location.href = '/travelPal/register.php';\" >REGISTER</button>
-                    <button class=\"logout-btn\" onclick=\"location.href = 'login.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>LOG IN</button>
+                    <button class=\"logout-btn\" onclick=\"location.href = 'login.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>&nbsp;&nbsp;LOG IN</button>
                 </div>            
             </div>
             <div class=\"navigationbarfoot\">
@@ -52,7 +52,7 @@
                     <button class=\"nav\">CONTACT US</button>
                     <button class=\"nav\">BLOGS</button>
                     <button class=\"nav-select\">PROFILE</button>
-                    <button class=\"logout-btn\" onclick=\"location.href = 'logout.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>LOG OUT</button>
+                    <button class=\"logout-btn\" onclick=\"location.href = 'logout.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>&nbsp;&nbsp;LOG OUT</button>
                 </div>            
             </div>
             <div class=\"navigationbarfoot\">

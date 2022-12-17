@@ -57,15 +57,10 @@ require_once("../inc/header.php");
             <?php echo $_SESSION['full_name']; ?>
         </p>
         <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
-        <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
+        <button class="nav" onclick="location.href = 'sp-update-profile.php';">UPDATE PROFILE</button>
         <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
     </div>
     <div class="content">
-        <?php
-        if (isset($_GET['profile_updated'])) {
-            echo '<p class="info-1">Profile updated successfully</p>';
-        }
-        ?>
         <h1>PROFILE</h1>
         <table class="table">
             <tr class="row">

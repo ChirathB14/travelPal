@@ -21,15 +21,45 @@ fieldset{
     border: 0px;
     width: 90%;
     margin: auto;
-    position: absolute;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
-.login{
+/* .login{
     margin: auto;
-    height: 600px;
-    padding-top: 40px;
+    height:200px;
     text-align: center;
+    align-items: center;
     display: flex;
+} */
+
+.login {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.login h1{
+    text-align: center;
+}
+
+.logintext{
+    width: 100%;
+    color: #000000;
+    height: 50px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: large; 
+    -webkit-appearance: none;
 }
 
 .login button{
@@ -71,6 +101,14 @@ p.info{
     color: white;
     padding: 10px;
     margin: 10px;
+    width: 100%;
+}
+
+p.info-1{
+    margin: auto;
+    background-color: green;
+    color: white;
+    padding: 10px;
 }
 
 .textinput{
@@ -87,6 +125,7 @@ p.info{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-size: large; 
+    -webkit-appearance: none;
 }
 .checkbox{
     margin: 10px;
@@ -249,7 +288,7 @@ img{
     width: 90%;
     margin-left: 200px;
     margin-right: 150px;
-    margin-top: 100px;
+    margin-top: 50px;
     
 }
 .content h1{
@@ -279,8 +318,13 @@ img{
     border: 0px;
     width: 50%;
     height: 100%;
-
+    
 }
+
+.row button{
+    cursor: pointer;
+}
+
 .row label{
     color: #000000;
 }
@@ -336,4 +380,33 @@ footer{
     overflow: auto;
     padding: 10px;
     text-align: center;
+}
+
+
+/* login */
+
+.password {
+    display: flex;
+    flex-direction: row;
+    color: var(--accentcolor);   
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.password a{
+    margin-left: 40px;
+}
+
+.new-user {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.new-user a {
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 10px;
 }
