@@ -1,106 +1,37 @@
-<?php session_start();?>
-<?php require_once('../../inc/connection.php')?>
-<?php if(!isset($_SESSION['userID'])){
+<?php session_start();
+
+require_once('../../inc/connection.php');
+
+if(!isset($_SESSION['userID'])){
     header('Location: login.php');
 }
-$errors = array();
-$user_id = '';
-$first_name = '';
-$last_name = '';
-$email = '';
-$password = '';
 
-if (isset($_SESSION['userID'])) {
-    //getting the user information
-    $user_id = mysqli_real_escape_string($connection, $_SESSION['userID']);
-    $query = "SELECT * 
-              FROM users u, sitemanager s
-              WHERE u.userID = {$user_id} 
-                    AND u.userID = s.userID
-              LIMIT 1";
-
-    $result_set = mysqli_query($connection, $query);
-
-    if ($result_set) {
-        if (mysqli_num_rows($result_set) == 1) {
-            //user found
-            $result = mysqli_fetch_assoc($result_set);
-            $first_name = $result['firstName'];
-            $last_name = $result['lastName'];
-            $email = $result['email'];
-        } else {
-            //user not found
-            header('Location: sm-updateprofile.php?err=user_not_found');
-        }
-    } else {
-        //query unsuccessful
-        header('Location: sm-updateprofile.php?err=query_failed');
-    }
-}
-
-if (isset($_POST['submit'])) {
-
-    $user_id = $_POST['user_id'];
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
-
-    $req_fields = array('user_id', 'first_name', 'last_name', 'email');
-
-    //checking required fields
-    $errors = array_merge($errors, check_req_fields($req_fields));
-
-    //checking maxlength
-    $max_len_fields = array('first_name' => 50, 'last_name' => 50, 'email' => 50);
-
-    //checking required fields
-    $errors = array_merge($errors, check_max_length($max_len_fields));
-
-    //checking email address
-    if (!is_email($_POST['email'])) {
-        $errors[] = 'Email address is invalid.';
-    }
-
-    //checking email is existing
-    $email = mysqli_real_escape_string($connection, $_POST['email']);
-    $query = "SELECT * 
-              FROM users u, sitemanager s
-              WHERE email = '{$email}' 
-                    AND u.userID != {$user_id} 
-                    AND u.userID = s.userID
-              LIMIT 1";
-
-    $result_set = mysqli_query($connection, $query);
-
-    verify_query($result_set);
-
-    if (mysqli_num_rows($result_set) == 1) {
-        $errors[] = "Email address already exists.";
-    }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {  
 
 
-    if (empty($errors)) {
-        //adding new record
-        $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
-        $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
+$season=$_POST['season'];
+$Location=$_POST['Location'];
+$No_of_Days=$_POST['No_of_Days'];
+$Budget=$_POST['Budget'];
+$Type_of_Package=$_POST['Type_of_Package'];
+$No_of_Nights=$_POST['No_of_Nights'];
+$user_id=$_SESSION['user_id'];
 
-        $query = "UPDATE Users 
-                  SET firstName = '{$first_name}',
-                      lastName = '{$last_name}',
-                      email = '{$email}'
-                   WHERE userID = {$user_id} LIMIT 1";
 
-        $result = mysqli_query($connection, $query);
+$sql="INSERT INTO premadetourplan(budget,userID,season,location,noOfDays,type)
+VALUES ($Budget,$user_id,'$season','$Location',$No_of_Days,'$Type_of_Package');";
 
-        if ($result) {
-            //query succes..redirecting to users page
-            header('Location: sm-updateprofile.php?profile_updated=true');
-        } else {
-            $errors[] = 'Failed to update the profile.';
-        }
-    }
+
+
+
+$result= mysqli_query($connection,$sql);
+
+
 
 }
+
+
+
 ?>
 <?php
 $title = "Create tour plan";
@@ -119,7 +50,54 @@ require_once("../../inc/header.php");
             <button class="nav" onclick="location.href = 'sm-TG.php';">TOURIST GUIDE</button>
         </div>
         <div class="content">
+
+
+            <!-- Create New Tour Plan -->
+        <div class="create-plan">
+            <h2>Create New Plan</h2>
+            <div class="plan-content">
             
+            
+            <form action="" method="post">
+               <div  class="plan-details">
+                    <label for="season">Season</label>
+                    <select name="season" id="cars">
+                        <option value="NOVEMBER-MARCH">NOVEMBER-MARCH</option>
+                        <option value="APRIL-JUNE">APRIL-JUNE</option>
+                        <option value="JULY-OCTOMBER">JULY-OCTOMBER</option>
+                        <!-- <option value="audi">Audi</option> -->
+                    </select>
+                </div>
+                <div  class="plan-details">
+                    
+                        <input type="text" placeholder="Location" name="Location"> 
+                    
+                </div>
+                <div  class="plan-details">
+                   
+                    <input type="text" placeholder="No of Days" name="No_of_Days"> 
+                    
+                </div>
+                <div  class="plan-details">
+                    
+                    <input type="text" placeholder="Budget" name="Budget"> 
+                     
+                </div>
+                <div  class="plan-details">
+                    
+                    <input type="text" placeholder="Type of Package" name="Type_of_Package"> 
+                    
+                </div>
+                <div  class="plan-details">
+                    
+                    <input type="text" placeholder="No of Nights" name="No_of_Nights"> 
+                     
+                </div>
+                <button Type="submit">Create Tour Plan</button>
+               </form>
+
+               
+            </div>
         </div>
     </div>
 <?php require_once("../../inc/footer.php");?>
