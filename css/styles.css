@@ -10,13 +10,13 @@
     font-size: 14px;
     color: aliceblue;
     margin: auto;
-    background-color: #0E064D;
     background-image: url('../assets/bg.png');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
     background-position: center; 
 }
+
 fieldset{
     border: 0px;
     width: 90%;
@@ -740,4 +740,12 @@ body h1{
     margin-right: auto;
     margin-top: 20px;
     display: flex;
+}
+.contactus-ourdetails{
+    display: flex;
+    padding: 40px;
+}
+.ourdetails{
+    padding: 40px;
+    width: auto;
 }

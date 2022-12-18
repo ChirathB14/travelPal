@@ -1,5 +1,8 @@
 <?php session_start();?>
-<?php require_once('../inc/connection.php')?>
+<?php 
+require_once('../../inc/connection.php');
+require_once('../../inc/functions.php');
+?>
 <?php 
     //check for form submission
     if(isset($_POST['submit'])){
@@ -47,24 +50,11 @@
 
 <?php
 $title = "Login";
-require_once("../inc/header.php");
+require_once("../../inc/header.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In - User Management System</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="index">
+<div class="index">
     <div class="login">
         <form action="login.php" method="post">
-            <fieldset>
                 <legend>
                     <h1>LOGIN</h1>
                 </legend>
@@ -99,9 +89,8 @@ require_once("../inc/header.php");
 
                     </button>
                 </p>
-            </fieldset>
         </form>    
-    </div>  
-</body>
-</html>
+    </div>
+</div>
+<?php require_once("../../inc/footer.php");?>
 <?php mysqli_close($connection); ?>
