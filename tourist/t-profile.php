@@ -61,6 +61,11 @@ require_once("../inc/header.php");
         <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
     </div>
     <div class="content">
+        <?php
+        if (isset($_GET['profile_updated'])) {
+            echo '<p class="info-1">Profile updated successfully</p>';
+        }
+        ?>
         <h1>PROFILE</h1>
         <table class="table">
             <tr class="row">

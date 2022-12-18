@@ -103,7 +103,6 @@ if (isset($_POST['submit'])) {
             $errors[] = 'Failed to update the profile.';
         }
     }
-
 }
 
 ?>
@@ -111,36 +110,28 @@ if (isset($_POST['submit'])) {
 <?php
 $title = "Update Profile";
 require_once "../inc/header.php";
+// require_once "../inc/t-sidemenu.php";
 ?>
+<div class="body">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="body">
     <div class="dashboard">
-            <img src="/travelPal/assets/profile.png" alt="">
-            <p><?php echo $_SESSION['full_name']; ?></p>
-            <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
-            <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
-            <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
-        </div>
-        <?php
-if (!empty($errors)) {
-    display_errors($errors);
-}
-?>
+        <img src="/travelPal/assets/profile.png" alt="">
+        <p><?php echo $_SESSION['full_name']; ?></p>
+        <button class="nav" onclick="location.href = 't-profile.php';">MY PROFILE</button>
+        <button class="select" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
+        <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
+    </div>
 
-        <div class="content">
-        <h1>PROFILE</h1>
+
+    <div class="content">
+        <?php
+        if (!empty($errors)) {
+            display_errors($errors);
+        }
+        ?>
+        <h1>UPDATE PROFILE</h1>
+        <form action="t-update-profile.php" class="" method='post'>
+            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
             <table class="table">
                 <tr class="row">
                     <td colspan="2">
@@ -150,86 +141,38 @@ if (!empty($errors)) {
                 <tr class="row">
                     <td>
                         <label for="">First name:</label>
-                        <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> >
-                    </td>
-                    <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?>>
                     </td>
                 </tr>
                 <tr class="row">
                     <td>
                         <label for="">Last name:</label>
-                        <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> >
-                    </td>
-                    <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?>>
                     </td>
                 </tr>
                 <tr class="row">
                     <td>
                         <label for="">Email address:</label>
-                        <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> >
+                        <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?>>
                     </td>
+                </tr>
+                <tr class="row">
                     <td>
-                        <img src="/travelPal/assets/Frame.png" alt="TRAVELPal">
+                        <label for="">Password:</label>
+                        <input type="text" value="************" disabled></input> <br><a style="color:black;" href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <button type="submit" name="submit">Update</button>
                     </td>
                 </tr>
             </table>
-        </div>
-
-
+        </form>
     </div>
-    <div class="footer">
-        <hr>
-        <p>© 2022 TRAVEL PAL ALL RIGHTS RESERVED</p>
-    </div>
-</body>
-</html>
-
-
-
-<main>
-    <h1>Update Profile</h1>
-    <p>
-        <a href="t-profile.php"> MY PROFILE</a>
-        <a href="t-update-profile.php"> UPDATE PROFILE</a>
-        <a href="#t-tours.php"> VIEW TOURS</a>
-    </p>
-
-    <?php
-if (!empty($errors)) {
-    display_errors($errors);
-}
-?>
-
-    <form action="t-update-profile.php" class="userform" method='post'>
-        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-        <p>
-            <label for="">First name:</label>
-            <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Last name:</label>
-            <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Email address:</label>
-            <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> >
-        </p>
-        <p>
-            <label for="">Password:</label>
-            <span>************</span> | <a href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change
-                Password</a>
-        </p>
-        <p>
-            <label for="">&nbsp;</label>
-            <button type="submit" name="submit">Update</button>
-        </p>
-
-    </form>
-</main>
+</div>
 <?php
 require_once "../inc/footer.php";
 ?>
 
-<?php mysqli_close($connection);?>
+<?php mysqli_close($connection); ?>
