@@ -4,7 +4,7 @@ require_once('../inc/connection.php');
 require_once('../inc/functions.php');
 
 //checking if the user is logged in
-if (!$_SESSION['user_id']) {
+if (!$_SESSION['user_id'] && !$_SESSION['user_type'] == 'ServiceProvider') {
     header('Location: login.php');
 }
 

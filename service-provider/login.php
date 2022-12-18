@@ -5,6 +5,8 @@ session_start();
 require_once('../inc/connection.php');
 require_once('../inc/functions.php');
 
+$email = '';
+
 //check for form submission
 if (isset($_POST['submit'])) {
 
@@ -14,9 +16,23 @@ if (isset($_POST['submit'])) {
     if (!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1) {
         $errors[] = 'Username is missing/invalid!';
     }
+
     if (!isset($_POST['password']) || strlen(trim($_POST['password'])) < 1) {
         $errors[] = 'Password is missing/invalid!';
     }
+
+    //checking email is existing
+    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    $query = "SELECT * FROM Users WHERE email = '{$email}' LIMIT 1";
+
+    $result_set = mysqli_query($connection, $query);
+
+    verify_query($result_set);
+
+    if (mysqli_num_rows($result_set) != 1) {
+        $errors[] = "Email is invalid!";
+    }
+
     //check if there are any errors in the form
     if (empty($errors)) {
         //save username and pssword into variables
@@ -30,7 +46,6 @@ if (isset($_POST['submit'])) {
                         AND password = '{$hashed_password}'
                         AND u.userID = sp.userID
                   LIMIT 1";
-
         $result_set = mysqli_query($connection, $query);
 
         //check if the user is valid
@@ -42,13 +57,14 @@ if (isset($_POST['submit'])) {
             $user = mysqli_fetch_assoc($result_set);
             $_SESSION['user_id'] = $user['userID'];
             $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
-            $_SESSION['user_type'] = "ServicerProvider";
+            $_SESSION['user_type'] = "ServiceProvider";
 
-            //redirect to users.php
+            //redirect to profile page
             header('Location: sp-profile.php');
+            $email = '';
         } else {
-            //username and password is invalid
-            $errors[] = 'Invalid username/password';
+            //password is invalid
+            $errors[] = 'Invalid password!';
         }
     }
 }
@@ -65,7 +81,11 @@ require_once("../inc/header.php");
             <h1>LOGIN</h1>
             <?php
             if (isset($errors) && !empty($errors)) {
-                echo '<p class="error">Invalid email or password</p>';
+                echo '<p class="error"> ';
+                foreach ($errors as $error) {
+                    echo "- " . $error . '<br>';
+                }
+                echo '</p>';
             }
             ?>
             <?php
@@ -74,14 +94,14 @@ require_once("../inc/header.php");
             }
             ?>
             <p>
-                <input class="textinput" type="text" name="email" id="" placeholder="Email Address">
+                <input class="textinput" type="email" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?> >
             </p>
             <p>
-                <input class="textinput" type="password" name="password" id="" placeholder="Password">
+                <input class="textinput" type="password" name="password" id="password" placeholder="Password" required>
             </p>
             <div class="password">
                 <div>
-                    <input class="checkbox" type="checkbox" name="remember" id="" value="yes">
+                    <input class="checkbox" type="checkbox" name="remember" id="remember" value="yes">
                     <label for="remember">show password</label>
                     <a class="" href="reset-pw.php">Forgot password?</a>
                 </div>
@@ -95,6 +115,18 @@ require_once("../inc/header.php");
         </fieldset>
     </form>
 </div>
+<script src="../js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#remember').click(function() {
+            if ($('#remember').is(':checked')) {
+                $('#password').attr('type', 'text');
+            } else {
+                $('#password').attr('type', 'password');
+            }
+        });
+    });
+</script>
 <?php
 require_once("../inc/footer.php");
 ?>

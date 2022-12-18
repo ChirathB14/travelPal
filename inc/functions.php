@@ -48,13 +48,13 @@ function is_nic($nic)
 
 function display_errors($errors)
 {   //format and display form errros
-    echo "<div class=\"error\">";
+    echo "<p class=\"error\">";
     echo "<b>There were error(s) in your form:</b><br>";
     foreach ($errors as $error) {
         $error = ucfirst(str_replace("_", " ", $error));
         echo "- " . $error . '<br>';
     }
-    echo "</div>";
+    echo "</p>";
 }
 
 ?>

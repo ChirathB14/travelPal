@@ -5,6 +5,8 @@ session_start();
 require_once('../inc/connection.php');
 require_once('../inc/functions.php');
 
+$email = '';
+
 //check for form submission
 if (isset($_POST['submit'])) {
 
@@ -17,6 +19,19 @@ if (isset($_POST['submit'])) {
     if (!isset($_POST['password']) || strlen(trim($_POST['password'])) < 1) {
         $errors[] = 'Password is missing/invalid!';
     }
+
+    //checking email is existing
+    $email = mysqli_real_escape_string($connection, $_POST['email']);
+    $query = "SELECT * FROM Users WHERE email = '{$email}' LIMIT 1";
+
+    $result_set = mysqli_query($connection, $query);
+
+    verify_query($result_set);
+
+    if (mysqli_num_rows($result_set) != 1) {
+        $errors[] = "Email is invalid!";
+    }
+
     //check if there are any errors in the form
     if (empty($errors)) {
         //save username and pssword into variables
@@ -46,9 +61,10 @@ if (isset($_POST['submit'])) {
 
             //redirect to users.php
             header('Location: t-profile.php');
+            $email = '';
         } else {
             //username and password is invalid
-            $errors[] = 'Invalid username/password';
+            $errors[] = 'Invalid password';
         }
     }
 }
@@ -60,43 +76,59 @@ $title = "Login";
 require_once("../inc/header.php");
 ?>
 <div class="index">
-<div class="login">
-    <form action="login.php" method="post">
-        <fieldset>
-            <h1>LOGIN</h1>
-            <?php
-            if (isset($errors) && !empty($errors)) {
-                echo '<p class="error">Invalid email or password</p>';
-            }
-            ?>
-            <?php
-            if (isset($_GET['logout'])) {
-                echo '<p class="info">You have successfully logged out</p>';
-            }
-            ?>
-            <p>
-                <input class="logintext" type="text" name="email" id="" placeholder="Email Address">
-            </p>
-            <p>
-                <input class="logintext" type="password" name="password" id="" placeholder="Password">
-            </p>
-            <div class="password">
-                <div>
-                    <input class="checkbox" type="checkbox" name="remember" id="" value="yes">
-                    <label for="remember">show password</label>
-                    <a class="" href="reset-pw.php">Forgot password?</a>
+    <div class="login">
+        <form action="login.php" method="post">
+            <fieldset>
+                <h1>LOGIN</h1>
+                <?php
+                if (isset($errors) && !empty($errors)) {
+                    echo '<p class="error"> ';
+                    foreach ($errors as $error) {
+                        echo "- " . $error . '<br>';
+                    }
+                    echo '</p>';
+                }
+                ?>
+                <?php
+                if (isset($_GET['logout'])) {
+                    echo '<p class="info">You have successfully logged out</p>';
+                }
+                ?>
+                <p>
+                    <input class="logintext" type="text" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?>>
+                </p>
+                <p>
+                    <input class="logintext" type="password" name="password" id="password" placeholder="password" required>
+                </p>
+                <div class="password">
+                    <div>
+                        <input class="checkbox" type="checkbox" name="remember" id="remember">
+                        <label for="remember">show password</label>
+                        <a class="" href="reset-pw.php">Forgot password?</a>
+                    </div>
                 </div>
-            </div>
-            <p>
-                <button type="submit" name="submit"> <b>LOGIN </b></button>
-            </p>
-            <div class="new-user">
-                <a href="./registration.php">New user? Create an account</a>
-            </div>
-        </fieldset>
-    </form>
+                <p>
+                    <button type="submit" name="submit"> <b>LOGIN </b></button>
+                </p>
+                <div class="new-user">
+                    <a href="./registration.php">New user? Create an account</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </div>
-</div>
+<script src="../js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#remember').click(function() {
+            if ($('#remember').is(':checked')) {
+                $('#password').attr('type', 'text');
+            } else {
+                $('#password').attr('type', 'password');
+            }
+        });
+    });
+</script>
 <?php
 require_once("../inc/footer.php");
 ?>
