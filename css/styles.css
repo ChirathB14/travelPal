@@ -6,6 +6,7 @@
     text-transform: uppercase;
     letter-spacing: 0.195em;   
 }
+
 .index{
     font-size: 14px;
     color: aliceblue;
@@ -17,6 +18,7 @@
     background-size: cover;
     background-position: center; 
 }
+
 fieldset{
     border: 0px;
     position: fixed;
@@ -26,18 +28,28 @@ fieldset{
     width: 350px;
     margin: auto;
     padding-top: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.login h1{
     text-align: center;
     display: flex;
 }
+
 .divl{
     float: left;
     margin: 10px;
 }
+
 .divr{
     float: right;
     margin: 10px;
     color: white;
 }
+
 .forgotpw{
     background-color: transparent;
     border: 0px;
@@ -50,6 +62,7 @@ p.error{
     padding: 10px;
     margin: 10px;
 }
+
 p.info{
     background-color: green;
     color: white;
@@ -72,6 +85,7 @@ p.info{
     -moz-box-sizing: border-box;
     font-size: large; 
 }
+
 .checkbox{
     margin: 10px;
     padding-top: 170px;
@@ -113,41 +127,46 @@ body{
  
 .navigationbar{
     width: 100%;
-    height: 95%;
+    height: 75%;
     display: flex;
 }
 
 .nav-Logo{
-    margin: 0px;
-    width: 30%;
-    height: 100%;
+    margin: 10px 10px 0px 0px;
+    width: 20%;
+    height: 70%;
     float: left;
 }
+
 img{
     width: 100%;
     height: 100%;
 }
 
 .menu{
+    margin-top: 5px;
     height: 100%;
-    width: 70%;
+    width: 80%;
     display: flex;
 }
+
 .menu .nav{
     margin: 0;
     border-radius: 0px;
     background-color: #0E064D;
 }
+
 .menu .nav:hover{
     background-color: #00357A;
 }
+
 .menu .nav-select{
     margin: 0;
     border-radius: 0px;
     background-color: #00357A;;
 }
+
 .menu .logout-btn{
-    margin: auto;
     margin-right: 10px;
     margin-left: 10px;
     height: 68px;
@@ -156,6 +175,7 @@ img{
     box-shadow: 0px 3px 9px #000000;
     border-radius: 15px;
 }
+
 .menu .logout-btn:hover{
     background: #EEB444;
 }
@@ -207,6 +227,7 @@ img{
     background-color:  rgb(050, 121, 114,0.5);
 
 }
+
 .dashboard p{
     text-align: center;
     padding: 20px;
@@ -233,21 +254,30 @@ img{
     justify-content: center;
     
 }
+
 .content h1{
     background-color: transparent;
     letter-spacing: 10px;
 }
+
+.content h2{
+    background-color: transparent;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+}
+
 .table{
     width: 75%;
     height: 40%;
-    padding: 75px;
+    padding: 30px 40px 30px 40px;
     background-color:rgb(255, 255, 255,0.75);
 }
 .row{
     width: 50%;
-    height: 50px;
+    height: 40px;
     background-color: rgb(255, 255, 255);
 }
+
 .row td{
     color: #000000;
     padding-left: 20px;
@@ -630,17 +660,49 @@ body h1{
     text-transform: uppercase;
     color: #0E064D;
 }
+
+/* login */
+
+.password {
+    display: flex;
+    flex-direction: row;
+    color: var(--accentcolor);   
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.password a{
+    margin-left: 40px;
+}
+
+.new-user {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.new-user a {
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 10px;
+}
+    
+.contactus-sendmsg {
+    margin: 30px;
+}
+
 .contactus-sendmsg{
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    width: 1085px;
-    height: 520px;
-    left: 182px;
-    top: 1372px;
+    width: 70%;
+    height: 60%;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 2px 2px 4px rgba(30, 30, 30, 0.52);
 }
+
 .contactus-textinput{
     color: #0E064D;
     width: 730px;
@@ -655,6 +717,11 @@ body h1{
     display: flex;
     justify-content: center;
 }
+
+.contactus-sendmsg button {
+    margin-left: 25%;
+}
+
 .contactus-sendmsg ::placeholder{
     color: #0E064D;
     font-size: 15px;
@@ -672,4 +739,15 @@ body h1{
     margin-right: auto;
     margin-top: 20px;
     display: flex;
+
+}
+.contactus-ourdetails{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+.ourdetails{
+    padding: 40px;
+    width: auto;
 }

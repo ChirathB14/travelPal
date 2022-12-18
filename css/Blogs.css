@@ -1,0 +1,37 @@
+.page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.Blogs-Title {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.Blogs-TitleContent {
+    margin-left: 30%;
+}
+
+.Blogs-Title button {
+    width: 280px;
+    margin-left: 200px;
+}
+
+.Blog-content {
+    background-color: #327972;
+    opacity: 80%;
+    margin: 20px 40px 20px 40px;
+    padding: 40px;
+}
+
+img {
+    width: 99%;
+}
+
+.Blog-content a {
+    color: var(--secondarycolor);
+}
+

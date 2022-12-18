@@ -13,15 +13,36 @@ require_once("./inc/header.php");
           made luxury tour in Sri Lanka.</p>
     </div>
     <div class="contactus-ourdetails">
-
+        <div class="ourdetails"><i class="fa fa-phone" aria-hidden="true"></i><br> <h3>Phone</h3>
+            <br> <h4>0712345678</h4>
+        </div>
+        <hr>
+        <div class="ourdetails"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><h3>Email</h3>
+            <br> <h4>silva@gmail.com</h4>
+        </div>
+        <hr>
+        <div class="ourdetails"><i class="fa fa-home" aria-hidden="true"></i><br><h3>Address</h3>
+            <br> <h4>10,Park lane,Colombo 3</h4>
+        </div>
     </div>
+
+    <div class="contact">
+                        <h4>Find us on social media</h4>
+                        <p>
+                            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                            <i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i>
+                            <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                        </p>
+    </div>
+
     <div class="contactus-sendmsg">
         <h1>Write a line for us...</h1>
         <input class="contactus-textinput" type="text" name="name" id="" placeholder="Name">
         <input class="contactus-textinput" type="email" name="message" id="" placeholder="Email">
         <input class="contactus-textinput-msg" type="text" name="message" id="" placeholder="Message">
-        <button>Send Message7</button>
+        <button>Send Message</button>
     </div>
+
     <div class="footer-lrg">
         <hr>
         <div class="foot-content">
