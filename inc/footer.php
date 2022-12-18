@@ -1,7 +1,8 @@
 <footer>
     <hr>
     <div class="footer">
-        <?php echo date("Y"); ?> - TravelPal
+            <hr>
+            © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
     </div>
 </footer>
 
