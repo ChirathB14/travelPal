@@ -188,7 +188,7 @@ if (!empty($errors)) {
 
 
 
-<!-- <main>
+<main>
     <h1>Update Profile</h1>
     <p>
         <a href="t-profile.php"> MY PROFILE</a>
@@ -227,7 +227,7 @@ if (!empty($errors)) {
         </p>
 
     </form>
-</main> -->
+</main>
 <?php
 require_once "../inc/footer.php";
 ?>

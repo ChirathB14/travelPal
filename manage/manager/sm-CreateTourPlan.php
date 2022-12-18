@@ -102,61 +102,26 @@ if (isset($_POST['submit'])) {
 
 }
 ?>
-
 <?php
-$title = "Site Manager-Update profile";
+$title = "Create tour plan";
 require_once("../../inc/header.php");
 ?>
     <div class="body">
         <div class="dashboard">
-            <img src="../../assets/profile.png" alt="">
+            <img src="css/profile.png" alt="">
             <p><?php echo $_SESSION['firstName']; ?></p>
-            <button class="nav"onclick="location.href = 'sm-myprofile.php';">MY PROFILE</button>
-            <button class="select" onclick="location.href = 'sm-updateprofile.php';">UPDATE PROFILE</button>
-            <button class="nav">GENERATE REPORT</button>
-            <button class="nav">CREATE TOUR PLAN</button>
-            <button class="nav">ACCOMMODATION PROVIDER</button>
-            <button class="nav">VEHICLE PROVIDER</button>
-            <button class="nav">TOURIST GUIDE</button>
+            <button class="nav" onclick="location.href = 'sm-myprofile.php';">MY PROFILE</button>
+            <button class="nav" onclick="location.href = 'sm-updateprofile.php';">UPDATE PROFILE</button>
+            <button class="nav" onclick="location.href = 'sm-GenerateReport.php';">GENERATE REPORT</button>
+            <button class="select" onclick="location.href = 'sm-CreateTourPlan.php';">CREATE TOUR PLAN</button>
+            <button class="nav" onclick="location.href = 'sm-AP.php';">ACCOMMODATION PROVIDER</button>
+            <button class="nav" onclick="location.href = 'sm-VP.php';">VEHICLE PROVIDER</button>
+            <button class="nav" onclick="location.href = 'sm-TG.php';">TOURIST GUIDE</button>
         </div>
-        
         <div class="content">
-        <h1>PROFILE</h1>
-            <table class="table">
-                <tr class="row">
-                    <td colspan="2">
-                        <?php echo "Your ID : " . $user_id;?>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">First name:</label>
-                        <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> > 
-                    </td>
-                    <td>
-                        <img src="../../assets/Frame.png" alt="TRAVELPal">
-                    </td>
-                </tr>
-                <tr class="row"> 
-                    <td>
-                        <label for="">Last name:</label>
-                        <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> >
-                    </td>
-                    <td>
-                        <img src="../../assets/Frame.png" alt="TRAVELPal">
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Email address:</label>
-                        <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> >
-                    </td>
-                    <td>
-                        <img src="../../assets/Frame.png" alt="TRAVELPal">
-                    </td>
-                </tr>
-            </table>
+            
         </div>
     </div>
-
 <?php require_once("../../inc/footer.php");?>
+</body>
+</html>

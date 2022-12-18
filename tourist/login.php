@@ -61,6 +61,7 @@ if (isset($_POST['submit'])) {
 $title = "Login";
 require_once("../inc/header.php");
 ?>
+<div class="index">
 <div class="login">
     <form action="login.php" method="post">
         <fieldset>
@@ -100,8 +101,8 @@ require_once("../inc/header.php");
         </fieldset>
     </form>
 </div>
+</div>
 <?php
 require_once("../inc/footer.php");
 ?>
-
 <?php mysqli_close($connection); ?>

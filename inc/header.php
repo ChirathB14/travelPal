@@ -27,9 +27,9 @@
                     <img src=\"/travelPal/assets/logo tpal.png\" alt=\"TRAVELPal\">
                 </div>
                 <div class=\"menu\">
-                    <button class=\"nav\">HOME</button>
+                    <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
                     <button class=\"nav\">TOUR PLAN</button>
-                    <button class=\"nav\">CONTACT US</button>
+                    <button class=\"nav\" onclick=\"location.href = '/travelPal/contactus.php';\">CONTACT US</button>
                     <button class=\"nav\">BLOGS</button>
                     <button class=\"logout-btn\" onclick=\"location.href = '/travelPal/register.php';\" >REGISTER</button>
                     <button class=\"logout-btn\" onclick=\"location.href = 'login.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>LOG IN</button>
@@ -47,11 +47,11 @@
                     <img src=\"/travelPal/assets/logo tpal.png\" alt=\"TRAVELPal\">
                 </div>
                 <div class=\"menu\">
-                    <button class=\"nav\">HOME</button>
-                    <button class=\"nav\">TOUR PLAN</button>
+                    <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
+                    <button class=\"nav\"onclick=\"location.href = '/travelPal/tourplan-pre.php';\">TOUR PLAN</button>
                     <button class=\"nav\">CONTACT US</button>
                     <button class=\"nav\">BLOGS</button>
-                    <button class=\"nav-select\">PROFILE</button>
+                    <button class=\"nav\">PROFILE</button>
                     <button class=\"logout-btn\" onclick=\"location.href = 'logout.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>LOG OUT</button>
                 </div>            
             </div>

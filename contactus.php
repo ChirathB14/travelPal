@@ -13,6 +13,11 @@ require_once("./inc/header.php");
           made luxury tour in Sri Lanka.</p>
     </div>
     <div class="contactus-ourdetails">
+        <div class="ourdetails"><center><i class="fa fa-phone" aria-hidden="true"></i><br> <h3>Phone</h3></center></div>
+        <hr>
+        <div class="ourdetails"><center><i class="fa fa-envelope-o" aria-hidden="true"></i><br><h3>Email</h3></center></div>
+        <hr>
+        <div class="ourdetails"><center><i class="fa fa-home" aria-hidden="true"></i><br><h3>Address</h3></center></div>
 
     </div>
     <div class="contactus-sendmsg">
