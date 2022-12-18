@@ -25,10 +25,10 @@ if (isset($_POST['submit'])) {
         $hashed_password = sha1($password);
 
         $query = "SELECT * 
-                  FROM Users u, Tourist t
+                  FROM Users u, serviceprovider sp
                   WHERE email = '{$email}'
                         AND password = '{$hashed_password}'
-                        AND u.userID = t.userID
+                        AND u.userID = sp.userID
                   LIMIT 1";
 
         $result_set = mysqli_query($connection, $query);
@@ -42,10 +42,10 @@ if (isset($_POST['submit'])) {
             $user = mysqli_fetch_assoc($result_set);
             $_SESSION['user_id'] = $user['userID'];
             $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
-            $_SESSION['user_type'] = "Tourist";
+            $_SESSION['user_type'] = "ServicerProvider";
 
             //redirect to users.php
-            header('Location: t-profile.php');
+            header('Location: sp-profile.php');
         } else {
             //username and password is invalid
             $errors[] = 'Invalid username/password';
@@ -74,10 +74,10 @@ require_once("../inc/header.php");
             }
             ?>
             <p>
-                <input class="logintext" type="text" name="email" id="" placeholder="Email Address">
+                <input class="textinput" type="text" name="email" id="" placeholder="Email Address">
             </p>
             <p>
-                <input class="logintext" type="password" name="password" id="" placeholder="Password">
+                <input class="textinput" type="password" name="password" id="" placeholder="Password">
             </p>
             <div class="password">
                 <div>

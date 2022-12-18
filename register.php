@@ -17,7 +17,7 @@ require_once("inc/header.php");
         </legend>
         <p>
             <a href="./tourist/registration.php"><button type="submit" name="submit"> <b> A Tourist -></b></button></a>
-            <button type="submit" name="submit"> <b>A Service Provider -> </b></button>
+            <a href="./service-provider/registration.php"><button type="submit" name="submit"> <b> A Service Provider -></b></button></a>
         </p>
     </fieldset>
 </div>
