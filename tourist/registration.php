@@ -120,7 +120,7 @@ require_once("../inc/header.php");
                 echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
             }
             ?>
-            <input class="textinput" type="text" name="firstName" id="" placeholder="FIRST NAME" <?php echo 'value="' . $firstName . '"'; ?>>
+            <input class="textinput" type="text" name="firstName" id="" placeholder="FIRST NAME" <?php echo 'value="' . $firstName . '"'; ?> >
             <input class="textinput" type="text" name="lastName" id="" placeholder="LAST NAME" <?php echo 'value="' . $lastName . '"'; ?> >
             <input class="textinput" type="email" name="email" id="" placeholder="EMAIL" <?php echo 'value="' . $email . '"'; ?> >
             <input class="textinput" type="password" name="password" id="" placeholder="PASSWORD">

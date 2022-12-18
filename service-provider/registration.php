@@ -72,7 +72,6 @@ if (isset($_POST['submit'])) {
     verify_query($result_set);
     
     if (mysqli_num_rows($result_set) == 1) {
-        array_push($errors, "Password does not match");
         $errors[] = "Email address already exists.";
     }
     

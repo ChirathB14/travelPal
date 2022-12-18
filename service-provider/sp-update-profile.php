@@ -4,8 +4,8 @@ require_once '../inc/connection.php';
 require_once '../inc/functions.php';
 
 //checking if the user is logged in
-if (!$_SESSION['user_id']) {
-    header('Location: t-login.php');
+if (!$_SESSION['user_id'] && !$_SESSION['user_type']) {
+    header('Location: login.php');
 }
 
 $errors = array();
