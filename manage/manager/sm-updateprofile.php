@@ -121,7 +121,7 @@ require_once("../../inc/header.php");
         </div>
         
         <div class="content">
-        <h1>PROFILE</h1>
+            <h1>PROFILE</h1>
             <table class="table">
                 <tr class="row">
                     <td colspan="2">

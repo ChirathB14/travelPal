@@ -275,6 +275,9 @@ img{
     padding: 75px;
     background-color:rgb(255, 255, 255,0.75);
 }
+.table select, option{
+    color: #0E064D;
+} 
 .row{
     width: 50%;
     height: 50px;
@@ -616,6 +619,8 @@ body h1{
     margin-right: 160px;
     font-size: 12px;
 }
+/*************pre made tour plan************/
+
 .pre{
     width: 100%;
     margin-left: auto;
@@ -632,7 +637,41 @@ body h1{
     margin-left: auto;
     margin-right: auto;
     display: flex;
+}
+.plan-content{
+    display: flex;
+    border-radius: 15;
+    flex-direction: column;
+    background-color: #00357A;
+    color: var(--primarycolor);
+    opacity: 90%;
     justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 340px;
+}
+.plan-details{
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    background-color: var(--accentcolor);
+    justify-content: center;
+    width: 70%;
+    height: 34px;
+}
+/*******************create tour plan page*******************/
+.plan-details select{
+    color: #0E064D;
+}
+.plan-details option{
+    color: #0E064D;
+}
+.plan-details label{
+    color: #0E064D;
+}
+.plan-details input{
+    color: #0E064D;
+    height: 100%;
 }
 .plans-chevron{
     margin-top: auto;
