@@ -21,7 +21,7 @@ body {
     font-family: poppins;
 }
 
-/* Styles for the navigation bar */
+/* Styles for the navigation bar 
 .nav {
     display: flex;
     justify-content: space-between;
@@ -86,6 +86,7 @@ hr {
     outline: 1px solid #327972;
     width: 100%;
 }
+*/
 
 /* Heading Styles */
 h1{
@@ -410,7 +411,7 @@ input::placeholder {
     color: var(--accentcolor);
 }
 
-/* Footer styles */
+/* Footer styles 
 .footer {
     background-color: #0a0433;
     display: flex;
@@ -502,11 +503,36 @@ input::placeholder {
     margin-right: 160px;
     font-size: 12px;
 }
+*/
 
 /* copyright styles */
 .copyright p{
     margin-top: 15px;
     text-align: center;
+}
+
+/* 404 styles */
+.error-content img {
+    margin-left: 40%;
+    margin-top: 8%;
+}
+
+.error-page {
+    text-align: center;
+    background-color: var(--accentcolor);
+    opacity: 70%;
+}
+
+.error-page h1 {
+    color: var(--primarycolor);
+}
+
+.error-page p {
+    color: var(--primarycolor);
+}
+
+.error-page a {
+    color: var(--primarycolor);
 }
 
 

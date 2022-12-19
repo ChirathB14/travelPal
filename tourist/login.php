@@ -75,10 +75,11 @@ if (isset($_POST['submit'])) {
 $title = "Login";
 require_once("../inc/header.php");
 ?>
-<div class="index">
-    <div class="login">
-        <form action="login.php" method="post">
-            <fieldset>
+
+<div class="login">
+    <form action="login.php" method="post">
+        <fieldset>
+            <legend>
                 <h1>LOGIN</h1>
                 <?php
                 if (isset($errors) && !empty($errors)) {
@@ -117,18 +118,6 @@ require_once("../inc/header.php");
         </form>
     </div>
 </div>
-<script src="../js/jquery.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#remember').click(function() {
-            if ($('#remember').is(':checked')) {
-                $('#password').attr('type', 'text');
-            } else {
-                $('#password').attr('type', 'password');
-            }
-        });
-    });
-</script>
 <?php
 require_once("../inc/footer.php");
 ?>
