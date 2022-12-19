@@ -115,21 +115,23 @@ require_once "../inc/header.php";
 <div class="body">
 
     <div class="dashboard">
-        <img src="/travelPal/assets/profile.png" alt="">
-        <p><?php echo $_SESSION['full_name']; ?></p>
-        <button class="nav" onclick="location.href = 't-profile.php';">MY PROFILE</button>
-        <button class="select" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
-        <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
-    </div>
 
+            <img src="/travelPal/assets/profile.png" alt="">
+            <p><?php echo $_SESSION['full_name']; ?></p>
+            <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
+            <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
+            <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
+        </div>
 
-    <div class="content">
+        <div class="content">
+        
         <?php
         if (!empty($errors)) {
             display_errors($errors);
         }
         ?>
-        <h1>UPDATE PROFILE</h1>
+
+        <h2>UPDATE PROFILE</h2>
         <form action="t-update-profile.php" class="" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
             <table class="table">
@@ -158,12 +160,13 @@ require_once "../inc/header.php";
                 </tr>
                 <tr class="row">
                     <td>
-                        <label for="">Password:</label>
-                        <input type="text" value="************" disabled></input> <br><a style="color:black;" href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
+         <label for="">Password:</label>
+                        <input type="text" value="************" disabled></input><a style="color:black;" href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
                     </td>
                 </tr>
                 <tr class="row">
                     <td>
+
                         <button type="submit" name="submit">Update</button>
                     </td>
                 </tr>
