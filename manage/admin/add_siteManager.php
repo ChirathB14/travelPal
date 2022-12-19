@@ -1,10 +1,8 @@
+
 <?php 
 session_start();
 require_once('../../inc/connection.php');
 require_once('../../inc/functions.php');
-
-
-
 
 if (isset($_POST["submit"])) {
         // echo "Kalana";
@@ -49,11 +47,16 @@ if (isset($_POST["submit"])) {
 
         verify_query($result_set);
     
+//checking if the user is logged in
+if (!$_SESSION['user_id']) {
+    header('Location: login.php');
+}
+
     if (mysqli_num_rows($result_set) == 1) {
         // array_push($errors, "Password does not match");
         $errors[] = "Email address already exists.";
     }
-    
+
     if (empty($errors)) {
         $query = "INSERT INTO users (
                     `firstName`, `lastName`, `email`, `password`
@@ -77,13 +80,12 @@ if (isset($_POST["submit"])) {
             // $firstName = "";
             // $lastName = "";
             // $email = "";
-            
+
         } else {
             echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
         }
     }
 
-        
 }
 
 
@@ -91,6 +93,7 @@ if (isset($_POST["submit"])) {
 
 
 ?>
+
 <?php require_once('../../inc/connection.php')?>
 
 <!DOCTYPE html>
@@ -114,7 +117,6 @@ if (isset($_POST["submit"])) {
 <?php
 require_once("../../inc/header.php");
 ?>
-
     <div class="body">
         <div class="dashboard">
             <img src="../../assets/profile.png" alt="">
@@ -143,6 +145,7 @@ require_once("../../inc/header.php");
                         <label>Email</label>
                         <input type="text" placeholder="Enter your email" name="email" required>
                     </div> 
+
                     <div class="input-field-input">
                         <label>Password</label>
                         <input type="password" placeholder="Enter password" name="password" required>

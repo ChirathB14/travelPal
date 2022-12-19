@@ -11,7 +11,6 @@
     font-size: 14px;
     color: aliceblue;
     margin: auto;
-    background-color: #0E064D;
     background-image: url('../assets/bg.png');
     background-repeat: no-repeat;
     background-attachment: fixed;  
@@ -21,11 +20,15 @@
 
 fieldset{
     border: 0px;
-    position: fixed;
+    width: 90%;
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
-.login{
-    width: 350px;
+
+.login {
+    width: 500px;
     margin: auto;
     padding-top: 10%;
     display: flex;
@@ -36,7 +39,23 @@ fieldset{
 
 .login h1{
     text-align: center;
-    display: flex;
+}
+
+.logintext{
+    width: 100%;
+    color: #000000;
+    height: 50px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: large; 
+    -webkit-appearance: none;
 }
 
 .divl{
@@ -61,6 +80,8 @@ p.error{
     color: white;
     padding: 10px;
     margin: 10px;
+    text-align: left;
+    font-size: small;
 }
 
 p.info{
@@ -68,6 +89,14 @@ p.info{
     color: white;
     padding: 10px;
     margin: 10px;
+    width: 100%;
+}
+
+p.info-1{
+    margin: auto;
+    background-color: green;
+    color: white;
+    padding: 10px;
 }
 
 .textinput{
@@ -84,6 +113,7 @@ p.info{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-size: large; 
+    -webkit-appearance: none;
 }
 
 .checkbox{
@@ -250,9 +280,7 @@ img{
     width: 90%;
     margin-left: 200px;
     margin-right: 150px;
-    margin-top: 100px;
-    justify-content: center;
-    
+    margin-top: 50px;
 }
 
 .content h1{
@@ -272,6 +300,9 @@ img{
     padding: 30px 40px 30px 40px;
     background-color:rgb(255, 255, 255,0.75);
 }
+.table select, option{
+    color: #0E064D;
+} 
 .row{
     width: 50%;
     height: 40px;
@@ -290,8 +321,13 @@ img{
     border: 0px;
     width: 50%;
     height: 100%;
-
+    
 }
+
+.row button{
+    cursor: pointer;
+}
+
 .row label{
     color: #000000;
 }
@@ -609,6 +645,8 @@ body h1{
     margin-right: 160px;
     font-size: 12px;
 }
+/*************pre made tour plan************/
+
 .pre{
     width: 100%;
     margin-left: auto;
@@ -625,7 +663,41 @@ body h1{
     margin-left: auto;
     margin-right: auto;
     display: flex;
+}
+.plan-content{
+    display: flex;
+    border-radius: 15;
+    flex-direction: column;
+    background-color: #00357A;
+    color: var(--primarycolor);
+    opacity: 90%;
     justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 340px;
+}
+.plan-details{
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    background-color: var(--accentcolor);
+    justify-content: center;
+    width: 70%;
+    height: 34px;
+}
+/*******************create tour plan page*******************/
+.plan-details select{
+    color: #0E064D;
+}
+.plan-details option{
+    color: #0E064D;
+}
+.plan-details label{
+    color: #0E064D;
+}
+.plan-details input{
+    color: #0E064D;
+    height: 100%;
 }
 .plans-chevron{
     margin-top: auto;
@@ -727,6 +799,7 @@ body h1{
     font-size: 15px;
     font-weight: bold;
 }
+
 .contactus-textinput-msg{
     color: #0E064D;
     width: 730px;

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -17,7 +17,7 @@
             <h1>plan your next<br> trip with <br> <mark> travelpal</mark></h1>
             <h5>We support you to travel within Sri Lanka with the superb experience</h5>
         </div>
-        <div class="logo"> <img src="css/logo.png" alt=""></div>
+        <div class="logo"> <img src="../../assets/logo.png" alt=""></div>
     </div>
     <div class="div2">
         <div class="btn-left">
@@ -92,7 +92,7 @@
         <br>
         <div class="tourist">
             <div class="plans">
-                <img src="css/jaffna.png" alt="jaffna">
+                <img src="../../assets/jaffna.png" alt="jaffna">
                 <div class="cont">
                     <h3>Jaffna</h3>
                     <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="plans">
-                <img src="css/trinco.png" alt="jaffna">
+                <img src="../../assets/trinco.png" alt="jaffna">
                 <div class="cont">
                     <h3>Trincomalee</h3>
                     <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="plans">
-                <img src="css/nuwra.png" alt="jaffna">
+                <img src="../../assets/nuwra.png" alt="jaffna">
                 <div class="cont">
                     <h3>Nuwaraeliya</h3>
                     <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
@@ -118,7 +118,7 @@
         </div>
         <div class="tourist">
         <div class="plans">
-                <img src="css/kandy.png" alt="jaffna">
+                <img src="../../assets/kandy.png" alt="jaffna">
                 <div class="cont">
                     <h3>Kandy</h3>
                     <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <div class="plans">
-                <img src="css/negambo.png" alt="jaffna">
+                <img src="../../assets/negambo.png" alt="jaffna">
                 <div class="cont">
                     <h3>Negambo</h3>
                     <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
@@ -134,7 +134,7 @@
                 </div>
             </div>
             <div class="plans">
-                <img src="css/galle.png" alt="jaffna">
+                <img src="../../assets/galle.png" alt="jaffna">
                 <div class="cont">
                     <h3>Galle</h3>
                     <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
@@ -151,7 +151,7 @@
         <hr>
         <div class="foot-content">
             <div class="foot-content-left">
-                <img src="css/logo tpal.png" alt="">
+                <img src="assets/logo tpal.png" alt="">
                 <h3>GET INSPIRED ! RECEIVE TRAVEL DISCOUNTS, TIPS & 
                     BEHIND THE SCENE STORIES</h3>
                     <div class="subscribe">
@@ -185,7 +185,7 @@
                     </div>
             </div>
             <div class="foot-content-right">
-                <img src="css/logo.png" alt="">
+                <img src="assets/logo.png" alt="">
             </div>
         </div>
         <div class="footer">

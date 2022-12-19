@@ -1,5 +1,5 @@
 <?php session_start();?>
-<?php require_once('../inc/connection.php')?>
+<?php require_once('../../inc/connection.php')?>
 <?php if(!isset($_SESSION['userID'])){
     header('Location: login.php');
 }
@@ -103,39 +103,13 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="header">
-        <div class="navigationbar">
-            <div class="nav-Logo">
-                <img src="css/logo tpal.png" alt="TRAVELPal">
-            </div>
-            <div class="menu">
-                <button class="nav">HOME</button>
-                <button class="nav">TOUR PLAN</button>
-                <button class="nav">CONTACT US</button>
-                <button class="nav">BLOGS</button>
-                <button class="nav-select">PROFILE</button>
-                    <button class="logout-btn" onclick="location.href = 'logout.php';" ><i class="fa fa-user fa-lg" aria-hidden="true"></i>LOG OUT</button>
-            </div>            
-        </div>
-        <div class="navigationbarfoot">
-            <hr>  
-        </div>    
-    </div>
+<?php
+$title = "Site Manager-Update profile";
+require_once("../../inc/header.php");
+?>
     <div class="body">
         <div class="dashboard">
-            <img src="css/profile.png" alt="">
+            <img src="../../assets/profile.png" alt="">
             <p><?php echo $_SESSION['firstName']; ?></p>
             <button class="nav"onclick="location.href = 'sm-myprofile.php';">MY PROFILE</button>
             <button class="select" onclick="location.href = 'sm-updateprofile.php';">UPDATE PROFILE</button>
@@ -147,7 +121,7 @@ if (isset($_POST['submit'])) {
         </div>
         
         <div class="content">
-        <h1>PROFILE</h1>
+            <h1>PROFILE</h1>
             <table class="table">
                 <tr class="row">
                     <td colspan="2">
@@ -160,7 +134,7 @@ if (isset($_POST['submit'])) {
                         <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> > 
                     </td>
                     <td>
-                        <img src="css/Frame.png" alt="TRAVELPal">
+                        <img src="../../assets/Frame.png" alt="TRAVELPal">
                     </td>
                 </tr>
                 <tr class="row"> 
@@ -169,7 +143,7 @@ if (isset($_POST['submit'])) {
                         <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> >
                     </td>
                     <td>
-                        <img src="css/Frame.png" alt="TRAVELPal">
+                        <img src="../../assets/Frame.png" alt="TRAVELPal">
                     </td>
                 </tr>
                 <tr class="row">
@@ -178,17 +152,11 @@ if (isset($_POST['submit'])) {
                         <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> >
                     </td>
                     <td>
-                        <img src="css/Frame.png" alt="TRAVELPal">
+                        <img src="../../assets/Frame.png" alt="TRAVELPal">
                     </td>
                 </tr>
             </table>
         </div>
-
-
     </div>
-    <div class="footer">
-        <hr>
-        <p>© 2022 TRAVEL PAL ALL RIGHTS RESERVED</p>
-    </div>
-</body>
-</html>
+
+<?php require_once("../../inc/footer.php");?>

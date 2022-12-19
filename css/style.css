@@ -411,9 +411,6 @@ input::placeholder {
     color: var(--accentcolor);
 }
 
-/* Admin view */
-
-
 /* Footer styles 
 .footer {
     background-color: #0a0433;
@@ -537,7 +534,6 @@ input::placeholder {
 .error-page a {
     color: var(--primarycolor);
 }
-
 
 
 

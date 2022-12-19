@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
     if (!isset($_POST['email']) || strlen(trim($_POST['email'])) < 1) {
         $errors[] = 'Username is missing/invalid!';
     }
+
     if (!isset($_POST['password']) || strlen(trim($_POST['password'])) < 1) {
         $errors[] = 'Password is missing/invalid!';
     }
@@ -40,12 +41,11 @@ if (isset($_POST['submit'])) {
         $hashed_password = sha1($password);
 
         $query = "SELECT * 
-                  FROM Users u, Tourist t
+                  FROM Users u, serviceprovider sp
                   WHERE email = '{$email}'
                         AND password = '{$hashed_password}'
-                        AND u.userID = t.userID
+                        AND u.userID = sp.userID
                   LIMIT 1";
-
         $result_set = mysqli_query($connection, $query);
 
         //check if the user is valid
@@ -57,14 +57,14 @@ if (isset($_POST['submit'])) {
             $user = mysqli_fetch_assoc($result_set);
             $_SESSION['user_id'] = $user['userID'];
             $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
-            $_SESSION['user_type'] = "Tourist";
+            $_SESSION['user_type'] = "ServiceProvider";
 
-            //redirect to users.php
-            header('Location: t-profile.php');
+            //redirect to profile page
+            header('Location: sp-profile.php');
             $email = '';
         } else {
-            //username and password is invalid
-            $errors[] = 'Invalid password';
+            //password is invalid
+            $errors[] = 'Invalid password!';
         }
     }
 }
@@ -75,50 +75,60 @@ if (isset($_POST['submit'])) {
 $title = "Login";
 require_once("../inc/header.php");
 ?>
-
 <div class="login">
     <form action="login.php" method="post">
         <fieldset>
-            <legend>
-                <h1>LOGIN</h1>
-                <?php
-                if (isset($errors) && !empty($errors)) {
-                    echo '<p class="error"> ';
-                    foreach ($errors as $error) {
-                        echo "- " . $error . '<br>';
-                    }
-                    echo '</p>';
+            <h1>LOGIN</h1>
+            <?php
+            if (isset($errors) && !empty($errors)) {
+                echo '<p class="error"> ';
+                foreach ($errors as $error) {
+                    echo "- " . $error . '<br>';
                 }
-                ?>
-                <?php
-                if (isset($_GET['logout'])) {
-                    echo '<p class="info">You have successfully logged out</p>';
-                }
-                ?>
-                <p>
-                    <input class="logintext" type="text" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?>>
-                </p>
-                <p>
-                    <input class="logintext" type="password" name="password" id="password" placeholder="password" required>
-                </p>
-                <div class="password">
-                    <div>
-                        <input class="checkbox" type="checkbox" name="remember" id="remember">
-                        <label for="remember">show password</label>
-                        <a class="" href="reset-pw.php">Forgot password?</a>
-                    </div>
+                echo '</p>';
+            }
+            ?>
+            <?php
+            if (isset($_GET['logout'])) {
+                echo '<p class="info">You have successfully logged out</p>';
+            }
+            ?>
+            <p>
+                <input class="textinput" type="email" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?> >
+            </p>
+            <p>
+                <input class="textinput" type="password" name="password" id="password" placeholder="Password" required>
+            </p>
+            <div class="password">
+                <div>
+                    <input class="checkbox" type="checkbox" name="remember" id="remember" value="yes">
+                    <label for="remember">show password</label>
+                    <a class="" href="reset-pw.php">Forgot password?</a>
                 </div>
-                <p>
-                    <button type="submit" name="submit"> <b>LOGIN </b></button>
-                </p>
-                <div class="new-user">
-                    <a href="./registration.php">New user? Create an account</a>
-                </div>
-            </fieldset>
-        </form>
-    </div>
+            </div>
+            <p>
+                <button type="submit" name="submit"> <b>LOGIN </b></button>
+            </p>
+            <div class="new-user">
+                <a href="./registration.php">New user? Create an account</a>
+            </div>
+        </fieldset>
+    </form>
 </div>
+<script src="../js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#remember').click(function() {
+            if ($('#remember').is(':checked')) {
+                $('#password').attr('type', 'text');
+            } else {
+                $('#password').attr('type', 'password');
+            }
+        });
+    });
+</script>
 <?php
 require_once("../inc/footer.php");
 ?>
+
 <?php mysqli_close($connection); ?>

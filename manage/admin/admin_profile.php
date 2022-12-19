@@ -2,6 +2,12 @@
 session_start();
 require_once('../../inc/connection.php');
 require_once('../../inc/functions.php');
+
+//checking if the user is logged in
+if (!$_SESSION['user_id']) {
+    header('Location: login.php');
+}
+
 $sitemanager_list = '';
 $query = "SELECT * FROM users
 INNER JOIN sitemanager ON users.userID=sitemanager.userID";
@@ -28,6 +34,7 @@ while ($user = mysqli_fetch_assoc($users)) {
 
 
 ?>
+
 <?php require_once('../../inc/connection.php')?>
 
 <!DOCTYPE html>
@@ -41,7 +48,6 @@ while ($user = mysqli_fetch_assoc($users)) {
     <!-- CSS Import -->
     <link rel="stylesheet" href="../../css/admin-styles.css">   
 
-
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -51,7 +57,6 @@ while ($user = mysqli_fetch_assoc($users)) {
 <?php
 require_once("../../inc/header.php");
 ?>
-
     <div class="body">
         <div class="dashboard">
             <img src="../../assets/profile.png" alt="">
