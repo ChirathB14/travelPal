@@ -39,7 +39,7 @@
                 <hr>  
             </div>    
         </div> ";
-    } else {
+    } else  {
         echo "
         <div class=\"header\">
             <div class=\"navigationbar\">

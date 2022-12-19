@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
             if (mysqli_num_rows($result_set) == 1) {
                 //valid user found
                 $user = mysqli_fetch_assoc($result_set);
-                $_SESSION['userID'] = $user['userID'];
+                $_SESSION['user_id'] = $user['userID'];
                 $_SESSION['firstName'] = $user['firstName'] . " " . $user['lastName'];
 
                 //redirect to the profile

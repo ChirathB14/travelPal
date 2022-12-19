@@ -3,7 +3,7 @@
 require_once '../../inc/connection.php';
 require_once '../../inc/functions.php';
 
-if (!isset($_SESSION['userID'])) {
+if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
 }
 
@@ -13,7 +13,7 @@ $No_of_Days = '';
 $Budget = '';
 $Type_of_Package = '';
 $No_of_Nights = '';
-$user_id = $_SESSION['userID'];
+$user_id = $_SESSION['user_id'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -38,8 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = array_merge($errors, check_max_length($max_len_fields));
 
     if (empty($errors)) {
-        $sql = "INSERT INTO premadetourplan(budget,userID,season,location,noOfDays,type)
-                VALUES ($Budget,$user_id,'$season','$Location',$No_of_Days,'$Type_of_Package');";
+        $tourplanID = rand(0,100);
+        $sql = "INSERT INTO premadetourplan(tourPlanID,budget,userID,season,location,noOfDays,type)
+                VALUES ($tourplanID, $Budget,$user_id,'$season','$Location',$No_of_Days,'$Type_of_Package');";
 
         $result = mysqli_query($connection, $sql);
 

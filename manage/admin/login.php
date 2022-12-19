@@ -27,12 +27,12 @@ if (isset($_POST['submit'])) {
         // echo $query;
         // die();
         $result_set = mysqli_query($connection, $query);
-        var_dump($result_set);
+        // var_dump($result_set);
         if ($result_set) {
             if (mysqli_num_rows($result_set) == 1) {
                 //valid user found
                 $user = mysqli_fetch_assoc($result_set);
-                $_SESSION['userID'] = $user['userID'];
+                $_SESSION['user_id'] = $user['userID'];
                 $_SESSION['firstName'] = $user['firstName'] . " " . $user['lastName'];
 
                 //redirect to the user.php
@@ -67,7 +67,7 @@ require_once("../../inc/header.php");
 
 <body class="index">
     <div class="login">
-        <form action="admin_login.php" method="post">
+        <form action="login.php" method="post">
             <fieldset>
                 <legend>
                     <h1>LOGIN</h1>

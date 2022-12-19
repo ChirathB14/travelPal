@@ -71,7 +71,7 @@ if (isset($_POST["submit"])) {
 
             $Name = $firstName . " " . $lastName;
 
-            $query = "INSERT INTO sitemanager(userID,siteManagerName)  VALUES ('{$last_id}','{$Name}')";
+            $query = "INSERT INTO sitemanager(userID)  VALUES ('{$last_id}')";
             $result = mysqli_query($connection, $query);
             verify_query($result);
 
@@ -145,23 +145,23 @@ if (isset($_POST["submit"])) {
 
                     <div class="input-field-input">
                         <label>First Name</label>
-                        <input type="text" placeholder="Enter first name" name="firstName" required>
+                        <input type="text" placeholder="Enter first name" name="firstName" required style="color:black;">
                     </div>
                     <div class="input-field-input">
                         <label>Last Name</label>
-                        <input type="text" placeholder="Enter last name" name="lastName" required>
+                        <input type="text" placeholder="Enter last name" name="lastName" required style="color:black;">
                     </div>
                     <div class="input-field-input">
                         <label>Email</label>
-                        <input type="text" placeholder="Enter your email" name="email" required>
+                        <input type="text" placeholder="Enter your email" name="email" required style="color:black;">
                     </div>
                     <div class="input-field-input">
                         <label>Password</label>
-                        <input type="password" placeholder="Enter password" name="password" required>
+                        <input type="password" placeholder="Enter password" name="password" required style="color:black;">
                     </div>
                     <div class="input-field-input">
                         <label>Conform Password</label>
-                        <input type="password" placeholder="Enter password" name="confirm_password" required>
+                        <input type="password" placeholder="Enter password" name="confirm_password" required style="color:black;">
                     </div>
 
                     <!-- <div>

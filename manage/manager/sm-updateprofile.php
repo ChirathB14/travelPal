@@ -1,6 +1,6 @@
 <?php session_start();?>
 <?php require_once('../../inc/connection.php')?>
-<?php if(!isset($_SESSION['userID'])){
+<?php if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
 }
 $errors = array();
@@ -10,9 +10,9 @@ $last_name = '';
 $email = '';
 $password = '';
 
-if (isset($_SESSION['userID'])) {
+if (isset($_SESSION['user_id'])) {
     //getting the user information
-    $user_id = mysqli_real_escape_string($connection, $_SESSION['userID']);
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
     $query = "SELECT * 
               FROM users u, sitemanager s
               WHERE u.userID = {$user_id} 
