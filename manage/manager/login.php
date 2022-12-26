@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
                 WHERE email = '{$email}'
                 AND password ='{$hashed_password}'
                 LIMIT 1";
-                
+
         $result_set = mysqli_query($connection, $query);
         if ($result_set) {
             if (mysqli_num_rows($result_set) == 1) {
@@ -95,7 +95,7 @@ require_once("../../inc/header.php");
         <p>
             <input class="textinput" type="password" name="password" id="" placeholder="password" required>
         </p>
-        <div class="password">
+        <div class="password" style="font-size: 10px ;">
             <div>
                 <input class="checkbox" type="checkbox" name="remember" id="remember" value="yes">
                 <label for="remember">show password</label>

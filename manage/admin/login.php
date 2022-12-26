@@ -88,13 +88,13 @@ require_once("../../inc/header.php");
                 <p>
                     <input class="textinput" type="password" name="password" id="" placeholder="Password">
                 </p>
-                <div class="divl">
+                <div class="divl" style="font-size: 10px ;">
                     <P>
                         <input class="checkbx" type="checkbox" name="remember" id="" value="yes">
                         <label for="remember">REMEMBER ME</label>
                     </P>
                 </div>
-                <div class="divr">
+                <div class="divr" style="font-size: 10px ;">
                     <input type="button" value="FORGOT PASSWORD?" class="forgotpw" id="btnHome" onClick="document.location.href='resetpw.php'" />
                 </div>
                 <p>

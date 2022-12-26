@@ -128,7 +128,13 @@ require_once "../../inc/header.php";
                     <tr class="row">
                         <td>
                             <label for="No_of_Days">No of Days</label>
-                            <input type="text" placeholder="No of Days" name="No_of_Days" <?php echo 'value="' . $No_of_Days . '"'; ?> required>
+                            <input type="number" placeholder="No of Days" name="No_of_Days" <?php echo 'value="' . $No_of_Days . '"'; ?> required>
+                        </td>
+                    </tr>
+                    <tr class="row">
+                        <td>
+                            <label for="No_-f_Nights">No of Nights</label>
+                            <input type="number" placeholder="No of Nights" name="No_of_Nights" <?php echo 'value="' . $No_of_Nights . '"'; ?> required min=0> 
                         </td>
                     </tr>
                     <tr class="row">
@@ -142,12 +148,6 @@ require_once "../../inc/header.php";
                         <td>
                             <label for="Type_of_Package">Type of Package</label>
                             <input type="text" placeholder="Type of Package" name="Type_of_Package" <?php echo 'value="' . $Type_of_Package . '"'; ?> required>
-                        </td>
-                    </tr>
-                    <tr class="row">
-                        <td>
-                            <label for="No_-f_Nights">No of Nights</label>
-                            <input type="number" placeholder="No of Nights" name="No_of_Nights" <?php echo 'value="' . $No_of_Nights . '"'; ?> required min=0> 
                         </td>
                     </tr>
                 </table>

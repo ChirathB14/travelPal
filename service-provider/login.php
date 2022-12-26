@@ -94,12 +94,12 @@ require_once("../inc/header.php");
             }
             ?>
             <p>
-                <input class="textinput" type="email" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?> >
+                <input class="textinput" type="email" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?>>
             </p>
             <p>
                 <input class="textinput" type="password" name="password" id="password" placeholder="Password" required>
             </p>
-            <div class="password">
+            <div class="password" style="font-size: 12px ;">
                 <div>
                     <input class="checkbox" type="checkbox" name="remember" id="remember" value="yes">
                     <label for="remember">show password</label>

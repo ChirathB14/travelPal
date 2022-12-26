@@ -101,7 +101,7 @@ require_once("../inc/header.php");
                 <p>
                     <input class="logintext" type="password" name="password" id="password" placeholder="password" required>
                 </p>
-                <div class="password">
+                <div class="password" style="font-size: 12px ;">
                     <div>
                         <input class="checkbox" type="checkbox" name="remember" id="remember">
                         <label for="remember">show password</label>
@@ -114,9 +114,9 @@ require_once("../inc/header.php");
                 <div class="new-user">
                     <a href="./registration.php">New user? Create an account</a>
                 </div>
-            </fieldset>
-        </form>
-    </div>
+        </fieldset>
+    </form>
+</div>
 </div>
 <?php
 require_once("../inc/footer.php");
