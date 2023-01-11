@@ -28,8 +28,8 @@ while ($blog = mysqli_fetch_assoc($blogs)) {
 
     verify_query($blog_author);
 
-    while ($author = mysqli_fetch_assoc($blog_author)){
-        $author_name = $author['firstName'] . " " . $author['lastName'] ;
+    while ($author = mysqli_fetch_assoc($blog_author)) {
+        $author_name = $author['firstName'] . " " . $author['lastName'];
     }
 
     $blog_list .= "<div class=\"Blog-content\">";
@@ -115,5 +115,6 @@ require_once("./inc/header.php");
             <img src="./assets/logo.png" alt="">
         </div>
     </div>
+</div>
 
-    <?php require_once("./inc/footer.php"); ?>
+<?php require_once("./inc/footer.php"); ?>

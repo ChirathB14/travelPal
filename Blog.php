@@ -47,7 +47,4 @@ if (isset($_GET['blogID'])) {
 }
 
 
-
-
-
 ?>
