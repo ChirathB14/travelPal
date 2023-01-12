@@ -1,6 +1,6 @@
-<?php
-// session_start();
-?>
+<!-- <?php
+        // session_start();
+        ?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +15,11 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/travelPal/css/styles.css">
+    <link rel="stylesheet" href="/travelPal/css/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/travelPal/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/travelPal/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/travelPal/assets/favicon/favicon-16x16.png">
 </head>
 
 <body>
@@ -28,7 +33,7 @@
                 </div>
                 <div class=\"menu\">
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
-                    <button class=\"nav\"onclick=\"location.href = '/travelPal/TourPlan.html';\">TOUR PLAN</button>
+                    <button class=\"nav\"onclick=\"location.href = '/travelPal/TourPlan.php';\">TOUR PLAN</button>
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/contactus.php';\">CONTACT US</button>
                     <button class=\"nav\"onclick=\"location.href = '/travelPal/Blogs.php';\">BLOGS</button>
                     <button class=\"logout-btn\" onclick=\"location.href = '/travelPal/register.php';\" >REGISTER</button>
@@ -39,7 +44,7 @@
                 <hr>  
             </div>    
         </div> ";
-    } else  {
+    } else {
         echo "
         <div class=\"header\">
             <div class=\"navigationbar\">
