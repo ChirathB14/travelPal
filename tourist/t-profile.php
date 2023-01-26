@@ -50,46 +50,64 @@ $title = "Profile";
 require_once("../inc/header.php");
 ?>
 
-<div class="body">
-    <div class="dashboard">
-        <img src="/travelPal/assets/profile.png" alt="">
-        <p>
-            <?php echo $_SESSION['full_name']; ?>
-        </p>
-        <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
-        <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
-        <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
-    </div>
-    <div class="content">
-        <?php
-        if (isset($_GET['profile_updated'])) {
-            echo '<p class="info-1">Profile updated successfully</p>';
-        }
-        ?>
-        <h1>PROFILE</h1>
-        <table class="table">
-            <tr class="row">
-                <td>
-                    <?php echo "YOUR ID : " . $user_id; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "FIRST NAME : " . $first_name; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "LAST NAME : " . $last_name; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "EMAIL : " . $email; ?>
-                </td>
-            </tr>
-        </table>
+<head>
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
 
+        <!-- Disable input profile details in profile pages -->
+        <script lang="javascript">
+        function disable() {
+          document.querySelectorAll('input').forEach(element => element.disabled = true);
+        }
+        </script>
+</head>
+
+<div class="body">
+    <!-- Profile page content -->
+    <div class="page-content">
+        <!-- Dashboard - Tourist -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="../assets/Profile.png" alt="">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button class="active" onclick="location.href = 't-profile.php';">My Profile</button>
+                <button onclick="location.href = 't-update-profile.php';">Update Profile</button>
+                <button onclick="location.href = 't-view-tours.php';">View Tours</button>
+                <br> <br> <br> <br> <br>
+            </div>
+        </div>
+        <div class="profile">
+            <?php
+            if (isset($_GET['profile_updated'])) {
+                echo '<p class="info-1">Profile updated successfully</p>';
+            }
+            ?>
+            <h2>Profile</h2>
+
+            <div class="profile-content">
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Tourist Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Tourist First name" disabled value="<?php echo "FIRST NAME : " . $first_name; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Tourist Last Name" disabled value="<?php echo "LAST NAME : " . $last_name; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Tourist Email" disabled value="<?php echo "EMAIL : " . $email; ?>"> 
+                    </p> 
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

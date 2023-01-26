@@ -1,7 +1,5 @@
 <?php
 session_start();
-// require_once('/travelPal/inc/connection.php');
-// require_once('/travelPal/inc/functions.php');
 require_once('../inc/connection.php');
 require_once('../inc/functions.php');
 
@@ -68,7 +66,6 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-
 ?>
 
 <?php
@@ -76,12 +73,15 @@ $title = "Login";
 require_once("../inc/header.php");
 ?>
 
+<head>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
 <div class="login">
     <form action="login.php" method="post">
-        <fieldset>
-            <legend>
-                <h1>LOGIN</h1>
-                <?php
+            <h1>Login</h1>
+
+            <?php
                 if (isset($errors) && !empty($errors)) {
                     echo '<p class="error"> ';
                     foreach ($errors as $error) {
@@ -89,36 +89,32 @@ require_once("../inc/header.php");
                     }
                     echo '</p>';
                 }
-                ?>
-                <?php
-                if (isset($_GET['logout'])) {
-                    echo '<p class="info">You have successfully logged out</p>';
-                }
-                ?>
-                <p>
-                    <input class="logintext" type="text" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?>>
-                </p>
-                <p>
-                    <input class="logintext" type="password" name="password" id="password" placeholder="password" required>
-                </p>
-                <div class="password" style="font-size: 12px ;">
-                    <div>
-                        <input class="checkbox" type="checkbox" name="remember" id="remember">
-                        <label for="remember">show password</label>
-                        <a class="" href="reset-pw.php">Forgot password?</a>
-                    </div>
+            ?>
+
+            <!-- Successfully logout -->
+            <?php
+            if (isset($_GET['logout'])) {
+                echo '<p class="info"> Logged out successfully!</p>';
+            }
+            ?>
+
+                <div class="input-elements">
+                    <input type="text" name="email" placeholder="  Email">
+                    <input type="password" name="password" placeholder="  Password">
                 </div>
-                <p>
-                    <button type="submit" name="submit"> <b>LOGIN </b></button>
-                </p>
+                <div class="password">
+                    <div><input type="checkbox" name="remember" id=""> Remember password</div>
+                    <a href="">Forgot Password?</a>
+                </div>
                 <div class="new-user">
-                    <a href="./registration.php">New user? Create an account</a>
+                    <button type="submit" name="submit">Login</button>
+                    <a href="../register.php">New user? Create an account</a>
                 </div>
-        </fieldset>
     </form>
 </div>
-</div>
+
 <?php
 require_once("../inc/footer.php");
 ?>
+
 <?php mysqli_close($connection); ?>

@@ -2,15 +2,24 @@
 $title = "Contact us";
 require_once("./inc/header.php");
 ?>
-    <img src="./assets/contactusimg.png" alt="Contact Us">
-    <div class="contactus-dis">
+
+<head>
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <link rel="stylesheet" href="./css/contactus.css" type="text/css">
+</head>
+
+    <img src="./assets/contactusimg.png" alt="Contact Us" style="width: 100%;">
+    <div class="contactus-text">
+        <br><br>
         <h1>Contact us</h1>
+        <br><br>
         <p>Expect a premium level of service from your first point of contact to your last moments 
         in Sri Lanka.<br><br>Lanka Travel plan is a Sri Lanka luxury tour service provider with a 
-        particular emphasis on  tailored solutions with highly personalized service that match the 
+        particular emphasis on  tailored solutions with highly personalized <br><br> service that match the 
         luxury lifestyle and the higher expectations of the privileged clients. <br><br>Feel free to
          call, send us an email or simply complete the enquiry form to arrange your own private tailor
           made luxury tour in Sri Lanka.</p>
+        <br><br>
     </div>
     <div class="contactus-ourdetails">
         <div class="ourdetails"><i class="fa fa-phone" aria-hidden="true"></i><br> <h3>Phone</h3>
@@ -40,14 +49,14 @@ require_once("./inc/header.php");
         <input class="contactus-textinput" type="text" name="name" id="" placeholder="Name">
         <input class="contactus-textinput" type="email" name="message" id="" placeholder="Email">
         <input class="contactus-textinput-msg" type="text" name="message" id="" placeholder="Message">
+        <br>
         <button>Send Message</button>
     </div>
 
-    <div class="footer-lrg">
-        <hr>
-        <div class="foot-content">
-            <div class="foot-content-left">
-                <img src="./assets/logo tpal.png" alt="">
+    <hr>
+    <div class="footer">
+            <div class="foot-left">
+                <img src="./assets/logo tpal 1.png" alt="logo" style="width:40%;">
                 <h3>GET INSPIRED ! RECEIVE TRAVEL DISCOUNTS, TIPS & 
                     BEHIND THE SCENE STORIES</h3>
                     <div class="subscribe">
@@ -80,8 +89,8 @@ require_once("./inc/header.php");
                         </div>
                     </div>
             </div>
-            <div class="foot-content-right">
-                <img src="./assets/logo.png" alt="">
+            <div class="foot-right">
+                <img src="./assets/logo.png" alt="" style="width:70%;">
             </div>
         </div>
         <?php require_once("./inc/footer.php");?>
