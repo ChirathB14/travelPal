@@ -245,23 +245,18 @@ input::placeholder {
 
 .details {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 4px;
     background-color: var(--accentcolor);
+    justify-content: center;
     width: 80%;
     height: 34px;
 }
 
-.details p {
-    border: none;
-    width: 95%;
-    margin: 8px;
-    color: black;
-    font-size: 14px;
-}
-
 .details input {
     border: none;
+    width: 90%;
+    margin: 8px;
 }
 
 .details-password {
@@ -294,6 +289,13 @@ input::placeholder {
 .profile-content button {
     margin-top: 8px;
     width: 80%;
+}
+
+/* 404 styles */
+.error-content {
+    text-align: center;
+    align-items: center;
+    margin-top: 100px;
 }
 
 /* Footer styles */
