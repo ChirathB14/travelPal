@@ -8,15 +8,22 @@ require_once('inc/functions.php');
 $title = "Home - TravePal";
 require_once("./inc/header.php");
 ?>
-<div class="home">
+
+<head>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+    <div class="home">
         <div class="welcome">
-            <h3>welcome to travel pal</h3>
+            <h3>welcome to travelPal</h3>
             <h1>plan your next<br> trip with <br> <mark> travelpal</mark></h1>
             <h5>We support you to travel within Sri Lanka with the superb experience</h5>
         </div>
         <div class="logo"> <img src="assets/logo.png" alt=""></div>
     </div>
-    <div class="div2">
+    <br> <br>
+    <div class="selection">
         <div class="btn-left">
             <h2>Are you a tourist ?</h2>
             <p>Join with us today to make your dreams true. We offer you preplanned tour 
@@ -43,11 +50,11 @@ require_once("./inc/header.php");
             operator with a promise of truly a premium luxury travel experience in Sri Lanka.
         </p>
     </div>
-    <h1>travel pal offers you</h1>
+    <h1>travel pal offers You... </h1>
+    <br>
     <div class="offers">
-        <br><br>
+    <br> 
         <h1>Tourist</h1>
-        <br><br>
         <div class="tourist">
             <div class="left">
                 <h2>Get a personalized trip</h2>
@@ -62,9 +69,7 @@ require_once("./inc/header.php");
                 <p>Choose from the best hotels. Everything in one place.</p>
             </div>
         </div>
-        <br><br>
         <h1>Service Provider</h1>
-        <br><br>
         <div class="tourist">
             <div class="left">
                 <h2>Get your vehical registered</h2>
@@ -83,10 +88,10 @@ require_once("./inc/header.php");
     <div class="reg-button">
         <button> Register now</button>        
     </div>
+    <br>
     <div class="popular">
         <br>
         <h1>popular</h1>
-        <br>
         <div class="tourist">
             <div class="plans">
                 <img src="assets/jaffna.png" alt="jaffna">
@@ -143,53 +148,11 @@ require_once("./inc/header.php");
             <button class="drp-dwn">Packages <i class="fa fa-chevron-down fa-lg" aria-hidden="true"></i></button> 
             <button class="viewall">view all</button>
         </div>
+        <br>
     </div>
-    <div class="footer-lrg">
-        <hr>
-        <div class="foot-content">
-            <div class="foot-content-left">
-                <img src="../assests/logo tpal.png" alt="">
-                <h3>GET INSPIRED ! RECEIVE TRAVEL DISCOUNTS, TIPS & 
-                    BEHIND THE SCENE STORIES</h3>
-                    <div class="subscribe">
-                        <input type="text" placeholder="Your Email Address">
-                        <button>Subscribe</button>
-                    </div>
-                    <div class="contact">
-                        <h4>contact</h4>
-                        <p>
-                            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                            <i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i>
-                            <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                        </p>
-                    </div>
-                    <div class="links-footer">
-                        <div class="link">
-                            <a href="">Home</a>
-                            <a href="">About Us</a>
-                            <a href="">Contact Us</a>
-                            <a href="">Blogs</a>
-                        </div>
-                        <div class="link">
-                            <a href="">Tour Plans</a>
-                            <a href="">Preplanned Tour</a>
-                            <a href="">Customize Tour</a>
-                        </div>
-                        <div class="link">
-                            <a href="">Blogs</a>
-                            <a href="">Create Blogs</a>
-                        </div>
-                    </div>
-            </div>
-            <div class="foot-content-right">
-                <img src="assets/logo.png" alt="">
-            </div>
-        </div>
-        <div class="footer">
-            <hr>
-            <p>© 2022 TRAVEL PAL ALL RIGHTS RESERVED</p>
-        </div>
-    </div>
+    <br>
+
+    <!-- footer -->
 
 
 <!-- <main>

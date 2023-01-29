@@ -110,21 +110,30 @@ if (isset($_POST['submit'])) {
 <?php
 $title = "Update Profile";
 require_once "../inc/header.php";
-// require_once "../inc/t-sidemenu.php";
 ?>
+
+<head>
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+</head>
+
 <div class="body">
-
-    <div class="dashboard">
-
-            <img src="/travelPal/assets/profile.png" alt="">
-            <p><?php echo $_SESSION['full_name']; ?></p>
-            <button class="select" onclick="location.href = 't-profile.php';">MY PROFILE</button>
-            <button class="nav" onclick="location.href = 't-update-profile.php';">UPDATE PROFILE</button>
-            <button class="nav" onclick="location.href = 't-view-tours.php';">VIEW TOURS</button>
+    <!-- Profile page content -->
+    <div class="page-content">
+        <!-- Dashboard - Tourist -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="../assets/profile.png" alt="Profile pic">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button onclick="location.href = 't-profile.php';">My Profile</button>
+                <button class="active" onclick="location.href = 't-update-profile.php';">Update Profile</button>
+                <button onclick="location.href = 't-view-tours.php';">View Tours</button>
+                <br> <br> <br> <br> <br>
+            </div>    
         </div>
 
-        <div class="content">
-        
+        <div class="content"> 
         <?php
         if (!empty($errors)) {
             display_errors($errors);
@@ -132,48 +141,46 @@ require_once "../inc/header.php";
         ?>
 
         <h2>UPDATE PROFILE</h2>
-        <form action="t-update-profile.php" class="" method='post'>
+        <div class="profile-content">
+        <form action="t-update-profile.php" class="form-update" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-            <table class="table">
-                <tr class="row">
-                    <td colspan="2">
-                        <?php echo "Your ID : " . $user_id; ?>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">First name:</label>
-                        <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?>>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Last name:</label>
-                        <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?>>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Email address:</label>
-                        <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?>>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-         <label for="">Password:</label>
-                        <input type="text" value="************" disabled></input><a style="color:black;" href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-
-                        <button type="submit" name="submit">Update</button>
-                    </td>
-                </tr>
-            </table>
+                <div  class="details">
+                    <p>
+                        Your ID :
+                        <input type="text" name="user_id" value="<?php echo  $user_id; ?>" disabled>
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        First Name : 
+                        <input type="text" name="first_name" id="" value="<?php echo $first_name ; ?>">
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        Last Name : 
+                        <input type="text" name="last_name" id="" value="<?php echo $last_name ; ?>">
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        Email : 
+                        <input type="email" name="email" id="" value="<?php echo $email ; ?>">
+                    </p> 
+                </div>
+                <div  class="details-password">
+                    <p>
+                        <input type="password" value="********" disabled>
+                            <a style="color:black;" href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
+                        </input>
+                    </p> 
+                </div>
+                <button type="submit" name="submit">Update</button>
         </form>
+        </div>
+        </div>
     </div>
-</div>
+
 <?php
 require_once "../inc/footer.php";
 ?>
