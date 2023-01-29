@@ -10,7 +10,7 @@
     </title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/travelPal/css/main.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
@@ -44,7 +44,7 @@
         <div class=\"header\">
             <div class=\"navigationbar\">
                 <div class=\"nav-Logo\">
-                    <img src=\"../assets/logo tpal 1.png\" alt=\"TRAVELPal\">
+                    <img src=\"/travelPal/assets/logo tpal 1.png\" alt=\"TRAVELPal\">
                 </div>
                 <div class=\"menu\">
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
