@@ -50,13 +50,18 @@ while ($blog = mysqli_fetch_assoc($blogs)) {
 
 <head>
     <link rel="stylesheet" href="/travelPal/css/Blogs.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-
 
 <?php
 $title = "Blogs | TravePal";
 require_once("./inc/header.php");
 ?>
+
+<head>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/Blogs.css">
+</head>
 
 <!-- Blogs page content -->
 <div class="page-content">
@@ -74,47 +79,5 @@ require_once("./inc/header.php");
 </div>
 
 <!-- footer -->
-<div class="footer-lrg">
-    <hr>
-    <div class="foot-content">
-        <div class="foot-content-left">
-            <img src="./assets/logo tpal.png" alt="">
-            <h3>GET INSPIRED! RECEIVE TRAVEL DISCOUNTS, TIPS &
-                BEHIND THE SCENE STORIES</h3>
-            <div class="subscribe">
-                <input type="text" placeholder="Your Email Address">
-                <button>Subscribe</button>
-            </div>
-            <div class="contact">
-                <h4>contact</h4>
-                <p>
-                    <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                    <i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i>
-                    <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                </p>
-            </div>
-            <div class="links-footer">
-                <div class="link">
-                    <a href="">Home</a>
-                    <a href="">About Us</a>
-                    <a href="">Contact Us</a>
-                    <a href="">Blogs</a>
-                </div>
-                <div class="link">
-                    <a href="">Tour Plans</a>
-                    <a href="">Preplanned Tour</a>
-                    <a href="">Customize Tour</a>
-                </div>
-                <div class="link">
-                    <a href="">Blogs</a>
-                    <a href="">Create Blogs</a>
-                </div>
-            </div>
-        </div>
-        <div class="foot-content-right">
-            <img src="./assets/logo.png" alt="">
-        </div>
-    </div>
-</div>
 
 <?php require_once("./inc/footer.php"); ?>
