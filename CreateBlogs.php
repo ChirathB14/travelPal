@@ -108,8 +108,11 @@ require_once("./inc/header.php");
         <h5>Nature | beauty | experience</h5>
     </div>
 </div>
-
 <!-- Footer -->
+
+<?php require_once("./inc/footer.php");?>
+
+
 <div class="footer-lrg">
     <hr>
     <div class="foot-content">

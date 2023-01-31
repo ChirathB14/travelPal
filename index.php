@@ -153,6 +153,7 @@ require_once("./inc/header.php");
     <br>
 
     <!-- footer -->
+    <?php require_once("./inc/footer.php");?>
 
 
 <!-- <main>

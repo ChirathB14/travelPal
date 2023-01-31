@@ -1,5 +1,6 @@
 <html>
 <head>
+    <link rel="stylesheet" href="/travelPal/css/main.css">
     <link rel="stylesheet" href="/travelPal/css/TourPlan.css">
 </head>
 
@@ -57,7 +58,4 @@ require_once("./inc/header.php");
 </div>
 
 <!-- Footer -->
-
-</body>
-
-</html>
+<?php require_once("./inc/footer.php");?>
