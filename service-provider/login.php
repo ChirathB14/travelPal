@@ -75,10 +75,15 @@ if (isset($_POST['submit'])) {
 $title = "Login";
 require_once("../inc/header.php");
 ?>
+
+<head>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
 <div class="login">
     <form action="login.php" method="post">
-        <fieldset>
             <h1>LOGIN</h1>
+
             <?php
             if (isset($errors) && !empty($errors)) {
                 echo '<p class="error"> ';
@@ -88,33 +93,29 @@ require_once("../inc/header.php");
                 echo '</p>';
             }
             ?>
+
+            <!-- Successfully logout -->
             <?php
             if (isset($_GET['logout'])) {
                 echo '<p class="info">You have successfully logged out</p>';
             }
             ?>
-            <p>
-                <input class="textinput" type="email" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?>>
-            </p>
-            <p>
-                <input class="textinput" type="password" name="password" id="password" placeholder="Password" required>
-            </p>
-            <div class="password" style="font-size: 12px ;">
-                <div>
-                    <input class="checkbox" type="checkbox" name="remember" id="remember" value="yes">
-                    <label for="remember">show password</label>
-                    <a class="" href="reset-pw.php">Forgot password?</a>
+
+                <div class="input-elements">
+                    <input type="text" name="email" placeholder="  Email">
+                    <input type="password" name="password" placeholder="  Password">
                 </div>
-            </div>
-            <p>
-                <button type="submit" name="submit"> <b>LOGIN </b></button>
-            </p>
-            <div class="new-user">
-                <a href="./registration.php">New user? Create an account</a>
-            </div>
-        </fieldset>
+                <div class="password">
+                    <div><input type="checkbox" name="remember" id=""> Remember password</div>
+                    <a href="">Forgot Password?</a>
+                </div>
+                <div class="new-user">
+                    <button type="submit" name="submit">Login</button>
+                    <a href="../register.php">New user? Create an account</a>
+                </div>
     </form>
 </div>
+
 <script src="../js/jquery.js"></script>
 <script>
     $(document).ready(function() {

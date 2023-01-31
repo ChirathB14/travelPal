@@ -113,45 +113,63 @@ $title = "Login";
 require_once("../inc/header.php");
 ?>
 
+<head>
+    <link rel="stylesheet" href="../css/registration.css">
+</head>
+
 <body class="registration">
-    <div class="reg">
+    <div class="register">
         <form action="registration.php" method="post">
             <h1>CREATE AN ACCOUNT</h1>
+
             <?php
                 if (!empty($errors)) {
                     display_errors($errors);
                 }
             ?>
+
             <?php
             if (isset($_GET['success'])) {
                 echo '<p class="info">You have successfully registered.</p>';
             }
             ?>
+
             <?php
             if (isset($_GET['failed'])) {
                 echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
             }
             ?>
-            <input class="textinput" type="text" name="firstName" id="" placeholder="FIRST NAME" <?php echo 'value="' . $firstName . '"'; ?>>
-            <input class="textinput" type="text" name="lastName" id="" placeholder="LAST NAME" <?php echo 'value="' . $lastName . '"'; ?> >
-            <input class="textinput" type="email" name="email" id="" placeholder="EMAIL" <?php echo 'value="' . $email . '"'; ?> >
-            <input class="textinput" type="password" name="password" id="" placeholder="PASSWORD">
-            <input class="textinput" type="password" name="confirmPassword" id="" placeholder="CONFIRM PASSWORD">
-            <input type="hidden" value="serviceProvider" name="userType">
-            <select class="textinput" id="" name="location">
-                <option value="" disabled selected>PLEASE SELECT THE LOCATION</option>
-                <option value="Colombo">COLOMBO</option>
-                <option value="Gampaha">GAMPAHA</option>
-                <option value="Kalutara">KALUTARA</option>
-            </select>
-            <input class="textinput" type="tel" name="phoneNo" id="" placeholder="ENTER PHONE NUMBER" <?php echo 'value="' . $phoneNo . '"'; ?> >
-            <input class="textinput" type="text" name="NIC" id="" placeholder="ENTER NIC" <?php echo 'value="' . $nic . '"'; ?> >
-            <button type="submit" name="submit">
-                REGISTER
-            </button>
-            <P>
-                ALREADY HAVE AN ACCOUNT? <a href="login.php">Log in</a>
-            </P>
+
+            <div class="input-elements">
+                <input type="text" name="firstName" id="" placeholder="  FIRST NAME" <?php echo 'value="' . $firstName . '"'; ?> >
+                <input type="text" name="lastName" id="" placeholder="  LAST NAME" <?php echo 'value="' . $lastName . '"'; ?> >
+                <input type="email" name="email" id="" placeholder="  EMAIL" <?php echo 'value="' . $email . '"'; ?> >
+                <input type="password" name="password" id="" placeholder="  PASSWORD">
+                <input type="password" name="confirmPassword" id="" placeholder="  CONFIRM PASSWORD">
+                <input type="hidden" value="serviceProvider" name="userType">
+                <div class="selectLocation">
+                    <select id="" name="location" placeholder="Pleae Select the Location" style="width: 400px;  margin-top: 12px; 
+                            background-color: var(--accentcolor); opacity: 0.75; height: 40px;
+                            box-sizing: border-box; border: none; border-radius: 5px;
+                            font-size: 10px; font-weight: bold; color:#808080;">
+                        <option value="" disabled selected>PLEASE SELECT THE LOCATION</option>
+                        <option value="Colombo">COLOMBO</option>
+                        <option value="Gampaha">GAMPAHA</option>
+                        <option value="Kalutara">KALUTARA</option>
+                    </select>
+                </div>
+                <input type="tel" name="phoneNo" id="" placeholder="  PHONE NUMBER" <?php echo 'value="' . $phoneNo . '"'; ?> >
+                <input type="text" name="NIC" id="" placeholder="  NIC" <?php echo 'value="' . $nic . '"'; ?> >
+            </div>
+
+            <div class="new-user">
+                <button type="submit" name="submit">
+                    Register
+                </button>
+                <P>
+                    <a href="login.php"> Already have an Account? Log in</a>
+                </P>
+            </div>
         </form>
     </div>
 <?php

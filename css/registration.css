@@ -24,3 +24,29 @@ body {
     margin: 12px 0px 5px 90px;
     font-size: 12px;
 }
+
+/* The container must be positioned relative: */
+.selectLocation select {
+    position: relative;
+}
+  
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    color: var(--accentcolor);
+    background-color: var(--primarycolor);
+    cursor: pointer;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+  
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+  
+.select-items div:hover, .same-as-selected {
+    background-color: var(--secondarycolor);
+}
