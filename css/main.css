@@ -220,8 +220,9 @@ input::placeholder {
     opacity: 90%;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 300px;
+    width: 60%;
+    height: 90%;
+    margin-bottom: 5px;
 }
 
 .form-update {
@@ -245,10 +246,9 @@ input::placeholder {
 
 .details {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 4px;
     background-color: var(--accentcolor);
-    justify-content: center;
     width: 80%;
     height: 34px;
 }
@@ -286,9 +286,47 @@ input::placeholder {
     margin: 2px;
 }
 
-.profile-content button {
-    margin-top: 8px;
+.details-update {
+    display: flex;
+    flex-direction: row;
+    margin: 4px;
+    background-color: var(--accentcolor);
     width: 80%;
+    height: 34px;
+}
+
+.details-update input {
+    border: none;
+    width: 50%;
+    margin: 8px;
+}
+
+.profile-content button {
+    margin-top: 5px;
+    width: 80%;
+}
+
+/* password reset styles */
+.password-content {
+    display: block;
+    margin: 80px;
+    background-color: #00357A;
+    width: 40%;
+    height: 65%;
+    margin-left: 30%;
+    padding: 50px;
+    border-radius: 15px;
+}
+
+.password-content h2 {
+    text-align: center;
+}
+
+.password-content button {
+    width: 35%;
+    float: right;
+    opacity: 80%;
+    margin: 10px;
 }
 
 /* 404 styles */

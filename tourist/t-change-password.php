@@ -111,27 +111,27 @@ require_once("../inc/header.php");
         <div class="profile-content">
         <form action="t-change-password.php" class="userform" method='post' style="width: 80%;">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-            <div  class="details">
+            <div class="details-update">
                     <p>
-                        First Name : 
+                        &nbsp; First Name : 
                         <input type="text" name="first_name" id="" value="<?php echo $first_name ; ?>" disabled>
                     </p> 
             </div>
-            <div  class="details">
+            <div class="details-update">
                     <p>
-                        Last Name : 
+                        &nbsp; Last Name : 
                         <input type="text" name="last_name" id="" value="<?php echo $last_name ; ?>" disabled>
                     </p> 
             </div>
-            <div  class="details">
+            <div class="details-update">
                     <p>
-                        Email : 
+                        &nbsp; Email : 
                         <input type="email" name="email" id="" value="<?php echo $email ; ?>" disabled>
                     </p> 
             </div>
-            <div  class="details">
+            <div class="details-update">
                     <p>
-                        Password : 
+                        &nbsp; Password : 
                         <input type="password" name="password" id="password" value="<?php echo $password ; ?>">
                     </p> 
             </div>
@@ -142,9 +142,10 @@ require_once("../inc/header.php");
             </div>
             <button type="submit" name="submit">Update Password</button>
         </form>
+        </div>
+        </div>
     </div>
-    </div>
-    </div>
+
 
 <script src="../js/jquery.js"></script>
 <script>
