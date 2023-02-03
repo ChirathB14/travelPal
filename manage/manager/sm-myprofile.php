@@ -1,5 +1,6 @@
 <?php session_start();?>
 <?php require_once('../../inc/connection.php')?>
+
 <?php if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
 }
@@ -102,41 +103,78 @@ if (isset($_POST['submit'])) {
 
 }
 ?>
+
 <?php
 $title = "Site Manager-Profile";
 require_once("../../inc/header.php");
 ?>
-    <div class="body">
-        <div class="dashboard">
-            <img src="../../assets/profile.png" alt="">
-            <p><?php echo $_SESSION['firstName']; ?></p>
-            <button class="select" onclick="location.href = 'sm-myprofile.php';">MY PROFILE</button>
-            <button class="nav" onclick="location.href = 'sm-updateprofile.php';">UPDATE PROFILE</button>
-            <button class="nav" onclick="location.href = 'sm-GenerateReport.php';">GENERATE REPORT</button>
-            <button class="nav" onclick="location.href = 'sm-CreateTourPlan.php';">CREATE TOUR PLAN</button>
-            <button class="nav" onclick="location.href = 'sm-AP.php';">ACCOMMODATION PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-VP.php';">VEHICLE PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-TG.php';">TOURIST GUIDE</button>
-        </div>
-        <div class="content">
-            <h1>PROFILE</h1>
-            <table class="table">
-                <tr class="row">
-                    <td><?php echo "YOUR ID : " . $user_id;?></td>
-                </tr>
-                <tr class="row">
-                    <td><?php echo "FIRST NAME : " . $first_name;?></td>
-                </tr>
-                <tr class="row">
-                    <td><?php echo "LAST NAME : " . $last_name;?></td>
-                </tr>
-                <tr class="row">
-                    <td><?php echo "EMAIL : " . $email;?></td>
-                </tr>
-            </table>
 
+<head>
+        <link rel="stylesheet" href="/travelPal/css/main.css" type="text/css">
+
+        <!-- Disable input profile details in profile pages -->
+        <script lang="javascript">
+        function disable() {
+          document.querySelectorAll('input').forEach(element => element.disabled = true);
+        }
+        </script>
+</head>
+
+    <div class="body">
+        <!-- Profile page content -->
+        <div class="page-content">
+        <!-- Dashboard - Site Manager -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="../assets/Profile.png" alt="">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button class="active" onclick="location.href = 'sm-myprofile.php';">My Profile</button>
+                <button onclick="location.href = 'sm-updateprofile.php';">Update Profile</button>
+                <button onclick="location.href = 'sm-GenerateReport.php';">Generate Report</button>
+                <button onclick="location.href = 'sm-CreateTourPlan.php';">Create Tour Plan</button>
+                <button onclick="location.href = 'sm-AP.php';">Accommodation Provider</button>
+                <button onclick="location.href = 'sm-VP.php';">Vehicle Provider</button>
+                <button onclick="location.href = 'sm-TG.php';">Tourist Guide</button>
+            </div>
+        </div>
+
+        <div class="profile">
+            <?php
+            if (isset($_GET['profile_updated'])) {
+                echo '<p class="info-1">Profile updated successfully</p>';
+            }
+            ?>
+            <h2>Profile</h2>
+
+            <div class="profile-content">
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Site Manager Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Site Manager First name" disabled value="<?php echo "FIRST NAME : " . $first_name; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Site Manager Last Name" disabled value="<?php echo "LAST NAME : " . $last_name; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Site Manager Email" disabled value="<?php echo "EMAIL : " . $email; ?>"> 
+                    </p> 
+                </div>
+            </div>
+            <br>
+        </div>
         </div>
     </div>
+
 <?php require_once("../../inc/footer.php");?>
-</body>
-</html>
+
+<?php mysqli_close($connection); ?>
