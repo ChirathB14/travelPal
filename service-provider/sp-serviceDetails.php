@@ -43,31 +43,31 @@ require_once("../inc/header.php");
                 <div class="details">
                     <p>
                         &nbsp; District : 
-                        <input type="text" placeholder="Service Provider District" name="" id="" value="<?php echo  ; ?>" disabled>
+                        <input type="text" placeholder="Service Provider District" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
                 <div class="details">
                     <p>
                         &nbsp; Address : 
-                        <input type="text" placeholder="Service Provider Address" name="" id="" value="<?php echo  ; ?>" disabled>
+                        <input type="text" placeholder="Service Provider Address" name="" id="" value="<?php echo  ""; ?>" disabled>
                     </p> 
                 </div>
                 <div class="details">
                     <p>
                         &nbsp; Accommodation Type : 
-                        <input type="text" placeholder="Service Provider Acc.Type" name="" id="" value="<?php echo  ; ?>" disabled>
+                        <input type="text" placeholder="Service Provider Acc.Type" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
                 <div class="details">
                     <p>
                         &nbsp; With Food : 
-                        <input type="text" placeholder="With food" name="" id="" value="<?php echo  ; ?>" disabled>
+                        <input type="text" placeholder="With food" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
                 <div class="details">
                     <p>
                         &nbsp; Price per room : 
-                        <input type="text" placeholder="Price per room" name="" id="" value="<?php echo  ; ?>" disabled>
+                        <input type="text" placeholder="Price per room" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
                 <button type="submit" name="submit">Add Services</button>
