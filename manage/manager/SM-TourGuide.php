@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once('../../inc/connection.php')?>
+
+<?php
+$title = "Profiles - Tour Guide";
+require_once("../../inc/header.php");
+?>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profiles - Tour Guide | TravelPal</title>
-
     <!-- CSS Import -->
-    <link rel="stylesheet" href="../../css/style.css">
-
-    <!-- Icon import -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet"/>
-
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/profiles-view.css">
 </head>
-<body>
-    
-    <!-- Navigation Bar -->
-    
 
     <!-- Profile page content -->
     <div class="page-content">
@@ -87,9 +80,7 @@
         </div>
     </div>
 
-    <div class="copyright">
-        <hr>
-        <p>© 2022 TRAVEL PAL ALL RIGHTS RESERVED</p>
-    </div>
-</body>
-</html>
+
+<?php require_once("../../inc/footer.php");?>
+
+<?php mysqli_close($connection); ?>
