@@ -24,7 +24,9 @@
         <div class=\"header\">
             <div class=\"navigationbar\">
                 <div class=\"nav-Logo\">
-                    <img src=\"/travelPal/assets/logo tpal 1.png\" alt=\"TRAVELPal\">
+                    <a href=\"/travelPal/index.php\">
+                        <img src=\"/travelPal/assets/logo tpal 1.png\" alt=\"TRAVELPal\">
+                    </a>
                 </div>
                 <div class=\"menu\">
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
@@ -32,7 +34,7 @@
                     <button class=\"nav\" onclick=\"location.href = './contactus.php';\">CONTACT US</button>
                     <button class=\"nav\"onclick=\"location.href = './Blogs.php';\">BLOGS</button>
                     <button class=\"logout-btn\" onclick=\"location.href = '/travelPal/register.php';\" >REGISTER</button>
-                    <button class=\"logout-btn\" onclick=\"location.href = './login.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>&nbsp;&nbsp;LOG IN</button>
+                    <button class=\"logout-btn\" onclick=\"location.href = '/travelPal/login.php';\" ><i class=\"fa fa-user fa-lg\" aria-hidden=\"true\"></i>&nbsp;&nbsp;LOG IN</button>
                 </div>            
             </div>
             <div class=\"navigationbarfoot\">
@@ -44,7 +46,9 @@
         <div class=\"header\">
             <div class=\"navigationbar\">
                 <div class=\"nav-Logo\">
-                    <img src=\"/travelPal/assets/logo tpal 1.png\" alt=\"TRAVELPal\">
+                    <a href=\"/travelPal/index.php\">
+                        <img src=\"/travelPal/assets/logo tpal 1.png\" alt=\"TRAVELPal\">
+                    </a>
                 </div>
                 <div class=\"menu\">
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
