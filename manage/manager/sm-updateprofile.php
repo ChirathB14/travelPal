@@ -1,6 +1,11 @@
-<?php session_start();?>
-<?php require_once('../../inc/connection.php')?>
-<?php if(!isset($_SESSION['user_id'])){
+<?php 
+
+session_start();
+require_once('../../inc/connection.php');
+require_once('../../inc/functions.php');
+
+
+if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
 }
 $errors = array();
@@ -141,7 +146,7 @@ require_once("../../inc/header.php");
 
         <h2>UPDATE PROFILE</h2>
         <div class="profile-content">
-        <form action="t-update-profile.php" class="form-update" method='post'>
+        <form action="sm-updateprofile.php" class="form-update" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">
                     <p>
