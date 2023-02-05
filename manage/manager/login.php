@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
                 //valid user found
                 $user = mysqli_fetch_assoc($result_set);
                 $_SESSION['user_id'] = $user['userID'];
-                $_SESSION['firstName'] = $user['firstName'] . " " . $user['lastName'];
+                $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
 
                 //redirect to the profile
                 header('Location: sm-myprofile.php');
@@ -126,7 +126,7 @@ require_once("../../inc/header.php");
 </script>
 
 <?php
-require_once("../inc/footer.php");
+require_once("../../inc/footer.php");
 ?>
 
 <?php mysqli_close($connection); ?>
