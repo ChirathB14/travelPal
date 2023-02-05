@@ -20,23 +20,11 @@ $blogs = mysqli_query($connection, $query);
 verify_query($blogs);
 
 while ($blog = mysqli_fetch_assoc($blogs)) {
-    $blog_author_id = $blog['userID'];
-
-    $query = "SELECT * FROM users WHERE userID = '{$blog_author_id}'";
-
-    $blog_author = mysqli_query($connection, $query);
-
-    verify_query($blog_author);
-
-    while ($author = mysqli_fetch_assoc($blog_author)) {
-        $author_name = $author['firstName'] . " " . $author['lastName'];
-    }
-
     $blog_list .= "<div class=\"Blog-content\">";
     $blog_list .= "     <h2>{$blog['subject']}</h2>";
-    $blog_list .= "     <h6>{$blog['writtenDate']} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {$author_name}</h6>";
+    $blog_list .= "     <h6>{$blog['writtenDate']} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {$blog['authorName']}</h6>";
     $blog_list .= "     <br>";
-    $blog_list .= "     <img src=\"./assets/blog1.png\" alt=\"Blog image\">";
+    $blog_list .= "     <img src=\"./uploads/blogs/{$blog['imagePath']}\" alt=\"Blog image\">";
     $blog_list .= "     <br><br>";
     $blog_list .= "     <p>{$blog['content']}</p>";
     $blog_list .= "     <a href=\"Blog.php?blogID={$blog['blogID']}\">View more</a>";
@@ -73,7 +61,13 @@ require_once("./inc/header.php");
         <button onclick="location.href = 'CreateBlogs.php';">Create Blog</button>
     </div>
 
-    <?php echo $blog_list; ?>
+    <?php 
+    if($blog_list){
+        echo $blog_list; 
+    }else {
+        echo "No Blogs Yet!";
+    }
+    ?>
 
     <br>
 </div>
