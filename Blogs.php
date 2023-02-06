@@ -34,21 +34,14 @@ while ($blog = mysqli_fetch_assoc($blogs)) {
 ?>
 
 
-<html>
-
-<head>
-    <link rel="stylesheet" href="/travelPal/css/Blogs.css">
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-
 <?php
 $title = "Blogs | TravePal";
 require_once("./inc/header.php");
 ?>
 
 <head>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/Blogs.css">
+    <link rel="stylesheet" href="/travelPal/css/main.css">
+    <link rel="stylesheet" href="/travelPal/css/Blogs.css">
 </head>
 
 <!-- Blogs page content -->
@@ -70,8 +63,8 @@ require_once("./inc/header.php");
     ?>
 
     <br>
+    
 </div>
 
-<!-- footer -->
-
-<?php require_once("./inc/footer.php"); ?>
+<!-- Footer -->
+<?php require_once("./inc/footer.php");?>

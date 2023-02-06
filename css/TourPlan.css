@@ -25,6 +25,7 @@ h1 {
     float: left;
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .Tourplan-image img{
@@ -68,8 +69,9 @@ p {
     text-align: center;
     background-color: #F8EDDA;
     opacity: 85%;
-    padding: 20px;
-    margin: 10px 20px 10px 20px;
+    width: 350px;
+    height:200px;
+    margin: 10px auto 10px auto;
 }
 
 .feature-content h4 {
