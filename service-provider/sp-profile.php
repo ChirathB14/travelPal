@@ -73,60 +73,81 @@ $title = "Profile";
 require_once("../inc/header.php");
 ?>
 
-<div class="body">
-    <div class="dashboard">
-        <img src="/travelPal/assets/profile.png" alt="">
-        <p>
-            <?php echo $_SESSION['full_name']; ?>
-        </p>
-        <button class="select" onclick="location.href = 'sp-profile.php';">MY PROFILE</button>
-        <button class="nav" onclick="location.href = 'sp-update-profile.php';">UPDATE PROFILE</button>
-    </div>
-    <div class="content">
-        <?php
-        if (isset($_GET['profile_updated'])) {
-            echo '<p class="info-1">Profile updated successfully</p>';
-        }
-        ?>
-        <h1>PROFILE</h1>
-        <table class="table">
-            <tr class="row">
-                <td>
-                    <?php echo "YOUR ID : " . $user_id; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "FIRST NAME : " . $first_name; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "LAST NAME : " . $last_name; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "EMAIL : " . $email; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "LOCATION : " . $location; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "PHONE NUMBER : " . $phoneNo; ?>
-                </td>
-            </tr>
-            <tr class="row">
-                <td>
-                    <?php echo "NIC : " . $nic; ?>
-                </td>
-            </tr>
-        </table>
+<head>
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
 
+        <!-- Disable input profile details in profile pages -->
+        <script lang="javascript">
+        function disable() {
+          document.querySelectorAll('input').forEach(element => element.disabled = true);
+        }
+        </script>
+</head>
+
+<div class="body">
+    <!-- Profile page content -->
+    <div class="page-content">
+        <!-- Dashboard - Service Provider -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="/travelPal/assets/Profile.png" alt="">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button class="active" onclick="location.href = 'sp-profile.php';">My Profile</button>
+                <button onclick="location.href = 'sp-serviceDetails.php';">Service Details</button>
+                <button onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
+                <button onclick="location.href = 'sp-update-profile.php';">Update Availability</button>
+                <br> <br> <br> <br> <br> <br>
+            </div>
+        </div>
+
+        <div class="profile">
+            <?php
+            if (isset($_GET['profile_updated'])) {
+                echo '<p class="info-1">Profile updated successfully</p>';
+            }
+            ?>
+            <h2>Profile</h2>
+
+            <div class="profile-content">
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Service Provider Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Service Provider First name" disabled value="<?php echo "FIRST NAME : " . $first_name; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Service Provider Last Name" disabled value="<?php echo "LAST NAME : " . $last_name; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Service Provider Email" disabled value="<?php echo "EMAIL : " . $email; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Service Provider Location" disabled value="<?php echo "LOCATION : " . $location; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="tel" placeholder="Service Provider Phone Number" disabled value="<?php echo "PHONE NUMBER : " . $phoneNo; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Service Provider NIC" disabled value="<?php echo "NIC : " . $nic; ?>"> 
+                    </p> 
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

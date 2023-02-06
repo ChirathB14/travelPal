@@ -1,6 +1,11 @@
-<?php session_start();?>
-<?php require_once('../../inc/connection.php')?>
-<?php if(!isset($_SESSION['user_id'])){
+<?php 
+
+session_start();
+require_once('../../inc/connection.php');
+require_once('../../inc/functions.php');
+
+
+if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
 }
 $errors = array();
@@ -107,56 +112,72 @@ if (isset($_POST['submit'])) {
 $title = "Site Manager-Update profile";
 require_once("../../inc/header.php");
 ?>
-    <div class="body">
-        <div class="dashboard">
-            <img src="../../assets/profile.png" alt="">
-            <p><?php echo $_SESSION['firstName']; ?></p>
-            <button class="nav"onclick="location.href = 'sm-myprofile.php';">MY PROFILE</button>
-            <button class="select" onclick="location.href = 'sm-updateprofile.php';">UPDATE PROFILE</button>
-            <button class="nav">GENERATE REPORT</button>
-            <button class="nav">CREATE TOUR PLAN</button>
-            <button class="nav">ACCOMMODATION PROVIDER</button>
-            <button class="nav">VEHICLE PROVIDER</button>
-            <button class="nav">TOURIST GUIDE</button>
+
+<head>
+        <link rel="stylesheet" href="/travelPal/css/main.css" type="text/css">
+</head>
+
+<div class="body">
+        <!-- Profile page content -->
+        <div class="page-content">
+        <!-- Dashboard - Site Manager -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="../assets/Profile.png" alt="">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button onclick="location.href = 'sm-myprofile.php';">My Profile</button>
+                <button class="active" onclick="location.href = 'sm-updateprofile.php';">Update Profile</button>
+                <button onclick="location.href = 'sm-GenerateReport.php';">Generate Report</button>
+                <button onclick="location.href = 'sm-CreateTourPlan.php';">Create Tour Plan</button>
+                <button onclick="location.href = 'sm-AP.php';">Accommodation Provider</button>
+                <button onclick="location.href = 'sm-VP.php';">Vehicle Provider</button>
+                <button onclick="location.href = 'sm-TG.php';">Tourist Guide</button>
+            </div>
         </div>
-        
-        <div class="content">
-            <h1>PROFILE</h1>
-            <table class="table">
-                <tr class="row">
-                    <td colspan="2">
-                        <?php echo "Your ID : " . $user_id;?>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">First name:</label>
-                        <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> > 
-                    </td>
-                    <td>
-                        <img src="../../assets/Frame.png" alt="TRAVELPal">
-                    </td>
-                </tr>
-                <tr class="row"> 
-                    <td>
-                        <label for="">Last name:</label>
-                        <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> >
-                    </td>
-                    <td>
-                        <img src="../../assets/Frame.png" alt="TRAVELPal">
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Email address:</label>
-                        <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> >
-                    </td>
-                    <td>
-                        <img src="../../assets/Frame.png" alt="TRAVELPal">
-                    </td>
-                </tr>
-            </table>
+
+        <div class="content"> 
+        <?php
+        if (!empty($errors)) {
+            display_errors($errors);
+        }
+        ?>
+
+        <h2>UPDATE PROFILE</h2>
+        <div class="profile-content">
+        <form action="sm-updateprofile.php" class="form-update" method='post'>
+            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <div class="details-update">
+                    <p>
+                        &nbsp; Your ID :
+                        <input type="text" name="user_id" value="<?php echo  $user_id; ?>" disabled>
+                    </p>
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; First Name : 
+                        <input type="text" name="first_name" id="" value="<?php echo $first_name ; ?>">
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Last Name : 
+                        <input type="text" name="last_name" id="" value="<?php echo $last_name ; ?>">
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Email : 
+                        <input type="email" name="email" id="" value="<?php echo $email ; ?>">
+                    </p> 
+                </div>
+                <button type="submit" name="submit">Update</button>
+        </form>
+        </div>
         </div>
     </div>
 
 <?php require_once("../../inc/footer.php");?>
+
+<?php mysqli_close($connection); ?>

@@ -144,34 +144,34 @@ require_once "../inc/header.php";
         <div class="profile-content">
         <form action="t-update-profile.php" class="form-update" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                <div  class="details">
+                <div class="details-update">
                     <p>
-                        Your ID :
+                        &nbsp; Your ID :
                         <input type="text" name="user_id" value="<?php echo  $user_id; ?>" disabled>
-                    </p> 
+                    </p>
                 </div>
-                <div  class="details">
+                <div class="details-update">
                     <p>
-                        First Name : 
+                        &nbsp; First Name : 
                         <input type="text" name="first_name" id="" value="<?php echo $first_name ; ?>">
                     </p> 
                 </div>
-                <div  class="details">
+                <div class="details-update">
                     <p>
-                        Last Name : 
+                        &nbsp; Last Name : 
                         <input type="text" name="last_name" id="" value="<?php echo $last_name ; ?>">
                     </p> 
                 </div>
-                <div  class="details">
+                <div class="details-update">
                     <p>
-                        Email : 
+                        &nbsp; Email : 
                         <input type="email" name="email" id="" value="<?php echo $email ; ?>">
                     </p> 
                 </div>
                 <div  class="details-password">
                     <p>
                         <input type="password" value="********" disabled>
-                            <a style="color:black;" href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
+                            <a style="color:black;" href="t-change-password.php">Change Password</a>
                         </input>
                     </p> 
                 </div>

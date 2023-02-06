@@ -167,14 +167,27 @@ $title = "Update Profile";
 require_once "../inc/header.php";
 ?>
 
-<div class="body">
+<head>
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+</head>
 
-    <div class="dashboard">
-        <img src="/travelPal/assets/profile.png" alt="">
-        <p><?php echo $_SESSION['full_name']; ?></p>
-        <button class="nav" onclick="location.href = 'sp-profile.php';">MY PROFILE</button>
-        <button class="select" onclick="location.href = 'sp-update-profile.php';">UPDATE PROFILE</button>
-    </div>
+<div class="body">
+    <!-- Profile page content -->
+    <div class="page-content">
+        <!-- Dashboard - Service Provider -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="../assets/profile.png" alt="Profile pic">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button onclick="location.href = 'sp-profile.php';">My Profile</button>
+                <button onclick="location.href = 'sp-service-details.php';">Service Details</button>
+                <button class="active" onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
+                <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
+                <br> <br> <br> <br> <br>
+            </div> 
+        </div>
 
     <div class="content">
         <?php
@@ -182,76 +195,73 @@ require_once "../inc/header.php";
             display_errors($errors);
         }
         ?>
-        <h1>UPDATE PROFILE</h1>
-        <form action="sp-update-profile.php" class="" method='post'>
+
+        <h2>UPDATE PROFILE</h2>
+        <div class="profile-content">
+        <form action="sp-update-profile.php" class="" method='post' style="margin-left: 70px;">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-            <table class="table">
-                <tr class="row">
-                    <td colspan="2">
-                        <?php echo "Your ID : " . $user_id; ?>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">First name:</label>
-                        <input type="text" name="firstName" id="" <?php echo 'value="' . $first_name . '"'; ?>>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Last name:</label>
-                        <input type="text" name="lastName" id="" <?php echo 'value="' . $last_name . '"'; ?>>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Email address:</label>
-                        <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?>>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Password:</label>
-                        <input type="text" value="************" disabled></input> <br><a style="color:black;" href="t-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Location:</label>
-                        <input type="text" name="location_old1" id="" <?php echo 'value="' . $location . '"'; ?> disabled>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Your ID :
+                        <input type="text" name="user_id" value="<?php echo  $user_id; ?>" disabled>
+                    </p>
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; First Name : 
+                        <input type="text" name="first_name" id="" value="<?php echo $first_name ; ?>">
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Last Name : 
+                        <input type="text" name="last_name" id="" value="<?php echo $last_name ; ?>">
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Email : 
+                        <input type="email" name="email" id="" value="<?php echo $email ; ?>">
+                    </p> 
+                </div>
+                <div  class="details-password">
+                    <p>
+                        <input type="password" value="********" disabled>
+                            <a style="color:black;" href="sp-change-password.php">Change Password</a>
+                        </input>
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Location : 
+                        <input type="text" name="location_old1" id="" value="<?php echo $location ; ?>" disabled>
                         <input type="hidden" name="location_old" id="" <?php echo 'value="' . $location . '"'; ?> >
-                        <select class="textinput" id="" name="location">
-                            <option value="" disabled selected>PLEASE SELECT NEW LOCATION</option>
+                        <select id="" name="location" style="width: 375px;  margin-top: 7px; 
+                            background-color: var(--accentcolor); height: 34px;
+                            border: none; font-size: 10px; font-weight: bold;">
+                            <option value="" disabled selected>SELECT NEW LOCATION</option>
                             <option value="Colombo">COLOMBO</option>
                             <option value="Gampaha">GAMPAHA</option>
                             <option value="Kalutara">KALUTARA</option>
                         </select>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">Phone Number:</label>
+                    </p> 
+                </div>
+                <br>
+                <div class="details-update" style="margin-top: 15px;">
+                    <p>
+                        &nbsp; Phone Number : 
                         <input type="text" name="phoneNo" id="" <?php echo 'value="' . $phoneNo . '"'; ?>>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <label for="">NIC:</label>
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; NIC : 
                         <input type="text" name="NIC" id="" <?php echo 'value="' . $nic . '"'; ?>>
-                    </td>
-                </tr>
-                <tr class="row">
-                    <td>
-                        <button type="submit" name="submit">Update</button>
-                    </td>
-                </tr>
-            </table>
+                    </p> 
+                </div>
+                <button type="submit" name="submit">Update</button>
         </form>
     </div>
 </div>
-
-<?php
-require_once "../inc/footer.php";
-?>
 
 <?php mysqli_close($connection); ?>

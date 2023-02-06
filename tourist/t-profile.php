@@ -77,6 +77,7 @@ require_once("../inc/header.php");
                 <br> <br> <br> <br> <br>
             </div>
         </div>
+        
         <div class="profile">
             <?php
             if (isset($_GET['profile_updated'])) {
@@ -107,6 +108,7 @@ require_once("../inc/header.php");
                     </p> 
                 </div>
             </div>
+            <br>
         </div>
     </div>
 </div>

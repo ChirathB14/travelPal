@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
                 //valid user found
                 $user = mysqli_fetch_assoc($result_set);
                 $_SESSION['user_id'] = $user['userID'];
-                $_SESSION['firstName'] = $user['firstName'] . " " . $user['lastName'];
+                $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
 
                 //redirect to the profile
                 header('Location: sm-myprofile.php');
@@ -72,41 +72,46 @@ if (isset($_POST['submit'])) {
 $title = "Login";
 require_once("../../inc/header.php");
 ?>
+
+<head>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
 <div class="login">
     <form action="login.php" method="post">
-        <h1>LOGIN</h1>
-        <?php
-        if (isset($errors) && !empty($errors)) {
-            echo '<p class="error"> ';
-            foreach ($errors as $error) {
-                echo "- " . $error . '<br>';
+            <h1>Login</h1>
+
+            <?php
+                if (isset($errors) && !empty($errors)) {
+                    echo '<p class="error"> ';
+                    foreach ($errors as $error) {
+                        echo "- " . $error . '<br>';
+                    }
+                    echo '</p>';
+                }
+            ?>
+
+            <!-- Successfully logout -->
+            <?php
+            if (isset($_GET['logout'])) {
+                echo '<p class="info"> Logged out successfully!</p>';
             }
-            echo '</p>';
-        }
-        ?>
-        <?php
-        if (isset($_GET['logout'])) {
-            echo '<p class="info">You have successfully logged out</p>';
-        }
-        ?>
-        <p>
-            <input class="textinput" type="email" name="email" id="" placeholder="Email Address" required <?php echo 'value="' . $email . '"'; ?>>
-        </p>
-        <p>
-            <input class="textinput" type="password" name="password" id="" placeholder="password" required>
-        </p>
-        <div class="password" style="font-size: 10px ;">
-            <div>
-                <input class="checkbox" type="checkbox" name="remember" id="remember" value="yes">
-                <label for="remember">show password</label>
-                <a class="" href="reset-pw.php">Forgot password?</a>
-            </div>
-        </div>
-        <p>
-            <button type="submit" name="submit"> <b>LOGIN </b></button>
-        </p>
+            ?>
+
+                <div class="input-elements">
+                    <input type="text" name="email" placeholder="  Email" required <?php echo 'value="' . $email . '"'; ?>>
+                    <input type="password" name="password" placeholder="  Password" required>
+                </div>
+                <div class="password">
+                    <div><input type="checkbox" name="remember" id="remember" value="yes"> Remember password</div>
+                    <a href="password-reset.php">Forgot Password?</a>
+                </div>
+                <div class="new-user">
+                    <button type="submit" name="submit">Login</button>
+                </div>
     </form>
 </div>
+
 <script src="../../js/jquery.js"></script>
 <script>
     $(document).ready(function() {
@@ -119,5 +124,10 @@ require_once("../../inc/header.php");
         });
     });
 </script>
-<?php require_once("../../inc/footer.php"); ?>
+
+<?php
+require_once("../../inc/footer.php");
+?>
+
 <?php mysqli_close($connection); ?>
+
