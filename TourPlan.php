@@ -16,7 +16,6 @@ require_once("./inc/header.php");
     <div class="Title-Tourplan">
         <h1>Welcome to </h1> <img src="./assets/logo tpal.png" alt="TravelPal">
     </div>
-
     <div class="Tourplan-image">
         <img src="./assets/tourPlan.png" alt="Tour Plan">
         <h3>Plan your <br> next trip <br> with <br> TravelPal</h3>
