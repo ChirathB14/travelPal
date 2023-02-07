@@ -19,18 +19,8 @@ if (isset($_GET['blogID'])) {
             $subject = $result['subject'];
             $content = $result['content'];
             $writtenDate = $result['writtenDate'];
-            $blog_author_id = $result['userID'];
+            $authorName = $result['authorName'];
 
-            $query = "SELECT * FROM users WHERE userID = '{$blog_author_id}'";
-
-            $blog_author = mysqli_query($connection, $query);
-
-            verify_query($blog_author);
-
-            while ($author = mysqli_fetch_assoc($blog_author)) {
-                $author_name = $author['firstName'] . " " . $author['lastName'];
-            }
-            
         } else {
             //blog not found
             header('Location: Blogs.php?err=blog_not_found');

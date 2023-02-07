@@ -227,7 +227,7 @@ require_once "../inc/header.php";
                 <div  class="details-password">
                     <p>
                         <input type="password" value="********" disabled>
-                            <a style="color:black;" href="sp-change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
+                            <a style="color:black;" href="sp-change-password.php">Change Password</a>
                         </input>
                     </p> 
                 </div>
