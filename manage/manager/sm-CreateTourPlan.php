@@ -71,24 +71,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $title = "Create tour plan";
 require_once "../../inc/header.php";
 ?>
-    <div class="body">
-        <div class="dashboard">
-            <img src="../../assets/profile.png" alt="">
-            <p><?php echo $_SESSION['firstName']; ?></p>
-            <button class="nav" onclick="location.href = 'sm-myprofile.php';">MY PROFILE</button>
-            <button class="nav" onclick="location.href = 'sm-updateprofile.php';">UPDATE PROFILE</button>
-            <button class="nav" onclick="location.href = 'sm-GenerateReport.php';">GENERATE REPORT</button>
-            <button class="select" onclick="location.href = 'sm-CreateTourPlan.php';">CREATE TOUR PLAN</button>
-            <button class="nav" onclick="location.href = 'sm-AP.php';">ACCOMMODATION PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-VP.php';">VEHICLE PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-TG.php';">TOURIST GUIDE</button>
+
+<head>
+        <link rel="stylesheet" href="/travelPal/css/main.css" type="text/css">
+</head>
+
+<div class="body">
+        <!-- Profile page content -->
+        <div class="page-content">
+        <!-- Dashboard - Site Manager -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="../../assets/Profile.png" alt="">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button onclick="location.href = 'sm-myprofile.php';">My Profile</button>
+                <button onclick="location.href = 'sm-updateprofile.php';">Update Profile</button>
+                <button onclick="location.href = 'sm-GenerateReport.php';">Generate Report</button>
+                <button class="active" onclick="location.href = 'sm-CreateTourPlan.php';">Create Tour Plan</button>
+                <button onclick="location.href = 'sm-AP.php';">Accommodation Provider</button>
+                <button onclick="location.href = 'sm-VP.php';">Vehicle Provider</button>
+                <button onclick="location.href = 'sm-TG.php';">Tourist Guide</button>
+            </div>
         </div>
 
-
-        <div class="content">
-            <!-- Create New Tour Plan -->
-            <div class="create-plan">
-                <h2>Create New Plan</h2>
+        
+        <div class="content"> 
+        <h2>Create New Plan</h2>
                 <?php
                     if (!empty($errors)) {
                         display_errors($errors);
@@ -104,57 +114,52 @@ require_once "../../inc/header.php";
                     echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
                 }
                 ?>
-                
-<div class="content">
-            <form action="" method="post">
-                <table class="table">
-                    <tr class="row">
-                        <td>
-                            <label for="season">Season</label>
-                                <select name="season" id="cars">
-                                    <option value="" selected>Select a season</option>
-                                    <option value="NOVEMBER-MARCH">NOVEMBER-MARCH</option>
-                                    <option value="APRIL-JUNE">APRIL-JUNE</option>
-                                    <option value="JULY-OCTOMBER">JULY-OCTOMBER</option>
-                                </select>
-                        </td>
-                    </tr>
-                    <tr class="row"> 
-                        <td>
-                            <label for="Location">Location</label>
-                            <input type="text" placeholder="Location" name="Location" <?php echo 'value="' . $Location . '"'; ?> required>
-                        </td>
-                    </tr>
-                    <tr class="row">
-                        <td>
-                            <label for="No_of_Days">No of Days</label>
-                            <input type="number" placeholder="No of Days" name="No_of_Days" <?php echo 'value="' . $No_of_Days . '"'; ?> required>
-                        </td>
-                    </tr>
-                    <tr class="row">
-                        <td>
-                            <label for="No_-f_Nights">No of Nights</label>
-                            <input type="number" placeholder="No of Nights" name="No_of_Nights" <?php echo 'value="' . $No_of_Nights . '"'; ?> required min=0> 
-                        </td>
-                    </tr>
-                    <tr class="row">
-                        <td>  
-                            <label for="Budget">Budget</label>
-                            <input type="text" placeholder="Budget" name="Budget" <?php echo 'value="' . $Budget . '"'; ?> required>
-                        </td>
-                    </tr>
 
-                    <tr class="row">
-                        <td>
-                            <label for="Type_of_Package">Type of Package</label>
-                            <input type="text" placeholder="Type of Package" name="Type_of_Package" <?php echo 'value="' . $Type_of_Package . '"'; ?> required>
-                        </td>
-                    </tr>
-                </table>
+        <div class="profile-content">
+        <form action="" class="form-update" method='post'>
+            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <div class="details-update">
+                    <p>
+                        &nbsp; Season : 
+                        <select id="" name="season" style="width: 375px;  margin-top: 7px; 
+                            background-color: var(--accentcolor); height: 34px;
+                            border: none; font-size: 10px; font-weight: bold;">
+                            <option value="" disabled selected>Select a season</option>
+                            <option value="NOVEMBER-MARCH">NOVEMBER-MARCH</option>
+                            <option value="APRIL-JUNE">APRIL-JUNE</option>
+                            <option value="JULY-OCTOMBER">JULY-OCTOMBER</option>
+                        </select>
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Location :
+                        <input type="text" placeholder="Location" name="Location" value="<?php echo $Location ; ?>" required>
+                    </p>
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; No of Nights : 
+                        <input type="number" placeholder="No of Nights" name="No_of_Nights" value="<?php echo $No_of_Nights ; ?>" required min=0> 
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Budget :
+                        <input type="text" placeholder="Budget" name="Budget" value="<?php echo $Budget ; ?>" required> 
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Type of Package : 
+                        <input type="text" placeholder="Type of Package" name="Type_of_Package" value="<?php echo $Type_of_Package ; ?>" required>
+                    </p> 
+                </div>
                 <button Type="submit">Create Tour Plan</button>
-            </form>
-        </div>
-            </div>
+        </form>
         </div>
     </div>
-    <?php require_once "../../inc/footer.php";?>
+</div>
+
+<?php require_once "../../inc/footer.php";?>
+<?php mysqli_close($connection); ?>
