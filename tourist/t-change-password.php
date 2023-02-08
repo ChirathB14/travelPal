@@ -164,19 +164,19 @@ require_once("../inc/header.php");
                 <div class="details-update">
                     <p>
                         &nbsp; Current Password :
-                        <input style="width: 200px;" id="cur_password" name="cur_password" type="password" placeholder="****************" required>
+                        <input style="width: 80px;" id="cur_password" name="cur_password" type="password" placeholder="********" required>
                     </p>
                 </div>
                 <div class="details-update">
                     <p>
                         &nbsp; New Password :
-                        <input style="width: 200px;" id="new_password" name="new_password" type="password" placeholder="****************" required>
+                        <input style="width: 100px;" id="new_password" name="new_password" type="password" placeholder="********" required>
                     </p>
                 </div>
                 <div class="details-update">
                     <p>
                         &nbsp; Retype New Password :
-                        <input style="width: 200px;" id="re_new_password" name="re_new_password" type="password" placeholder="****************" required>
+                        <input style="width: 100px;" id="re_new_password" name="re_new_password" type="password" placeholder="********" required>
                     </p>
                 </div>
                 <div class="details-showpassword">
