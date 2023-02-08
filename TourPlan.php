@@ -52,7 +52,7 @@ require_once("./inc/header.php");
 
     <div class="TourPlan-buttons">
         <button>Preplanned Tours</button>
-        <button>Customize Tour</button>
+        <button><a href="/travelPal/tourist/customize-tour-plan1.php">Customize Tour</a></button>
     </div>
 </div>
 

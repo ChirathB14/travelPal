@@ -5,7 +5,7 @@
     <hr>
     <div class=\"footer\">
             <div class=\"foot-left\">
-                <img src=\"./assets/logo tpal 1.png\" alt=\"logo\">
+                <img src=\"/travelPal/assets/logo tpal 1.png\" alt=\"logo\">
                 <h3>GET INSPIRED ! RECEIVE TRAVEL DISCOUNTS, TIPS & 
                     BEHIND THE SCENE STORIES</h3>
                     <div class=\"subscribe\">
@@ -38,7 +38,7 @@
                     </div>
             </div>
             <div class=\"foot-right\">
-                <img src=\"./assets/logo.png\" alt=\"\">
+                <img src=\"/travelPal/assets/logo.png\" alt=\"\">
             </div>
         </div>
         <?php require_once(\"./inc/footer.php\");?>

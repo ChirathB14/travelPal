@@ -109,7 +109,9 @@ require_once("../inc/header.php");
             </div>
         </div>
     </div>
-    <button class="nextbtn" type="submit" name="submit">Next</button>
+    <button class="nextbtn" type="submit" name="submit">
+        <a href="/travelPal/tourist/proceed-to-pay.php">Next</a> 
+    </button>
     <br>
     </form>
 </div>

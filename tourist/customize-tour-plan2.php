@@ -31,7 +31,9 @@ require_once("../inc/header.php");
             </div>
         </div>
     </div>
-        <button class="proceedbtn" type="submit" name="submit">Proceed to plan the tour</button>
+        <button class="proceedbtn" type="submit" name="submit">
+            <a href="/travelPal/tourist/enter-tour-details.php">Proceed to plan the tour</a>   
+        </button>
         <br>
     </form>
 </div>
