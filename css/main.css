@@ -338,7 +338,7 @@ input::placeholder {
 
 /* Footer styles */
 .footer {
-    height: 20%;
+    height: 500px;
     background-color: #0a0433;
     display: flex;
     flex-direction: row;

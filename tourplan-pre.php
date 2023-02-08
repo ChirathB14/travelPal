@@ -1,5 +1,5 @@
 <?php
-$title = "Pre-made tour plans";
+$title = "Pre-made tour plans -TravelPal";
 require_once("./inc/header.php");
 require_once('./inc/connection.php');
 
