@@ -295,6 +295,10 @@ input::placeholder {
     height: 34px;
 }
 
+.details-update p {
+    font-size: 12px;
+}
+
 .details-update input {
     border: none;
     width: 50%;

@@ -86,7 +86,7 @@ require_once("./inc/header.php");
         </div>  
     </div>
     <div class="reg-button">
-        <button> Register now</button>        
+        <button><a href="register.php">Register now</a></button>        
     </div>
     <br>
     <div class="popular">
@@ -145,8 +145,8 @@ require_once("./inc/header.php");
             </div>
         </div>
         <div class="home-dropdown">
-            <button class="drp-dwn">Packages <i class="fa fa-chevron-down fa-lg" aria-hidden="true"></i></button> 
-            <button class="viewall">view all</button>
+            <button class="drp-dwn"><a href="prePlanTour-view.php">Packages</button> 
+            <button class="viewall"><a href="ToutPlan.php">view all</a></button>
         </div>
         <br>
     </div>
