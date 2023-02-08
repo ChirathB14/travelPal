@@ -6,12 +6,10 @@
 .Title-Tourplan {
     display: flex;
     flex-direction: row;
-    margin: 30px;
+    margin: 20px auto 20px auto;
 }
 
 h1 {
-    margin-top: 15px;
-    margin-left: 30%;
     font-size: 40px;
     letter-spacing: 4px;
 }
@@ -72,6 +70,7 @@ p {
     width: 350px;
     height:200px;
     margin: 10px auto 10px auto;
+    padding: 30px;
 }
 
 .feature-content h4 {
@@ -87,10 +86,9 @@ p {
 
 .TourPlan-buttons {
     display: inline-block;
-    margin: 10px 160px 50px 150px;
+    margin: 10px auto 50px auto;
 }
 
 .TourPlan-buttons button{
     margin-left: 30px;
-    opacity: 75%;
 }

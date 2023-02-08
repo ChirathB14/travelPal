@@ -38,3 +38,43 @@ if (isset($_GET['blogID'])) {
 
 
 ?>
+
+<?php
+$title = "Blogs_View more | TravePal";
+require_once("./inc/header.php");
+?>
+
+<head>
+    <link rel="stylesheet" href="/travelPal/css/main.css">
+    <link rel="stylesheet" href="/travelPal/css/Blogs.css">
+</head>
+
+<!-- Blogs page content -->
+<div class="page-content">
+    <div class="Blogs-Title">
+        <div class="Blogs-TitleContent">
+            <h2>Welcome to the Travel Pal Blog!</h2>
+            <h4>Nature | beauty | experience</h4>
+        </div>
+        <button onclick="location.href = 'CreateBlogs.php';">Create Blog</button>
+    </div>
+    <br>
+    
+    <div class="Blog-content">
+         <h2> <?php echo $subject?> </h2>";
+         <h6> <?php echo $writtenDate?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $authorName?> </h6>
+         <br>
+        <img src="./uploads/blogs/{$blog['imagePath']}" alt="Blog image">
+        <br><br>
+         <p>{$blog['content']}</p>";
+    </div>
+}
+    
+</div>
+
+
+
+
+
+<!-- Footer -->
+<?php require_once("./inc/footer.php");?>
