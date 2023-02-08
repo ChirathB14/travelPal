@@ -184,6 +184,7 @@ require_once "../inc/header.php";
                 <button onclick="location.href = 'sp-profile.php';">My Profile</button>
                 <button onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
                 <button class="active" onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
+                <button onclick="location.href = 'sp-service-details.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
                 <br> <br> <br> <br> <br>
             </div> 
@@ -198,7 +199,7 @@ require_once "../inc/header.php";
 
         <h2>UPDATE PROFILE</h2>
         <div class="profile-content">
-        <form action="sp-update-profile.php" class="" method='post' style="margin-left: 70px;">
+        <form action="sp-update-profile.php" class="" method='post'  style="margin: 15px 0px 15px 70px;">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">
                     <p>

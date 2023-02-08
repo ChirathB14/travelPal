@@ -1,14 +1,13 @@
-<html>
+<!-- Navigation Bar -->
+<?php
+session_start();
+$title = "Tour plan | TravePal";
+require_once("./inc/header.php");
+?>
 <head>
     <link rel="stylesheet" href="/travelPal/css/main.css">
     <link rel="stylesheet" href="/travelPal/css/TourPlan.css">
 </head>
-
-<!-- Navigation Bar -->
-<?php
-$title = "Tour plan | TravePal";
-require_once("./inc/header.php");
-?>
 
 
 <!-- Tour plan page content -->

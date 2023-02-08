@@ -26,6 +26,7 @@ require_once("../inc/header.php");
                 <button onclick="location.href = 'sp-profile.php';">My Profile</button>
                 <button class="active" onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
+                <button class="active" onclick="location.href = 'sp-service-details.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
                 <br> <br> <br> <br> <br>
             </div> 
