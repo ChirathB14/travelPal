@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = array();
 
     //checking required fields
-    if (empty($season) || empty($Location) || empty($No_of_Days) || empty($Budget) || empty($Type_of_Package) || empty($No_of_Nights)) {
+    if (empty($season) || empty($Location) || empty($Budget) || empty($Type_of_Package) || empty($No_of_Nights)) {
         array_push($errors, "All the fields are required");
     }
 
@@ -118,13 +118,12 @@ require_once "../../inc/header.php";
         <div class="profile-content">
         <form action="" class="form-update" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                <div class="details-update">
+                <div class="details-update" style="margin-bottom: 11px">
                     <p>
-                        &nbsp; Season : 
-                        <select id="" name="season" style="width: 375px;  margin-top: 7px; 
+                        <select id="" name="season" style="width: 340px;  margin-top: 7px; 
                             background-color: var(--accentcolor); height: 34px;
-                            border: none; font-size: 10px; font-weight: bold;">
-                            <option value="" disabled selected>Select a season</option>
+                            border: none; font-size: 12px; font-weight: bold;">
+                            <option value="" disabled selected>SELECT A SEASON</option>
                             <option value="NOVEMBER-MARCH">NOVEMBER-MARCH</option>
                             <option value="APRIL-JUNE">APRIL-JUNE</option>
                             <option value="JULY-OCTOMBER">JULY-OCTOMBER</option>
@@ -149,10 +148,17 @@ require_once "../../inc/header.php";
                         <input type="text" placeholder="Budget" name="Budget" value="<?php echo $Budget ; ?>" required> 
                     </p> 
                 </div>
-                <div class="details-update">
+                <div class="details-update" style="margin-bottom: 11px">
                     <p>
-                        &nbsp; Type of Package : 
-                        <input type="text" placeholder="Type of Package" name="Type_of_Package" value="<?php echo $Type_of_Package ; ?>" required>
+                        <select id="" name="season" style="width: 340px;  margin-top: 7px; 
+                            background-color: var(--accentcolor); height: 34px;
+                            border: none; font-size: 12px; font-weight: bold;">
+                            <option value="" disabled selected>TYPE OF PACKAGE</option>
+                            <option value="Luxury Tours">Luxury Tours</option>
+                            <option value="Budget Tours">Budget Tours</option>
+                            <option value="Family Tours">Family Tours</option>
+                            <option value="Honeymoon Tours">Honeymoon Tours</option>
+                        </select>
                     </p> 
                 </div>
                 <button Type="submit">Create Tour Plan</button>

@@ -123,7 +123,7 @@ require_once("../../inc/header.php");
         <!-- Dashboard - Site Manager -->
         <div class="Dashboard">
             <div class="Dashboard-top">
-                <img src="../assets/Profile.png" alt="">
+                <img src="/travelPal/assets/Profile.png" alt="">
                 <h4><?php echo $_SESSION['full_name']; ?></h4>
             </div>
             <div class="Dashboard-bottom">
