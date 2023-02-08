@@ -20,7 +20,6 @@ if (isset($_GET['blogID'])) {
             $content = $result['content'];
             $writtenDate = $result['writtenDate'];
             $authorName = $result['authorName'];
-
         } else {
             //blog not found
             header('Location: Blogs.php?err=blog_not_found');
