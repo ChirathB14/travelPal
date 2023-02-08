@@ -83,6 +83,7 @@ while ($user = mysqli_fetch_assoc($users)) {
             </tr>
             <?php echo $sitemanager_list; ?>
         </table>
+        <br>
             
         <a href="add_siteManager.php">+ Site Manager</a>   
 
