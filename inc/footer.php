@@ -1,7 +1,7 @@
 <?php
     if($title == "Contact us" || $title == "Tour plan | TravePal" || $title == "Home - TravePal" || $title == "Blogs | TravePal" 
     || $title == "Create Blog - TravePal" || $title == "Pre-made tour plans" || $title == "Blogs_View more | TravePal" || $title == "Pre-made tour plans -TravelPal"
-    || $title == "Register" || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" 
+    || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" 
     || $title == "Profile" || $title == "Service Details" || $title == "Update Profile")
     {
     echo" 
@@ -60,10 +60,7 @@
                 © <?php echo date(\"Y\"); ?> TRAVEL PAL ALL RIGHTS RESERVED
         </div>
         </footer>
-    
-    
     </body>
-    
     </html> " ;
 
     }

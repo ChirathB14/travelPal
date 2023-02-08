@@ -482,6 +482,12 @@ p.info-1{
     letter-spacing: 0.1em;
     background-color: #0a0433;
 }
+footer{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+
 
 
 
