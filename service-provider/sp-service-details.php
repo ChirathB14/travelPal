@@ -24,6 +24,7 @@ require_once("../inc/header.php");
             </div>
             <div class="Dashboard-bottom">
                 <button onclick="location.href = 'sp-profile.php';">My Profile</button>
+                <button class="active" onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
                 <button class="active" onclick="location.href = 'sp-service-details.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
@@ -33,44 +34,47 @@ require_once("../inc/header.php");
 
 
         <!-- Profile -->
+        <div clas="content" style="width: 70%; margin:10px 50px 10px 180px;">
         <h2>Accommodation Provider</h2>
         <div class="profile-content">
-                <div  class="details">
+                <div  class="details-update">
                     <p>
-                        <input type="text" placeholder="Service Provider Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>"> 
+                        &nbsp; User ID : 
+                        <input type="text" placeholder="Service Provider Id" disabled value="<?php echo ""; ?>"> 
                     </p> 
                 </div>
-                <div class="details">
+                <div class="details-update">
                     <p>
                         &nbsp; District : 
-                        <input type="text" placeholder="Service Provider District" name="" id="" value="<?php echo "" ; ?>" disabled>
+                        <input type="text" placeholder="District" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
-                <div class="details">
+                <div class="details-update">
                     <p>
                         &nbsp; Address : 
-                        <input type="text" placeholder="Service Provider Address" name="" id="" value="<?php echo  ""; ?>" disabled>
+                        <input type="text" placeholder="Address" name="" id="" value="<?php echo  ""; ?>" disabled>
                     </p> 
                 </div>
-                <div class="details">
+                <div class="details-update">
                     <p>
-                        &nbsp; Accommodation Type : 
-                        <input type="text" placeholder="Service Provider Acc.Type" name="" id="" value="<?php echo "" ; ?>" disabled>
+                        &nbsp; Acc. Type : 
+                        <input type="text" placeholder="Type" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
-                <div class="details">
+                <div class="details-update">
                     <p>
                         &nbsp; With Food : 
                         <input type="text" placeholder="With food" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
-                <div class="details">
+                <div class="details-update">
                     <p>
                         &nbsp; Price per room : 
                         <input type="text" placeholder="Price per room" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
                 <button type="submit" name="submit">Add Services</button>
+        </div>
         </div>
     </div>
 </div>

@@ -95,6 +95,7 @@ require_once("../inc/header.php");
             </div>
             <div class="Dashboard-bottom">
                 <button class="active" onclick="location.href = 'sp-profile.php';">My Profile</button>
+                <button onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
                 <button onclick="location.href = 'sp-serviceDetails.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-profile.php';">Update Availability</button>
