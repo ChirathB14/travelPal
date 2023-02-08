@@ -1,7 +1,7 @@
 <?php require_once('../../inc/connection.php')?>
 
 <?php
-$title = "Profiles - Tour Guide";
+$title = "Profiles - Accommodation Provider";
 require_once("../../inc/header.php");
 ?>
 
@@ -10,7 +10,7 @@ require_once("../../inc/header.php");
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profiles-view.css">
 </head>
-
+    
     <!-- Profile page content -->
     <div class="page-content">
         <!-- Dashboard - Tourist -->
@@ -20,18 +20,18 @@ require_once("../../inc/header.php");
                 <h4>M.S.SILVA</h4>
             </div>
             <div class="Dashboard-bottom">
-                <button><a href="sm-myprofile.php">My Profile</a></button>
-                <button><a href="sm-updateprofile.php">Update Profile</a></button>
-                <button><a href="">Generate Report</a></button>
-                <button><a href="">Create Tour Plan</a></button>
-                <button><a href="SM-AccProvider.html">Accommodation Provider</a></button>
-                <button><a href="SM-VehicleProvider.html">Vehicle Provider</a></button>
-                <button class="active"><a href="SM-TourGuide.html">Tourist Guide</a></button>
-                <br> <br> <br>
+                <button onclick="location.href = 'sm-myprofile.php';">My Profile</button>
+                <button onclick="location.href = 'sm-updateprofile.php';">Update Profile</button>
+                <button onclick="location.href = 'sm-GenerateReport.php';">Generate Report</button>
+                <button onclick="location.href = 'sm-CreateTourPlan.php';">Create Tour Plan</button>
+                <button class="active" onclick="location.href = 'sm-AP.php';">Accommodation Provider</button>
+                <button onclick="location.href = 'sm-VP.php';">Vehicle Provider</button>
+                <button onclick="location.href = 'sm-TG.php';">Tourist Guide</button>
+                <br><br><br>
             </div>
         </div>
 
-        <!-- Tour Guide profile view -->
+        <!-- Accommodation Provider profile view -->
         <div class="profileViewContent">
             <div class="profileView">
                 <input class="id" type="text" placeholder="XXX">
@@ -42,9 +42,8 @@ require_once("../../inc/header.php");
                     <input type="text" placeholder="Phone Number">
                     <input type="text" placeholder="Email">
                     <input type="text" placeholder="Registration Number">
-                    <input type="text" placeholder="Experience">
-                    <input type="text" placeholder="Price per day">
-                    <input type="text" placeholder="Languages">
+                    <input type="text" placeholder="Address">
+                    <input type="text" placeholder="Price per room">
                 </form>
             </div>
     
@@ -57,9 +56,8 @@ require_once("../../inc/header.php");
                     <input type="text" placeholder="Phone Number">
                     <input type="text" placeholder="Email">
                     <input type="text" placeholder="Registration Number">
-                    <input type="text" placeholder="Experience">
-                    <input type="text" placeholder="Price per day">
-                    <input type="text" placeholder="Languages">
+                    <input type="text" placeholder="Address">
+                    <input type="text" placeholder="Price per room">
                 </form>
             </div>
     
@@ -72,14 +70,12 @@ require_once("../../inc/header.php");
                     <input type="text" placeholder="Phone Number">
                     <input type="text" placeholder="Email">
                     <input type="text" placeholder="Registration Number">
-                    <input type="text" placeholder="Experience">
-                    <input type="text" placeholder="Price per day">
-                    <input type="text" placeholder="Languages">
+                    <input type="text" placeholder="Address">
+                    <input type="text" placeholder="Price per room">
                 </form>
             </div>
         </div>
     </div>
-
 
 <?php require_once("../../inc/footer.php");?>
 
