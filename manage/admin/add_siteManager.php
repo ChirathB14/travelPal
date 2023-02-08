@@ -81,88 +81,88 @@ if (isset($_POST["submit"])) {
         }
     }
 }
-
-
-
-
-
 ?>
 
-<?php require_once('../../inc/connection.php') ?>
-
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+$title = "Add SiteManager";
+require_once('../../inc/header.php') 
+?>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add SiteManager | TravelPal</title>
-
     <!-- CSS Import -->
-    <link rel="stylesheet" href="../../css/admin-styles.css">
-    <!--<link rel="stylesheet" href="../../css/styles.css"> -->
-    <!-- <link rel="stylesheet" href="../../css/add_siteManager.css"> -->
-
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/main.css" type="text/css">
 </head>
 
-<body>
-
-    <?php
-    require_once("../../inc/header.php");
-    ?>
-    <div class="body">
-        <div class="dashboard">
-            <img src="../../assets/profile.png" alt="">
-            <p><?php echo $_SESSION['firstName']; ?></p>
-            <button class="select" onclick="location.href = 'admin_profile.php';">SITE MANAGER</button>
-            <button class="nav" onclick="location.href = 'admin_tourist.php';">TOURIST</button>
-            <button class="nav" onclick="location.href = 'accomodation_provider.php';">ACCOMODATION PROVIDER</button>
-            <button class="nav" onclick="location.href = 'vehicle_provider.php';">VEHICLE PROVIDER</button>
-            <button class="nav" onclick="location.href = 'tourist_guide.php';">TOURIST GUIDE</button>
-        </div>
-        <div class="content">
-            <h2>Site Manager</h2>
-            <div class="container">
-                <form action="add_siteManager.php" method="post">
-
-                    <div class="input-field-input">
-                        <label>First Name</label>
-                        <input type="text" placeholder="Enter first name" name="firstName" required style="color:black;">
-                    </div>
-                    <div class="input-field-input">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="Enter last name" name="lastName" required style="color:black;">
-                    </div>
-                    <div class="input-field-input">
-                        <label>Email</label>
-                        <input type="text" placeholder="Enter your email" name="email" required style="color:black;">
-                    </div>
-                    <div class="input-field-input">
-                        <label>Password</label>
-                        <input type="password" placeholder="Enter password" name="password" required style="color:black;">
-                    </div>
-                    <div class="input-field-input">
-                        <label>Conform Password</label>
-                        <input type="password" placeholder="Enter password" name="confirm_password" required style="color:black;">
-                    </div>
-                    <button class="nextBtn" type="submit" name="submit">
-                        <span class="btnText">Submit</span>
-                    </button>
-                </form>
-
+<div class="body">
+    <!-- Profile page content -->
+    <div class="page-content">
+        <!-- Dashboard - Service Provider -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="../../assets/profile.png" alt="Profile pic">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
             </div>
+            <div class="Dashboard-bottom">
+                <button class="active" onclick="location.href = 'admin_profile.php';">Site Manager</button>
+                <button onclick="location.href = 'admin_tourist.php';">Tourist</button>
+                <button onclick="location.href = 'accomodation_provider.php';">Accommodation Provider</button>
+                <button onclick="location.href = 'vehicle_provider.php';">Vehicle Provider</button>
+                <button onclick="location.href = 'tourist_guide.php';">Tourist Guide</button>
+                <br> <br> <br> <br> <br>
+            </div> 
+        </div>
 
+        
+    <div class="content">
+        <?php
+        if (!empty($errors)) {
+            display_errors($errors);
+        }
+        ?>
 
+        <h2>Site Manager</h2>
+        <div class="profile-content" style="height: 300px">
+        <form action="add_siteManager.php" class="" method='post'>
+            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <div class="details-update" style="width:300px">
+                    <p>
+                        &nbsp; First Name : 
+                        <input type="text" name="first_name" id="" placeholder="Enter first name" required>
+                    </p> 
+                </div>
+                <div class="details-update" style="width:300px">
+                    <p>
+                        &nbsp; Last Name : 
+                        <input type="text" name="last_name" id="" placeholder="Enter last name" required>
+                    </p> 
+                </div>
+                <div class="details-update" style="width:300px">
+                    <p>
+                        &nbsp; Email : 
+                        <input type="email" name="email" id="" placeholder="Enter your email" required>
+                    </p> 
+                </div>
+                <div class="details-update" style="width:300px">
+                    <p>
+                        &nbsp; Password : 
+                        <input type="password" id="" name="password" placeholder="Enter password" required>
+                    </p> 
+                </div>
+                <div class="details-update" style="width:300px">
+                    <p>
+                        &nbsp; Confirm Password : 
+                        <input type="password" id="" name="confirm_password" placeholder="Enter password" required  style="width:140px">
+                    </p> 
+                </div>
+                <button type="submit" name="submit" style="margin-left:30px">Submit</button>
+        </form>
         </div>
     </div>
     </div>
-    <div class="footer">
-        <hr>
-        <p>© 2022 TRAVEL PAL ALL RIGHTS RESERVED</p>
-    </div>
-</body>
+</div>
 
-</html>
+<?php
+require_once("../../inc/footer.php");
+?>
+
+<?php mysqli_close($connection); ?>
