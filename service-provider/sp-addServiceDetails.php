@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('inc/connection.php');
+require_once('../inc/connection.php');
 ?>
 
 <?php
@@ -24,7 +24,7 @@ require_once("../inc/header.php");
             </div>
             <div class="Dashboard-bottom">
                 <button onclick="location.href = 'sp-profile.php';">My Profile</button>
-                <button class="active" onclick="location.href = 'sp-serviceDetails.php';">Service Details</button>
+                <button class="active" onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
                 <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
                 <br> <br> <br> <br> <br>
@@ -32,10 +32,12 @@ require_once("../inc/header.php");
         </div>
 
         <!-- Profile -->
-        <div class="profile-content">
-            <h2>No services added</h2>
-            <br><br>
-            <button type="submit" name="submit"><a href="sp-serviceDetails.php">Add Services</a></button>
+        <div class="content">
+            <div class="profile-content">
+                <h2>No services added</h2>
+                <br><br>
+                <button type="submit" name="submit"><a href="sp-serviceDetails.php">Add Services</a></button>
+            </div>
         </div>
     </div>
 
