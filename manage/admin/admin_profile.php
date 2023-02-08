@@ -38,6 +38,7 @@ while ($user = mysqli_fetch_assoc($users)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/admin/adminstyle.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -63,12 +64,11 @@ while ($user = mysqli_fetch_assoc($users)) {
     <div class="body">
         <div class="dashboard">
             <img src="../../assets/profile.png" alt="">
-            <p><?php echo $_SESSION['firstName']; ?></p>
             <button class="select" onclick="location.href = 'admin_profile.php';">SITE MANAGER</button>
-            <button class="nav" onclick="location.href = 'sm-updateprofile.php';">TOURIST</button>
-            <button class="nav" onclick="location.href = 'sm-GenerateReport.php';">ACCOMODATION PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-CreateTourPlan.php';">VEHICLE PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-AP.php';">TOURIST GUIDE</button>
+            <button class="nav" onclick="location.href = 'admin_tourist.php';">TOURIST</button>
+            <button class="nav" onclick="location.href = 'accomodation_provider.php';">ACCOMODATION PROVIDER</button>
+            <button class="nav" onclick="location.href = 'vehicle_provider.php';">VEHICLE PROVIDER</button>
+            <button class="nav" onclick="location.href = 'tourist_guide.php';">TOURIST GUIDE</button>
             
         </div>
         <div class="content">

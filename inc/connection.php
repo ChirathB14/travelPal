@@ -1,8 +1,8 @@
 <?php
 
-$dbhost = 'database';
+$dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = $_ENV['MYSQL_ROOT_PASSWORD'];
+$dbpass = '';
 $dbname = 'travelpal_db';
 
 $connection = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
