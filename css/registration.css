@@ -1,0 +1,52 @@
+body {
+    background-image: url(../assets/bgRegister.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh;
+}
+
+.new-user {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.new-user a {
+    text-decoration: underline;
+    text-align: center;
+    margin: 12px 0px 5px 90px;
+    font-size: 12px;
+}
+
+/* The container must be positioned relative: */
+.select {
+    position: relative;
+}
+  
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    color: var(--accentcolor);
+    background-color: var(--primarycolor);
+    cursor: pointer;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+  
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+  
+.select-items div:hover, .same-as-selected {
+    background-color: var(--secondarycolor);
+}

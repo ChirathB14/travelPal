@@ -1,0 +1,149 @@
+/* Add Service Details styles */
+.services-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #00357A;
+    opacity: 95%;
+    margin: 60px 200px 60px 200px;
+    width: 90%;
+}
+
+.services-container h2 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.services-sub-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+}
+
+.services-sub-container .input-elements {
+    padding: 0px 25px 20px 25px;
+}
+
+.preference {
+    display: flex;
+    flex-direction: row;
+}
+
+.preference input[type='checkbox'] {
+    margin: 0px 5px 0px 105px;
+}
+
+.preference p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.preference h6 {
+    margin-top: 12px;
+}
+
+.form-bottom { 
+    display: flex;
+    flex-direction: row;
+}
+
+.services-container button {
+    margin-left: 25%;
+}
+
+/* Customize tour plan page styles */
+.customize-page-content {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../assets/logo.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    align-items: center;
+    opacity: 80%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 200px 30px 200px;
+}
+
+.customize-page-content .services-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: #0b3770;
+    opacity: 80%;
+    padding: 50px;
+    margin: 30px 200px 30px 200px;
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox-items1 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 250px 0px 0px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    width: 230px;
+}
+
+.nextbtn {
+    width: 8%;
+    opacity: 70%;
+    margin: 10px 10px 10px 650px;
+}
+
+.checkbox-items {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 120px 0px 0px;
+}
+
+.proceedbtn {
+    width: 28%;
+    opacity: 90%;
+    margin: 10px 10px 10px 400px;
+}
+
+/* Enter tour details page styles */
+.input-item {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    width: 600px;
+}
+
+.backbtn {
+    width: 12%;
+    opacity: 70%;
+    margin: 10px 10px 10px 10px;
+}
+
+.cancelbtn {
+    background-color: rgb(134, 2, 2);
+    opacity: 70%;
+    width: 280px;
+    margin: 10px 10px 10px 380px;
+}
+
+/* Payment successful page styles */
+.body-successful {
+    align-items: center;
+    text-align: center;
+    margin: 60px 0px 60px 0px;
+}
+
+.body-successful img {
+    width: 12%;
+    height: auto;
+}

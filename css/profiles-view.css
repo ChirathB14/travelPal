@@ -1,0 +1,59 @@
+/* Profile page styles */
+/* Profile styles */
+.details input::placeholder {
+    color: var(--primarycolor);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.details img {
+    height: 60%;
+    width: auto;
+    margin-top: 2px;
+}
+
+.profileViewContent{
+    display: flex;
+    margin: 35px;
+}
+
+.profileView {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(198, 200, 218);
+    margin: 10px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileView .id {
+    background-color: #D10E0E;
+    opacity: 70%;
+    width: 40px;
+    height: 30px;
+    margin: 4px 10px 2px 250px;
+}
+
+.profileView .id::placeholder {
+    color: var(--accentcolor);
+}
+
+.profileView img {
+    width: 30%;
+    height: auto;
+    margin: 10px 5px 10px 5px;
+}
+
+.profileView input {
+    background-color: var(--accentcolor); 
+    width: 90%;
+    height: 30px;
+    margin: 4px 12px 4px 12px;
+    padding: 10px;
+    border: none;
+}
+
+.profileView input::placeholder {
+    color: var(--primarycolor);
+}

@@ -5,7 +5,7 @@ require_once('../inc/functions.php');
 
 //checking if the user is logged in
 if (!$_SESSION['user_id']) {
-    header('Location: t-login.php');
+    header('Location: login.php');
 }
 
 $errors = array();
@@ -13,7 +13,9 @@ $user_id = '';
 $first_name = '';
 $last_name = '';
 $email = '';
-$password = '';
+$cur_password = '';
+$new_password = '';
+$re_new_password = '';
 
 if (isset($_SESSION['user_id'])) {
     //getting the user information
@@ -44,31 +46,61 @@ if (isset($_SESSION['user_id'])) {
 }
 
 if (isset($_POST['submit'])) {
-
-    $user_id = $_POST['user_id'];
-    $password = $_POST['password'];
+    $user_id = mysqli_real_escape_string($connection, trim($_POST['user_id']));
+    $cur_password = mysqli_real_escape_string($connection, trim($_POST['cur_password']));
+    $new_password = mysqli_real_escape_string($connection, trim($_POST['new_password']));
+    $re_new_password = mysqli_real_escape_string($connection, trim($_POST['re_new_password']));
 
     //checking required fields
-    $req_fields = array('user_id', 'password');
+    $req_fields = array('user_id', 'cur_password', 'new_password', 're_new_password');
     $errors = array_merge($errors, check_req_fields($req_fields));
 
     //checking maxlength
-    $max_len_fields = array('password' => 40);
+    $max_len_fields = array('cur_password' => 40, 'new_password' => 40, 're_new_password' => 40);
     $errors = array_merge($errors, check_max_length($max_len_fields));
 
+    //checking minimum password length
+    if (strlen($new_password) < 8) {
+        array_push($errors, "New Password must be at least 8 character long");
+    }
+
+    //checking password match
+    if ($new_password !== $re_new_password) {
+        array_push($errors, "New Passwords does not match");
+    }
+
+    $cur_password = sha1($cur_password);
+    //checking old password is correct
+    $query = "SELECT * 
+            FROM Users u, Tourist t 
+            WHERE u.userID = {$user_id} 
+                    AND u.userID = t.userID
+                    AND u.password = '{$cur_password}'
+            LIMIT 1";
+    $result_set = mysqli_query($connection, $query);
+
+    if ($result_set) {
+        if (mysqli_num_rows($result_set) != 1) {
+            //current password is incorrect
+            $errors[] = "Current password is incorrect.";
+        }
+    } else {
+        //query unsuccessful
+        $errors[] = "DB Query failed. Please try again.";
+    }
+
     if (empty($errors)) {
-        //adding new record
-        $password = mysqli_real_escape_string($connection, $_POST['password']);
-        $hashed_password = sha1($password);
+
+        $new_hashed_password = sha1(mysqli_real_escape_string($connection, $new_password));
 
         $query = "UPDATE Users 
-                  SET `password` = '{$hashed_password}'
+                  SET `password` = '{$new_hashed_password}'
                   WHERE userID = {$user_id} LIMIT 1";
 
         $result = mysqli_query($connection, $query);
 
         if ($result) {
-            //query succes..redirecting to users page
+            //query success..redirecting to users page
             header('Location: t-profile.php?pw_updated=true');
         } else {
             $errors[] = 'Failed to update the password.';
@@ -82,57 +114,91 @@ if (isset($_POST['submit'])) {
 $title = "Update Password";
 require_once("../inc/header.php");
 ?>
-<main>
-    <h1>Update Profile</h1>
-    <p>
-        <a href="t-profile.php"> MY PROFILE</a>
-        <a href="t-update-profile.php"> UPDATE PROFILE</a>
-        <a href="#t-tours.php"> VIEW TOURS</a>
-    </p>
 
-    <?php
+<!-- Profile page content -->
+<div class="page-content">
+    <!-- Dashboard - Tourist -->
+    <div class="Dashboard">
+        <div class="Dashboard-top">
+            <img src="../assets/profile.png" alt="Profile pic">
+            <h4><?php echo $_SESSION['full_name']; ?></h4>
+        </div>
+        <div class="Dashboard-bottom">
+            <button onclick="location.href = 't-profile.php';">My Profile</button>
+            <button class="active" onclick="location.href = 't-update-profile.php';">Update Profile</button>
+            <button onclick="location.href = 't-view-tours.php';">View Tours</button>
+            <br> <br> <br> <br> <br>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <?php
         if (!empty($errors)) {
             display_errors($errors);
         }
         ?>
 
-    <form action="t-change-password.php" class="userform" method='post'>
-        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-        <p>
-            <label for="">First name:</label>
-            <input type="text" name="first_name" id="" <?php echo 'value="' . $first_name . '"'; ?> disabled>
-        </p>
-        <p>
-            <label for="">Last name:</label>
-            <input type="text" name="last_name" id="" <?php echo 'value="' . $last_name . '"'; ?> disabled>
-        </p>
-        <p>
-            <label for="">Email address:</label>
-            <input type="email" name="email" id="" <?php echo 'value="' . $email . '"'; ?> disabled>
-        </p>
-        <p>
-            <label for="">Password:</label>
-            <input type="password" name="password" id="password">
-        </p>
-        <p>
-            <label for="">Show Password:</label>
-            <input type="checkbox" name="showpassword" id="showpassword" style="width:20px;height:20px">
-        </p>
-        <p>
-            <label for="">&nbsp;</label>
-            <button type="submit" name="submit">Update Password</button>
-        </p>
+        <h2>Update Profile</h2>
+        <div class="profile-content">
+            <form action="t-change-password.php" class="userform" method='post' style="width: 80%;">
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <div class="details-update">
+                    <p>
+                        &nbsp; First Name :
+                        <input type="text" name="first_name" id="" value="<?php echo $first_name; ?>" disabled>
+                    </p>
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Last Name :
+                        <input type="text" name="last_name" id="" value="<?php echo $last_name; ?>" disabled>
+                    </p>
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Email :
+                        <input type="email" name="email" id="" value="<?php echo $email; ?>" disabled>
+                    </p>
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Current Password :
+                        <input style="width: 80px;" id="cur_password" name="cur_password" type="password" placeholder="********" required>
+                    </p>
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; New Password :
+                        <input style="width: 100px;" id="new_password" name="new_password" type="password" placeholder="********" required>
+                    </p>
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Retype New Password :
+                        <input style="width: 100px;" id="re_new_password" name="re_new_password" type="password" placeholder="********" required>
+                    </p>
+                </div>
+                <div class="details-showpassword">
+                    <p>
+                        <input type="checkbox" name="showpassword" id="showpassword" style="width:15px;height:15px"> Show Password
+                    </p>
+                </div>
+                <button type="submit" name="submit">Update Password</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-    </form>
-</main>
+
 <script src="../js/jquery.js"></script>
 <script>
-    $(document).ready(function () {
-        $('#showpassword').click(function () {
+    $(document).ready(function() {
+        $('#showpassword').click(function() {
             if ($('#showpassword').is(':checked')) {
-                $('#password').attr('type', 'text');
+                $('#cur_password').attr('type', 'text') && $('#new_password').attr('type', 'text') && $('#re_new_password').attr('type', 'text');
             } else {
-                $('#password').attr('type', 'password');
+                $('#cur_password').attr('type', 'password') && $('#new_password').attr('type', 'password') && $('#re_new_password').attr('type', 'password');
             }
         });
     });

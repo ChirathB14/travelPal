@@ -1,0 +1,52 @@
+body {
+    background-image: url(../assets/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30vh;
+    margin: 90px;
+}
+
+.password {
+    display: flex;
+    flex-direction: row;
+    color: var(--accentcolor);   
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 10px;
+}
+
+.new-user {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.new-user a {
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 10px;
+}
+
+.registerAs {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto 100px auto;
+}
+
+.register-as {
+    margin: 20px auto 60px auto;
+}
+
+.register-as button {
+    align-items: center;
+    width: 300px;
+    font-size: 16px;
+}
