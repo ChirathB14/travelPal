@@ -16,11 +16,18 @@ $title = "Password Reset";
         <div class="password-content">
             <h2>Reset Password</h2>
             <div class="input-elements">
-                <p>New Password</p>
-                <input type="password" name="">
+                <p>Email</p>
+                <input type="email" name="">
                 <br>
-                <p>Confirm Password</p>
-                <input type="password" name="">
+                <p>OTP</p>
+                <div class="otp">
+                    <input type="number" name="">
+                    <input type="number" name="">
+                    <input type="number" name="">
+                    <input type="number" name="">
+                    <input type="number" name="">
+                    <input type="number" name="">
+                </div>
             </div>
             <button type="submit">Next</button>
         </div>
