@@ -65,10 +65,10 @@ while ($user = mysqli_fetch_assoc($users)) {
         <div class="dashboard">
             <img src="../../assets/profile.png" alt="">
             <button class="select" onclick="location.href = 'admin_profile.php';">SITE MANAGER</button>
-            <button class="nav" onclick="location.href = 'admin_tourist.php';">TOURIST</button>
-            <button class="nav" onclick="location.href = 'accomodation_provider.php';">ACCOMODATION PROVIDER</button>
-            <button class="nav" onclick="location.href = 'vehicle_provider.php';">VEHICLE PROVIDER</button>
-            <button class="nav" onclick="location.href = 'tourist_guide.php';">TOURIST GUIDE</button>
+            <button onclick="location.href = 'admin_tourist.php';">TOURIST</button>
+            <button onclick="location.href = 'accomodation_provider.php';">ACCOMODATION PROVIDER</button>
+            <button onclick="location.href = 'vehicle_provider.php';">VEHICLE PROVIDER</button>
+            <button onclick="location.href = 'tourist_guide.php';">TOURIST GUIDE</button>
             
         </div>
         <div class="content">
