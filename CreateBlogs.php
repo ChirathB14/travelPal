@@ -150,7 +150,7 @@ require_once("./inc/header.php");
                 <div class="form-elements">
                     <input type="hidden" name="userID" value="<?php echo $_SESSION['user_id']; ?>">
                     <input type="text" name="subject" placeholder="Article Heading" <?php echo 'value="' . $subject . '"'; ?>>
-                    <textarea name="content" cols="30" rows="10" placeholder="Article Body"> <?php echo $content; ?></textarea>
+                    <textarea name="content" cols="30" rows="10" placeholder="Article Body"> <?php echo $content ; ?></textarea>
                     <input type="file" placeholder="Add Photos" name="blogImage" id="blogImage">
                     <p><strong>Note:</strong> Only .jpg, .jpeg, .png formats allowed to a max size of 5 MB.</p>
                     <button type="submit" name="submit">Publish</button>

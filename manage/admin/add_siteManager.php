@@ -117,12 +117,11 @@ if (isset($_POST["submit"])) {
         <div class="dashboard">
             <img src="../../assets/profile.png" alt="">
             <p><?php echo $_SESSION['firstName']; ?></p>
-            <button class="select" onclick="location.href ='admin_profile.php';">SITE MANAGER</button>
-            <button class="nav" onclick="location.href = 'sm-updateprofile.php';">TOURIST</button>
-            <button class="nav" onclick="location.href = 'sm-GenerateReport.php';">ACCOMODATION PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-CreateTourPlan.php';">VEHICLE PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-AP.php';">TOURIST GUIDE</button>
-
+            <button class="select" onclick="location.href = 'admin_profile.php';">SITE MANAGER</button>
+            <button class="nav" onclick="location.href = 'admin_tourist.php';">TOURIST</button>
+            <button class="nav" onclick="location.href = 'accomodation_provider.php';">ACCOMODATION PROVIDER</button>
+            <button class="nav" onclick="location.href = 'vehicle_provider.php';">VEHICLE PROVIDER</button>
+            <button class="nav" onclick="location.href = 'tourist_guide.php';">TOURIST GUIDE</button>
         </div>
         <div class="content">
             <h2>Site Manager</h2>

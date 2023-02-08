@@ -48,7 +48,6 @@ while ($user = mysqli_fetch_assoc($users)) {
     <!-- CSS Import -->
     <link rel="stylesheet" href="../../css/admin-styles.css">   
 
-    <link rel="stylesheet" href="../../css/admin/adminstyle.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -61,6 +60,7 @@ require_once("../../inc/header.php");
     <div class="body">
         <div class="dashboard">
             <img src="../../assets/profile.png" alt="">
+            <p><?php echo $_SESSION['firstName']; ?></p>
             <button class="select" onclick="location.href = 'admin_profile.php';">SITE MANAGER</button>
             <button class="nav" onclick="location.href = 'admin_tourist.php';">TOURIST</button>
             <button class="nav" onclick="location.href = 'accomodation_provider.php';">ACCOMODATION PROVIDER</button>
@@ -69,7 +69,7 @@ require_once("../../inc/header.php");
             
         </div>
         <div class="content">
-            <h1>SITE MANAGER</h1>
+            <h1>TOURIST GUIDE</h1>
             <table>
             <tr>
                 <th>Name</th>
@@ -80,10 +80,7 @@ require_once("../../inc/header.php");
             </tr>
             <?php echo $sitemanager_list; ?>   
         </table>
-        <br>
             
-        <a href="add_siteManager.php">+ Site Manager</a>   
-
         </div>
     </div>
     </div>
