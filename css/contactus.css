@@ -81,9 +81,13 @@
 
 .ourdetails {
     padding: 40px;
-    width: auto;
+    width: 250px;
 }
 
-.contact h4 p{
+.contact h4 p {
     margin-left: 400px;
+}
+
+.contact i{
+    padding: 10px;
 }

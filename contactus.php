@@ -26,12 +26,12 @@ require_once("./inc/header.php");
             <br> <h4>0712345678</h4>
         </div>
         <hr>
-        <div class="ourdetails"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><h3>Email</h3>
-            <br> <h4>silva@gmail.com</h4>
-        </div>
-        <hr>
         <div class="ourdetails"><i class="fa fa-home" aria-hidden="true"></i><br><h3>Address</h3>
             <br> <h4>10,Park lane,Colombo 3</h4>
+        </div>
+        <hr>
+        <div class="ourdetails"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><h3>Email</h3>
+            <br> <h4>silva@gmail.com</h4>
         </div>
     </div>
 

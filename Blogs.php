@@ -58,7 +58,7 @@ require_once("./inc/header.php");
     if($blog_list){
         echo $blog_list; 
     }else {
-        echo "No Blogs Yet!";
+        echo "<center>No Blogs Yet!</center>";
     }
     ?>
 
