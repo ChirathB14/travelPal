@@ -357,7 +357,6 @@ p.error{
     background-color: red;
     color: white;
     padding: 10px;
-    margin: 10px;
     text-align: left;
     font-size: small;
 }
@@ -366,7 +365,6 @@ p.info{
     background-color: green;
     color: white;
     padding: 10px;
-    margin: 10px;
     width: 100%;
 }
 

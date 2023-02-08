@@ -10,6 +10,7 @@ require_once("../../inc/header.php");
         <link rel="stylesheet" href="/travelPal/css/form.css" type="text/css">
 </head>
 
+<form action="">
 <div class="page-content">
     <div class="services-container">
         <h2>Approve Service Details</h2>
@@ -50,6 +51,7 @@ require_once("../../inc/header.php");
         <br>
     </div>
 </div>
+</form>
 
 <?php require_once("../../inc/footer.php");?>
 
