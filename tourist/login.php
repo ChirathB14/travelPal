@@ -74,6 +74,7 @@ require_once("../inc/header.php");
 ?>
 
 <head>
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/login.css">
 </head>
 
