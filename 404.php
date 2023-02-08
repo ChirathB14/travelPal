@@ -9,7 +9,7 @@ $title = "404 Page not Found - TravePal";
 
 <body>
     <div class="error-content">
-        <img src="/project/assets/error.png" alt="error">
+        <img src="/travelPal/assets/error.png" alt="error">
         <div class="error-page">
             <h1>Error 404! Page Not Found!</h1>
             <p>Page you're looking is not found.<a href="index.php"> Go back to home</a></p>

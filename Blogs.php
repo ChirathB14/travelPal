@@ -45,7 +45,7 @@ require_once("./inc/header.php");
 </head>
 
 <!-- Blogs page content -->
-<div class="page-content">
+<div class="page-content" style="justify-content:center;align-items:center;">
     <div class="Blogs-Title">
         <div class="Blogs-TitleContent">
             <h2>Welcome to the Travel Pal Blog!</h2>
