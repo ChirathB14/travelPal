@@ -1,6 +1,7 @@
 <?php session_start();?>
-<?php require_once('../inc/connection.php')?>
-<?php if(!isset($_SESSION['userID'])){
+<?php require_once('../../inc/connection.php')?>
+
+<?php if(!isset($_SESSION['user_id'])){
     header('Location: login.php');
 }
 $errors = array();
@@ -10,9 +11,9 @@ $last_name = '';
 $email = '';
 $password = '';
 
-if (isset($_SESSION['userID'])) {
+if (isset($_SESSION['user_id'])) {
     //getting the user information
-    $user_id = mysqli_real_escape_string($connection, $_SESSION['userID']);
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
     $query = "SELECT * 
               FROM users u, sitemanager s
               WHERE u.userID = {$user_id} 
@@ -102,70 +103,78 @@ if (isset($_POST['submit'])) {
 
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="header">
-        <div class="navigationbar">
-            <div class="nav-Logo">
-                <img src="css/logo tpal.png" alt="TRAVELPal">
-            </div>
-            <div class="menu">
-                <button class="nav">HOME</button>
-                <button class="nav">TOUR PLAN</button>
-                <button class="nav">CONTACT US</button>
-                <button class="nav">BLOGS</button>
-                <button class="nav-select">PROFILE</button>
-                <button class="logout-btn" onclick="location.href = 'logout.php';" ><i class="fa fa-user fa-lg" aria-hidden="true"></i>LOG OUT</button>
-            </div>            
-        </div>
-        <div class="navigationbarfoot">
-            <hr>  
-        </div>    
-    </div>
-    <div class="body">
-        <div class="dashboard">
-            <img src="css/profile.png" alt="">
-            <p><?php echo $_SESSION['firstName']; ?></p>
-            <button class="select" onclick="location.href = 'sm-myprofile.php';">MY PROFILE</button>
-            <button class="nav" onclick="location.href = 'sm-updateprofile.php';">UPDATE PROFILE</button>
-            <button class="nav" onclick="location.href = 'sm-GenerateReport.php';">GENERATE REPORT</button>
-            <button class="nav" onclick="location.href = 'sm-CreateTourPlan.php';">CREATE TOUR PLAN</button>
-            <button class="nav" onclick="location.href = 'sm-AP.php';">ACCOMMODATION PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-VP.php';">VEHICLE PROVIDER</button>
-            <button class="nav" onclick="location.href = 'sm-TG.php';">TOURIST GUIDE</button>
-        </div>
-        <div class="content">
-            <h1>PROFILE</h1>
-            <table class="table">
-                <tr class="row">
-                    <td><?php echo "YOUR ID : " . $user_id;?></td>
-                </tr>
-                <tr class="row">
-                    <td><?php echo "FIRST NAME : " . $first_name;?></td>
-                </tr>
-                <tr class="row">
-                    <td><?php echo "LAST NAME : " . $last_name;?></td>
-                </tr>
-                <tr class="row">
-                    <td><?php echo "EMAIL : " . $email;?></td>
-                </tr>
-            </table>
 
+<?php
+$title = "Site Manager-Profile";
+require_once("../../inc/header.php");
+?>
+
+<head>
+        <link rel="stylesheet" href="/travelPal/css/main.css" type="text/css">
+
+        <!-- Disable input profile details in profile pages -->
+        <script lang="javascript">
+        function disable() {
+          document.querySelectorAll('input').forEach(element => element.disabled = true);
+        }
+        </script>
+</head>
+
+    <div class="body">
+        <!-- Profile page content -->
+        <div class="page-content">
+        <!-- Dashboard - Site Manager -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="/travelPal/assets/Profile.png" alt="">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button class="active" onclick="location.href = 'sm-myprofile.php';">My Profile</button>
+                <button onclick="location.href = 'sm-updateprofile.php';">Update Profile</button>
+                <button onclick="location.href = 'sm-GenerateReport.php';">Generate Report</button>
+                <button onclick="location.href = 'sm-CreateTourPlan.php';">Create Tour Plan</button>
+                <button onclick="location.href = 'sm-AP.php';">Accommodation Provider</button>
+                <button onclick="location.href = 'sm-VP.php';">Vehicle Provider</button>
+                <button onclick="location.href = 'sm-TG.php';">Tourist Guide</button>
+            </div>
+        </div>
+
+        <div class="profile">
+            <?php
+            if (isset($_GET['profile_updated'])) {
+                echo '<p class="info-1">Profile updated successfully</p>';
+            }
+            ?>
+            <h2>Profile</h2>
+
+            <div class="profile-content">
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Site Manager Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Site Manager First name" disabled value="<?php echo "FIRST NAME : " . $first_name; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Site Manager Last Name" disabled value="<?php echo "LAST NAME : " . $last_name; ?>"> 
+                    </p> 
+                </div>
+                <div  class="details">
+                    <p>
+                        <input type="text" placeholder="Site Manager Email" disabled value="<?php echo "EMAIL : " . $email; ?>"> 
+                    </p> 
+                </div>
+            </div>
+            <br>
+        </div>
         </div>
     </div>
-    <div class="footer">
-        <hr>
-        <p>© 2022 TRAVEL PAL ALL RIGHTS RESERVED</p>
-    </div>
-</body>
-</html>
+
+<?php require_once("../../inc/footer.php");?>
+
+<?php mysqli_close($connection); ?>

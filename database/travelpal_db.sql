@@ -43,13 +43,13 @@ CREATE TABLE `Accomodation` (
 -- Table structure for table `Blog`
 --
 
-CREATE TABLE `Blog` (
-  `blogID` int(11) NOT NULL,
-  `subject` varchar(30) NOT NULL,
-  `content` varchar(500) NOT NULL,
-  `writtenDate` date NOT NULL,
-  `userID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- CREATE TABLE `Blog` (
+--   `blogID` int(11) NOT NULL,
+--   `subject` varchar(30) NOT NULL,
+--   `content` varchar(500) NOT NULL,
+--   `writtenDate` date NOT NULL,
+--   `userID` int(11) NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -535,11 +535,11 @@ ALTER TABLE `Users`
 ALTER TABLE `Accomodation`
   ADD CONSTRAINT `Accomodation_ibfk_1` FOREIGN KEY (`serviceProfileID`) REFERENCES `Service` (`serviceProfileID`);
 
---
--- Constraints for table `Blog`
---
-ALTER TABLE `Blog`
-  ADD CONSTRAINT `Blog_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `Tourist` (`userID`);
+-- --
+-- -- Constraints for table `Blog`
+-- --
+-- ALTER TABLE `Blog`
+--   ADD CONSTRAINT `Blog_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `Tourist` (`userID`);
 
 --
 -- Constraints for table `consists`
@@ -651,6 +651,63 @@ ALTER TABLE `Tourist`
 --
 ALTER TABLE `Transport`
   ADD CONSTRAINT `Transport_ibfk_1` FOREIGN KEY (`serviceProfileID`) REFERENCES `Service` (`serviceProfileID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+--
+-- Database: `travelpal_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog`
+--
+
+CREATE TABLE `blog` (
+  `blogID` int(11) NOT NULL,
+  `subject` varchar(30) NOT NULL,
+  `content` varchar(1000) NOT NULL,
+  `writtenDate` date NOT NULL,
+  `authorName` varchar(102) NOT NULL,
+  `imagePath` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `size` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`blogID`, `subject`, `content`, `writtenDate`, `authorName`, `imagePath`, `type`, `size`) VALUES
+(20, 'a', 'a', '2023-02-05', 'test test', 'blog2.png', 'image/png', '56229'),
+(21, 'Travel Experience to Athens', 'The eyes of the hare are not the same as the eyes of the owl… ~ Greek Proverb HE SAID... Today we were travelling north from Athens to Thessaloniki– by train. Having checked out of Hotel Attalos earlier in the day, we caught a taxi to Larissis Station in the mid-afternoon, made our way to the open-air platform and waited for our train to arrive. The platform soon began to fill with people', '2023-02-05', 'test test', 'gh_user.png', 'image/png', '235855');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`blogID`) USING BTREE;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `blogID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

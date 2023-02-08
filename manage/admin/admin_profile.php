@@ -2,6 +2,12 @@
 session_start();
 require_once('../../inc/connection.php');
 require_once('../../inc/functions.php');
+
+//checking if the user is logged in
+if (!$_SESSION['user_id']) {
+    header('Location: login.php');
+}
+
 $sitemanager_list = '';
 $query = "SELECT * FROM users
 INNER JOIN sitemanager ON users.userID=sitemanager.userID";
@@ -18,8 +24,8 @@ $users = mysqli_query($connection, $query);
 
 while ($user = mysqli_fetch_assoc($users)) {
     $sitemanager_list .= "<tr>";
-    $Name=$user['firstName']." ".$user['lastName'];
-    $sitemanager_list .= "<td>$Name</td>";
+    $FullName=$user['firstName']." ".$user['lastName'];
+    $sitemanager_list .= "<td>$FullName</td>";
     $sitemanager_list .= "<td>{$user['email']}</td>";
     // $user_list .= "<td><a href=''><i class="fa-regular fa-pen-to-square"></i></a></td>";
     // $user_list .= "<td><a href=''><i class="fa-solid fa-trash-can"></i></a></td>";
@@ -28,6 +34,7 @@ while ($user = mysqli_fetch_assoc($users)) {
 
 
 ?>
+
 <?php require_once('../../inc/connection.php')?>
 
 <!DOCTYPE html>
@@ -36,31 +43,21 @@ while ($user = mysqli_fetch_assoc($users)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="../../css/styles.css">
+    <title>Admin_view | TravelPal</title>
+
+    <!-- CSS Import -->
+    <link rel="stylesheet" href="../../css/admin-styles.css">   
+
     <link rel="stylesheet" href="../../css/admin/adminstyle.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <div class="header">
-        <div class="navigationbar">
-            <div class="nav-Logo">
-                <img src="../../assets/logo tpal.png" alt="TRAVELPal">
-            </div>
-            <div class="menu">
-                <button class="nav">HOME</button>
-                <button class="nav">TOUR PLAN</button>
-                <button class="nav">CONTACT US</button>
-                <button class="nav">BLOGS</button>
-                <button class="nav-select">PROFILE</button>
-                <button class="logout-btn" onclick="location.href = 'logout.php';" ><i class="fa fa-user fa-lg" aria-hidden="true"></i>LOG OUT</button>
-            </div>            
-        </div>
-        <div class="navigationbarfoot">
-            <hr>  
-        </div>    
-    </div>
+
+<?php
+require_once("../../inc/header.php");
+?>
     <div class="body">
         <div class="dashboard">
             <img src="../../assets/profile.png" alt="">
@@ -73,7 +70,7 @@ while ($user = mysqli_fetch_assoc($users)) {
         </div>
         <div class="content">
             <h1>SITE MANAGER</h1>
-            <table class="masterlist">
+            <table>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -81,7 +78,7 @@ while ($user = mysqli_fetch_assoc($users)) {
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            <?php echo $sitemanager_list; ?>
+            <?php echo $sitemanager_list; ?>   
         </table>
         <br>
             

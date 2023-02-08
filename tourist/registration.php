@@ -2,6 +2,13 @@
 require_once('../inc/connection.php');
 require_once('../inc/functions.php');
 
+$firstName = '';
+$lastName = '';
+$email = '';
+$password = '';
+$confirmPassword = '';
+$userType = '';
+
 if (isset($_POST['submit'])) {
     $firstName = mysqli_real_escape_string($connection, trim($_POST['firstName']));
     $lastName = mysqli_real_escape_string($connection, trim($_POST['lastName']));
@@ -75,25 +82,31 @@ if (isset($_POST['submit'])) {
                 verify_query($result);
             }
 
-            echo "<p class='info'>You have successfully registered</p>";
+            // echo "<p class='info'>You have successfully registered</p>";
+            header('Location: registration.php?success=yes');
             $firstName = "";
             $lastName = "";
             $email = "";
             
         } else {
-            echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
+            header('Location: registration.php?failed=yes');
+            // echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
         }
     }
 }
 ?>
 
 <?php
-$title = "Login";
+$title = "Registration";
 require_once("../inc/header.php");
 ?>
 
+<head>
+    <link rel="stylesheet" href="../css/registration.css">
+</head>
+
 <body class="registration">
-    <div class="reg">
+    <div class="register">
         <form action="registration.php" method="post">
             <h1>CREATE AN ACCOUNT</h1>
             <?php
@@ -101,22 +114,34 @@ require_once("../inc/header.php");
                     display_errors($errors);
                 }
             ?>
-            <input class="textinput" type="text" name="firstName" id="" placeholder="FIRST NAME" <?php echo 'value="' . $firstName . '"'; ?>>
-            <input class="textinput" type="text" name="lastName" id="" placeholder="LAST NAME" <?php echo 'value="' . $lastName . '"'; ?> >
-            <input class="textinput" type="email" name="email" id="" placeholder="EMAIL" <?php echo 'value="' . $email . '"'; ?> >
-            <input class="textinput" type="password" name="password" id="" placeholder="PASSWORD">
-            <input class="textinput" type="password" name="confirmPassword" id="" placeholder="CONFIRM PASSWORD">
-            <select class="textinput" id="" name="userType">
-                <option value="" disabled selected>REGISTER AS A</option>
-                <option value="tourist">TOURIST</option>
-                <option value="serviceProvider">SERVICE PROVIDER</option>
-            </select>
+            <?php
+            if (isset($_GET['success'])) {
+                echo '<p class="info">You have successfully registered.</p>';
+            }
+            ?>
+            <?php
+            if (isset($_GET['failed'])) {
+                echo "<p class='error'> Failed to add the new record. Error: " .mysqli_error($connection)."</p>";
+            }
+            ?>
+
+        <div class="input-elements">
+            <input type="text" name="firstName" id="" placeholder="  FIRST NAME" <?php echo 'value="' . $firstName . '"'; ?> >
+            <input type="text" name="lastName" id="" placeholder="  LAST NAME" <?php echo 'value="' . $lastName . '"'; ?> >
+            <input type="email" name="email" id="" placeholder="  EMAIL" <?php echo 'value="' . $email . '"'; ?> >
+            <input type="password" name="password" id="" placeholder="  PASSWORD">
+            <input type="password" name="confirmPassword" id="" placeholder="  CONFIRM PASSWORD">
+            <input type="hidden" value="tourist" name="userType">
+        </div>
+
+        <div class="new-user">
             <button type="submit" name="submit">
-                REGISTER
+                Register
             </button>
             <P>
-                ALREADY HAVE AN ACCOUNT? <a href="login.php">Log in</a>
+                <a href="login.php"> Already have an Account? Log in</a>
             </P>
+        </div>
         </form>
     </div>
 <?php
