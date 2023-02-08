@@ -31,46 +31,42 @@ while ($user = mysqli_fetch_assoc($users)) {
     // $user_list .= "<td><a href=''><i class="fa-solid fa-trash-can"></i></a></td>";
     $sitemanager_list .= "</tr>";
 }
-
-
 ?>
 
-<?php require_once('../../inc/connection.php')?>
+<?php 
+$title = "Site Manager - View";
+require_once('../../inc/header.php') 
+?>
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin_view | TravelPal</title>
-
     <!-- CSS Import -->
-    <link rel="stylesheet" href="../../css/admin-styles.css">   
-
-    <link rel="stylesheet" href="../../css/admin/adminstyle.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../../css/admin-styles.css">
 </head>
 
-<body>
-
-<?php
-require_once("../../inc/header.php");
-?>
-    <div class="body">
-        <div class="dashboard">
-            <img src="../../assets/profile.png" alt="">
-            <button class="select" onclick="location.href = 'admin_profile.php';">SITE MANAGER</button>
-            <button class="nav" onclick="location.href = 'admin_tourist.php';">TOURIST</button>
-            <button class="nav" onclick="location.href = 'accomodation_provider.php';">ACCOMODATION PROVIDER</button>
-            <button class="nav" onclick="location.href = 'vehicle_provider.php';">VEHICLE PROVIDER</button>
-            <button class="nav" onclick="location.href = 'tourist_guide.php';">TOURIST GUIDE</button>
-            
+<div class="body">
+    <!-- Profile page content -->
+    <div class="page-content">
+        <!-- Dashboard - Service Provider -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="../../assets/profile.png" alt="Profile pic">
+                <h4><?php echo $_SESSION['firstName']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button class="active" onclick="location.href = 'admin_profile.php';">Site Manager</button>
+                <button onclick="location.href = 'admin_tourist.php';">Tourist</button>
+                <button onclick="location.href = 'accomodation_provider.php';">Accommodation Provider</button>
+                <button onclick="location.href = 'vehicle_provider.php';">Vehicle Provider</button>
+                <button onclick="location.href = 'tourist_guide.php';">Tourist Guide</button>
+                <br> <br> <br> <br> <br>
+            </div> 
         </div>
-        <div class="content">
-            <h1>SITE MANAGER</h1>
-            <table>
+
+        
+    <div class="content">
+        <h2>Site Manager</h2>
+        <table>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -80,16 +76,14 @@ require_once("../../inc/header.php");
             </tr>
             <?php echo $sitemanager_list; ?>   
         </table>
-        <br>
-            
-        <a href="add_siteManager.php">+ Site Manager</a>   
+        <br>           
+        <a href="add_siteManager.php">+ Site Manager</a> 
+    </div>
+    </div>
+</div>
 
-        </div>
-    </div>
-    </div>
-    <div class="footer">
-        <hr>
-        <p>© 2022 TRAVEL PAL ALL RIGHTS RESERVED</p>
-    </div>
-</body>
-</html>
+<?php
+require_once("../../inc/footer.php");
+?>
+
+<?php mysqli_close($connection); ?>
