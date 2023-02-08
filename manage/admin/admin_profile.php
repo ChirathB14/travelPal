@@ -25,16 +25,13 @@ while ($user = mysqli_fetch_assoc($users)) {
     // $user_list .= "<td><a href=''><i class="fa-solid fa-trash-can"></i></a></td>";
     $sitemanager_list .= "</tr>";
 }
-
-
 ?>
-<?php require_once('../../inc/connection.php')?>
 
 <head>
     <title>Home Page</title>
-    <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/admin/adminstyle.css">
 </head>
+
 <body>
     <div class="header">
         <div class="navigationbar">
