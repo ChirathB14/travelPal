@@ -51,7 +51,7 @@ require_once('../../inc/header.php')
         <div class="Dashboard">
             <div class="Dashboard-top">
                 <img src="../../assets/profile.png" alt="Profile pic">
-                <h4><?php echo $_SESSION['firstName']; ?></h4>
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
             </div>
             <div class="Dashboard-bottom">
                 <button class="active" onclick="location.href = 'admin_profile.php';">Site Manager</button>
@@ -66,6 +66,7 @@ require_once('../../inc/header.php')
         
     <div class="content">
         <h2>Site Manager</h2>
+        <a href="add_siteManager.php" class="create-sm">+ Create Site Manager</a> 
         <table>
             <tr>
                 <th>Name</th>
@@ -77,7 +78,6 @@ require_once('../../inc/header.php')
             <?php echo $sitemanager_list; ?>   
         </table>
         <br>           
-        <a href="add_siteManager.php">+ Site Manager</a> 
     </div>
     </div>
 </div>
