@@ -51,7 +51,7 @@ require_once('../../inc/header.php')
         <div class="Dashboard">
             <div class="Dashboard-top">
                 <img src="../../assets/profile.png" alt="Profile pic">
-                <h4><?php echo $_SESSION['firstName']; ?></h4>
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
             </div>
             <div class="Dashboard-bottom">
                 <button onclick="location.href = 'admin_profile.php';">Site Manager</button>

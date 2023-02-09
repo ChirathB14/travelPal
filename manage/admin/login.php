@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
                 //valid user found
                 $user = mysqli_fetch_assoc($result_set);
                 $_SESSION['user_id'] = $user['userID'];
-                $_SESSION['firstName'] = $user['firstName'] . " " . $user['lastName'];
+                $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
 
                 //redirect to the user.php
                 header('Location: admin_profile.php');

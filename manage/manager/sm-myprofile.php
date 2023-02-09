@@ -1,7 +1,7 @@
-<?php session_start();?>
-<?php require_once('../../inc/connection.php')?>
+<?php session_start(); ?>
+<?php require_once('../../inc/connection.php') ?>
 
-<?php if(!isset($_SESSION['user_id'])){
+<?php if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
 }
 $errors = array();
@@ -100,7 +100,6 @@ if (isset($_POST['submit'])) {
             $errors[] = 'Failed to update the profile.';
         }
     }
-
 }
 ?>
 
@@ -110,19 +109,19 @@ require_once("../../inc/header.php");
 ?>
 
 <head>
-        <link rel="stylesheet" href="/travelPal/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/travelPal/css/main.css" type="text/css">
 
-        <!-- Disable input profile details in profile pages -->
-        <script lang="javascript">
+    <!-- Disable input profile details in profile pages -->
+    <script lang="javascript">
         function disable() {
-          document.querySelectorAll('input').forEach(element => element.disabled = true);
+            document.querySelectorAll('input').forEach(element => element.disabled = true);
         }
-        </script>
+    </script>
 </head>
 
-    <div class="body">
-        <!-- Profile page content -->
-        <div class="page-content">
+<div class="body">
+    <!-- Profile page content -->
+    <div class="page-content">
         <!-- Dashboard - Site Manager -->
         <div class="Dashboard">
             <div class="Dashboard-top">
@@ -133,6 +132,7 @@ require_once("../../inc/header.php");
                 <button class="active" onclick="location.href = 'sm-myprofile.php';">My Profile</button>
                 <button onclick="location.href = 'sm-updateprofile.php';">Update Profile</button>
                 <button onclick="location.href = 'sm-GenerateReport.php';">Generate Report</button>
+                <button onclick="location.href = 'sm-addDestination.php';">Add a Destination</button>
                 <button onclick="location.href = 'sm-CreateTourPlan.php';">Create Tour Plan</button>
                 <button onclick="location.href = 'sm-AP.php';">Accommodation Provider</button>
                 <button onclick="location.href = 'sm-VP.php';">Vehicle Provider</button>
@@ -149,32 +149,32 @@ require_once("../../inc/header.php");
             <h2>Profile</h2>
 
             <div class="profile-content">
-                <div  class="details">
+                <div class="details">
                     <p>
-                        <input type="text" placeholder="Site Manager Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>"> 
-                    </p> 
+                        <input type="text" placeholder="Site Manager Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>">
+                    </p>
                 </div>
-                <div  class="details">
+                <div class="details">
                     <p>
-                        <input type="text" placeholder="Site Manager First name" disabled value="<?php echo "FIRST NAME : " . $first_name; ?>"> 
-                    </p> 
+                        <input type="text" placeholder="Site Manager First name" disabled value="<?php echo "FIRST NAME : " . $first_name; ?>">
+                    </p>
                 </div>
-                <div  class="details">
+                <div class="details">
                     <p>
-                        <input type="text" placeholder="Site Manager Last Name" disabled value="<?php echo "LAST NAME : " . $last_name; ?>"> 
-                    </p> 
+                        <input type="text" placeholder="Site Manager Last Name" disabled value="<?php echo "LAST NAME : " . $last_name; ?>">
+                    </p>
                 </div>
-                <div  class="details">
+                <div class="details">
                     <p>
-                        <input type="text" placeholder="Site Manager Email" disabled value="<?php echo "EMAIL : " . $email; ?>"> 
-                    </p> 
+                        <input type="text" placeholder="Site Manager Email" disabled value="<?php echo "EMAIL : " . $email; ?>">
+                    </p>
                 </div>
             </div>
             <br>
         </div>
-        </div>
     </div>
+</div>
 
-<?php require_once("../../inc/footer.php");?>
+<?php require_once("../../inc/footer.php"); ?>
 
 <?php mysqli_close($connection); ?>

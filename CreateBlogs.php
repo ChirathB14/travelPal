@@ -5,7 +5,7 @@ require_once('./inc/functions.php');
 session_start();
 //checking if the user is logged in
 if (!$_SESSION['user_id']) {
-    header('Location: tourist/t-login.php');
+    header('Location: login.php');
 }
 
 $subject = '';
