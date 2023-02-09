@@ -3,12 +3,16 @@ session_start();
 require_once('../../inc/connection.php');
 require_once('../../inc/functions.php');
 
+$email = "";
+$firstName = "";
+$lastName = "";
+$password = "";
+$confirmPassword = "";
 
 if (isset($_POST["submit"])) {
-    // echo "Kalana";
     $email = $_POST['email'];
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm_password'];
 
@@ -70,6 +74,7 @@ if (isset($_POST["submit"])) {
             $result = mysqli_query($connection, $query);
             verify_query($result);
 
+            $result = send_creds($email, $password, $firstName, $lastName);
 
             header('Location: admin_profile.php');
             // $firstName = "";
@@ -79,6 +84,45 @@ if (isset($_POST["submit"])) {
         } else {
             echo "<p class='error'> Failed to add the new record. Error: " . mysqli_error($connection) . "</p>";
         }
+    }
+}
+
+function send_creds($email, $password, $firstName, $lastName){
+    $fullname = $firstName . " " . $lastName;
+    $to_email = $email;
+    $to = "$fullname < $to_email >";
+    $subject = "You were added as a Site Manager in TravelPal website";
+    $message = "You were added as a site manager in TravelPal website.\nPlease use\nEmail: $email \nPassword: $password\nto log into your account.";
+    $headers = "From: contact.travelpal@gmail.com";
+
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+        CURLOPT_URL => "https://api.mailgun.net/v3/sandboxb7abdc2ab5b74fad93525266b5f06ab3.mailgun.org/messages",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => "from=TravelPal <contact.travelpal@gmail.com>&to=$to&subject=$subject&text=$message",
+        CURLOPT_HTTPHEADER => [
+            "Accept: */*",
+            "Authorization: Basic YXBpOjUwMGRiNzU3NDA3MDliNDE1ZjExOTljNzhmNTRlOGZjLTQ4ZDdkOTdjLTU4YTRmMjBj",
+            "Content-Type: application/x-www-form-urlencoded",
+            $headers
+        ],
+    ]);
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+
+    curl_close($curl);
+
+    if ($err) {
+        return  "cURL Error #:" . $err;
+    } else {
+        return "success";
     }
 }
 ?>
@@ -122,7 +166,7 @@ require_once('../../inc/header.php')
 
         <h2>Site Manager</h2>
         <div class="profile-content" style="height: 300px">
-        <form action="add_siteManager.php" class="" method='post'>
+        <form action="add_siteManager.php" class="" method='post' style="width: 300px;">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update" style="width:300px">
                     <p>
