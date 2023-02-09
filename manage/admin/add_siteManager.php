@@ -100,12 +100,17 @@ if (isset($_POST["submit"])) {
     <title>Add SiteManager | TravelPal</title>
 
     <!-- CSS Import -->
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="../../css/admin-styles.css">
     <!--<link rel="stylesheet" href="../../css/styles.css"> -->
     <!-- <link rel="stylesheet" href="../../css/add_siteManager.css"> -->
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+=======
+    <link rel="stylesheet" href="../../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../../css/admin-styles.css" type="text/css">
+>>>>>>> Stashed changes
 </head>
 
 <body>
