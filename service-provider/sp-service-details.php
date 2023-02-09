@@ -26,7 +26,6 @@ require_once("../inc/header.php");
                 <button onclick="location.href = 'sp-profile.php';">My Profile</button>
                 <button class="active" onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
-                <button class="active" onclick="location.href = 'sp-service-details.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
                 <br> <br> <br> <br> <br>
             </div> 
@@ -34,8 +33,8 @@ require_once("../inc/header.php");
 
 
         <!-- Profile -->
-        <div clas="content" style="width: 70%; margin:10px 50px 10px 180px;">
-        <h2>Accommodation Provider</h2>
+        <div clas="content" style="width: 70%; height: 400px; margin:30px 50px 10px 180px;">
+        <h2 style="margin-left: 70px">Accommodation Provider</h2>
         <div class="profile-content">
                 <div  class="details-update">
                     <p>
@@ -73,7 +72,9 @@ require_once("../inc/header.php");
                         <input type="text" placeholder="Price per room" name="" id="" value="<?php echo "" ; ?>" disabled>
                     </p> 
                 </div>
-                <button type="submit" name="submit">Add Services</button>
+                <button type="submit" name="submit">
+                    <a href="add-service-details.php">Add Services</a>
+                </button>
         </div>
         </div>
     </div>

@@ -33,10 +33,12 @@ require_once("../inc/header.php");
 
         <!-- Profile -->
         <div class="content">
-            <div class="profile-content">
-                <h2>No services added</h2>
+            <div class="profile-content" style="background-color: var(--primarycolor);">
+                <h2 style="color: var(--accentcolor);">No services added</h2>
                 <br><br>
-                <button type="submit" name="submit"><a href="sp-serviceDetails.php">Add Services</a></button>
+                <button type="submit" name="submit" style="width: 200px">
+                    <a href="/travelPal/service-provider/sp-service-details.php">Add Services</a>
+                </button>
             </div>
         </div>
     </div>
