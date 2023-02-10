@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
                 //valid user found
                 $user = mysqli_fetch_assoc($result_set);
                 $_SESSION['user_id'] = $user['userID'];
-                $_SESSION['firstName'] = $user['firstName'] . " " . $user['lastName'];
+                $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
 
                 //redirect to the user.php
                 header('Location: admin_profile.php');
@@ -52,60 +52,48 @@ $title = "Login";
 require_once("../../inc/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php $title  ?></title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/login.css">
 </head>
 
-<body class="index">
-    <div class="login">
-        <form action="login.php" method="post">
-            <fieldset>
-                <legend>
-                    <h1>LOGIN</h1>
-                </legend>
-                <?php
-                if (isset($errors) && !empty($errors)) {
-                    echo '<p class="error">Invalid user name or password</p>';
-                }
-                ?>
-                <?php
-                if (isset($_GET['logout'])) {
-                    echo '<p class="info">You have successfully logged out</p>';
-                }
-                ?>
-                <p>
-                    <input class="textinput" type="text" name="email" id="" placeholder="Email Address">
-                </p>
-                <p>
-                    <input class="textinput" type="password" name="password" id="" placeholder="Password">
-                </p>
-                <div class="divl" style="font-size: 10px ;">
-                    <P>
-                        <input class="checkbx" type="checkbox" name="remember" id="" value="yes">
-                        <label for="remember">REMEMBER ME</label>
-                    </P>
-                </div>
-                <div class="divr" style="font-size: 10px ;">
-                    <input type="button" value="FORGOT PASSWORD?" class="forgotpw" id="btnHome" onClick="document.location.href='resetpw.php'" />
-                </div>
-                <p>
-                    <button type="submit" name="submit"> <b>LOGIN </b>
+<div class="login">
+    <form action="login.php" method="post">
+            <h1>LOGIN</h1>
 
-                    </button>
-                </p>
-            </fieldset>
-        </form>
-    </div>
-</body>
+            <?php
+            if (isset($errors) && !empty($errors)) {
+                echo '<p class="error"> ';
+                foreach ($errors as $error) {
+                    echo "- " . $error . '<br>';
+                }
+                echo '</p>';
+            }
+            ?>
 
-</html>
+            <!-- Successfully logout -->
+            <?php
+            if (isset($_GET['logout'])) {
+                echo '<p class="info">You have successfully logged out</p>';
+            }
+            ?>
+
+                <div class="input-elements">
+                    <input type="text" name="email" placeholder="  Email">
+                    <input type="password" name="password" placeholder="  Password">
+                </div>
+                <div class="password">
+                    <div><input type="checkbox" name="remember" id=""> Remember password</div>
+                    <a href="">Forgot Password?</a>
+                </div>
+                <div class="new-user">
+                    <button type="submit" name="submit">Login</button>
+                    <a href="../register.php">New user? Create an account</a>
+                </div>
+    </form>
+</div>
+
+<?php
+require_once("../../inc/footer.php");
+?>
+
 <?php mysqli_close($connection); ?>

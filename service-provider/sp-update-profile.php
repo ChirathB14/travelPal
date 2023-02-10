@@ -182,10 +182,10 @@ require_once "../inc/header.php";
             </div>
             <div class="Dashboard-bottom">
                 <button onclick="location.href = 'sp-profile.php';">My Profile</button>
-                <button onclick="location.href = 'sp-service-details.php';">Service Details</button>
+                <button onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
                 <button class="active" onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
                 <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
-                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br> <br> <br>
             </div> 
         </div>
 
@@ -198,7 +198,7 @@ require_once "../inc/header.php";
 
         <h2>UPDATE PROFILE</h2>
         <div class="profile-content">
-        <form action="sp-update-profile.php" class="" method='post' style="margin-left: 70px;">
+        <form action="sp-update-profile.php" class="" method='post'  style="margin: 15px 0px 15px 70px;">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">
                     <p>
@@ -236,7 +236,7 @@ require_once "../inc/header.php";
                         &nbsp; Location : 
                         <input type="text" name="location_old1" id="" value="<?php echo $location ; ?>" disabled>
                         <input type="hidden" name="location_old" id="" <?php echo 'value="' . $location . '"'; ?> >
-                        <select id="" name="location" style="width: 375px;  margin-top: 7px; 
+                        <select id="" name="location" style="width: 370px;  margin-top: 7px; 
                             background-color: var(--accentcolor); height: 34px;
                             border: none; font-size: 10px; font-weight: bold;">
                             <option value="" disabled selected>SELECT NEW LOCATION</option>
@@ -263,5 +263,9 @@ require_once "../inc/header.php";
         </form>
     </div>
 </div>
+</div>
+<?php
+require_once("../inc/footer.php");
+?>
 
 <?php mysqli_close($connection); ?>

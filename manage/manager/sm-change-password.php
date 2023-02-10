@@ -5,7 +5,7 @@ require_once('../inc/functions.php');
 
 //checking if the user is logged in
 if (!$_SESSION['user_id']) {
-    header('Location: /travelPal/login.php');
+    header('Location: login.php');
 }
 
 $errors = array();
@@ -21,9 +21,9 @@ if (isset($_SESSION['user_id'])) {
     //getting the user information
     $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
     $query = "SELECT * 
-              FROM Users u, serviceprovider sp 
+              FROM Users u, sitemanager s 
               WHERE u.userID = {$user_id} 
-                    AND u.userID = sp.userID
+                    AND u.userID = s.userID
               LIMIT 1";
 
     $result_set = mysqli_query($connection, $query);
@@ -37,16 +37,15 @@ if (isset($_SESSION['user_id'])) {
             $email = $result['email'];
         } else {
             //user not found
-            header('Location: sp-change-password.php?err=user_not_found');
+            header('Location: sm-change-password.php?err=user_not_found');
         }
     } else {
         //query unsuccessful
-        header('Location: sp-change-password.php?err=query_failed');
+        header('Location: sm-change-password.php?err=query_failed');
     }
 }
 
 if (isset($_POST['submit'])) {
-
     $user_id = mysqli_real_escape_string($connection, trim($_POST['user_id']));
     $cur_password = mysqli_real_escape_string($connection, trim($_POST['cur_password']));
     $new_password = mysqli_real_escape_string($connection, trim($_POST['new_password']));
@@ -73,9 +72,9 @@ if (isset($_POST['submit'])) {
     $cur_password = sha1($cur_password);
     //checking old password is correct
     $query = "SELECT * 
-            FROM Users u, serviceprovider sp
+            FROM Users u, sitemanager s 
             WHERE u.userID = {$user_id} 
-                    AND u.userID = sp.userID
+                    AND u.userID = s.userID
                     AND u.password = '{$cur_password}'
             LIMIT 1";
     $result_set = mysqli_query($connection, $query);
@@ -101,8 +100,8 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($connection, $query);
 
         if ($result) {
-            //query succes..redirecting to users page
-            header('Location: sp-profile.php?pw_updated=true');
+            //query success..redirecting to users page
+            header('Location: t-profile.php?pw_updated=true');
         } else {
             $errors[] = 'Failed to update the password.';
         }
@@ -116,26 +115,25 @@ $title = "Update Password";
 require_once("../inc/header.php");
 ?>
 
-<head>
-    <link rel="stylesheet" href="../css/main.css" type="text/css">
-</head>
-
-<!-- Profile page content -->
-<div class="page-content">
-    <!-- Dashboard - Tourist -->
-    <div class="Dashboard">
-        <div class="Dashboard-top">
-            <img src="../assets/profile.png" alt="Profile pic">
-            <h4><?php echo $_SESSION['full_name']; ?></h4>
+<div class="body">
+        <!-- Profile page content -->
+        <div class="page-content">
+        <!-- Dashboard - Site Manager -->
+        <div class="Dashboard">
+            <div class="Dashboard-top">
+                <img src="/travelPal/assets/Profile.png" alt="">
+                <h4><?php echo $_SESSION['full_name']; ?></h4>
+            </div>
+            <div class="Dashboard-bottom">
+                <button onclick="location.href = 'sm-myprofile.php';">My Profile</button>
+                <button class="active" onclick="location.href = 'sm-updateprofile.php';">Update Profile</button>
+                <button onclick="location.href = 'sm-GenerateReport.php';">Generate Report</button>
+                <button onclick="location.href = 'sm-CreateTourPlan.php';">Create Tour Plan</button>
+                <button onclick="location.href = 'sm-AP.php';">Accommodation Provider</button>
+                <button onclick="location.href = 'sm-VP.php';">Vehicle Provider</button>
+                <button onclick="location.href = 'sm-TG.php';">Tourist Guide</button>
+            </div>
         </div>
-        <div class="Dashboard-bottom">
-            <button onclick="location.href = 'sp-profile.php';">My Profile</button>
-            <button onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
-            <button class="active" onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
-            <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
-            <br> <br> <br> <br> <br>
-        </div>
-    </div>
 
     <div class="content">
 
@@ -145,44 +143,50 @@ require_once("../inc/header.php");
         }
         ?>
 
-        <h2>Update Profile</h2>
+        <h2>UPDATE PROFILE</h2>
         <div class="profile-content">
-            <form action="sp-change-password.php" class="userform" method='post' style="width: 80%;">
-                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+        <form action="sm-updateprofile.php" class="form-update" method='post'>
+            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">
                     <p>
-                        &nbsp; First Name :
-                        <input type="text" name="first_name" id="" value="<?php echo $first_name; ?>" disabled>
+                        &nbsp; Your ID :
+                        <input type="text" name="user_id" value="<?php echo  $user_id; ?>" disabled>
                     </p>
                 </div>
                 <div class="details-update">
                     <p>
-                        &nbsp; Last Name :
-                        <input type="text" name="last_name" id="" value="<?php echo $last_name; ?>" disabled>
-                    </p>
+                        &nbsp; First Name : 
+                        <input type="text" name="first_name" id="" value="<?php echo $first_name ; ?>">
+                    </p> 
                 </div>
                 <div class="details-update">
                     <p>
-                        &nbsp; Email :
-                        <input type="email" name="email" id="" value="<?php echo $email; ?>" disabled>
-                    </p>
+                        &nbsp; Last Name : 
+                        <input type="text" name="last_name" id="" value="<?php echo $last_name ; ?>">
+                    </p> 
+                </div>
+                <div class="details-update">
+                    <p>
+                        &nbsp; Email : 
+                        <input type="email" name="email" id="" value="<?php echo $email ; ?>">
+                    </p> 
                 </div>
                 <div class="details-update">
                     <p>
                         &nbsp; Current Password :
-                        <input style="width: 200px;" id="cur_password" name="cur_password" type="password" placeholder="****************" required>
+                        <input style="width: 80px;" id="cur_password" name="cur_password" type="password" placeholder="********" required>
                     </p>
                 </div>
                 <div class="details-update">
                     <p>
                         &nbsp; New Password :
-                        <input style="width: 200px;" id="new_password" name="new_password" type="password" placeholder="****************" required>
+                        <input style="width: 100px;" id="new_password" name="new_password" type="password" placeholder="********" required>
                     </p>
                 </div>
                 <div class="details-update">
                     <p>
                         &nbsp; Retype New Password :
-                        <input style="width: 200px;" id="re_new_password" name="re_new_password" type="password" placeholder="****************" required>
+                        <input style="width: 100px;" id="re_new_password" name="re_new_password" type="password" placeholder="********" required>
                     </p>
                 </div>
                 <div class="details-showpassword">
@@ -191,10 +195,11 @@ require_once("../inc/header.php");
                     </p>
                 </div>
                 <button type="submit" name="submit">Update Password</button>
-            </form>
+        </form>
         </div>
     </div>
 </div>
+
 
 <script src="../js/jquery.js"></script>
 <script>

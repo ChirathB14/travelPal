@@ -20,7 +20,6 @@ if (isset($_GET['blogID'])) {
             $content = $result['content'];
             $writtenDate = $result['writtenDate'];
             $authorName = $result['authorName'];
-
         } else {
             //blog not found
             header('Location: Blogs.php?err=blog_not_found');
@@ -61,12 +60,12 @@ require_once("./inc/header.php");
     <br>
     
     <div class="Blog-content">
-         <h2> <?php echo $subject?> </h2>";
+         <h2> <?php echo $subject?> </h2>
          <h6> <?php echo $writtenDate?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $authorName?> </h6>
          <br>
         <img src="./uploads/blogs/blog2.png" alt="Blog image">
         <br><br>
-         <p>{$blog['content']}</p>";
+         <p><?php echo $content?></p>
     </div>
     
 </div>

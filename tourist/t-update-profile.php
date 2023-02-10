@@ -98,6 +98,7 @@ if (isset($_POST['submit'])) {
 
         if ($result) {
             //query succes..redirecting to users page
+            $_SESSION['full_name'] = $first_name . " " . $last_name;
             header('Location: t-profile.php?profile_updated=true');
         } else {
             $errors[] = 'Failed to update the profile.';

@@ -172,11 +172,19 @@ require_once("../../inc/header.php");
                         <input type="email" name="email" id="" value="<?php echo $email ; ?>">
                     </p> 
                 </div>
+                <div  class="details-password">
+                    <p>
+                        <input type="password" value="********" disabled>
+                            <a style="color:black;" href="sm-change-password.php">Change Password</a>
+                        </input>
+                    </p> 
+                </div>
                 <button type="submit" name="submit">Update</button>
         </form>
         </div>
         </div>
     </div>
+</div>
 
 <?php require_once("../../inc/footer.php");?>
 
