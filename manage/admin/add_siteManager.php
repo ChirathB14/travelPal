@@ -134,7 +134,9 @@ require_once('../../inc/header.php')
 
 <head>
     <!-- CSS Import -->
+
     <link rel="stylesheet" href="../../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../../css/admin-styles.css" type="text/css">
 </head>
 
 <div class="body">
