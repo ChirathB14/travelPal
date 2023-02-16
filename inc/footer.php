@@ -2,7 +2,9 @@
     if($title == "Contact us" || $title == "Tour plan | TravePal" || $title == "Home - TravePal" || $title == "Blogs | TravePal" 
     || $title == "Create Blog - TravePal" || $title == "Pre-made tour plans" || $title == "Blogs_View more | TravePal" || $title == "Pre-made tour plans -TravelPal"
     || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" 
-    || $title == "Profile" || $title == "Service Details" || $title == "Update Profile" || $title == "View Tours")
+    || $title == "Profile" || $title == "Service Details" || $title == "Update Profile" || $title == "Add Service Details"|| $title == "Add Services" 
+    || $title == "Service Details" || $title == "View Tours")
+    
     {
     echo" 
     <hr>

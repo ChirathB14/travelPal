@@ -3,7 +3,7 @@
 require_once('./inc/connection.php');
 require_once('./inc/functions.php');
 
-echo "Display  the blog - Blog ID -> {$_GET['blogID']} ";
+// echo "Display  the blog - Blog ID -> {$_GET['blogID']} ";
 
 if (isset($_GET['blogID'])) {
     $blogID = mysqli_real_escape_string($connection, trim($_GET['blogID']));
@@ -49,7 +49,7 @@ require_once("./inc/header.php");
 </head>
 
 <!-- Blogs page content -->
-<div class="page-content">
+<div class="page-content" style="justify-content:center;align-items:center;">
     <div class="Blogs-Title">
         <div class="Blogs-TitleContent">
             <h2>Welcome to the Travel Pal Blog!</h2>
@@ -63,11 +63,10 @@ require_once("./inc/header.php");
          <h2> <?php echo $subject?> </h2>
          <h6> <?php echo $writtenDate?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $authorName?> </h6>
          <br>
-        <img src="./uploads/blogs/{$blog['imagePath']}" alt="Blog image">
+        <img src="./uploads/blogs/blog2.png" alt="Blog image">
         <br><br>
          <p><?php echo $content?></p>
     </div>
-}
     
 </div>
 
