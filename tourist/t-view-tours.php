@@ -84,7 +84,7 @@ require_once("../inc/header.php");
     </div>
 
 <?php
-require_once("../inc/footer.php");
+require_once "../inc/footer.php";
 ?>
 
 <?php mysqli_close($connection); ?>
