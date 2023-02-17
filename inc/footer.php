@@ -4,6 +4,7 @@
     || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" 
     || $title == "Profile" || $title == "Service Details" || $title == "Update Profile" || $title == "Add Service Details"|| $title == "Add Services" 
     || $title == "Service Details" || $title == "View Tours")
+    
     {
     echo" 
     <hr>
