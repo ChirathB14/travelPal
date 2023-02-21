@@ -189,16 +189,16 @@ require_once "../inc/header.php";
             </div> 
         </div>
 
-    <div class="content">
+    <div class="profile-update-content">
         <?php
         if (!empty($errors)) {
             display_errors($errors);
         }
         ?>
 
-        <h2>UPDATE PROFILE</h2>
         <div class="profile-content">
-        <form action="sp-update-profile.php" class="" method='post'  style="margin: 15px 0px 15px 70px;">
+        <h2>UPDATE PROFILE</h2>
+        <form action="sp-update-profile.php" class="" method='post'  style="margin: 5px 0px 5px 40px;">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">
                     <p>
@@ -236,7 +236,7 @@ require_once "../inc/header.php";
                         &nbsp; Location : 
                         <input type="text" name="location_old1" id="" value="<?php echo $location ; ?>" disabled>
                         <input type="hidden" name="location_old" id="" <?php echo 'value="' . $location . '"'; ?> >
-                        <select id="" name="location" style="width: 370px;  margin-top: 7px; 
+                        <select id="" name="location" style="width: 435px;  margin-top: 7px; 
                             background-color: var(--accentcolor); height: 34px;
                             border: none; font-size: 10px; font-weight: bold;">
                             <option value="" disabled selected>SELECT NEW LOCATION</option>

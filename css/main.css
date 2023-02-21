@@ -234,6 +234,30 @@ input::placeholder {
     width: 80%;
 }
 
+/* update profile styles */
+.profile-update-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    background-image: url(../assets/profilebg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-update-content button {
+    background-color: var(--primarycolor);
+    margin-left: 4px;
+}
+
+.profile-update-content button:hover {
+    background-color: var(--secondarycolor) !important;
+}
+
+.profile-update-content .profile-content {
+    margin: 15px 0px 10px 0px;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -268,7 +292,7 @@ input::placeholder {
     flex-direction: row;
     margin: 4px;
     background-color: var(--accentcolor);
-    width: 80%;
+    width: 90%;
     height: 34px;
 }
 
@@ -295,7 +319,7 @@ input::placeholder {
     flex-direction: row;
     margin: 4px;
     background-color: var(--accentcolor);
-    width: 80%;
+    width: 90%;
     height: 34px;
 }
 
@@ -320,7 +344,7 @@ input::placeholder {
 
 .profile-content button {
     margin-top: 5px;
-    width: 80%;
+    width: 90%;
 }
 
 /* password reset styles */
