@@ -33,7 +33,7 @@ require_once("../inc/header.php");
 
         <!-- Profile -->
         <div class="content">
-            <div class="profile-content" style="background-color: var(--primarycolor);">
+            <div class="profile-content">
                 <h2 style="color: var(--accentcolor);">No services added</h2>
                 <br><br>
                 <button type="submit" name="submit" style="width: 200px">

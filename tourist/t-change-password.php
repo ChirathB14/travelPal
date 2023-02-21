@@ -131,7 +131,7 @@ require_once("../inc/header.php");
         </div>
     </div>
 
-    <div class="content">
+    <div class="profile-update-content">
 
         <?php
         if (!empty($errors)) {
@@ -139,8 +139,8 @@ require_once("../inc/header.php");
         }
         ?>
 
+        <div class="profile-content" style="margin: 25px 0px 10px 0px;">
         <h2>Update Profile</h2>
-        <div class="profile-content">
             <form action="t-change-password.php" class="userform" method='post' style="width: 80%;">
                 <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">

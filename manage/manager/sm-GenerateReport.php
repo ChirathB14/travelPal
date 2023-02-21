@@ -61,7 +61,7 @@ require_once("../../inc/header.php");
                 </div>
                 <div class="details-update" style="margin-bottom: 11px">
                     <p>
-                        <select id="" name="service_type" style="width: 340px;  margin-top: 7px; 
+                        <select id="" name="service_type" style="width: 377px;  margin-top: 7px; 
                             background-color: var(--accentcolor); height: 34px;
                             border: none; font-size: 10px; font-weight: bold;">
                             <option value="" disabled selected>SELECT SERVICE TYPE</option>
