@@ -146,9 +146,9 @@ require_once("../../inc/header.php");
                 echo '<p class="info-1">Profile updated successfully</p>';
             }
             ?>
-            <h2>Profile</h2>
 
             <div class="profile-content">
+            <h2>Profile</h2>
                 <div class="details">
                     <p>
                         <input type="text" placeholder="Site Manager Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>">
@@ -166,7 +166,7 @@ require_once("../../inc/header.php");
                 </div>
                 <div class="details">
                     <p>
-                        <input type="text" placeholder="Site Manager Email" disabled value="<?php echo "EMAIL : " . $email; ?>">
+                        <input type="text" placeholder="Site Manager Email" style="width: 450px" disabled value="<?php echo "EMAIL : " . $email; ?>">
                     </p>
                 </div>
             </div>

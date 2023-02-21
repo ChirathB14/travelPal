@@ -108,9 +108,9 @@ require_once("../inc/header.php");
                 echo '<p class="info-1">Profile updated successfully</p>';
             }
             ?>
-            <h2>Profile</h2>
 
             <div class="profile-content">
+            <h2>Profile</h2>
                 <div  class="details">
                     <p>
                         <input type="text" placeholder="Service Provider Id" disabled value="<?php echo "YOUR ID : " . $user_id; ?>"> 
