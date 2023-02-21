@@ -1,5 +1,10 @@
 /* Profile page styles */
 /* Profile styles */
+
+.page-content {
+    background-color: var(--accentcolor);
+}
+
 .details input::placeholder {
     color: var(--primarycolor);
     font-weight: bold;
@@ -14,7 +19,8 @@
 
 .profileViewContent{
     display: flex;
-    margin: 35px;
+    margin: 5px 60px 10px 60px;
+    width: 70%;
 }
 
 .profileView {
@@ -22,7 +28,8 @@
     flex-direction: column;
     background-color: rgb(198, 200, 218);
     margin: 10px;
-    height: 100%;
+    height: 95%;
+    width: 35%;
     justify-content: center;
     align-items: center;
 }
@@ -32,7 +39,7 @@
     opacity: 70%;
     width: 40px;
     height: 30px;
-    margin: 4px 10px 2px 250px;
+    margin: 4px 10px 2px 200px;
 }
 
 .profileView .id::placeholder {
@@ -40,9 +47,9 @@
 }
 
 .profileView img {
-    width: 30%;
+    width: 25%;
     height: auto;
-    margin: 10px 5px 10px 5px;
+    margin: 10px 5px 10px 0px;
 }
 
 .profileView input {

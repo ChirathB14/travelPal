@@ -12,15 +12,15 @@ require_once("./inc/header.php");
 
 <!-- Tour plan page content -->
 <div class="page-content">
-    <div class="Title-Tourplan">
-        <h1>Welcome to </h1> <img src="./assets/logo tpal.png" alt="TravelPal">
-    </div>
-    <div class="Tourplan-image">
+    <!-- <div class="Tourplan-image">
         <img src="./assets/tourPlan.png" alt="Tour Plan">
-        <h3>Plan your <br> next trip <br> with <br> TravelPal</h3>
-        <hr>
+    </div> -->
+    <div class="tour-plan-top-container">
+        <img src="./assets/tourPlan.png" alt="Tour Plan">
+        <div class="Title-Tourplan">
+            <h1>Welcome to </h1> <img src="./assets/logo tpal.png" alt="TravelPal">
+        </div>
     </div>
-
     <p>
         The fascination of Sri Lanka never ends. Astonishment, awe and amazement are just a few
         emotions that are used to describe travel in this paradise island. Blend these with the

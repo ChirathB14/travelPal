@@ -261,9 +261,10 @@ input::placeholder {
 .content {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     justify-content: center;
     align-items: center;
+    background-color: #99afd2;
 }
 
 .content h2 {
@@ -338,13 +339,14 @@ input::placeholder {
     flex-direction: row;
     margin: 4px;
     background-color: var(--accentcolor);
-    width: 80%;
+    width: 90%;
     height: 34px;
 }
 
 .profile-content button {
-    margin-top: 5px;
+    margin: 5px 0px 0px 5px;
     width: 90%;
+    background-color: var(--primarycolor);
 }
 
 /* password reset styles */

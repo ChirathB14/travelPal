@@ -120,7 +120,7 @@ require_once "../../inc/header.php";
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                     <div class="details-update" style="margin-bottom: 11px">
                         <p>
-                            <select id="" name="season" style="width: 340px;  margin-top: 7px; 
+                            <select id="" name="season" style="width: 377px;  margin-top: 7px; 
                             background-color: var(--accentcolor); height: 34px;
                             border: none; font-size: 12px; font-weight: bold;">
                                 <option value="" disabled selected>SELECT A SEASON</option>
@@ -150,7 +150,7 @@ require_once "../../inc/header.php";
                     </div>
                     <div class="details-update" style="margin-bottom: 11px">
                         <p>
-                            <select id="" name="season" style="width: 340px;  margin-top: 7px; 
+                            <select id="" name="season" style="width: 377px;  margin-top: 7px; 
                             background-color: var(--accentcolor); height: 34px;
                             border: none; font-size: 12px; font-weight: bold;">
                                 <option value="" disabled selected>TYPE OF PACKAGE</option>
