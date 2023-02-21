@@ -134,15 +134,15 @@ require_once "../inc/header.php";
             </div>    
         </div>
 
-        <div class="content"> 
+        <div class="profile-update-content"> 
         <?php
         if (!empty($errors)) {
             display_errors($errors);
         }
         ?>
 
+        <div class="profile-content"style="margin: 55px 0px 10px 0px;" >
         <h2>UPDATE PROFILE</h2>
-        <div class="profile-content">
         <form action="t-update-profile.php" class="form-update" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">
