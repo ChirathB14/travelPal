@@ -10,7 +10,7 @@
 
 .services-container h2 {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .services-sub-container {
@@ -46,20 +46,15 @@
     flex-direction: row;
 }
 
-.services-container button {
-    margin-left: 25%;
-}
-
 /* Customize tour plan page styles */
 .customize-page-content {
     display: flex;
     flex-direction: column;
-    background-image: url(../assets/logo.png);
+    background-image: url(../assets/Background-Overlay.png);
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: cover;
     background-position: center;
     align-items: center;
-    opacity: 80%;
 }
 
 form {
@@ -73,21 +68,24 @@ form {
     display: flex;
     flex-direction: column;
     width: 60%;
-    background-color: #0b3770;
-    opacity: 80%;
-    padding: 50px;
-    margin: 30px 200px 30px 200px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px 60px 40px 70px;
+}
+
+.customize-page-content .services-container h2, p {
+    color: var(--primarycolor);
 }
 
 .checkbox-list {
     display: flex;
     flex-direction: row;
+    color: var(--primarycolor);
 }
 
 .checkbox-items1 {
     display: flex;
     flex-direction: column;
-    margin: 10px 250px 0px 0px;
+    margin: 10px 150px 0px 20px;
 }
 
 .item {
@@ -97,22 +95,39 @@ form {
     width: 230px;
 }
 
-.nextbtn {
-    width: 8%;
-    opacity: 70%;
-    margin: 10px 10px 10px 650px;
+.form-buttons {
+    display: inline;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
+.cancelbutton {
+    background-color: #FF7676;
+    width: 18%;
+}
+
+.nextbutton {
+    background-color: var(--primarycolor);
+    width: 18%;
+    margin-left: 300px;
+}
+
+/* cutomize tour plan page 2 styles */
 .checkbox-items {
     display: flex;
     flex-direction: column;
-    margin: 10px 120px 0px 0px;
+    margin: 10px 10px 0px 10px;
+}
+
+.checkbox-items .item {
+    margin-right: 25px;
 }
 
 .proceedbtn {
-    width: 28%;
-    opacity: 90%;
-    margin: 10px 10px 10px 400px;
+    background-color: var(--primarycolor);
+    font-size: 16px;
+    width: 40%;
+    float: right;
 }
 
 /* Enter tour details page styles */
@@ -120,7 +135,7 @@ form {
     display: flex;
     flex-direction: row;
     margin: 5px;
-    width: 600px;
+    width: 500px;
 }
 
 .backbtn {

@@ -11,10 +11,10 @@ require_once("../inc/header.php");
 </head>
 
 <div class="customize-page-content">
-    <br> <br>
-    <h2>Customize Tour</h2>
     <form action="">
     <div class="services-container">
+    <h2>Customize Tour</h2>
+    <br>
         <p>Select a city you prefer to visit *</p>
         <div class="checkbox-list">
             <div class="checkbox-items1">
@@ -28,9 +28,7 @@ require_once("../inc/header.php");
                 <div class="item"><h6 style="margin-right:81px">Dambulla</h6><input type="checkbox" name="" id=""> </div>
             </div>
         </div>
-    </div>
-
-    <div class="services-container">
+        <br><br>
         <p>What do you wish to experience in Sri Lanka other than the includes in the tour plan *</p>
         <div class="checkbox-list">
                 <div class="checkbox-items1">
@@ -44,9 +42,11 @@ require_once("../inc/header.php");
                     <div class="item"><h6 style="margin-right:40px">Colonical Tours</h6><input type="checkbox" name="" id="">  </div> 
                 </div>
         </div>
+        <div class="form-buttons">
+            <button class="cancelbutton" type="submit" name="submit"><a href="/travelPal/tourist/customize-tour-plan2.php">Cancel</a></button>
+            <button class="nextbutton" type="submit" name="submit" style="margin-left: 400px;"><a href="/travelPal/tourist/customize-tour-plan2.php">Next</a></button>
+        </div>
     </div>
-        <button class="nextbtn" type="submit" name="submit"><a href="/travelPal/tourist/customize-tour-plan2.php">Next</a></button>
-        <br>
     </form>
 </div>
 
