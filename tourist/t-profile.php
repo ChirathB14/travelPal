@@ -74,7 +74,7 @@ require_once("../inc/header.php");
                 <button class="active" onclick="location.href = 't-profile.php';">My Profile</button>
                 <button onclick="location.href = 't-update-profile.php';">Update Profile</button>
                 <button onclick="location.href = 't-view-tours.php';">View Tours</button>
-                <br> <br> <br> <br> <br>
+                <!-- <br> <br> <br> <br> <br> -->
             </div>
         </div>
         

@@ -34,6 +34,8 @@ $pricePerDay = '';
 $experience = '';
 $languages = '';
 
+$user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
+
 if (isset($_SESSION['user_id'])) {
     //getting the user information
     $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
@@ -53,11 +55,11 @@ if (isset($_SESSION['user_id'])) {
             $email = $result['email'];
         } else {
             //user not found
-            header('Location: sp-addServiceDetails.php?err=user_not_found');
+            // header('Location: sp-addServiceDetails.php?err=user_not_found');
         }
     } else {
         //query unsuccessful
-        header('Location: sp-addServiceDetails.php?err=query_failed');
+        // header('Location: sp-addServiceDetails.php?err=query_failed');
     }
 }
 
@@ -127,22 +129,22 @@ if (isset($_POST['submit'])) {
 
     if (empty($errors)) {
         if($serviceType == 'Accommodation Provider') {
-            $last_id = mysqli_insert_id($connection);
+            // $last_id = mysqli_insert_id($connection);
             $query = "INSERT INTO accomodation(
                         `serviceProfileID`, `regNo`, `address`, `pricePerRoom`, `withFoodStatus`, `withAcStatus`
                         ) VALUES (
-                        {$last_id}, '{$regNo}','{$address}', '{$pricePerRoom}', '{$withFoodStatus}', '{$withAcStatus}'
+                        {$user_id}, '{$regNo}','{$address}', '{$pricePerRoom}', '{$withFoodStatus}', '{$withAcStatus}'
                         )";
 
             $result = mysqli_query($connection, $query) or (die(mysqli_error()));
         }
 
         if($serviceType == 'Vehicle Provider') {
-            $last_id = mysqli_insert_id($connection);
+            // $last_id = mysqli_insert_id($connection);
             $query = "INSERT INTO transport(
                         `serviceProfileID`, `vehicleNumber`, `pricePerKm`, `vehicleType`, `fuelType`
                         ) VALUES (
-                        {$last_id}, '{$vehicleNumber}','{$pricePerKm}', '{$vehicleType}', '{$fuelType}'
+                        {$user_id}, '{$vehicleNumber}','{$pricePerKm}', '{$vehicleType}', '{$fuelType}'
                         )";
 
             $result = mysqli_query($connection, $query);
@@ -152,7 +154,7 @@ if (isset($_POST['submit'])) {
             $query = "INSERT INTO tourguide(
                         `serviceProfileID`, `reg_number`, `pricePerDay`, `experience`, `languages`
                         ) VALUES (
-                            {$last_id}, '{$reg_number}','{$pricePerDay}', '{$experience}', '{$languages}'
+                            {$user_id}, '{$reg_number}','{$pricePerDay}', '{$experience}', '{$languages}'
                         )";
 
                 $result = mysqli_query($connection, $query);

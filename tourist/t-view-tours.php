@@ -52,7 +52,7 @@ require_once("../inc/header.php");
                 <button onclick="location.href = 't-profile.php';">My Profile</button>
                 <button onclick="location.href = 't-update-profile.php';">Update Profile</button>
                 <button class="active" onclick="location.href = 't-view-tours.php';">View Tours</button>
-                <br> <br> <br> <br> <br>
+                <!-- <br> <br> <br> <br> <br> -->
             </div>    
         </div>
 
@@ -76,7 +76,19 @@ require_once("../inc/header.php");
                 <td><mark style="background-color:green; color:white; font-size:12px; padding:2px;">&nbsp;Paid&nbsp;</mark></td>
                 <td><i class="fa fa-eye" aria-hidden="true" style="margin-left:15px; color:blue;"></i></td>
                 <td><i class="fa fa-times" aria-hidden="true" style="margin-left:30px; color:red;"></i></td>
-            </tr>  
+            </tr> 
+            <tr>
+                <td>001</td>
+                <td><mark style="background-color:grey; color:white; font-size:12px; padding:2px;">&nbsp;Draft&nbsp;</mark></td>
+                <td><i class="fa fa-eye" aria-hidden="true" style="margin-left:15px; color:blue;"></i></td>
+                <td><i class="fa fa-times" aria-hidden="true" style="margin-left:30px; color:red;"></i></td>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td><mark style="background-color:grey; color:white; font-size:12px; padding:2px;">&nbsp;Draft&nbsp;</mark></td>
+                <td><i class="fa fa-eye" aria-hidden="true" style="margin-left:15px; color:blue;"></i></td>
+                <td><i class="fa fa-times" aria-hidden="true" style="margin-left:30px; color:red;"></i></td>
+            </tr> 
         </table>
         </div>
 

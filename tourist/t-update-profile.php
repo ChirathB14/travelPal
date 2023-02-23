@@ -130,7 +130,7 @@ require_once "../inc/header.php";
                 <button onclick="location.href = 't-profile.php';">My Profile</button>
                 <button class="active" onclick="location.href = 't-update-profile.php';">Update Profile</button>
                 <button onclick="location.href = 't-view-tours.php';">View Tours</button>
-                <br> <br> <br> <br> <br>
+                <!-- <br> <br> <br> <br> <br> -->
             </div>    
         </div>
 
@@ -141,7 +141,7 @@ require_once "../inc/header.php";
         }
         ?>
 
-        <div class="profile-content"style="margin: 55px 0px 10px 0px;" >
+        <div class="profile-content"style="margin: 75px 0px 10px 0px;" >
         <h2>UPDATE PROFILE</h2>
         <form action="t-update-profile.php" class="form-update" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
