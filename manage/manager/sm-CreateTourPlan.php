@@ -98,7 +98,7 @@ require_once "../../inc/header.php";
 
 
         <div class="content">
-            <h2>Create New Plan</h2>
+            
             <?php
             if (!empty($errors)) {
                 display_errors($errors);
@@ -116,6 +116,7 @@ require_once "../../inc/header.php";
             ?>
 
             <div class="profile-content">
+            <h2>Create New Plan</h2>
                 <form action="" class="form-update" method='post'>
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                     <div class="details-update" style="margin-bottom: 11px">

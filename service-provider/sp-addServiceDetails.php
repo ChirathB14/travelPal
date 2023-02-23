@@ -27,19 +27,19 @@ require_once("../inc/header.php");
                 <button class="active" onclick="location.href = 'sp-addServiceDetails.php';">Service Details</button>
                 <button onclick="location.href = 'sp-update-profile.php';">Update Profile</button>
                 <button onclick="location.href = 'sp-update-availability.php';">Update Availability</button>
-                <br> <br> <br> <br> <br>
+                <!-- <br> <br> <br> <br> <br> -->
             </div> 
         </div>
 
         <!-- Profile -->
         <div class="content">
-            <div class="profile-content">
-                <h2 style="color: var(--accentcolor);">No services added</h2>
+            <!-- <div class="profile-content"> -->
+                <h2 style="color: var(--primarycolor);">No services added</h2>
                 <br><br>
                 <button type="submit" name="submit" style="width: 200px">
                     <a href="/travelPal/service-provider/sp-service-details.php">Add Services</a>
                 </button>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 

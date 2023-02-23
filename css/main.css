@@ -176,17 +176,27 @@ input::placeholder {
 .Dashboard-top {
     display: block;
     margin: 25px;
-    align-items: center;
+}
+
+.Dashboard-top img {
+    height: 48px;
+    width: auto;
+    float: left;
+}
+
+.Dashboard-top h4 {
+    margin-top: 12px;
     text-align: center;
 }
 
 .Dashboard-bottom {
     display: block;
+    height: 65vh;
 }
 
 .Dashboard-bottom button {
     background-color: #00357A;
-    border: 0.2px solid #D9D9D9;
+    /* border: 0.2px solid #D9D9D9; */
     border-radius: 0%;
     width: 100%;
     font-size: 14px;
@@ -196,6 +206,7 @@ input::placeholder {
 /* Style the active class (and buttons on mouse-over) */
 .Dashboard-bottom button.active, .Dashboard-bottom button:hover{
     background-color: #D9D9D9 !important;
+    color: var(--primarycolor);
 }
 
 /* Profile styles */
@@ -210,11 +221,6 @@ input::placeholder {
     background-size: cover;
 }
 
-/* .profile h2 {
-    font-size: 24px;
-    font-weight: bolder;
-} */
-
 .profile-content {
     display: flex;
     flex-direction: column;
@@ -222,6 +228,7 @@ input::placeholder {
     color: var(--primarycolor);   
     justify-content: center;
     align-items: center;
+    margin-top: 10vh;
     width: 55%;
     height: max-content;
     padding: 20px;
@@ -264,7 +271,7 @@ input::placeholder {
     width: 80%;
     justify-content: center;
     align-items: center;
-    background-color: #99afd2;
+    background-color: #D9D9D9;
 }
 
 .content h2 {

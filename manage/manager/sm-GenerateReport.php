@@ -37,8 +37,8 @@ require_once("../../inc/header.php");
         }
         ?>
 
-        <h2>Service Details</h2>
         <div class="profile-content">
+        <h2>Service Details</h2>
         <form action="t-update-profile.php" class="form-update" method='post'>
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">

@@ -2,7 +2,8 @@
 /* Profile styles */
 
 .page-content {
-    background-color: var(--accentcolor);
+    /* background-color: var(--accentcolor); */
+    background-color: #D9D9D9;
 }
 
 .details input::placeholder {
@@ -26,7 +27,8 @@
 .profileView {
     display: flex;
     flex-direction: column;
-    background-color: rgb(198, 200, 218);
+    background-color: rgba(255, 255, 255,0.45);
+    border: 2px solid var(--primarycolor);
     margin: 10px;
     height: 95%;
     width: 35%;
