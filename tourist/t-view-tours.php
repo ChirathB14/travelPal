@@ -11,15 +11,14 @@ require_once("../inc/header.php");
     
         <style>
             .content table {
-                margin: 5px;
-                border-spacing: 0;
+                border-collapse: collapse;
                 background-color: rgb(235, 235, 235);
-                width: 50%;
+                width: 95%;
             }
 
             .content table th {
-                padding: 5px;
                 background-color: var(--primarycolor);
+                height: 45px;
                 border-top: 1px solid var(--accentcolor);
                 color: var(--accentcolor);
             }
@@ -27,11 +26,11 @@ require_once("../inc/header.php");
             .content table tr {
                 border-bottom: 1px solid var(--accentcolor);
                 color: var(--primarycolor);
-                height: 20px;
+                height: 35px;
+                padding: 5px;
             }
 
             .content table td {
-                border-bottom: 1px solid var(--accentcolor);
                 color: var(--primarycolor);
                 text-align: center;
                 justify-content: center;
@@ -57,6 +56,7 @@ require_once("../inc/header.php");
         </div>
 
         <div class="content">
+        <div class="profile-content">
         <h2>Your Tour Plans</h2>
         <table>
             <tr>
@@ -64,7 +64,7 @@ require_once("../inc/header.php");
                 <th>Status</th>
                 <th>View</th>
                 <th>Cancel</th>
-            </tr> 
+            </tr>
             <tr>
                 <td>001</td>
                 <td><mark style="background-color:grey; color:white; font-size:12px; padding:2px;">&nbsp;Draft&nbsp;</mark></td>
@@ -77,19 +77,8 @@ require_once("../inc/header.php");
                 <td><i class="fa fa-eye" aria-hidden="true" style="margin-left:15px; color:blue;"></i></td>
                 <td><i class="fa fa-times" aria-hidden="true" style="margin-left:30px; color:red;"></i></td>
             </tr> 
-            <tr>
-                <td>001</td>
-                <td><mark style="background-color:grey; color:white; font-size:12px; padding:2px;">&nbsp;Draft&nbsp;</mark></td>
-                <td><i class="fa fa-eye" aria-hidden="true" style="margin-left:15px; color:blue;"></i></td>
-                <td><i class="fa fa-times" aria-hidden="true" style="margin-left:30px; color:red;"></i></td>
-            </tr>
-            <tr>
-                <td>001</td>
-                <td><mark style="background-color:grey; color:white; font-size:12px; padding:2px;">&nbsp;Draft&nbsp;</mark></td>
-                <td><i class="fa fa-eye" aria-hidden="true" style="margin-left:15px; color:blue;"></i></td>
-                <td><i class="fa fa-times" aria-hidden="true" style="margin-left:30px; color:red;"></i></td>
-            </tr> 
         </table>
+        </div>
         </div>
 
         </div>

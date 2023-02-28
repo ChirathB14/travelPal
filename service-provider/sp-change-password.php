@@ -145,8 +145,8 @@ require_once("../inc/header.php");
         }
         ?>
 
-        <h2>Update Profile</h2>
         <div class="profile-content">
+        <h2>Update Profile</h2>
             <form action="sp-change-password.php" class="userform" method='post' style="width: 80%;">
                 <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update">
