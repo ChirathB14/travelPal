@@ -8,9 +8,9 @@ if (!$_SESSION['user_id']) {
     header('Location: login.php');
 }
 
-$sitemanager_list = '';
+$transport_list = '';
 $query = "SELECT * FROM users
-INNER JOIN sitemanager ON users.userID=sitemanager.userID";
+INNER JOIN transport ON users.userID=transport.serviceProfileID";
 
 // echo $query;
 // die();
@@ -23,13 +23,13 @@ $users = mysqli_query($connection, $query);
 // die();
 
 while ($user = mysqli_fetch_assoc($users)) {
-    $sitemanager_list .= "<tr>";
+    $transport_list .= "<tr>";
     $FullName=$user['firstName']." ".$user['lastName'];
-    $sitemanager_list .= "<td>$FullName</td>";
-    $sitemanager_list .= "<td>{$user['email']}</td>";
+    $transport_list .= "<td>$FullName</td>";
+    $transport_list .= "<td>{$user['email']}</td>";
     // $user_list .= "<td><a href=''><i class="fa-regular fa-pen-to-square"></i></a></td>";
     // $user_list .= "<td><a href=''><i class="fa-solid fa-trash-can"></i></a></td>";
-    $sitemanager_list .= "</tr>";
+    $transport_list .= "</tr>";
 }
 ?>
 
@@ -74,7 +74,7 @@ require_once('../../inc/header.php')
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            <?php echo $sitemanager_list; ?>   
+            <?php echo $transport_list ; ?>   
         </table>
     </div>
     </div>
