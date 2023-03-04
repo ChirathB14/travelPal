@@ -149,6 +149,15 @@ form {
     opacity: 70%;
     width: 280px;
     margin: 10px 10px 10px 380px;
+    font-size: 14px !important;
+}
+
+/* proceed to pay page styles */
+.proceedpaybtn {
+    background-color: var(--primarycolor) !important;
+    font-size: 16px !important;
+    width: 40% !important;
+    float: right !important;
 }
 
 /* Payment successful page styles */

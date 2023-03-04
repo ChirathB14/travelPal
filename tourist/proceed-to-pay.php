@@ -11,10 +11,10 @@ require_once("../inc/header.php");
 </head>
 
 <div class="customize-page-content">
-    <br> <br>
-    <h2>Summary of your Tour Plan</h2>
-    <form action="">
+    <form action="proceed-to-pay.php">
     <div class="services-container">
+    <h2>Summary of your Tour Plan</h2>
+    <br>
         <div class="checkbox-list">
             <div class="checkbox-items">
                 <div class="input-item"><h6 style="margin-right:80px">City</h6><input type="text" name="" id="" style="width:180px;">  </div>
@@ -22,8 +22,7 @@ require_once("../inc/header.php");
                 <div class="input-item"><h6 style="margin-right:50px">Duration</h6><input type="text" name="" id="" style="width:460px;"> </div>    
             </div>
         </div>
-    </div>
-    <div class="services-container">
+        <br>
         <p>Set Duration *</p>
         <div class="checkbox-list">
             <div class="checkbox-items">
@@ -33,15 +32,13 @@ require_once("../inc/header.php");
                 <div class="item"><h6 style="margin-right:30px">End Date</h6><input type="date" name="" id=""> </div>   
             </div>
         </div>
-    </div>
-    <div class="services-container">
+        <br>
         <div class="checkbox-list">
             <div class="checkbox-items">
                 <div class="input-item"><p style="margin-right:60px;">No of Tourists *</p><input type="text" name="" id="" style="width:40px;" placeholder="  XXX">  </div>
             </div>
         </div>
-    </div>
-    <div class="services-container">
+        <br>
         <p>Select prefered Accommodation Type</p>
         <div class="checkbox-list">
             <div class="checkbox-items">
@@ -53,8 +50,7 @@ require_once("../inc/header.php");
                 <div class="item"><h6 style="margin-right:170px">Villa</h6><input type="checkbox" name="" id=""> </div>  
             </div>
         </div>
-    </div>
-    <div class="services-container">
+        <br>
         <p>Select prefered Accommodation facilities</p>
         <div class="checkbox-list">
             <div class="checkbox-items">
@@ -64,8 +60,7 @@ require_once("../inc/header.php");
                 <div class="item"><h6 style="margin-right:117px">Without Food</h6><input type="checkbox" name="" id=""> </div>   
             </div>
         </div>
-    </div>
-    <div class="services-container">
+        <br>
         <p>Select prefered Food Type</p>
         <div class="checkbox-list">
             <div class="checkbox-items">
@@ -75,8 +70,7 @@ require_once("../inc/header.php");
                 <div class="item"><h6 style="margin-right:145px">Non Veg</h6><input type="checkbox" name="" id=""> </div>   
             </div>
         </div>
-    </div>
-    <div class="services-container">
+        <br>
         <p>Select A/C Facilities</p>
         <div class="checkbox-list">
             <div class="checkbox-items">
@@ -86,8 +80,7 @@ require_once("../inc/header.php");
                 <div class="item"><h6 style="margin-right:145px">Non A/C</h6><input type="checkbox" name="" id=""> </div>   
             </div>
         </div>
-    </div>
-    <div class="services-container">
+        <br>
         <p>Select prefered transportation Type</p>
         <div class="checkbox-list">
             <div class="checkbox-items">
@@ -97,8 +90,7 @@ require_once("../inc/header.php");
                 <div class="item"><h6 style="margin-right:141px">Private</h6><input type="checkbox" name="" id=""> </div>   
             </div>
         </div>
-    </div>
-    <div class="services-container">
+        <br>
         <p>Do you need a Tour Guide</p>
         <div class="checkbox-list">
             <div class="checkbox-items">
@@ -108,8 +100,11 @@ require_once("../inc/header.php");
                 <div class="item"><h6 style="margin-right:165px">No</h6><input type="checkbox" name="" id=""> </div>   
             </div>
         </div>
+        <div class="form-buttons">
+            <button class="cancelbutton" type="submit" name="submit"><a href="/travelPal/tourist/customize-tour-plan2.php">Cancel</a></button>
+            <button class="proceedpaybtn" type="submit" name="submit">Proceed to pay</button>
+        </div>
     </div>
-    <button class="proceedbtn" type="submit" name="submit">Proceed to pay</button>
     </form>
 </div>
 

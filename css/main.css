@@ -61,15 +61,10 @@ body {
 }
   
 .nav:hover {
-    background-color: #00357A;
-    font-size: 16px;
     box-shadow: none;
-}
-
-.menu .nav-select{
-    margin: 0;
-    border-radius: 0px;
-    background-color: #00357A;;
+    border-bottom: 2px solid var(--accentcolor) !important;
+    background-color: var(--primarycolor) !important;
+    font-size: 14px;
 }
 
 .menu .logout-btn {
@@ -81,7 +76,7 @@ body {
 }
 
 .logout-btn:hover {
-    background-color: var(--secondarycolor);
+    background-color: var(--secondarycolor) !important;
     font-size: 16px;
     box-shadow: none;
 }
