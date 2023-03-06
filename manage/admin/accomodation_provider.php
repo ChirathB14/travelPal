@@ -12,23 +12,17 @@ $accomoation_list = '';
 $query = "SELECT * FROM users
 INNER JOIN accomodation ON users.userID=accomodation.serviceProfileID";
 
-// echo $query;
-// die();
-
 $users = mysqli_query($connection, $query);
+?>
 
-// verify_query($users);
-// $user = mysqli_fetch_assoc($users);
-// var_dump($user);
-// die();
-
+<?php
 while ($user = mysqli_fetch_assoc($users)) {
     $accomoation_list .= "<tr>";
     $FullName=$user['firstName']." ".$user['lastName'];
     $accomoation_list .= "<td>$FullName</td>";
     $accomoation_list .= "<td>{$user['email']}</td>";
-    // $user_list .= "<td><a href=''><i class="fa-regular fa-pen-to-square"></i></a></td>";
-    // $user_list .= "<td><a href=''><i class="fa-solid fa-trash-can"></i></a></td>";
+    $accomoation_list .= "<td><button><a href=\"modify-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to edit this record?');\">Edit</a></button></td>";
+    $accomoation_list .= "<td><button><a href=\"delete-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a></button></td>";
     $accomoation_list .= "</tr>";
 }
 ?>
@@ -59,14 +53,13 @@ require_once('../../inc/header.php')
                 <button class="active" onclick="location.href = 'accomodation_provider.php';">Accommodation Provider</button>
                 <button onclick="location.href = 'vehicle_provider.php';">Vehicle Provider</button>
                 <button onclick="location.href = 'tourist_guide.php';">Tourist Guide</button>
-                <br> <br> <br> <br> <br>
             </div> 
         </div>
 
         
     <div class="content">
         <h2>Accommodation Provider</h2>
-        <table>
+        <table class="admin-table">
             <tr>
                 <th>Name</th>
                 <th>Email</th>

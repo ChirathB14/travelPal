@@ -154,7 +154,6 @@ require_once('../../inc/header.php')
                 <button onclick="location.href = 'accomodation_provider.php';">Accommodation Provider</button>
                 <button onclick="location.href = 'vehicle_provider.php';">Vehicle Provider</button>
                 <button onclick="location.href = 'tourist_guide.php';">Tourist Guide</button>
-                <br> <br> <br> <br> <br>
             </div> 
         </div>
 
@@ -166,8 +165,8 @@ require_once('../../inc/header.php')
         }
         ?>
 
+        <div class="profile-content" style="height: 350px">
         <h2>Site Manager</h2>
-        <div class="profile-content" style="height: 300px">
         <form action="add_siteManager.php" class="" method='post' style="width: 300px;">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="details-update" style="width:300px">
@@ -200,7 +199,7 @@ require_once('../../inc/header.php')
                         <input type="password" id="" name="confirm_password" placeholder="Enter password" required  style="width:140px">
                     </p> 
                 </div>
-                <button type="submit" name="submit" style="margin-left:30px">Submit</button>
+                <button type="submit" name="submit" style="width: 100%; margin-bottom: 20px;">Submit</button>
         </form>
         </div>
     </div>
