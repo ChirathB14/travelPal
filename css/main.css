@@ -349,6 +349,8 @@ input::placeholder {
     background-color: var(--accentcolor);
     width: 90%;
     height: 34px;
+    font-size: 12px;
+    padding-top: 5px;
 }
 
 .profile-content button {
