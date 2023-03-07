@@ -12,23 +12,17 @@ $guide_list = '';
 $query = "SELECT * FROM users
 INNER JOIN tourguide ON users.userID=tourguide.serviceProfileID";
 
-// echo $query;
-// die();
-
 $users = mysqli_query($connection, $query);
+?>
 
-// verify_query($users);
-// $user = mysqli_fetch_assoc($users);
-// var_dump($user);
-// die();
-
+<?php
 while ($user = mysqli_fetch_assoc($users)) {
     $guide_list .= "<tr>";
     $FullName=$user['firstName']." ".$user['lastName'];
     $guide_list .= "<td>$FullName</td>";
     $guide_list .= "<td>{$user['email']}</td>";
-    // $user_list .= "<td><a href=''><i class="fa-regular fa-pen-to-square"></i></a></td>";
-    // $user_list .= "<td><a href=''><i class="fa-solid fa-trash-can"></i></a></td>";
+    $guide_list .= "<td><button><a href=\"modify-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to edit this record?');\">Edit</a></button></td>";
+    $guide_list .= "<td><button><a href=\"delete-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a></button></td>";
     $guide_list .= "</tr>";
 }
 ?>
@@ -66,7 +60,7 @@ require_once('../../inc/header.php')
         
     <div class="content">
         <h2>Tour Guide</h2>
-        <table>
+        <table class="admin-table">
             <tr>
                 <th>Name</th>
                 <th>Email</th>

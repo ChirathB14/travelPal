@@ -12,23 +12,17 @@ $sitemanager_list = '';
 $query = "SELECT * FROM users
 INNER JOIN sitemanager ON users.userID=sitemanager.userID";
 
-// echo $query;
-// die();
-
 $users = mysqli_query($connection, $query);
+?>
 
-// verify_query($users);
-// $user = mysqli_fetch_assoc($users);
-// var_dump($user);
-// die();
-
+<?php
 while ($user = mysqli_fetch_assoc($users)) {
     $sitemanager_list .= "<tr>";
     $FullName=$user['firstName']." ".$user['lastName'];
     $sitemanager_list .= "<td>$FullName</td>";
     $sitemanager_list .= "<td>{$user['email']}</td>";
-    // $user_list .= "<td><a href=''><i class="fa-regular fa-pen-to-square"></i></a></td>";
-    // $user_list .= "<td><a href=''><i class="fa-solid fa-trash-can"></i></a></td>";
+    $sitemanager_list .= "<td><button><a href=\"modify-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to edit this record?');\">Edit</a></button></td>";
+    $sitemanager_list .= "<td><button><a href=\"delete-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a></button></td>";
     $sitemanager_list .= "</tr>";
 }
 ?>
@@ -67,7 +61,7 @@ require_once('../../inc/header.php')
     <div class="content">
         <h2>Site Manager</h2>
         <a href="add_siteManager.php" class="create-sm">+ Create Site Manager</a> 
-        <table>
+        <table class="admin-table">
             <tr>
                 <th>Name</th>
                 <th>Email</th>
