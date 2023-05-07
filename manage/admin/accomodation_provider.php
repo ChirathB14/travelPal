@@ -8,9 +8,9 @@ if (!$_SESSION['user_id']) {
     header('Location: login.php');
 }
 
-$accomoation_list = '';
+$accommodation_list = '';
 $query = "SELECT * FROM users
-INNER JOIN accomodation ON users.userID=accomodation.serviceProfileID";
+INNER JOIN accommodation ON users.userID=accomodation.serviceProfileID";
 
 $users = mysqli_query($connection, $query);
 ?>
@@ -19,11 +19,11 @@ $users = mysqli_query($connection, $query);
 while ($user = mysqli_fetch_assoc($users)) {
     $accomoation_list .= "<tr>";
     $FullName=$user['firstName']." ".$user['lastName'];
-    $accomoation_list .= "<td>$FullName</td>";
-    $accomoation_list .= "<td>{$user['email']}</td>";
-    $accomoation_list .= "<td><button><a href=\"modify-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to edit this record?');\">Edit</a></button></td>";
-    $accomoation_list .= "<td><button><a href=\"delete-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a></button></td>";
-    $accomoation_list .= "</tr>";
+    $accommodation_list .= "<td>$FullName</td>";
+    $accommodation_list .= "<td>{$user['email']}</td>";
+    $accommodation_list .= "<td><button><a href=\"modify-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to edit this record?');\">Edit</a></button></td>";
+    $accommodation_list .= "<td><button><a href=\"delete-user.php?user_id={$user['userID']}\" onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a></button></td>";
+    $accommodation_list .= "</tr>";
 }
 ?>
 
@@ -68,7 +68,7 @@ require_once('../../inc/header.php')
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            <?php echo $accomoation_list; ?>   
+            <?php echo $accommodation_list; ?>   
         </table>
     </div>
     </div>
