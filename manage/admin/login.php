@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['full_name'] = $user['firstName'] . " " . $user['lastName'];
 
                 //redirect to the user.php
-                header('Location: admin_profile.php');
+                header('Location: admin-dashboard.php');
             } else {
                 $errors[] = 'Invalid username or Password 1';
             }

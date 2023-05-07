@@ -48,6 +48,7 @@ require_once('../../inc/header.php')
                 <h4><?php echo $_SESSION['full_name']; ?></h4>
             </div>
             <div class="Dashboard-bottom">
+                <button onclick="location.href = 'admin-dashboard.php';">Dashboard</button>
                 <button onclick="location.href = 'admin_profile.php';">Site Manager</button>
                 <button onclick="location.href = 'admin_tourist.php';">Tourist</button>
                 <button class="active" onclick="location.href = 'accomodation_provider.php';">Accommodation Provider</button>
