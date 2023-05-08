@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/registration.css">
     <link rel="stylesheet" href="../../css/main.css">
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
+    <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
     <title>Travel Pal</title>
 </head>
 
@@ -17,8 +18,7 @@
             <h2 id="heder-register">create new destination</h2>
             <form class="reg-form" method="POST" action="ManagerAddNewDestination.php">
                 <div style="width:100%;text-align:center">
-                    <select id="location" name="location" class="reg-input" required
-                    style="width: 400px;  margin-top: 12px; 
+                    <select id="location" name="location" class="reg-input" required style="width: 400px;  margin-top: 12px; 
                             background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                             box-sizing: border-box; border: none; border-radius: 5px;
                             font-size: 10px; font-weight: bold; color:#808080;">
@@ -46,7 +46,7 @@
                 <div class="new-user">
                     <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Create</button>
                 </div>
-                
+
                 <?php
                 require '../DbConfig.php';
                 if (isset($_POST['registerbtn']) && isset($_COOKIE['user'])) {
