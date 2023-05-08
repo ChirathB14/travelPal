@@ -10,15 +10,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
 
     <link rel="stylesheet" href="../../css/header.css">
     <script src="https://kit.fontawesome.com/c82cd88752.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../js/checkAccess.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>Travel Pal</title>
 </head>
 
 <body onload="checkAccess(false)">
-<?php
+    <?php
     if (!isset($_COOKIE['user'])) {
         echo "
         <div class=\"header\">
@@ -65,9 +69,9 @@
         </div> ";
     }
     ?>
-    
 
-<!--
+
+    <!--
     <ul class="header-ul">
         <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
         <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
@@ -82,4 +86,5 @@
     <hr style="background-color: #327972;color:#327972" />
 -->
 </body>
+
 </html>

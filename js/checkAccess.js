@@ -61,14 +61,14 @@ function checkTypeAccess() {
 
 function logOut() {
     var txt;
-    if (confirm("Are You Sure, \n Do You Want To Logout?")) {
+    if (confirm("Are You Sure,\nDo You Want To Logout?")) {
         delete_cookie('user')
         window.location.reload()
     }
 }
 
 function delete_cookie(name) {
-    document.cookie = name + '=; Path=/;';
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;Path=/;';
 }
 
 function onDeleteSuccess() {
@@ -100,4 +100,13 @@ function getCookie(name) {
 
   // Return null if not found
   return null;
+}
+
+function showPw() {
+  var x = document.getElementById("Pass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
 }
