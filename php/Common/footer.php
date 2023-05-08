@@ -227,7 +227,7 @@
                     </div>
             </div>
             <div class=\"foot-right\">
-                <img src=\"/travelPal/assets/logo.png\" alt=\"\">
+                <img src=\"/travelPal/images/footerimg.png\" alt=\"\">
             </div>
         </div>
         <?php require_once(\"./inc/footer.php\");?>

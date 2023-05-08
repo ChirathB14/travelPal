@@ -1,12 +1,17 @@
-<td>
+<td style="width: 30%;">
     <ul class="vertical-ul">
         <li class="verticle-li">
-            <center><img class="headerbtm" src="../../images/Profile.png" alt="logo" width="100" height="100"></center>
-        </li>
-        <li class="verticle-li">
-            <center>
+            <br>
+            <div class="vl-profile">
+                <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="50" height="50">
                 <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
-            </center>
+            </div>
+        <!-- </li>
+        <li class="verticle-li"> -->
+            <!-- <center> -->
+                
+            <!-- </center> -->
+            <br>
         </li>
         <li class="verticle-li"><a href="./Profile.php">My Profile</a></li>
         <li class="verticle-li"><a href="./UpdateProfile.php">Update Profile</a></li>
