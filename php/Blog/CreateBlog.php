@@ -61,7 +61,7 @@ else{
     "
     <script>
       alert('Please Login First');
-      document.location.replace('../../index.php');
+      document.location.replace('./ViewBlogs.php');
     </script>
     ";
 }

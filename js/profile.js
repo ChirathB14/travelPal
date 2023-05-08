@@ -1,12 +1,12 @@
 function logOut() {
-    if (confirm("Are You Sure, \n Do You Want To Logout?")) {
+    if (confirm("Are You Sure,\nDo You Want To Logout?")) {
         delete_cookie('user')
         window.location.reload()
     }
 }
 
 function delete_cookie(name) {
-    document.cookie = name + '=; Path=/;';
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;Path=/;';
 }
 
 function onDeleteSuccess() {
@@ -55,8 +55,6 @@ function checkUserAccess() {
     let MANAGER_VIEW_VEHICLE = document.getElementById('MANAGER_VIEW_VEHICLE')
     let MANAGER_VIEW_GUIDE = document.getElementById('MANAGER_VIEW_GUIDE')
     let VIEW_AVAILABILITY = document.getElementById('VIEW_AVAILABILITY')
-
-
 
     let user = getCookie('user')
     if (user) {
