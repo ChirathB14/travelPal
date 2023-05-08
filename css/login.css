@@ -1,20 +1,21 @@
+/*
 #overlay {
     position: fixed;
-    /* Sit on top of the page content */
+    /* Sit on top of the page content *
     width: 100%;
-    /* Full width (cover the whole page) */
+    /* Full width (cover the whole page) *
     height: 100%;
-    /* Full height (cover the whole page) */
+    /* Full height (cover the whole page) *
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(14, 6, 77, 0.7);
-    /* Black background with opacity */
+    /* Black background with opacity *
     z-index: 2;
     /* Specify a stack order in case you're using a different order for other elements */
     /* cursor: pointer; */
-    /* Add a pointer on hover */
+    /* Add a pointer on hover *
 }
 
 #heder-login {
@@ -24,7 +25,7 @@
     font-size: 32px;
     line-height: 48px;
 
-    /* identical to box height */
+    /* identical to box height *
     text-align: center;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -46,29 +47,23 @@
     padding-inline-end: 10px;
 }
 
-.log-form {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
+.new-user {
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    margin-top: 12px;
 }
 
-.loginbtn {
-    width: 30%;
-    height: 40px;
-    background: #EEB444;
-    border-radius: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 25px;
-    line-height: 30px;
+.new-user a {
+    text-decoration: underline;
     text-align: center;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    margin-top: 12px;
+    font-size: 10px;
+}
 
-    color: #FFFFFF;
+.registerAs {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto 100px auto;
 }
 
 .new-account {
@@ -78,7 +73,7 @@
     font-size: 14px;
     line-height: 21px;
 
-    /* identical to box height */
+    /* identical to box height *
     text-align: center;
     letter-spacing: 0.1em;
     text-decoration-line: underline;
@@ -94,10 +89,58 @@
     font-size: 14px;
     line-height: 21px;
 
-    /* identical to box height */
+    /* identical to box height *
     text-align: center;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
     color: #FFFFFF;
 }
+*/
+
+body {
+    background-image: url('../images/registerBG.png'); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-color: rgba(14, 6, 77, 0.7);
+}
+
+.login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30vh;
+    margin: 90px;
+}
+
+.password {
+    display: flex;
+    flex-direction: row;
+    color: var(--accentcolor);   
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 10px;
+}
+
+.new-user {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.new-user a {
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+

@@ -28,6 +28,8 @@ document.location.reload();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
     <link rel="stylesheet" href="../../css/newFooter.css">
     <link rel="stylesheet" href="../../css/header.css">
@@ -37,7 +39,7 @@ document.location.reload();
         .contact-dev {
             width: 80%;
             background: rgba(255, 255, 255, 0.8);
-            box-shadow: 2px 4px 4px #FFFFFF;
+            box-shadow: 2px 4px 4px var(--accentcolor);
             padding: 25px;
         }
 
@@ -50,38 +52,28 @@ document.location.reload();
         }
 
         .contact-p {
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 800;
-            font-size: 20px;
-            line-height: 114.5%;
-
-            /* or 41px */
+            font-size: 16px;
+            line-height: 110%;
             text-align: center;
             letter-spacing: 0.1em;
-
-            color: #0E064D;
+            color: var(--primarycolor);
         }
 
         .contact-h2 {
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 800;
             font-size: 25px;
-            line-height: 114.5%;
-
-            /* or 41px */
+            line-height: 110%;
+            margin-bottom: 10px;
             text-align: center;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
-
-            color: #0E064D;
+            color: var(--primarycolor);
         }
 
         .form-wrapper {
-            width: 40%;
+            width: 36%;
             background: rgba(255, 255, 255, 0.8);
-            box-shadow: 2px 4px 4px #FFFFFF;
+            box-shadow: 2px 4px 4px var(--accentcolor);
             padding: 25px;
             flex-direction: column;
             margin-top: 70px;
@@ -94,50 +86,44 @@ document.location.reload();
             justify-content: center;
         }
 
-        .contact-input {
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid #FFFFFF;
-            border-radius: 15px;
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
+        .input-elements textarea {
+            border: 1px solid var(--accentcolor);
+            border-radius: 5px;
             font-weight: 800;
-            font-size: 16px;
-            line-height: 24px;
 
             /* identical to box height */
             letter-spacing: 0.1em;
             padding-inline-start: 10px;
+            color: var(--primarycolor);
+            margin-top: 12px;
             text-transform: uppercase;
-
-            color: #0E064D;
-            width: 100%;
-            margin-top: 15px;
-
-
+            font-size: 12px;
         }
 
+        /*
         .messege-btn {
-            background: #EEB444;
+            background: var(--secondarycolor);
             border-radius: 10px;
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 800;
             font-size: 24px;
             line-height: 36px;
             text-align: center;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
             margin-top: 16px;
             padding: 10px;
-
-            color: #FFFFFF;
+            color: var(--accentcolor);
         }
+        */
     </style>
-    <title>Travel Pal</title>
+    <title>TravelPal</title>
 </head>
 
+<?php
+    require_once("../Common/header.php");
+?>
 <body style="background-color: #0E064D;" onload="checkAccess(true)">
     <table>
+        <!--
         <tr VALIGN=TOP>
             <ul class="header-ul">
                 <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
@@ -152,6 +138,7 @@ document.location.reload();
             </ul>
             <hr style="background-color: #327972;color:#327972" />
         </tr>
+    -->
         <tr VALIGN=TOP>
             <img src="../../images/contact.png" alt="Image" width="100%" height="auto">
             <div class="contact-main-dev">
@@ -159,21 +146,22 @@ document.location.reload();
                     <h2 class="contact-h2">Contact us</h2>
                     <p class="contact-p">
                         Expect a premium level of service from your first point of contact to your last moments in Sri Lanka.
-
-                        Lanka Travel plan is a Sri Lanka luxury tour service provider with a particular emphasis on tailored solutions with highly personalized service that match the luxury lifestyle and the higher expectations of the privileged clients.
-
-                        Feel free to call, send us an email or simply complete the enquiry form to arrange your own private tailor made luxury tour in Sri Lanka.
+                        Lanka Travel plan is a Sri Lanka luxury tour service provider with a particular emphasis on tailored 
+                        solutions with highly personalized service that match the luxury lifestyle and the higher expectations of the privileged clients.
+                        Feel free to call, send us an email or simply complete the enquiry form to arrange your own private 
+                        tailor made luxury tour in Sri Lanka.
                     </p>
                 </div>
             </div>
             <div class="form-main-wrapper">
                 <div class="form-wrapper">
                     <form method="POST" action="ContactUS.php">
-                        <input class="contact-input" name="name" type="text" placeholder="Name" required /><br>
-                        <input class="contact-input" type="email" name="email" placeholder="Email" required /><br>
-
-                        <textarea cols="30" rows="10" name="messege" class="contact-input" placeholder="Message" required></textarea><br>
-                        <button type="submit" name="submit" class="messege-btn">Send Message</button>
+                        <div class="input-elements">
+                            <input name="name" type="text" placeholder="    Name" required />
+                            <input type="email" name="email" placeholder="    Email" required />
+                            <textarea cols="30" rows="10" name="messege" placeholder="Message" required></textarea><br>
+                            <button type="submit" name="submit">Send Message</button>
+                        </div>
                     </form>
                 </div>
             </div>

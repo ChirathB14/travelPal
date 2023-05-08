@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--CSS-->
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/blog.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../../css/newFooter.css">
@@ -27,17 +28,15 @@ function loadBlog() {
 <body style="background-color:rgba(14, 6, 77, 0.7);">
     <div>
         <div class="blog-view-heading">
-            <div>
+            <div class="blog-view-top">
                 <center>
                     <h1>WELCOME TO THE TRAVEL PAL BLOG!</h1>
                     <p>Nature | Beauty | Experience</p>
                 </center>
-            </div>
-            <div>
                 <button class="create-blog" onclick="loadBlog()">Create Blog</button>
             </div>
-
         </div>
+
         <?php
              require '../DbConfig.php';
          
@@ -52,6 +51,7 @@ function loadBlog() {
         <div class="blog-card">
             <div class="blog-card-heading">
                 <div class="card-hedding">
+                    <br>
                     <h1><?php echo $row['heading']; ?></h1>
                 </div>
 
