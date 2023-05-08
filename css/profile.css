@@ -2,29 +2,48 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
+    width: 250px;
     background-color: #00357A;
     height: 80vh;
     display: block;
 }
 
+.vl-profile {
+    display: flex;
+    flex-direction: row;
+}
+
 .verticle-li a {
     display: block;
-    color: white;
+    color: var(--accentcolor);
     text-align: center;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
+    /* font-family: 'Poppins', sans-serif;
+    font-style: normal; */
     font-weight: 400;
     padding: 8px 16px;
-    background-color: #0E064D;
+    background-color: var(--primarycolor);
     font-size: 15px;
 }
 
-/* Change the link color on hover */
-.verticle-li a:hover {
-    background-color: #327972;
-    color: white;
+.verticle-li img {
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0px 0px 15px;
+    width: 50px;
+    height: 50px;
+}
+
+.verticle-li p {
+    margin-top: 20px;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.verticle-li a.active, .verticle-li a:hover{
+    background-color: #D9D9D9 !important;
+    color: var(--primarycolor);
 }
 
 .user-name {
@@ -61,25 +80,24 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 80%;
+    width: 70%;
+    margin: 10% 2% 10% 5%;
 }
 
 .line-wrapper {
     background-color: #FFFFFF;
     padding: 6px 10px;
-    margin: 20px 0px
+    margin: 10px 0px
 }
 
 .line-txt {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 17px;
+    font-size: 14px;
     line-height: 25px;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #0E064D;
+    color: var(--primarycolor);
 }
 
 .delete-btn {
