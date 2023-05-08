@@ -13,7 +13,11 @@
     <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
-<body style="background-color: #0E064D;" onload="checkUserAccess()">
+<?php
+    $title = "Profile";
+?>
+
+<body onload="checkUserAccess()">
     <?php
     require '../DbConfig.php';
     if (isset($_COOKIE['user'])) {

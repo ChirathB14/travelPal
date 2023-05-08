@@ -14,6 +14,10 @@
     <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
+<?php
+    $title = "Profile";
+?>
+
 <body onload="checkUserAccess()">
     <?php
     require '../DbConfig.php';
@@ -137,6 +141,8 @@
     }
 ?>
 </body>
+
+<!--
 <footer class="custom-footer">
     <div class="footer-left">
         <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -170,4 +176,7 @@
         <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
     </div>
 </footer>
+-->
+
+<?php require_once("../Common/footer.php");?>
 </html>
