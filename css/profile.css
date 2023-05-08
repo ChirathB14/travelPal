@@ -137,15 +137,23 @@
 }
 
 .new-manager {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 0.1em;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--primarycolor);
+    background-color: #D9D9D9;
+    width: 200px;
+    height: max-content;
+    border-radius: 5px;
+    margin: 10px;
     text-decoration-line: underline;
-    text-transform: uppercase;
+}
 
+.new-manager:hover {
+    color: var(--accentcolor);
+    background-color: var(--secondarycolor);
 }
 
 .add-service-btn {

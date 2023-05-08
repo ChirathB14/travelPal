@@ -59,7 +59,6 @@
 
         <?php
             $title = "UpdateProfile - TravePal";
-            require_once("../Common/header.php");
         ?>
         
                     <!-- <ul class="header-ul">

@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/header.css">
-    <link rel="stylesheet" href="../../css/profile.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
-    <script type="text/javascript" src="../../js/profile.js"></script>
 
-    <title>Travel Pal</title>
+    <!-- <link rel="stylesheet" href="../../css/header.css"> -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
+    <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
-<body style="background-color: #0E064D;" onload="checkUserAccess()">
+<?php
+    $title = "Admin View - TravePal";
+?>
+
+<body onload="checkUserAccess()">
     <?php
     require '../DbConfig.php';
     if (isset($_COOKIE['user'])) {
@@ -29,6 +33,29 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
     ?>
+
+<div class="header">
+            <div class="navigationbar">
+                <div class="nav-Logo">
+                    <a href="/travelPal/index.php">
+                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                    </a>
+                </div>
+                <div class="menu">
+                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                </div>            
+            </div>
+            <div class="navigationbarfoot">
+                <hr>  
+            </div>    
+        </div>
+
+    <!--
                     <ul class="header-ul">
                         <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
                         <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
@@ -39,6 +66,8 @@
                         <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
                     </ul>
                     <hr style="background-color: #327972;color:#327972"/>
+                --> 
+
                     <table style="width:100%">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
@@ -70,13 +99,13 @@
                                                                 <td class="td-txt"><?php echo $manager['address']; ?></td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewVehicle.php">
-                                                                        <center><button type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
+                                                                        <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
 
                                                                 </td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewVehicle.php">
-                                                                        <center> <button type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
+                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
                                                                     </a>
 
                                                                 </td>
@@ -116,6 +145,8 @@
     }
     ?>
 </body>
+
+<!--
 <footer class="custom-footer">
     <div class="footer-left">
         <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -149,4 +180,9 @@
         <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
     </div>
 </footer>
+--> 
+
+<!-- footer -->
+<?php require_once("../Common/footer.php");?>
+
 </html>
