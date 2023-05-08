@@ -194,7 +194,7 @@
     <hr>
     <div class=\"footer\">
             <div class=\"foot-left\">
-                <img src=\"/travelPal/images/logo.png\" alt=\"logo\">
+                <img src=\"/travelPal/assets/logo tpal 1.png\" alt=\"logo\">
                 <h3>GET INSPIRED ! RECEIVE TRAVEL DISCOUNTS, TIPS & 
                     BEHIND THE SCENE STORIES</h3>
                     <div class=\"subscribe\">
