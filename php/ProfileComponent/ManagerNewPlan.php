@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/header.css">
+    <!-- <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/newFooter.css"> -->
     <link rel="stylesheet" href="../../css/newPlan.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/profile.css">
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
 
@@ -52,12 +54,12 @@
                         <li class="header-left-li"><a class="header-left-li a" style="background-color: #00357A;" id="profile" href="./Profile.php">Profile</a></li>
                         <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
                     </ul> -->
-                    <hr style="background-color: #327972;color:#327972"/>
+                    <!-- <hr style="background-color: #327972;color:#327972"/> -->
                     <table style="width:100%;height: 100%;overflow-y: hidden;">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile" style="text-align:left">
-                                <div class="main-wrapper">
+                                <div class="main-wrapper" style="margin-top:10px;">
                                     <table style="width: 100%;">
                                         <tr style="width: 100%;">
                                             <td style="width: 50%;">
@@ -72,6 +74,7 @@
                                             </td>
                                         </tr>
                                     </table>
+
                                     <h2 class="heder-profile">Create New Plan</h2>
                                     <div class="profile-main-wrapper">
                                         <form method="POST" action="ManagerNewPlan.php" autocomplete="off" enctype="multipart/form-data">
@@ -220,7 +223,8 @@
 
 
                                     </div>
-                                </div>
+                                    </div>
+    
                             </td>
                         </tr>
                     </table>

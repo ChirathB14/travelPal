@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../../css/preplanned.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
+    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Travel Pal</title>
 </head>
 
@@ -22,6 +23,7 @@
                 <p class="preplanned-des">We have customized tours according to climate changes in Sri Lanka for more experience</p>
             </center>
             <!-- HTML -->
+            <div>
             <div class="product-list">
                 <?php
                 if (isset($_GET['season']) && isset($_GET['type'])) {
@@ -42,10 +44,18 @@
                                 <p class="subtitle"><?php foreach ($selectedOptions as $option) {
                                                         echo $option . "| ";
                                                     } ?></p>
-                                <div class="price-row">
+                                <div class="price-row"  style="flex:direction:row;">
+                                <div>
                                     <!-- <span class="price">LKR<?php echo $row['price']; ?></span> -->
                                     <span class="text-right"><?php echo $row['no_of_day']; ?> Days</span>
+                                </div>                                   
+
+                                    <div>
+                                        <h2>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-heart" aria-hidden="true"></i></h2>
+                                        
+                                    </div>
                                 </div>
+                                
                             </a>
                 <?php
                         }
@@ -57,6 +67,8 @@
                 $conn->close();
                 ?>
             </div>
+            </div>
+            
 
 
         </tr>
