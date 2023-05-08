@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/registration.css">
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
-    <title>Travel Pal</title>
 </head>
+
+<?php
+    $title = "Register Manager - TravePal";
+?>
 
 <body style="background-image: url('../../images/registerBG.png')">
 
     <div id="overlay">
-        <div>
-            <center>
-                <h2 id="heder-register">update manager account</h2>
-            </center>
+        <div class="register" style="margin: 115px 0px 110px 0px;">
+            <!-- <center>
+                
+            </center> -->
             <?php
             require '../DbConfig.php';
             if (isset($_GET['id'])) {
@@ -31,13 +36,15 @@
                         while ($row = $result->fetch_assoc()) {
             ?>
                             <form class="reg-form" method="POST" action="UpdateManager.php?userId=<?php echo urlencode($_GET['id']);?>&newPage=<?php echo urlencode($_GET['page']);?>">
-
+                            <h2 id="heder-register">&nbsp;&nbsp;&nbsp; update manager account</h2>
+                            <div class="input-elements">
                                 <input type="text" class="reg-input" id="fname" name="fname" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required />
                                 <input type="text" class="reg-input" id="lname" name="lname" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required />
                                 <input type="text" class="reg-input" id="address" name="address" placeholder="Address" value="<?php echo $row['address']; ?>" required />
                                 <input type="email" class="reg-input" id="email" name="email" placeholder="Email" value="<?php echo $row['email']; ?>" required />
+                                <br>
                                 <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Update</button>
-
+                            </div>
                             </form>
             <?php
                         }
@@ -77,7 +84,9 @@
             ?>
         </div>
     </div>
-
 </body>
+
+<!-- footer -->
+<?php require_once("../Common/footer.php");?>
 
 </html>
