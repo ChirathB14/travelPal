@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Pal</title>
+    <link rel="stylesheet" href="../../css/main.css">
+
     <style>
         .container {
             display: flex;
@@ -15,6 +16,11 @@
 
         .image-container {
             flex: 1;
+        }
+
+        .image-container img{
+            height: 50%;
+            width: 50%;
         }
 
         .content-container {
@@ -28,31 +34,21 @@
 
         .title {
             text-align: center;
-
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 800;
             font-size: 24px;
             line-height: 54px;
             text-align: center;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
-
             color: #FFFFFF;
         }
 
         .description {
             text-align: center;
-
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 500;
             font-size: 20px;
             line-height: 48px;
             text-align: center;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
-
             color: #FFFFFF;
         }
 
@@ -61,26 +57,47 @@
             margin-top: 20px;
             background: #EEB444;
             border-radius: 15px;
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 700;
             font-size: 15px;
             line-height: 54px;
             text-align: center;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-
-            color: #FFFFFF;
+            color: var(--accentcolor);
         }
     </style>
 </head>
 
-<body style="background-color: #0E064D;">
+<?php
+    $title = "Payment Successfull";
+?>
+
+<body>
+
+<div class="header">
+            <div class="navigationbar">
+                <div class="nav-Logo">
+                    <a href="/travelPal/index.php">
+                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                    </a>
+                </div>
+                <div class="menu">
+                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                </div>            
+            </div>
+            <div class="navigationbarfoot">
+                <hr>  
+            </div>    
+        </div>
+
     <table style="width: 100%;">
         <tr VALIGN=TOP>
             <td style="width: 100%;">
-                <?php include '../Common/header.php'; ?>
-
             </td>
         </tr>
         <tr VALIGN=TOP>
@@ -98,10 +115,12 @@
                         </a>
                     </div>
                 </div>
-
             </td>
         </tr>
     </table>
 </body>
+
+
+<?php require_once("../Common/footer.php");?>
 
 </html>

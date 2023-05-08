@@ -74,6 +74,7 @@ a {
     border-radius: 5px;
     background-color: var(--accentcolor);
     opacity: 0.75;
+    padding-inline-start: 10px;
 }
 
 input::placeholder {
