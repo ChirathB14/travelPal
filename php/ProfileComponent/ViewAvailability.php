@@ -21,7 +21,6 @@
 
         $userID = json_decode($_COOKIE['user'])->user_Id;
 
-
         $sql = "SELECT first_name, last_name, email, address FROM user WHERE user_Id= '" . $userID . "'";
         $result = $conn->query($sql);
         // echo $conn->query($sql);
@@ -30,7 +29,6 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
     ?>
-
                     <div class="header">
                         <div class="navigationbar">
                             <div class="nav-Logo">
@@ -86,7 +84,6 @@
                                                             <th style="min-width: 150px;">Start Date</th>
                                                             <th style="min-width: 150px;">End Date</th>
                                                             <th style="min-width: 150px;">Delete</th>
-
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -99,7 +96,11 @@
                                                                 <td class="td-txt"><?php echo $acc_row['end_date']; ?></td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewTourist.php">
-                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
+                                                                        <center> 
+                                                                            <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This entry ?');">
+                                                                                <img src="../../images/delete.png" alt="delete" width="16" height="16">
+                                                                            </button> 
+                                                                        </center>
                                                                     </a>
                                                                 </td>
                                                             </tr>
