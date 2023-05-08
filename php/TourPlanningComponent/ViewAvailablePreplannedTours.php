@@ -43,7 +43,7 @@
                                                         echo $option . "| ";
                                                     } ?></p>
                                 <div class="price-row">
-                                    <span class="price">LKR<?php echo $row['price']; ?></span>
+                                    <!-- <span class="price">LKR<?php echo $row['price']; ?></span> -->
                                     <span class="text-right"><?php echo $row['no_of_day']; ?> Days</span>
                                 </div>
                             </a>
