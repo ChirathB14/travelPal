@@ -66,6 +66,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--CSS-->
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/blog.css">
     <link rel="stylesheet" href="../../css/newFooter.css">
    
@@ -86,6 +87,24 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             </div>
         </center>
 
+        <div class="create-blog-form">
+            <h3>Start Blogging!</h3>
+            <form action="CreateBlog.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+                <div class="form-elements">
+                    <input type="text" id="article-heading" name="head" placeholder="Article Heading" required>
+                    <textarea id="article-body" name="body" cols="30" rows="10" placeholder="Article Body" required></textarea>
+                    <input type="file" placeholder="Add Photos" id="blog-image" name="image" id="image" accept=".jpg, .jpeg, .png" required>
+                    <p><strong>Note:</strong> Only .jpg, .jpeg, .png formats allowed to a max size of 5 MB.</p>
+                    <button type="submit" name="submit" id="btn-publish" >Publish</button>
+                </div>
+            </form>
+        </div>
+        <h5 style="text-align: center;">Nature | beauty | experience</h5>
+    </div>
+</body>
+
+
+        <!--
         <div class="blog-form">
             <div class="blog-form-heading">
                 <h2>START BLOGGING!</h2>
@@ -103,7 +122,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
                 </div>
             </div>
 
-        </div>
+
         <footer class="custom-footer" style="background-color: #0E064D;">
     <div class="footer-left">
         <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -138,7 +157,5 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     </div>
 </footer>
     </div>
-
-</body>
-
+-->
 </html>

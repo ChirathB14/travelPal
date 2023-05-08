@@ -1,0 +1,154 @@
+/* Font Import */
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+/* Color Palette */
+:root {
+    --primarycolor: #0E064D;
+    --secondarycolor: #EEB444;
+    --accentcolor: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primarycolor) !important;
+    text-transform: uppercase;
+    color: var(--accentcolor);
+    font-family: poppins;
+}
+
+/* Heading Styles */
+h1{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--accentcolor);
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+/* Button Styles */
+button {
+    background-color: var(--secondarycolor);
+    color: var(--accentcolor);
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 400px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: box-shadow 0.25s ease-in-out;
+}
+
+button:hover {
+    font-size: 22px;
+    background-color: #327972 !important; 
+    /* transition: 0.2ms ease-out; */
+}
+
+/* Link styles */
+a {
+    color: var(--accentcolor);
+    text-decoration: none;
+}
+
+/* Input Elements styles */
+.input-elements {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.input-elements input {
+    height: 40px;
+    margin-top: 12px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accentcolor);
+    opacity: 0.75;
+}
+
+input::placeholder {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Styles for the navigation bar */
+.navigationbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 14px 0 0;
+    background-color: var(--primarycolor);
+}
+
+.nav-Logo img {
+    width: 240px;
+    margin-left: 30px;
+}
+
+.menu {
+    margin: 10px;
+}
+  
+.navigationbar button {
+    border: none;
+    background-color: var(--primarycolor);
+    color: var(--accentcolor);
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: 16px;
+    border-radius: 0%;
+    cursor: pointer;
+    width: 140px;
+    font-weight: lighter;
+    height: 60px;
+}
+  
+.nav a {
+    text-decoration: none;
+    color: var(--accentcolor);
+}
+  
+.nav:hover {
+    box-shadow: none;
+    border-bottom: 2px solid var(--accentcolor) !important;
+    background-color: var(--primarycolor) !important;
+    font-size: 14px;
+}
+
+.menu .logout-btn {
+    width:150px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #00357A;
+}
+
+.logout-btn:hover {
+    background-color: var(--secondarycolor) !important;
+    font-size: 16px;
+    box-shadow: none;
+}
+
+.logout-btn img {
+    height: 16px;
+    width: auto;
+}
+
+hr {
+    outline: 1px solid #327972;
+    width: 100%;
+    border-width: 0;
+}

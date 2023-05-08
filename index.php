@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/main.css">
+    
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/newFooter.css">
-
     <script type="text/javascript" src="./js/checkAccess.js"></script>
     <title>Travel Pal</title>
+    <!--
     <style>
         .container {
             display: flex;
@@ -220,9 +224,16 @@
         }
 
     </style>
+    -->
 </head>
 
+<?php
+    require_once("php/Common/header.php");
+?>
+
 <body style="background-color: #0E064D;" onload="checkAccess(true)">
+
+<!--
     <ul class="header-ul">
         <li class="header-left-li"><img class="headerbtm" src="./images/logo.png" alt="logo" width="150" height="50"></li>
         <li class="header-left-li"><a class="header-left-li a" href="./index.php">Home</a></li>
@@ -235,6 +246,103 @@
         <li class="header-right-li"><a class="header-left-li a" id="logout" onclick="logOut()"><button class="button-login" href="../Blog/ViewBlogs.php"><img src="./images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
     </ul>
     <hr style="background-color: #327972;color:#327972" />
+    -->
+
+    <div class="home">
+        <img src="./images/home.png" alt="home-bg">
+        <div class="welcome">
+            <h3>&nbsp; welcome to travelPal</h3>
+            <h1>plan your next<br> trip with <br> <mark> travelpal</mark></h1>
+            <h5>&nbsp; &nbsp; We support you to travel within Sri Lanka with the superb experience</h5>
+        </div>
+    </div>
+    <br> <br>
+    <div class="selection">
+        <div class="btn-left">
+            <h2>Are you a tourist ?</h2>
+            <p>Join with us today to make your dreams true. We offer you preplanned tour 
+                plans with several packages which ease planning a tour and make the moments 
+                precious. Customize tours with us, we help you to acheive your destination and make 
+                golden memories in your life. <br></p>
+                <a href="/travelPal/php/RegisterUser.php">
+                    <button class="Register">Register Now</button>
+                </a>
+        </div>
+        <div class="btn-right">
+            <h2>Are you a service provider ?</h2>
+            <p>Do your business need a highest a rank in Sri Lankan Tourism industry? Do you like 
+                to levelup your business? Grab this opportunity now. You can be an Accommodation 
+                provider, Vehicle provider or you might be a tour guide. We are with you to promote 
+                your business. <br></p>
+                <a href="/travelPal/php/RegisterUser.php">
+                    <button class="Register">Register Now</button>
+                </a>
+        </div>
+    </div>
+    <h1><mark> travel pal </mark> offers You...</h1>
+    <div class="offers">
+            <div class="left">
+                <h2>Get a personalized trip</h2>
+                <p>A full day by day itinerary based on your preferences</p>
+            </div>
+            <div class="left">
+                <h2>Customize it</h2>
+                <br>
+                <p>Refine your trip. We'll find the best routes and schedules</p>
+            </div>
+            <div class="left">
+                <h2>Book & manage it</h2>
+                <br>
+                <p>Choose from the best hotels. Everything in one place.</p>
+            </div>
+    </div>
+    <div class="popular">
+        <h1>popular</h1>
+        <div class="tourist">
+            <div class="plans">
+                <img src="./images/jaffna.png" alt="jaffna">
+                <div class="cont">
+                    <h3>Jaffna</h3>
+                    <div class="fav">
+                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="plans">
+                <img src="./images/trinco.png" alt="jaffna">
+                <div class="cont">
+                    <h3>Trincomalee</h3>
+                    <div class="fav">
+                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="plans">
+                <img src="./images/nuwra.png" alt="jaffna">
+                <div class="cont">
+                    <h3>Nuwaraeliya</h3>
+                    <div class="fav">
+                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="plans">
+                <img src="./images/kandy.png" alt="jaffna">
+                <div class="cont">
+                    <h3>Kandy</h3>
+                    <div class="fav">
+                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--
     <div>
         <div class="container">
             <div class="left-side">
@@ -324,6 +432,8 @@
 
     </div>
 </body>
+-->
+
 <footer class="custom-footer">
     <div class="footer-left">
         <img src="./images/logo.png" alt="Company logo" class="footer-logo">
@@ -357,6 +467,8 @@
         <img src="./images/footerimg.png" alt="Image description" class="footer-image">
     </div>
 </footer>
-
-
 </html>
+
+
+
+

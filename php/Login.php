@@ -5,19 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/login.css">
     <script type="text/javascript" src="../js/checkAccess.js"></script>
 
     <title>Travel Pal</title>
 </head>
 
-<body style="background-image: url('../images/registerBG.png')" onload="loginRegisterAccess()">
+<body onload="loginRegisterAccess()">
+    <!--
     <div id="overlay">
         <div>
             <center>
                 <h2 id="heder-login">LOGIN</h2>
             </center>
-            <form class="log-form" method="POST" action="Login.php">
+            <form class="log-form" method="POST" action="Login.php"> -->
+
+        <div class="login">
+            <form action="Login.php" method="post">
+                <h1 id="heder-login">Login</h1>
+                <div class="input-elements">
+                    <input type="email" id="email" name="email" placeholder="  Email" required>
+                    <input type="password" id="Pass" name="Pass" placeholder="  Password" required>
+                </div>
+                <div class="password">
+                    <div><input type="checkbox" name="remember" id="policy"> Remember password</div>
+                    <a href="../php/fogotPassword/ForgotPassword.php">Forgot Password?</a>
+                </div>
+                <div class="new-user">
+                    <button type="submit" id="loginbtn" name="loginbtn" value="loginbtn">Login</button>
+                    <a href="./RegisterUser.php">New user? Create an account</a>
+                </div>
+        </div>
+                <!-- 
                 <input type="email" class="log-input" id="email" name="email" placeholder="Email" required />
                 <input type="password" class="log-input" id="Pass" name="Pass" placeholder="Password" required />
                 <table>
@@ -42,6 +63,8 @@
                     </tr>
                 </table>
                 <button type="submit" id="loginbtn" name="loginbtn" value="loginbtn" class="loginbtn">Login</button>
+                -->
+
                 <?php
                 require 'DbConfig.php';
                 if (isset($_POST['loginbtn'])) {
@@ -82,9 +105,12 @@
                 }
                 ?>
             </form>
+            
+            <!--
             <a href="./RegisterUser.php">
                 <p class="new-account">new user? Create an account</p>
             </a>
+            -->
         </div>
     </div>
 </body>
