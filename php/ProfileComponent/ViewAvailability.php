@@ -15,7 +15,7 @@
 </head>
 
 <?php
-    $title = "Profile";
+$title = "Profile";
 ?>
 
 <body onload="checkUserAccess()">
@@ -78,7 +78,7 @@
                                 if ($acc_result) {
                                     if ($acc_result->num_rows > 0) { ?>
                                         <div class="main-wrapper">
-                                            <h2 class="heder-profile">Unavailabilty List</h2>
+                                            <h2 class="heder-profile">Unavailability List</h2>
                                             <div>
                                                 <table>
                                                     <thead>
@@ -99,11 +99,11 @@
                                                                 <td class="td-txt"><?php echo $acc_row['start_date']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['end_date']; ?></td>
                                                                 <td style="padding: 5px 5px;">
-                                                                    <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewTourist.php">
-                                                                        <center> 
-                                                                            <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This entry ?');">
+                                                                    <a href="./subComponent/DeleteAvailability.php?id=<?php echo $acc_row['unavailability_Id']; ?>&page=location:../ViewAvailability.php">
+                                                                        <center>
+                                                                            <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\nDo You Want To Delete This entry ?');">
                                                                                 <img src="../../images/delete.png" alt="delete" width="16" height="16">
-                                                                            </button> 
+                                                                            </button>
                                                                         </center>
                                                                     </a>
                                                                 </td>
@@ -117,14 +117,14 @@
                     </table>
                     <div>
                         <a href="./UpdateAvailablility.php">
-                            <button class="add-service-btn">Mark Unavailabilty</button>
+                            <button class="add-service-btn">Add Unavailability</button>
                         </a>
                     </div>
                 <?php     } else { ?>
                     <div style="width: 80%;text-align: center;padding: 100px 0px;">
-                        <h3 class="new-manager">No Unavailabilty Marked</h3>
+                        <h3 class="new-manager">No Unavailabilties Marked</h3>
                         <a href="./UpdateAvailablility.php">
-                            <button class="add-service-btn">Mark Unavailabilty</button>
+                            <button class="add-service-btn">Add Unavailability</button>
                         </a>
                     </div>
             <?php
@@ -186,5 +186,6 @@
 </footer>
 -->
 
-<?php require_once("../Common/footer.php");?>
+<?php require_once("../Common/footer.php"); ?>
+
 </html>
