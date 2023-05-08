@@ -109,7 +109,7 @@
                                         </div>
                                     <?php     } else { ?>
                                         <center>
-                                        <h3 class="new-manager">No Tours Found</h3>
+                                        <h3 class="new-manager" style="margin-top: 20%;">No Tours Found</h3>
                                         </center>
                                 <?php
                                     }
@@ -167,6 +167,12 @@
         <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
     </div>
 </footer> -->
-<?php require_once("../Common/footer.php");?>
+
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>

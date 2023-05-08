@@ -70,7 +70,7 @@
                     <hr style="background-color: #327972;color:#327972"/>
                 --> 
 
-                    <table style="width:100%;height: 100%;overflow-y: hidden;">
+                    <table style="width:100%; height: 100%; overflow-y: hidden;">
                         <tr VALIGN=TOP>
                         <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile">
@@ -197,7 +197,11 @@
 </footer>
 --> 
     
-<!-- footer -->
-<?php require_once("../Common/footer.php");?>
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>
