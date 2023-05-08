@@ -52,6 +52,7 @@
                                                 <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
                                                     <th style="min-width: 150px;">Name</th>
                                                     <th style="min-width: 150px;">Email</th>
+                                                    <th style="min-width: 150px;">Address</th>
                                                     <th style="min-width: 150px;">Edit</th>
                                                     <th style="min-width: 150px;">Delete</th>
                                                 </tr>
@@ -66,6 +67,7 @@
                                                             <tr style="background-color: #FFFFFFCC;">
                                                                 <td class="td-txt"><?php echo $manager['first_name']; ?> <?php echo $manager['last_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['email']; ?></td>
+                                                                <td class="td-txt"><?php echo $manager['address']; ?></td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewManager.php">
                                                                         <center><button type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>

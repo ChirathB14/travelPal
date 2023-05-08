@@ -47,9 +47,6 @@
                                 <div class="main-wrapper">
                                     <h2 class="heder-profile">Profile</h2>
                                     <div class="profile-main-wrapper">
-                                        <!-- <form method="POST" action="Profile.php">
-                                            <button class="delete-btn" id="deleteBtn" name="deleteBtn">xxx</button>
-                                        </form>
                                         <?php
                                         if (isset($_POST['deleteBtn'])) {
                                             $sql = "DELETE FROM user WHERE user_Id= '$userID'";
