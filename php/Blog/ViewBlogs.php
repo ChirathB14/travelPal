@@ -9,20 +9,22 @@
     <!--CSS-->
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/blog.css">
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/newFooter.css">
     <script crossorigin="anonymous">
-
-function loadBlog() {
-    window.location.href="CreateBlog.php";
-  }
+        function loadBlog() {
+            window.location.href = "CreateBlog.php";
+        }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <!--header-->
-<?php 
+<?php
 $title = "Blogs | TravePal";
-include '../Common/header.php'; 
+include '../Common/header.php';
 ?>
 
 <!--body-->
@@ -39,43 +41,44 @@ include '../Common/header.php';
         </div>
 
         <?php
-             require '../DbConfig.php';
-         
-                 $sql = "SELECT * FROM blog WHERE isActivie= '" . 1 . "'";
-                 $result = $conn->query($sql);
-                 // echo $conn->query($sql);
-                 // $data = json_encode($result->user);
-                 if ($result) {
-                     if ($result->num_rows > 0) {
-                         while ($row = $result->fetch_assoc()) {
-        ?>
-        <div class="blog-card">
-            <div class="blog-card-heading">
-                <div class="card-hedding">
-                    <br>
-                    <h1><?php echo $row['heading']; ?></h1>
-                </div>
+        require '../DbConfig.php';
 
-            </div>
-            <div class="sub-items">
-                <div class="date">
-                    <h4><?php echo $row['created_date']; ?></h4>
-                </div>
-                <div class="author">
-                    <h4><?php echo $row['name']; ?></h4>
-                </div>
-            </div>
-            <div>
-                <img class="blog-image" src="../../upload/BlogImg/<?php echo $row['image'];  ?>" />
-            </div>
-            <div class="card-body">
-               
-                <p class="card-para">
-                <?php echo $row['body']; ?>
-                </p>
-               
-            </div>
-        </div><br/>
+        $sql = "SELECT * FROM blog WHERE isActivie= '" . 1 . "'";
+        $result = $conn->query($sql);
+        // echo $conn->query($sql);
+        // $data = json_encode($result->user);
+        if ($result) {
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+        ?>
+                    <div class="blog-card">
+                        <div class="blog-card-heading">
+                            <div class="card-hedding">
+                                <br>
+                                <h1><?php echo $row['heading']; ?></h1>
+                            </div>
+
+                        </div>
+                        <div class="sub-items">
+                            <div class="date">
+                                <h4><?php echo $row['created_date']; ?></h4>
+                            </div>
+                            <div class="author">
+                                <h4><?php echo $row['name']; ?></h4>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="blog-image" src="../../upload/BlogImg/<?php echo $row['image'];  ?>" />
+                        </div>
+                        <div class="card-body">
+
+                            <p class="card-para">
+                                <?php echo $row['body']; ?>
+                            </p>
+
+                        </div>
+                    </div>
+                    <br />
         <?php
                 }
             }
@@ -85,8 +88,8 @@ include '../Common/header.php';
         }
 
         $conn->close();
-?>
-    </div>    
+        ?>
+    </div>
 </body>
 
 <!--
@@ -126,5 +129,6 @@ include '../Common/header.php';
 -->
 
 <!-- footer -->
-<?php require_once("../Common/footer.php");?>
+<?php require_once("../Common/footer.php"); ?>
+
 </html>
