@@ -154,9 +154,9 @@ document.location.reload();
                 </div>
             </div>
             <div class="form-main-wrapper">
-                <div class="form-wrapper">
+                <div class="form-wrapper" >
                     <form method="POST" action="ContactUS.php">
-                        <div class="input-elements">
+                        <div class="input-elements" style="margin-left: auto; margin-right: auto;">
                             <input name="name" type="text" placeholder="    Name" required />
                             <input type="email" name="email" placeholder="    Email" required />
                             <textarea cols="30" rows="10" name="messege" placeholder="Message" required></textarea><br>

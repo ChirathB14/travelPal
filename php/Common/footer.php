@@ -187,7 +187,7 @@
     || $title == "Create Blog - TravePal" || $title == "Pre-made tour plans" || $title == "Blogs_View more | TravePal" || $title == "Pre-made tour plans -TravelPal"
     || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" 
     || $title == "Profile" || $title == "Service Details" || $title == "Update Profile" || $title == "Add Service Details"|| $title == "Add Services" 
-    || $title == "Service Details" || $title == "View Tours")
+    || $title == "Service Details" || $title == "View Tours"|| $title =="View My Tours - TravePal")
     
     {
     echo" 
