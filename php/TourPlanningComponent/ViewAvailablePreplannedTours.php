@@ -39,7 +39,7 @@
                             $selectedOptions = unserialize($serializedOptions);
                 ?>
                             <a href="./EnterTourDetails.php?id=<?php echo $row['plan_Id']; ?>" class="product-box">
-                                <img src="../../upload/PlannedTourImg/<?php echo $row['image']; ?>" alt="<?php echo $row['location']; ?>">
+                                <img src="../../upload/PlannedTourImg/<?php echo $row['image']; ?>" alt="<?php echo $row['location']; ?>" style="height:50%">
                                 <h3><?php echo $row['location']; ?></h3>
                                 <p class="subtitle"><?php foreach ($selectedOptions as $option) {
                                                         echo $option . "| ";
