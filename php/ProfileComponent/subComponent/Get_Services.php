@@ -5,7 +5,7 @@ $service = $_POST['service'];
 $userID = json_decode($_COOKIE['user'])->user_Id;
 
 $serviceDetails = array();
-if ($service == "Accomadation") {
+if ($service == "Accommodation") {
     $result = mysqli_query($conn, "SELECT * FROM accomadation_service WHERE status= '" . 2 . "' AND created_by= '" . $userID ."'");
     while ($row = mysqli_fetch_assoc($result)) {
         $serviceDetails[$row['accomadation_Id']] = $row['service_no'];

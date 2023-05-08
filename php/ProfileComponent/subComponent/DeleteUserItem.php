@@ -10,7 +10,7 @@ if ($conn->query($delete_sql) === TRUE) {
     header($_GET['page']);
 } else {
     echo '<script language = "javascript">';
-    echo 'alert("Unsuccessfull :( ")';
+    echo 'alert("Unsuccessful :( ")';
     echo '</script>';
 }
 }

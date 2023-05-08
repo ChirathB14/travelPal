@@ -213,7 +213,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
                         }
                     } else {
                         echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
                     }
 
                     $conn->close();
