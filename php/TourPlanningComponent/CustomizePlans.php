@@ -57,7 +57,7 @@
                 while ($row = $result->fetch_assoc()) {
     ?>
         <?php
-        $title = "Home - TravePal";
+        $title = "Customize Your Plan - TravePal";
         require_once("../Common/header.php");
         ?>
                     <!-- <ul class="header-ul">
@@ -150,14 +150,14 @@
                                         <input class="line-wrapper line-txt" type="text" id="noOfDays" name="noOfDays" style="width: 400px;  margin-top: 12px; 
                             background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                             box-sizing: border-box; border: none; border-radius: 5px;
-                            font-size: 10px; font-weight: bold; color:#808080;" placeholder="No Of Days" pattern="^\d+$" required>
+                            font-size: 10px; font-weight: bold; color:#808080;" min="1" placeholder="No Of Days" pattern="^\d+$" required>
                                     </div>
                                     <!-- <div class="line-wrapper">
                                         <input class="line-wrapper line-txt" type="text" id="price" name="price" style="width:90%" placeholder="Price" pattern="^\d+(\d{3})*(\.\d{1,2})?$" required>
                                     </div> -->
-                                    <div class="input-elements">
+                                    <!-- <div class="input-elements">
                                         <input class="line-wrapper line-txt" type="file" name="image" id="image" accept=".jpg, .jpeg, .png" required>
-                                    </div>
+                                    </div> -->
                                     <div class="new-user">
                                         <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn">Next</button>
                                     </div>
@@ -178,55 +178,21 @@
                                         $season = $_POST["season"];
                                         $createdDate = date('Y-m-d H:i:s');
 
-                                        if ($_FILES["image"]["error"] == 4) {
-                                            echo
-                                            "<script> alert('Image Does Not Exist'); </script>";
+                                        $sqltwo = "INSERT INTO new_plan (plan_Id, season, location, no_of_day, price, type_of_package, isActive,  destination, image, created_date, created_by, by_manager) VALUES (0,'$season','$location','$noOfDays','$price','$typeOfPackage','$isActive', '$destination', 'None', '$createdDate', '$userID', '0' )";
+                                        if ($conn->query($sqltwo) === TRUE) {
+                                            $pk = mysqli_insert_id($conn);
+                                            echo '<script language = "javascript">';
+                                            echo 'moveToNext(' . $pk . ')';
+                                            echo '</script>';
                                         } else {
-                                            $fileName = $_FILES["image"]["name"];
-                                            $fileSize = $_FILES["image"]["size"];
-                                            $tmpName = $_FILES["image"]["tmp_name"];
-
-                                            $validImageExtension = ['jpg', 'jpeg', 'png'];
-                                            $imageExtension = explode('.', $fileName);
-                                            $imageExtension = strtolower(end($imageExtension));
-                                            if (!in_array($imageExtension, $validImageExtension)) {
-                                                echo
-                                                "
-                                                      <script>
-                                                        alert('Invalid Image Extension');
-                                                      </script>
-                                                      ";
-                                            } else if ($fileSize > 2000000) {
-                                                echo
-                                                "
-                                                      <script>
-                                                        alert('Image Size Is Too Large');
-                                                      </script>
-                                                      ";
-                                            } else {
-                                                $newImageName = uniqid();
-                                                $newImageName .= '.' . $imageExtension;
-
-                                                move_uploaded_file($tmpName, '../../upload/PlannedTourImg/' . $newImageName);
-                                                $sqltwo = "INSERT INTO new_plan (plan_Id, season, location, no_of_day, price, type_of_package, isActive,  destination, image, created_date, created_by, by_manager)
-                                                            VALUES (0,'$season','$location','$noOfDays','$price','$typeOfPackage','$isActive', '$destination', '$newImageName', '$createdDate', '$userID', '0' )";
-
-                                                if ($conn->query($sqltwo) === TRUE) {
-                                                    $pk = mysqli_insert_id($conn);
-                                                    echo '<script language = "javascript">';
-                                                    echo 'moveToNext(' . $pk . ')';
-                                                    echo '</script>';
-                                                } else {
-                                                    echo '<script language = "javascript">';
-                                                    echo 'alert("Unsuccessfull :( ")';
-                                                    echo '</script>';
-                                                }
-                                            }
+                                            echo '<script language = "javascript">';
+                                            echo 'alert("Unsuccessfull :( ")';
+                                            echo '</script>';
                                         }
                                     } else {
                                         echo '<script language = "javascript">
                                                     showParagraph()
-                                                    </script>';
+                                              </script>';
                                     }
                                 }
 

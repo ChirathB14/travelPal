@@ -32,8 +32,10 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/newFooter.css">
-    <title>Travel Pal</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
+
     <style>
         .container {
             max-width: 600px;
@@ -47,6 +49,7 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
         header {
             display: flex;
             align-items: center;
+            justify-content: center;
             margin-bottom: 30px;
         }
 
@@ -144,6 +147,10 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
     </style>
 </head>
 
+<?php
+    $title = "Payment | TravelPal";
+?>
+
 <body style="background-color: #0E064D;">
     <table style="width: 100%;">
         <tr VALIGN=TOP>
@@ -153,6 +160,7 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
         </tr>
         <tr VALIGN=TOP>
             <td style="width: 100%;">
+            <br><br>
                 <div class="container">
                     <header>
                         <img src="../../images/logo.png" alt="Logo">
@@ -171,7 +179,7 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                     ?>
-                                    <form action="Payment.php?common=<?php echo $common_id ?>" method="POST">
+                                    <form action="Payment.php?common=<?php echo $common_id ?>" method="POST" style="margin-left:15%;">
                                         <div class="form-group">
                                             <label for="card-number">Card Number:</label>
                                             <input type="text" name="cardNumber" id="card-number" placeholder="1234 5678 9012 3456" required>
@@ -211,7 +219,10 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
             </td>
         </tr>
     </table>
+    <br><br>
 </body>
+
+<!--
 <footer class="custom-footer">
         <div class="footer-left">
             <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -245,4 +256,7 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
             <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
         </div>
     </footer>
+    -->
+
+    <?php require_once("../Common/footer.php");?>
 </html>

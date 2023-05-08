@@ -184,10 +184,10 @@
 
 <?php
     if($title == "Contact us" || $title == "Tour plan | TravePal" || $title == "Home - TravePal" || $title == "Blogs | TravePal" 
-    || $title == "Create Blog - TravePal" || $title == "Pre-made tour plans" || $title == "Blogs_View more | TravePal" || $title == "Pre-made tour plans -TravelPal"
-    || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" 
+    || $title == "Create Blog - TravePal" || $title == "PrePlanned Tour | TravePal" || $title == "Blogs_View more | TravePal" || $title == "Pre-made tour plans -TravelPal"
+    || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" || $title == "Customize Tour | TravelPal" 
     || $title == "Profile" || $title == "Service Details" || $title == "Update Profile" || $title == "Add Service Details"|| $title == "Add Services" 
-    || $title == "Service Details" || $title == "View Tours"|| $title =="View My Tours - TravePal")
+    || $title == "Service Details" || $title == "View Tours"|| $title =="View My Tours - TravePal" || $title = "Payment | TravelPal")
     
     {
     echo" 

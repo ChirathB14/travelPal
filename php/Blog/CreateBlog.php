@@ -5,7 +5,7 @@ if (!isset($_COOKIE['user'])) {
     echo
     "
     <script>
-      alert('Please Login First');
+      alert('To create blogs, please login first!');
       document.location.replace('../Login.php');
     </script>
     ";

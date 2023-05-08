@@ -55,8 +55,7 @@
             <div class="navigationbarfoot">
                 <hr>  
             </div>    
-        </div>
-
+</div>
         
                     <!-- <ul class="header-ul">
 
@@ -140,7 +139,6 @@
                                                 }
                                                 $conn->close();
                                             }
-
                                             ?>
                                         </form>
                                     </div>

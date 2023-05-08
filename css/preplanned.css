@@ -165,7 +165,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 10px;
     width: 75%;
     margin: 0 auto;
@@ -179,13 +179,15 @@
     margin-bottom: 10px;
 }
 
+.row input {
+    font-size: 14px;
+}
+
 .label {
     font-weight: bold;
     margin-right: 5px;
     flex: 1;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
+    font-size: 14px;
     line-height: 30px;
     letter-spacing: 0.1em;
 
@@ -195,13 +197,10 @@
 .value {
     margin-left: 5px;
     flex: 2;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 25px;
     letter-spacing: 0.1em;
-
     color: #FFFFFF;
     background-color: #0E064D;
     /* padding-inline-start: 15px; */
@@ -209,34 +208,19 @@
 }
 
 .title {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
-    font-family: 'Poppins', sans-serif;
     color: #FFFFFF;
     margin-bottom: 10px;
 }
 
 .nxt_btn {
-    background: rgba(238, 180, 68, 0.75);
-    border-radius: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 10px;
-    color: #FFFFFF;
-
-
+    width: 200px;
 }
 
 .td-txt {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.1em;
     color: #FFFFFF;
@@ -246,10 +230,8 @@
 }
 
 .th-txt {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.1em;
     color: #FFFFFF;

@@ -24,6 +24,7 @@ function checkAccess(isIndex) {
     register.style.display = 'display'
     logout.style.display = 'display'
     if (!isIndex) {
+      alert("Please Login To Continue")
       window.location = "../index.php"
 
     }
