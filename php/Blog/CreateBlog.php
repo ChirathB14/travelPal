@@ -1,5 +1,16 @@
 <?php
 require '../DbConfig.php';
+
+if (!isset($_COOKIE['user'])) {
+    echo
+    "
+    <script>
+      alert('Please Login First');
+      document.location.replace('../Login.php');
+    </script>
+    ";
+}
+
 if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     $userID = json_decode($_COOKIE['user'])->user_Id;
     $userName = json_decode($_COOKIE['user'])->first_name;
@@ -40,7 +51,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             move_uploaded_file($tmpName, '../../upload/BlogImg/' . $newImageName);
             // $query = "INSERT INTO blog (blog_Id, name, heading, body, image, created_by, created_date, isActivie) 
             // VALUES(0, '$userName', '$head', '$body','$newImageName', '$userID', '$createdDate', '1' )";
-            
+
             $stmt = $conn->prepare("INSERT INTO blog (blog_Id, name, heading, body, image, created_by, created_date, isActivie) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param('issssssi', $blog_Id, $userName, $head, $body, $newImageName, $userID, $createdDate, $isActive);
             $stmt->execute();
@@ -55,15 +66,6 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             $conn->close();
         }
     }
-}
-else{
-    echo
-    "
-    <script>
-      alert('Please Login First');
-      document.location.replace('../../index.php');
-    </script>
-    ";
 }
 ?>
 <!DOCTYPE html>
@@ -81,15 +83,15 @@ else{
 </head>
 
 <!--header-->
-<?php 
+<?php
 $title = "Create Blog - TravePal";
-include '../Common/header.php'; 
+include '../Common/header.php';
 ?>
 
 <!--body-->
 
-<body class="block-background" style="background-color:rgba(14, 6, 77, 0.7);">
-    <div class="overlay">
+<body class="block-background">
+    <div>
         <center>
             <div class="blog-heading">
                 <h1>CREATE YOUR OWN BLOG HERE</h1>
@@ -98,14 +100,16 @@ include '../Common/header.php';
         </center>
 
         <div class="create-blog-form">
-            <h3>Start Blogging!</h3>
+            <center>
+                <h3>Start Blogging!</h3>
+            </center>
             <form action="CreateBlog.php" method="POST" autocomplete="off" enctype="multipart/form-data">
                 <div class="form-elements">
                     <input type="text" id="article-heading" name="head" placeholder="Article Heading" required>
                     <textarea id="article-body" name="body" cols="30" rows="10" placeholder="Article Body" required></textarea>
                     <input type="file" placeholder="Add Photos" id="blog-image" name="image" id="image" accept=".jpg, .jpeg, .png" required>
-                    <p><strong>Note:</strong> Only .jpg, .jpeg, .png formats allowed to a max size of 5 MB.</p>
-                    <button type="submit" name="submit" id="btn-publish" >Publish</button>
+                    <br><p><strong>Note:</strong> Only .jpg, .jpeg, .png formats allowed to a max size of 5 MB.</p><br>
+                    <button type="submit" name="submit" id="btn-publish">Publish</button>
                 </div>
             </form>
         </div>
@@ -114,7 +118,7 @@ include '../Common/header.php';
 </body>
 
 
-        <!--
+<!--
         <div class="blog-form">
             <div class="blog-form-heading">
                 <h2>START BLOGGING!</h2>
@@ -170,6 +174,6 @@ include '../Common/header.php';
 -->
 
 <!-- footer -->
-<?php require_once("../Common/footer.php");?>
+<?php require_once("../Common/footer.php"); ?>
 
 </html>

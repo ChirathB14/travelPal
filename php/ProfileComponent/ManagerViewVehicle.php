@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/header.css">
+    <!-- <link rel="stylesheet" href="../../css/header.css"> -->
     <link rel="stylesheet" href="../../css/profile.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
+    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
     <script type="text/javascript" src="../../js/profile.js"></script>
 
 
@@ -30,7 +30,11 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
     ?>
-                    <ul class="header-ul">
+            <?php
+            $title = "View vehicle - TravePal";
+            require_once("../Common/header.php");
+            ?>
+                    <!-- <ul class="header-ul">
                         <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
                         <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
                         <li class="header-left-li"><a class="header-left-li a" href="../TourPlanningComponent/TourPlanningIndex.php">Tour Plan</a></li>
@@ -38,7 +42,7 @@
                         <li class="header-left-li"><a class="header-left-li a" href="../Blog/ViewBlogs.php">Blogs</a></li>
                         <li class="header-left-li"><a class="header-left-li a" style="background-color: #00357A;" id="profile" href="./Profile.php">Profile</a></li>
                         <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
-                    </ul>
+                    </ul> -->
                     <hr style="background-color: #327972;color:#327972"/>
                     <table style="width:100%">
                         <tr VALIGN=TOP>
@@ -113,7 +117,7 @@
     }
 ?>
 </body>
-<footer class="custom-footer">
+<!-- <footer class="custom-footer">
     <div class="footer-left">
         <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
         <div class="footer-title">
@@ -145,5 +149,6 @@
     <div class="footer-right">
         <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
     </div>
-</footer>
+</footer> -->
+<?php require_once("../Common/footer.php");?>
 </html>

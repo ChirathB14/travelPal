@@ -1,5 +1,5 @@
-function reFunction() {
-  var x = document.getElementById("rePass");
+function showPw() {
+  var x = document.getElementById("Pass");
   if (x.type === "password") {
     x.type = "text";
   } else {
