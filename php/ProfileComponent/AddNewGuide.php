@@ -71,6 +71,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <link rel="stylesheet" href="../../css/newService.css">
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
     <style>
@@ -134,13 +136,17 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             border-radius: 50%;
         }
     </style>
-    <title>Travel Pal</title>
 </head>
 
-<body style="background-image: url('../../images/registerBG.png')">
-    <div id="overlay">
+<?php
+    $title = "TravePal";
+    require_once("../Common/header.php");
+?>
+
+<body>
+    <div>
         <center>
-            <div style="background-color: #00357A; width: 80%; text-align:center;padding-bottom:20px">
+            <div style="background-color: #00357A; width: 70%; text-align:center;padding-bottom:20px">
                 <center>
                     <h2 id="heder-register">Add Service Details</h2>
                 </center>
@@ -186,7 +192,6 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
 
                         </tr>
                         <tr>
-                            <hr style="height:2px;background-color:aliceblue;width:100%" />
                         </tr>
                         <tr VALIGN=CENTER style="text-align: center;">
                             <td style="width: 50%;">
@@ -205,7 +210,6 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
                             </td>
                         </tr>
                     </table>
-                    <hr style="height:2px;background-color:aliceblue;width:100%" />
                     <button class="add-detail-btn" type="submit" name="submit">Add Details</button>
                 </form>
                 <?php
@@ -223,10 +227,9 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
                 ?>
             </div>
         </center>
-
     </div>
-
-
 </body>
+
+<?php require_once("../Common/footer.php");?>
 
 </html>
