@@ -17,9 +17,9 @@
     <title>Travel Pal</title>
 </head>
 
-<body onload="checkAccess(false)">
+<body onload="checkAccess(true)">
 <?php
-    if (!isset($_cookie['user'])) {
+    if (!isset($_COOKIE['user'])) {
         echo "
         <div class=\"header\">
             <div class=\"navigationbar\">

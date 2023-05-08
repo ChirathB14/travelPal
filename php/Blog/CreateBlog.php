@@ -56,6 +56,15 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
         }
     }
 }
+else{
+    echo
+    "
+    <script>
+      alert('Please Login First');
+      document.location.replace('../../index.php');
+    </script>
+    ";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

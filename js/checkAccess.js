@@ -1,8 +1,8 @@
 function checkAccess(isIndex) {
-  var x = document.getElementById("profile");
-  var y = document.getElementById("login");
-  var z = document.getElementById("register");
-  var j = document.getElementById("logout");
+  var profile = document.getElementById("profile");
+  var login = document.getElementById("login");
+  var register = document.getElementById("register");
+  var logout = document.getElementById("logout");
 
   // y.style.display = 'none'
   // z.style.display = 'none'
@@ -11,20 +11,20 @@ function checkAccess(isIndex) {
 
   let user = getCookie('user')
   if (user !== undefined && user !== null && user.length > 0) {
-    y.style.display = 'none'
-    z.style.display = 'none'
-    x.style.display = 'display'
-    j.style.display = 'display'
-
+    profile.style.display = 'display'
+    login.style.display = 'display'
+    register.style.display = 'none'
+    logout.style.display = 'none'
+    
     // checkUserType()
   }
   else {
-    y.style.display = 'display'
-    z.style.display = 'display'
-    x.style.display = 'none'
-    j.style.display = 'none'
+    profile.style.display = 'none'
+    login.style.display = 'none'
+    register.style.display = 'display'
+    logout.style.display = 'display'
     if (!isIndex) {
-      window.location = "../../index.php"
+      window.location = "../index.php"
 
     }
   }
@@ -64,7 +64,6 @@ function logOut() {
     if (confirm("Are You Sure, \n Do You Want To Logout?")) {
         delete_cookie('user')
         window.location.reload()
-
     }
 }
 
