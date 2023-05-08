@@ -62,7 +62,7 @@
                                             }
                                             $conn->close();
                                         }
-                                        ?> -->
+                                        ?> 
                                         <div class="line-wrapper">
                                             <p class="line-txt">
                                                 First Name : <?php echo $row['first_name']; ?>
@@ -96,7 +96,7 @@
             }
         } else {
             echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
         }
 
         $conn->close();
