@@ -115,13 +115,13 @@ document.location.reload();
         }
         */
     </style>
-    <title>TravelPal</title>
 </head>
 
 <?php
+    $title = "Contact us";
     require_once("../Common/header.php");
 ?>
-<body style="background-color: #0E064D;" onload="checkAccess(true)">
+<body onload="checkAccess(true)">
     <table>
         <!--
         <tr VALIGN=TOP>
@@ -167,8 +167,11 @@ document.location.reload();
             </div>
         </tr>
     </table>
+    <br><br>
 
 </body>
+
+<!--
 <footer class="custom-footer">
     <div class="footer-left">
         <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -202,5 +205,9 @@ document.location.reload();
         <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
     </div>
 </footer>
+    -->
+
+<!-- footer -->
+<?php require_once("../Common/footer.php");?>
 
 </html>
