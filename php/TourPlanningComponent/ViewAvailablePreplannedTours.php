@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
     <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Travel Pal</title>
 </head>
 
-<body style="background-color: #0E064D;">
+<?php
+    $title = "PrePlanned Tour | TravePal";
+?>
+
+<body>
     <table>
         <tr VALIGN=TOP>
             <?php include '../Common/header.php'; ?>
@@ -79,6 +83,8 @@
       }
     </script>
 </body>
+
+<!--
 <footer class="custom-footer">
         <div class="footer-left">
             <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -112,4 +118,8 @@
             <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
         </div>
     </footer>
+-->
+
+<?php require_once("../Common/footer.php");?>
+
 </html>
