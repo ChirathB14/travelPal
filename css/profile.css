@@ -47,11 +47,9 @@
 }
 
 .user-name {
-    color: white;
+    color: var(--accentcolor);
     text-align: center;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 600;
     padding: 0px 16px;
     font-size: 15px;
@@ -59,15 +57,8 @@
 }
 
 .heder-profile {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 36px;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
+    color: var(--accentcolor);
 }
 
 .profile-main-wrapper {
@@ -85,14 +76,14 @@
 }
 
 .line-wrapper {
-    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--accentcolor);
     padding: 6px 10px;
     margin: 10px 0px
 }
 
 .line-txt {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 14px;
     line-height: 25px;
@@ -103,57 +94,41 @@
 .delete-btn {
 
     background: rgba(209, 14, 14, 0.7);
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 16px;
     line-height: 24px;
 
     /* identical to box height */
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
-
-
+    color: var(--accentcolor);
 }
 
 .update-btn {
-    background: #00357A;
+    background: var(--secondarycolor);
     border-radius: 5px;
     width: 250px;
     height: 44.05px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 20px;
     line-height: 30px;
     text-align: center;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
+    color: var(--accentcolor);
 }
 
 .table-header {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 16px;
     line-height: 30px;
     text-align: center;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
+    color: var(--accentcolor);
 
 }
 
 .td-txt {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 12px;
     line-height: 20px;
     letter-spacing: 0.1em;
     justify-content: center;
@@ -162,30 +137,32 @@
 }
 
 .new-manager {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 0.1em;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--primarycolor);
+    background-color: #D9D9D9;
+    width: 200px;
+    height: max-content;
+    border-radius: 5px;
+    margin: 10px;
     text-decoration-line: underline;
-    text-transform: uppercase;
-
 }
 
+.new-manager:hover {
+    color: var(--accentcolor);
+    background-color: var(--secondarycolor);
+}
 
 .add-service-btn {
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 30px;
-    letter-spacing: 0.1em;
+    font-size: 16px;
     text-align: center;
-    color: #FFFFFF;
-    padding: 10px 15px;
-    text-transform: uppercase;
-    background: #EEB444;
-    border-radius: 15px;
+    color: var(--accentcolor);
+    background: var(--secondarycolor);
+    width: 220px;
+    height: 30px;
+    border-radius: 10px;
     margin-top: 20px;
 }

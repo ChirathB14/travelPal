@@ -79,6 +79,9 @@
 
 /* CSS */
 .product-list {
+    margin-left: auto; 
+    margin-right:auto;
+    width: 1000px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -97,12 +100,12 @@
 
 .product-box img {
     max-width: 100%;
-    height: auto;
+    height: 60%;
 }
 
 .product-box h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 24px;
     padding-inline: 5px;
     color: #FFFFFF;

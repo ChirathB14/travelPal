@@ -35,6 +35,8 @@ document.location.replace('./ViewAvailability.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/newService.css">
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
@@ -113,13 +115,17 @@ document.location.replace('./ViewAvailability.php');
             color: #FFFFFF;
         }
     </style>
-    <title>Travel Pal</title>
 </head>
 
-<body style="background-image: url('../../images/registerBG.png')">
-    <div id="overlay">
+<?php
+    $title = "TravePal";
+    require_once("../Common/header.php");
+?>
+
+<body>
+    <div>
         <center>
-            <div style="background-color: #00357A; width: 80%; text-align:center;padding-bottom:20px">
+            <div style="background-color: #00357A; width: 70%; text-align:center;padding-bottom:20px">
                 <center>
                     <h2 id="heder-register">Add Unavailabilty Details</h2>
                 </center>
@@ -161,6 +167,7 @@ document.location.replace('./ViewAvailability.php');
         </center>
 
     </div>
+    <br><br><br>
 
     <script>
         $(document).ready(function() {
@@ -186,7 +193,8 @@ document.location.replace('./ViewAvailability.php');
             });
         });
     </script>
-
 </body>
+
+<?php require_once("../Common/footer.php");?>
 
 </html>

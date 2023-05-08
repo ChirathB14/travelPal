@@ -22,7 +22,7 @@
                             background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                             box-sizing: border-box; border: none; border-radius: 5px;
                             font-size: 10px; font-weight: bold; color:#808080;">
-                        <option value="" disabled selected hidden>Location</option>
+                        <option value="" disabled selected hidden>LOCATION</option>
                         <?php
                         require '../DbConfig.php';
                         $districts_sql = "SELECT * FROM districts WHERE isActive= '" . 1 . "'";
