@@ -19,7 +19,7 @@ function reFunction() {
   
   
   function success() {
-    alert("Register Successfully")
+    alert("Manager added Successfully")
     window.location = './AdminViewManager.php'
   }
 
