@@ -17,7 +17,7 @@
     <title>Travel Pal</title>
 </head>
 
-<body onload="checkAccess(true)">
+<body onload="checkAccess(false)">
 <?php
     if (!isset($_COOKIE['user'])) {
         echo "

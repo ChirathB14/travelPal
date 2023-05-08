@@ -46,9 +46,9 @@
                                 <div class="main-wrapper">
                                     <h2 class="heder-profile">Update Profile</h2>
                                     <div class="profile-main-wrapper">
-                                        <form method="POST" action="UpdateProfile.php">
+                                        <!-- <form method="POST" action="UpdateProfile.php">
                                             <button class="delete-btn" id="deleteBtn" name="deleteBtn">xxx</button>
-                                        </form>
+                                        </form> -->
                                         <?php
                                         if (isset($_POST['deleteBtn'])) {
                                             $sql = "DELETE FROM user WHERE user_Id= '$userID'";
@@ -71,7 +71,7 @@
                                                 <input class="line-wrapper line-txt" type="text" id="firstName" name="firstName" style="width:90%" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required>
                                             </div>
                                             <div class="line-wrapper">
-                                                <label class="line-txt" for="lastName"><b>First Name:</b></label>
+                                                <label class="line-txt" for="lastName"><b>Last Name:</b></label>
                                                 <input class="line-wrapper line-txt" type="text" id="lastName" name="lastName" style="width:90%" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required>
                                             </div>
                                             <div class="line-wrapper">
