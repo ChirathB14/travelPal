@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
-    <title>Travel Pal</title>
+    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
 </head>
 
-<body style="background-color: #0E064D;">
+<?php
+    $title = "Customize Tour | TravelPal";
+?>
+
+<body>
     <table style="width: 100%;">
         <tr VALIGN=TOP style="width: 100%;">
             <td style="width: 100%;">
@@ -20,7 +25,9 @@
         <tr VALIGN=TOP style="width: 100%;">
             <td style="width: 100%;">
                 <div>
+                    <br>
                     <h2 class="preplanned-des">Select Tour Guide Service</h2>
+                    <br>
 
                     <div class="box">
                         <table style="width: 100%;border-collapse: collapse;">
@@ -72,7 +79,7 @@
                             </tbody>
                         </table>
 
-                        <div style="width:85%;text-align:right;margin-top:20px">
+                        <div style="width:98%;text-align:right;margin-top:20px">
                             <button onclick="window.location='./TourSummary.php?common=<?php echo $_GET['common'] ?>&acc=<?php echo $_GET['acc'] ?>&veh=<?php echo $_GET['veh'] ?>&guide=0'" type="submit" name="next" value="next" class="nxt_btn">Skip</button>
                         </div>
                     </div>
@@ -81,8 +88,10 @@
             </td>
         </tr>
     </table>
-
+    <br><br>
 </body>
+
+<!--
 <footer class="custom-footer">
         <div class="footer-left">
             <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -116,4 +125,7 @@
             <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
         </div>
     </footer>
+--> 
+
+    <?php require_once("../Common/footer.php");?>
 </html>

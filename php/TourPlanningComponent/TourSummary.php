@@ -5,18 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
-    <title>Travel Pal</title>
+    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
 </head>
 
-<body style="background-color: #0E064D;">
+<?php
+    $title = "Customize Tour | TravelPal";
+?>
+
+<body>
     <table>
         <tr VALIGN=TOP>
             <?php include '../Common/header.php'; ?>
         </tr>
         <tr VALIGN=TOP>
+            <br>
             <h2 class="preplanned-des">Summary of your tour plan</h2>
+            <br>
 
             <?php
             if (isset($_GET['common'])) {
@@ -238,8 +245,8 @@
                             </div>
 
                         </div> 
-                        <div style="width:85%;text-align:right;margin-top:20px;margin-bottom:20px">
-                            <button onclick="window.location='./SubComponent/UpdateUserTours.php?common=<?php echo $_GET['common'] ?>&acc=<?php echo $_GET['acc'] ?>&veh=<?php echo $_GET['veh'] ?>&guide=<?php echo $_GET['guide'] ?>&price=<?php echo $sum ?>'" type="submit" name="next" value="next" class="nxt_btn">Procced To Payment</button>
+                        <div style="width:87%;text-align:right;margin-top:20px;margin-bottom:20px">
+                            <button onclick="window.location='./SubComponent/UpdateUserTours.php?common=<?php echo $_GET['common'] ?>&acc=<?php echo $_GET['acc'] ?>&veh=<?php echo $_GET['veh'] ?>&guide=<?php echo $_GET['guide'] ?>&price=<?php echo $sum ?>'" type="submit" name="next" value="next" class="nxt_btn" style="width: 300px;">Procced To Payment</button>
                         </div>
 
             <?php
@@ -251,16 +258,12 @@
             // Close connection
             $conn->close();
             ?>
-
-
-
-
-
-
         </tr>
     </table>
 
 </body>
+
+<!--
 <footer class="custom-footer">
         <div class="footer-left">
             <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -294,4 +297,7 @@
             <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
         </div>
     </footer>
+-->
+
+    <?php require_once("../Common/footer.php");?>
 </html>
