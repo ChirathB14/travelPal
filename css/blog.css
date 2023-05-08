@@ -48,6 +48,7 @@
 }
 
 .block-background {
+    background-image: url("../images/blog_bg.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;

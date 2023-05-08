@@ -8,16 +8,15 @@ if (isset($_POST["submit"])) {
     $contact_id = 0;
 
     $stmt = $conn->prepare("INSERT INTO contact (contact_id, name, messege, email, created_date) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param('issssssi', $contact_id, $name, $messege, $email, $createdDate);
+    $stmt->bind_param('issss', $contact_id, $name, $messege, $email, $createdDate);
     $stmt->execute();
     echo
-
     "
-<script>
-alert('Successfully Added');
-document.location.reload();
-</script>
-";
+    <script>
+    alert('Successfully Added');
+    document.location.replace('./ContactUS.php');
+    </script>
+    ";
     $conn->close();
 }
 ?>

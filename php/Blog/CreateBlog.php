@@ -33,17 +33,17 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
         if (!in_array($imageExtension, $validImageExtension)) {
             echo
             "
-      <script>
-        alert('Invalid Image Extension');
-      </script>
-      ";
+            <script>
+                alert('Invalid Image Extension');
+            </script>
+            ";
         } else if ($fileSize > 5000000) {
             echo
             "
-      <script>
-        alert('Image Size Is Too Large');
-      </script>
-      ";
+            <script>
+                alert('Image Size Is Too Large');
+            </script>
+            ";
         } else {
             $newImageName = uniqid();
             $newImageName .= '.' . $imageExtension;
@@ -56,13 +56,12 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             $stmt->bind_param('issssssi', $blog_Id, $userName, $head, $body, $newImageName, $userID, $createdDate, $isActive);
             $stmt->execute();
             echo
-
             "
-      <script>
-        alert('Successfully Added');
-        document.location.replace('./ViewBlogs.php');
-      </script>
-      ";
+            <script>
+                alert('Successfully Added');
+                document.location.replace('./ViewBlogs.php');
+            </script>
+            ";
             $conn->close();
         }
     }
