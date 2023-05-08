@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
+
     <!-- <link rel="stylesheet" href="../../css/header.css"> -->
     <link rel="stylesheet" href="../../css/profile.css">
     <link rel="stylesheet" href="../../css/main.css">
@@ -31,28 +31,28 @@
                 while ($row = $result->fetch_assoc()) {
     ?>
 
-<div class="header">
-            <div class="navigationbar">
-                <div class="nav-Logo">
-                    <a href="/travelPal/index.php">
-                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
-                    </a>
-                </div>
-                <div class="menu">
-                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
-                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
-                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
-                </div>            
-            </div>
-            <div class="navigationbarfoot">
-                <hr>  
-            </div>    
-        </div>
+                    <div class="header">
+                        <div class="navigationbar">
+                            <div class="nav-Logo">
+                                <a href="/travelPal/index.php">
+                                    <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                                </a>
+                            </div>
+                            <div class="menu">
+                                <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                                <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                            </div>
+                        </div>
+                        <div class="navigationbarfoot">
+                            <hr>
+                        </div>
+                    </div>
 
-    <!--
+                    <!--
                     <ul class="header-ul">
                         <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
                         <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
@@ -63,7 +63,7 @@
                         <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
                     </ul>
                     <hr style="background-color: #327972;color:#327972"/>
-                --> 
+                -->
 
                     <table style="width:100%">
                         <tr VALIGN=TOP>
@@ -71,7 +71,7 @@
 
                             <td class="td-profile">
                                 <?php
-                                $acc_sql = "SELECT * FROM unavailability WHERE created_by= '" . $userID . "' AND isActive= '" . 1 ."'";
+                                $acc_sql = "SELECT * FROM unavailability WHERE created_by= '" . $userID . "' AND isActive= '" . 1 . "'";
                                 $acc_result = $conn->query($acc_sql);
                                 if ($acc_result) {
                                     if ($acc_result->num_rows > 0) { ?>
@@ -85,6 +85,8 @@
                                                             <th style="min-width: 150px;">Service</th>
                                                             <th style="min-width: 150px;">Start Date</th>
                                                             <th style="min-width: 150px;">End Date</th>
+                                                            <th style="min-width: 150px;">Delete</th>
+
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -95,6 +97,11 @@
                                                                 <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['start_date']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['end_date']; ?></td>
+                                                                <td style="padding: 5px 5px;">
+                                                                    <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewTourist.php">
+                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
+                                                                    </a>
+                                                                </td>
                                                             </tr>
 
                                             </div>
@@ -170,4 +177,5 @@
         <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
     </div>
 </footer>
+
 </html>
