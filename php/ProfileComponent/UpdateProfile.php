@@ -71,7 +71,7 @@
                                                 <input class="line-wrapper line-txt" type="text" id="firstName" name="firstName" style="width:90%" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required>
                                             </div>
                                             <div class="line-wrapper">
-                                                <label class="line-txt" for="lastName"><b>First Name:</b></label>
+                                                <label class="line-txt" for="lastName"><b>Last Name:</b></label>
                                                 <input class="line-wrapper line-txt" type="text" id="lastName" name="lastName" style="width:90%" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required>
                                             </div>
                                             <div class="line-wrapper">
