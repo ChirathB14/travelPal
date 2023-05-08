@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/header.css">
+
+    <!-- <link rel="stylesheet" href="../../css/header.css"> -->
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
+    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script type="text/javascript" src="../../js/checkAccess.js"></script>
-
-
-
-    <title>Travel Pal</title>
 </head>
 
-<body style="background-color: #0E064D;" onload="checkUserAccess()">
+<?php
+    $title = "View Tours";
+?>
+
+<body onload="checkUserAccess()">
     <?php
     require '../DbConfig.php';
     if (isset($_COOKIE['user'])) {
@@ -96,7 +98,7 @@
                                                                         ../TourPlanningComponent/AllTourSummary.php?common=<?php echo $acc_row['common_id'] ?>
                                                                    <?php }
                                                                     ?>">
-                                                                        <center><button type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
+                                                                        <center><button type="submit" value="editBtn" style="background-color: var(--accentcolor); width:20px; height:20px;"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
                                                                 </td>
                                                             </tr>
@@ -106,8 +108,9 @@
                                             </div>
                                         </div>
                                     <?php     } else { ?>
+                                        <center>
                                         <h3 class="new-manager">No Tours Found</h3>
-
+                                        </center>
                                 <?php
                                     }
                                 }
