@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/newFooter.css"> -->
-    <link rel="stylesheet" href="../../css/newPlan.css">
+    <!-- <link rel="stylesheet" href="../../css/newPlan.css"> -->
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
-
-    <title>Travel Pal</title>
 </head>
 
-<body style="background-color: #0E064D;" onload="checkUserAccess();">
+<?php
+    $title = "New Tour Plan - TravePal";
+?>
+
+<body onload="checkUserAccess();">
     <script>
         function hideParagraph() {
             document.getElementById("requird-destination").style.display = "none";
@@ -41,10 +44,27 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
     ?>
-            <?php
-            $title = "Create New Plan - TravePal";
-            require_once("../Common/header.php");
-            ?>
+
+<div class="header">
+            <div class="navigationbar">
+                <div class="nav-Logo">
+                    <a href="/travelPal/index.php">
+                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                    </a>
+                </div>
+                <div class="menu">
+                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                </div>            
+            </div>
+            <div class="navigationbarfoot">
+                <hr>  
+            </div>    
+</div>
                     <!-- <ul class="header-ul">
                         <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
                         <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
@@ -55,6 +75,7 @@
                         <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
                     </ul> -->
                     <!-- <hr style="background-color: #327972;color:#327972"/> -->
+                    
                     <table style="width:100%;height: 100%;overflow-y: hidden;">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
@@ -68,19 +89,19 @@
                                             <td style="width: 50%;text-align: right;">
                                                 <div>
                                                     <a href="./ManagerAddNewDestination.php">
-                                                        <button class="add-service-btn">Add New Destination</button>
+                                                        <button class="add-service-btn" style="width:280px; padding: 0px; margin: 10px;">Add New Destination</button>
                                                     </a>
                                                 </div>
                                             </td>
                                         </tr>
                                     </table>
 
-                                    <h2 class="heder-profile">Create New Plan</h2>
-                                    <div class="profile-main-wrapper">
+                                    <div class="profile-main-wrapper" style="width: 83%; margin: 0 15% 0 15%;">
                                         <form method="POST" action="ManagerNewPlan.php" autocomplete="off" enctype="multipart/form-data">
                                             <center>
-                                                <div class="line-wrapper">
-                                                    <select id="season" name="season" class="line-wrapper line-txt" style="width:93.5%" required>
+                                            <h2 class="heder-profile" style="color: var(--primarycolor);">Create New Plan</h2>
+                                                <div class="input-elements">
+                                                    <select id="season" name="season" class="line-wrapper line-txt"> required>
                                                         <option value="" disabled selected hidden>Season</option>
                                                         <?php
                                                         $season_sql = "SELECT * FROM season WHERE isActive= '" . 1 . "'";
@@ -96,9 +117,9 @@
                                                         }
                                                         ?>
                                                     </select>
-                                                </div>
-                                                <div class="line-wrapper">
-                                                    <select id="location" name="location" class="line-wrapper line-txt" style="width:93.5%" required>
+                                                <!-- </div>
+                                                <div class="input-elements"> -->
+                                                    <select id="location" name="location" class="line-wrapper line-txt" required>
                                                         <option value="" disabled selected hidden>Location</option>
                                                         <?php
                                                         $location_sql = "SELECT * FROM districts WHERE isActive= '" . 1 . "'";
@@ -114,15 +135,15 @@
                                                         }
                                                         ?>
                                                     </select>
-                                                </div>
-                                                <div class="line-wrapper">
-                                                    <select onclick="hideParagraph()" id="destination" name="destination[]" class="line-wrapper line-txt" style="width:93.5%" multiple required>
+                                                <!-- </div>
+                                                <div class="input-elements"> -->
+                                                    <select onclick="hideParagraph()" id="destination" name="destination[]" class="line-wrapper line-txt" multiple required>
                                                         <option value="" disabled>Destination</option>
                                                     </select>
-                                                </div>
-                                                <p id="requird-destination" style="color:red;">* Destinations are required</p>
-                                                <div class="line-wrapper">
-                                                    <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" style="width:93.5%" required>
+                                                <!-- </div> -->
+                                                <p id="requird-destination" style="color:red; font-size: 12px;">* Destinations are required</p>
+                                                <!-- <div class="input-elements"> -->
+                                                    <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" required>
                                                         <option value="" disabled selected hidden>Type Of Package</option>
                                                         <?php
                                                         $type_sql = "SELECT * FROM plan_types WHERE isActive= '" . 1 . "'";
@@ -138,16 +159,16 @@
                                                         }
                                                         ?>
                                                     </select>
-                                                </div>
+                                                <!-- </div>
+                                                <div class="input-elements"> -->
+                                                    <input class="line-wrapper line-txt" type="text" id="noOfDays" name="noOfDays" placeholder="No Of Days" pattern="^\d+$" required>
+                                                <!-- </div>
                                                 <div class="line-wrapper">
-                                                    <input class="line-wrapper line-txt" type="text" id="noOfDays" name="noOfDays" style="width:90%" placeholder="No Of Days" pattern="^\d+$" required>
-                                                </div>
-                                                <!-- <div class="line-wrapper">
                                                     <input class="line-wrapper line-txt" type="text" id="price" name="price" style="width:90%" placeholder="Price" pattern="^\d+(\d{3})*(\.\d{1,2})?$" required>
-                                                </div> -->
-                                                <div class="line-wrapper">
+                                                </div> 
+                                                <div class="input-elements"> -->
                                                     <input class="line-wrapper line-txt" type="file" name="image" id="image" accept=".jpg, .jpeg, .png" required>
-                                                </div>
+                                                <!-- </div> -->
 
                                                 <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn">Save</button>
                                             </center>

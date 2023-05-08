@@ -80,40 +80,34 @@
     flex-direction: row;
     background-color: var(--accentcolor);
     padding: 6px 10px;
-    margin: 10px 0px
+    margin: 10px 0px 0px 0px;
 }
 
 .line-txt {
-    font-weight: 800;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 10px;
     line-height: 25px;
     letter-spacing: 0.1em;
-    color: var(--primarycolor);
+    border-radius: 5px;
+    color: gray;
+    border-color: var(--accentcolor);
+    padding-inline-start: 10px;
+    text-transform: uppercase;
 }
 
 .delete-btn {
-
     background: rgba(209, 14, 14, 0.7);
-    font-weight: 800;
+    /* font-weight: 800;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 24px; */
 
     /* identical to box height */
     letter-spacing: 0.1em;
-    color: var(--accentcolor);
 }
 
 .update-btn {
-    background: var(--secondarycolor);
-    border-radius: 5px;
-    width: 250px;
-    height: 44.05px;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    letter-spacing: 0.1em;
-    color: var(--accentcolor);
+    background: var(--primarycolor);
+    margin-top: 5px;
 }
 
 .table-header {
@@ -123,7 +117,6 @@
     text-align: center;
     letter-spacing: 0.1em;
     color: var(--accentcolor);
-
 }
 
 .td-txt {

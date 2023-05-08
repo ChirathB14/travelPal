@@ -55,11 +55,7 @@
             <div class="navigationbarfoot">
                 <hr>  
             </div>    
-        </div>
-
-        <?php
-            $title = "UpdateProfile - TravePal";
-        ?>
+</div>
         
                     <!-- <ul class="header-ul">
 
@@ -143,7 +139,6 @@
                                                 }
                                                 $conn->close();
                                             }
-
                                             ?>
                                         </form>
                                     </div>
