@@ -78,12 +78,13 @@ else{
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/blog.css">
     <link rel="stylesheet" href="../../css/newFooter.css">
-   
-
-    <title>Travel Pal</title>
 </head>
+
 <!--header-->
-<?php include '../Common/header.php'; ?>
+<?php 
+$title = "Create Blog - TravePal";
+include '../Common/header.php'; 
+?>
 
 <!--body-->
 
@@ -167,4 +168,8 @@ else{
 </footer>
     </div>
 -->
+
+<!-- footer -->
+<?php require_once("../Common/footer.php");?>
+
 </html>

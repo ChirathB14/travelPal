@@ -17,14 +17,15 @@ function loadBlog() {
     window.location.href="CreateBlog.php";
   }
     </script>
-
-    <title>Travel Pal</title>
 </head>
+
 <!--header-->
-<?php include '../Common/header.php'; ?>
+<?php 
+$title = "Blogs | TravePal";
+include '../Common/header.php'; 
+?>
 
 <!--body-->
-
 <body style="background-color:rgba(14, 6, 77, 0.7);">
     <div>
         <div class="blog-view-heading">
@@ -85,10 +86,10 @@ function loadBlog() {
 
         $conn->close();
 ?>
-    </div>
-  
-    
+    </div>    
 </body>
+
+<!--
 <footer class="custom-footer">
     <div class="footer-left">
         <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -122,4 +123,8 @@ function loadBlog() {
         <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
     </div>
 </footer>
+-->
+
+<!-- footer -->
+<?php require_once("../Common/footer.php");?>
 </html>

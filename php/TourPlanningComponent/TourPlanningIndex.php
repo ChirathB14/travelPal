@@ -141,7 +141,10 @@
     -->
 </head>
 
-<?php include '../Common/header.php'; ?>
+<?php 
+$title = "Tour plan | TravePal";
+include '../Common/header.php'; 
+?>
 
 <!-- Tour plan page content -->
 <div class="page-content">
@@ -230,7 +233,7 @@
         </tr>
     </table>
 </body>
--->
+
 <footer class="custom-footer">
         <div class="footer-left">
             <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
@@ -264,6 +267,11 @@
             <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
         </div>
     </footer>
+-->
+
+<!-- footer -->
+<?php require_once("../Common/footer.php");?>
+
 </html>
 
 

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/newFooter.css">
     <script type="text/javascript" src="./js/checkAccess.js"></script>
-    <title>Travel Pal</title>
+
     <!--
     <style>
         .container {
@@ -156,8 +156,6 @@
             /* identical to box height */
             letter-spacing: 0.07em;
             text-transform: uppercase;
-
-            /* White */
             color: #FFFFFF;
         }
 
@@ -228,10 +226,11 @@
 </head>
 
 <?php
+    $title = "Home - TravePal";
     require_once("php/Common/header.php");
 ?>
 
-<body style="background-color: #0E064D;" onload="checkAccess(true)">
+<body onload="checkAccess(true)">
 
 <!--
     <ul class="header-ul">
@@ -432,7 +431,6 @@
 
     </div>
 </body>
--->
 
 <footer class="custom-footer">
     <div class="footer-left">
@@ -467,8 +465,8 @@
         <img src="./images/footerimg.png" alt="Image description" class="footer-image">
     </div>
 </footer>
+-->
+
+    <!-- footer -->
+    <?php require_once("php/Common/footer.php");?>
 </html>
-
-
-
-
