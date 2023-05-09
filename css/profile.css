@@ -101,7 +101,7 @@
     line-height: 25px;
     letter-spacing: 0.1em;
     border-radius: 5px;
-    color: gray;
+    color: var(--primarycolor);
     border-color: var(--accentcolor);
     padding-inline-start: 10px;
     text-transform: uppercase;
@@ -109,9 +109,6 @@
 
 .delete-btn {
     background: rgba(209, 14, 14, 0.7);
-    /* font-weight: 800;
-    font-size: 16px;
-    line-height: 24px; */
 
     /* identical to box height */
     letter-spacing: 0.1em;
