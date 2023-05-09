@@ -174,7 +174,7 @@ document.location.replace('./ViewAvailability.php');
                 var service = $(this).val();
                 $.ajax({
                     type: 'POST',
-                    url: './subComponent/Get_Services.php', // Replace with the URL of your PHP script that gets the cities
+                    url: './subComponent/Get_Services.php', // Replace with the URL of PHP script that gets the cities
                     data: {
                         service: service
                     },
