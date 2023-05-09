@@ -101,7 +101,10 @@
                                             <center>
                                             <h2 class="heder-profile" style="color: var(--primarycolor);">Create New Plan</h2>
                                                 <div class="input-elements">
-                                                    <select id="season" name="season" class="line-wrapper line-txt"> required>
+                                                    <select id="season" name="season" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
+                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
+                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled selected hidden>Season</option>
                                                         <?php
                                                         $season_sql = "SELECT * FROM season WHERE isActive= '" . 1 . "'";
