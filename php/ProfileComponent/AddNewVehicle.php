@@ -192,10 +192,10 @@ require_once("../Common/header.php");
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <input type="text" class="reg-input" id="vehiNumber" name="vehiNumber" placeholder="Vehicle Number" required />
+                                                <input type="text" class="reg-input" id="vehiNumber" name="vehiNumber" placeholder="Vehicle Number" required pattern="^([a-zA-Z]{1,3}|((?!0*-)[0-9]{1,3}))-[0-9]{4}(?<!0{4})$"/>
                                             </td>
                                             <td style="width: 50%;">
-                                                <select name="fuelType" id="fuelType" required style="width: 525px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
+                                                <select name="vehiType" id="vehiType" required style="width: 525px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
                                                     <option value="" disabled selected>Select vehicle type</option>
                                                     <option value="Car">Car</option>
                                                     <option value="Van">Van</option>
@@ -204,7 +204,7 @@ require_once("../Common/header.php");
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <input type="text" class="reg-input" id="pricePerKm" name="pricePerKm" placeholder="Price Per KM" required />
+                                                <input type="number" class="reg-input" id="pricePerKm" name="pricePerKm" placeholder="Price Per KM" required min=100 step=100 />
                                             </td>
                                             <td style="width: 50%;">
                                                 <select name="fuelType" id="fuelType" required style="width: 525px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
