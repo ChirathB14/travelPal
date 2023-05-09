@@ -14,6 +14,10 @@
     <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
+<?php
+$title = "View Vehicle Services - TravePal";
+?>
+
 <body onload="checkUserAccess()">
     <?php
     require '../DbConfig.php';
@@ -85,7 +89,6 @@
                                                             <th style="min-width: 140px;">Name</th>
                                                             <th style="min-width: 140px;">Email</th>
                                                             <th style="min-width: 140px;">NIC</th>
-                                                            <th style="min-width: 140px;">Type</th>
                                                             <th style="min-width: 140px;">Status</th>
                                                         </tr>
                                                     </thead>
@@ -97,7 +100,6 @@
                                                                 <td class="td-txt"><?php echo $acc_row['provider_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['provider_nic']; ?></td>
-                                                                <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
                                                                 <td class="td-txt"><?php  
                                                                 if($acc_row['status'] == 1){
                                                                     echo "Pending";
@@ -187,5 +189,11 @@
 </footer>
 -->
 
-<?php require_once("../Common/footer.php");?>
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
+
 </html>

@@ -13,6 +13,10 @@
     <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
+<?php
+    $title = "Services";
+?>
+
 <body onload="checkUserAccess()">
     <?php
     require '../DbConfig.php';
@@ -185,6 +189,11 @@
 </footer>
 --> 
 
-<?php require_once("../Common/footer.php");?>
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>

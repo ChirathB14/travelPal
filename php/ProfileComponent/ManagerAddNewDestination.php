@@ -5,24 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/registration.css">
+    <!-- <link rel="stylesheet" href="../../css/registration.css"> -->
     <link rel="stylesheet" href="../../css/main.css">
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
     <title>Travel Pal</title>
+
+    <style>
+        .register {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 5vh;
+        }
+
+        .new-user {
+            display: flex;
+            flex-direction: column;
+            margin-top: 12px;
+        }
+
+        .new-user a {
+            text-decoration: underline;
+            text-align: center;
+            margin: 12px 0px 5px 90px;
+            font-size: 12px;
+        }
+
+        /* The container must be positioned relative: */
+        .select {
+            position: relative;
+        }
+        
+        /* Style items (options): */
+        .select-items {
+            position: absolute;
+            color: var(--accentcolor);
+            background-color: var(--primarycolor);
+            cursor: pointer;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+        }
+        
+        /* Hide the items when the select box is closed: */
+        .select-hide {
+            display: none;
+        }
+        
+        .select-items div:hover, .same-as-selected {
+            background-color: var(--secondarycolor);
+        }
+    </style>
 </head>
 
-<body style="background-image: url('../../images/registerBG.png'); margin: 100px;">
+<body style="margin: 100px;">
     <div id="overlay" class="register">
         <div>
-            <h2 id="heder-register">create new destination</h2>
+            <center>
+                <h2 id="heder-register">create new destination</h2>
+            </center>
             <form class="reg-form" method="POST" action="ManagerAddNewDestination.php">
                 <div style="width:100%;text-align:center">
                     <select id="location" name="location" class="reg-input" required style="width: 400px;  margin-top: 12px; 
                             background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                             box-sizing: border-box; border: none; border-radius: 5px;
                             font-size: 10px; font-weight: bold; color:#808080;">
-                        <option value="" disabled selected hidden>LOCATION</option>
+                        <option value="" disabled selected hidden>&nbsp;&nbsp; LOCATION</option>
                         <?php
                         require '../DbConfig.php';
                         $districts_sql = "SELECT * FROM districts WHERE isActive= '" . 1 . "'";

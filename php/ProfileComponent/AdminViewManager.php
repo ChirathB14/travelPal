@@ -125,7 +125,7 @@
                                         </table>
                                         <div>
                                             <a href="./RegisterManager.php">
-                                                <h2 class="new-manager">+ New USER</h2>
+                                                <h2 class="new-manager-add">+ New USER</h2>
                                             </a>
                                         </div>
                                     </div>
@@ -185,7 +185,11 @@
 </footer>
 --> 
 
-<!-- footer -->
-<?php require_once("../Common/footer.php");?>
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>

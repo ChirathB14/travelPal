@@ -12,7 +12,7 @@
 </head>
 
 <?php
-    $title = "Register Manager - TravePal";
+$title = "Register Manager - TravePal";
 ?>
 
 <body style="background-image: url('../../images/registerBG.png')">
@@ -21,18 +21,20 @@
             <!-- <center>               
             </center> -->
             <form class="reg-form" method="POST" action="RegisterManager.php" onsubmit="return cheakpassword()">
-            <h2 id="heder-register">create manager account</h2>
-            <div class="input-elements">
-                <input type="text" id="fname" name="fname" placeholder="  First Name" required />
-                <input type="text" id="lname" name="lname" placeholder="  Last Name" required />
-                <input type="text" id="address" name="address" placeholder="  Address" required />
-                <input type="email" id="email" name="email" placeholder="  Email" required />
-                <input type="password" id="Pass" name="Pass" placeholder="  Password" required />
-                <input type="password" id="rePass" name="rePass" placeholder="  Confirm Password" required />
-                <!-- <input type="password" class="reg-input" id="rePass" name="rePass" placeholder="Confirm Password" required /> -->
-                <br>
-                <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Register</button>
-            </div>
+                <h2 id="heder-register">create manager account</h2>
+                <div class="input-elements">
+                    <input type="text" id="fname" name="fname" placeholder="  First Name" required />
+                    <input type="text" id="lname" name="lname" placeholder="  Last Name" required />
+                    <input type="text" id="address" name="address" placeholder="  Address" required />
+                    <input type="email" id="email" name="email" placeholder="  Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+                    <input type="password" id="Pass" name="Pass" placeholder="  Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" />
+                    (Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+                    Should be more than 8 characters and less than 16 characters.)
+                    <input type="password" id="rePass" name="rePass" placeholder="  Confirm Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" />
+                    <!-- <input type="password" class="reg-input" id="rePass" name="rePass" placeholder="Confirm Password" required /> -->
+                    <br>
+                    <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Register</button>
+                </div>
                 <?php
                 require '../DbConfig.php';
                 if (isset($_POST['registerbtn'])) {
@@ -78,6 +80,6 @@
 </body>
 
 <!-- footer -->
-<?php require_once("../Common/footer.php");?>
+<?php require_once("../Common/footer.php"); ?>
 
 </html>

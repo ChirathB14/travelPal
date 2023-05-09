@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
+
     <!-- <link rel="stylesheet" href="../../css/header.css"> -->
     <link rel="stylesheet" href="../../css/profile.css">
     <link rel="stylesheet" href="../../css/main.css">
@@ -15,7 +15,7 @@
 </head>
 
 <?php
-    $title = "Profile";
+$title = "Profile";
 ?>
 
 <body onload="checkUserAccess()">
@@ -25,7 +25,6 @@
 
         $userID = json_decode($_COOKIE['user'])->user_Id;
 
-
         $sql = "SELECT first_name, last_name, email, address FROM user WHERE user_Id= '" . $userID . "'";
         $result = $conn->query($sql);
         // echo $conn->query($sql);
@@ -34,29 +33,28 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
     ?>
+                    <div class="header">
+                        <div class="navigationbar">
+                            <div class="nav-Logo">
+                                <a href="/travelPal/index.php">
+                                    <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                                </a>
+                            </div>
+                            <div class="menu">
+                                <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                                <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                            </div>
+                        </div>
+                        <div class="navigationbarfoot">
+                            <hr>
+                        </div>
+                    </div>
 
-<div class="header">
-            <div class="navigationbar">
-                <div class="nav-Logo">
-                    <a href="/travelPal/index.php">
-                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
-                    </a>
-                </div>
-                <div class="menu">
-                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
-                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
-                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
-                </div>            
-            </div>
-            <div class="navigationbarfoot">
-                <hr>  
-            </div>    
-        </div>
-
-    <!--
+                    <!--
                     <ul class="header-ul">
                         <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
                         <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
@@ -67,7 +65,7 @@
                         <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
                     </ul>
                     <hr style="background-color: #327972;color:#327972"/>
-                --> 
+                -->
 
                     <table style="width:100%">
                         <tr VALIGN=TOP>
@@ -75,12 +73,12 @@
 
                             <td class="td-profile">
                                 <?php
-                                $acc_sql = "SELECT * FROM unavailability WHERE created_by= '" . $userID . "' AND isActive= '" . 1 ."'";
+                                $acc_sql = "SELECT * FROM unavailability WHERE created_by= '" . $userID . "' AND isActive= '" . 1 . "'";
                                 $acc_result = $conn->query($acc_sql);
                                 if ($acc_result) {
                                     if ($acc_result->num_rows > 0) { ?>
                                         <div class="main-wrapper">
-                                            <h2 class="heder-profile">Unavailabilty List</h2>
+                                            <h2 class="heder-profile">Unavailability List</h2>
                                             <div>
                                                 <table>
                                                     <thead>
@@ -89,6 +87,7 @@
                                                             <th style="min-width: 150px;">Service</th>
                                                             <th style="min-width: 150px;">Start Date</th>
                                                             <th style="min-width: 150px;">End Date</th>
+                                                            <th style="min-width: 150px;">Delete</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -99,6 +98,15 @@
                                                                 <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['start_date']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['end_date']; ?></td>
+                                                                <td style="padding: 5px 5px;">
+                                                                    <a href="./subComponent/DeleteAvailability.php?id=<?php echo $acc_row['unavailability_Id']; ?>&page=location:../ViewAvailability.php">
+                                                                        <center>
+                                                                            <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\nDo You Want To Delete This entry ?');">
+                                                                                <img src="../../images/delete.png" alt="delete" width="16" height="16">
+                                                                            </button>
+                                                                        </center>
+                                                                    </a>
+                                                                </td>
                                                             </tr>
 
                                             </div>
@@ -109,14 +117,14 @@
                     </table>
                     <div>
                         <a href="./UpdateAvailablility.php">
-                            <button class="add-service-btn">Mark Unavailabilty</button>
+                            <button class="add-service-btn">Add Unavailability</button>
                         </a>
                     </div>
                 <?php     } else { ?>
                     <div style="width: 80%;text-align: center;padding: 100px 0px;">
-                        <h3 class="new-manager">No Unavailabilty Marked</h3>
+                        <h3 class="new-manager">No Unavailabilties Marked</h3>
                         <a href="./UpdateAvailablility.php">
-                            <button class="add-service-btn">Mark Unavailabilty</button>
+                            <button class="add-service-btn">Add Unavailability</button>
                         </a>
                     </div>
             <?php
@@ -178,5 +186,6 @@
 </footer>
 -->
 
-<?php require_once("../Common/footer.php");?>
+<?php require_once("../Common/footer.php"); ?>
+
 </html>
