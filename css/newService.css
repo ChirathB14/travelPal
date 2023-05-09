@@ -65,23 +65,17 @@ html {
     background: #EEB444;
     border-radius: 15px;
     border-radius: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 25px;
     line-height: 30px;
     text-align: center;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
+    color: var(--accentcolor);
     margin-top: 20px;
 
 }
 
 .have-account {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
@@ -90,9 +84,7 @@ html {
     text-align: center;
     letter-spacing: 0.1em;
     text-decoration-line: underline;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
+    color: var(--accentcolor);
 }
 
 .switch-label {
