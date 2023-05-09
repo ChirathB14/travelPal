@@ -6,7 +6,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     $providerNIC = $_POST["providerNIC"];
     $phoneNumber = $_POST["phoneNumber"];
     $email = $_POST["email"];
-    $serviceType = $_POST["serviceType"];
+    // $serviceType = $_POST["serviceType"];
     $regNumber = $_POST["regNumber"];
     $address = $_POST["address"];
     $withFood = 0;
@@ -52,8 +52,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             $newImageName .= '.' . $imageExtension;
 
             move_uploaded_file($tmpName, '../../upload/serviceImg/' . $newImageName);
-            $query = "INSERT INTO accomadation_service (accomadation_Id, provider_name, provider_nic, phone_number, email, service_type, image,  reg_number, address, food, a_c, price_per_room, status, service_no, created_by, created_date, isActive) 
-            VALUES(0, '$providerName', '$providerNIC', '$phoneNumber', '$email', '$serviceType', '$newImageName', '$regNumber', '$address', '$withFood', '$withAc', '$pricePerRoom', '1', '$ref', '$userID', '$createdDate', '1' )";
+            $query = "INSERT INTO accomadation_service (accomadation_Id, provider_name, provider_nic, phone_number, email, image,  reg_number, address, food, a_c, price_per_room, status, service_no, created_by, created_date, isActive) 
+            VALUES(0, '$providerName', '$providerNIC', '$phoneNumber', '$email', '$newImageName', '$regNumber', '$address', '$withFood', '$withAc', '$pricePerRoom', '1', '$ref', '$userID', '$createdDate', '1' )";
             $sql = "UPDATE user SET is_accommodation='1' WHERE user_Id= '$userID'";
             mysqli_query($conn, $query);
             mysqli_query($conn, $sql);
@@ -177,13 +177,13 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
                                                 <input pattern="[a-zA-Z\.]+\s)*[a-zA-Z\.]" type="text" class="reg-input" id="providerName" name="providerName" placeholder="Service Provider Name" value="<?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?>" required />
                                             </td>
                                             <td style="width: 50%;">
-                                                <input type="text" class="reg-input" id="providerNIC" name="providerNIC" placeholder="Service Provider NIC" required />
+                                                <input type="text" class="reg-input" id="providerNIC" name="providerNIC" placeholder="Service Provider NIC" required pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"/>
                                             </td>
                                         </tr>
                                         
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <input type="tel" class="reg-input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required />
+                                                <input type="tel" class="reg-input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required pattern="^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$"/>
                                             </td>
                                             <td style="width: 50%;">
                                                 <input type="email" class="reg-input" id="email" name="email" placeholder="Email" value="<?php echo $row['email']; ?>" required />
@@ -191,9 +191,9 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
                                         </tr>
 
                                         <tr VALIGN=CENTER style="text-align: center;">
-                                            <td style="width: 50%;">
+                                            <!-- <td style="width: 50%;">
                                                 <input type="text" class="reg-input" id="serviceType" name="serviceType" placeholder="Service Type" required />
-                                            </td>
+                                            </td> -->
                                             <td style="width: 50%;">
                                                 <input type="file" class="reg-input" style="padding: 10px 10px;" name="image" id="image" accept=".jpg, .jpeg, .png" required />
                                             </td>
@@ -241,7 +241,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
 
                                             </td>
                                             <td style="width: 50%;">
-                                                <input type="text" pattern="^[1-9]\d{0,7}(?:\.\d{1,4})?|\.\d{1,4}$" class="reg-input" id="price-per-room" name="price-per-room" placeholder="Price Per Room" required />
+                                                <input type="number" pattern="^[1-9]\d{0,7}(?:\.\d{1,4})?|\.\d{1,4}$" class="reg-input" id="price-per-room" name="price-per-room" placeholder="Price Per Room" required min="1000" step="100"/>
                                             </td>
                                         </tr>
                                     </table>

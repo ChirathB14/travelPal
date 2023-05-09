@@ -169,7 +169,6 @@
                                                     </p>
                                                 </div>
                                             </td>
-
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
@@ -213,7 +212,7 @@
                         }
                     } else {
                         echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
                     }
 
                     $conn->close();

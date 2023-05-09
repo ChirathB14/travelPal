@@ -117,14 +117,14 @@ $title = "Profile";
                     </table>
                     <div>
                         <a href="./UpdateAvailablility.php">
-                            <button class="add-service-btn">Add Unavailability</button>
+                            <button class="add-service-btn" style="font-size:15px;">Add Unavailability</button>
                         </a>
                     </div>
                 <?php     } else { ?>
                     <div style="width: 80%;text-align: center;padding: 100px 0px;">
                         <h3 class="new-manager">No Unavailabilties Marked</h3>
                         <a href="./UpdateAvailablility.php">
-                            <button class="add-service-btn">Add Unavailability</button>
+                            <button class="add-service-btn" style="font-size:15px;">Add Unavailability</button>
                         </a>
                     </div>
             <?php
@@ -140,7 +140,7 @@ $title = "Profile";
             }
         } else {
             echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
         }
 
         $conn->close();

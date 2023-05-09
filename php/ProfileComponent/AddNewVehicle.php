@@ -171,12 +171,12 @@ require_once("../Common/header.php");
                                                 <input pattern="[a-zA-Z\.]+\s)*[a-zA-Z\.]" type="text" class="reg-input" id="providerName" name="providerName" placeholder="Service Provider Name" value="<?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?>" required />
                                             </td>
                                             <td style="width: 50%;">
-                                                <input type="text" class="reg-input" id="providerNIC" name="providerNIC" placeholder="Service Provider NIC" required />
+                                                <input type="text" class="reg-input" id="providerNIC" name="providerNIC" placeholder="Service Provider NIC" required pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$" />
                                             </td>
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <input type="tel" class="reg-input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required />
+                                                <input type="tel" class="reg-input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required pattern="^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$"/>
                                             </td>
                                             <td style="width: 50%;">
                                                 <input type="email" class="reg-input" id="email" name="email" placeholder="Email" value="<?php echo $row['email']; ?>" required />
@@ -192,10 +192,10 @@ require_once("../Common/header.php");
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <input type="text" class="reg-input" id="vehiNumber" name="vehiNumber" placeholder="Vehicle Number" required />
+                                                <input type="text" class="reg-input" id="vehiNumber" name="vehiNumber" placeholder="Vehicle Number" required pattern="^([a-zA-Z]{1,3}|((?!0*-)[0-9]{1,3}))-[0-9]{4}(?<!0{4})$"/>
                                             </td>
                                             <td style="width: 50%;">
-                                                <select name="fuelType" id="fuelType" required style="width: 525px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
+                                                <select name="vehiType" id="vehiType" required style="width: 525px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
                                                     <option value="" disabled selected>Select vehicle type</option>
                                                     <option value="Car">Car</option>
                                                     <option value="Van">Van</option>
@@ -204,7 +204,7 @@ require_once("../Common/header.php");
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <input type="text" class="reg-input" id="pricePerKm" name="pricePerKm" placeholder="Price Per KM" required />
+                                                <input type="number" class="reg-input" id="pricePerKm" name="pricePerKm" placeholder="Price Per KM" required min=100 step=100 />
                                             </td>
                                             <td style="width: 50%;">
                                                 <select name="fuelType" id="fuelType" required style="width: 525px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
@@ -222,7 +222,7 @@ require_once("../Common/header.php");
                         }
                     } else {
                         echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
                     }
 
                     $conn->close();

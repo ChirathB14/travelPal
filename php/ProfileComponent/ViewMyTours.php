@@ -34,11 +34,28 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
     ?>
+    <div class="header">
+            <div class="navigationbar">
+                <div class="nav-Logo">
+                    <a href="/travelPal/index.php">
+                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                    </a>
+                </div>
+                <div class="menu">
+                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                </div>            
+            </div>
+            <div class="navigationbarfoot">
+                <hr>  
+            </div>    
+    </div>
 
-            <?php
-            $title = "View My Tours - TravePal";
-            require_once("../Common/header.php");
-            ?>
+            
                     <!-- <ul class="header-ul">
                         <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
                         <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
@@ -124,7 +141,7 @@
             }
         } else {
             echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
         }
 
         $conn->close();

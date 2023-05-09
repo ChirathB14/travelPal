@@ -213,7 +213,7 @@
                         }
                     } else {
                         echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
                     }
 
                     $conn->close();
