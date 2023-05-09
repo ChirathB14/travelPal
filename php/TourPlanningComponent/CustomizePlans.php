@@ -8,6 +8,8 @@
     <!-- <link rel="stylesheet" href="../../css/header.css"> -->
     <!-- <link rel="stylesheet" href="../../css/custermizePlan.css"> -->
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+
     <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
     <script type="text/javascript" src="../../js/custermizePlan.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
@@ -70,8 +72,9 @@
                         <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
                     </ul>
                     <hr style="background-color: #327972;color:#327972"/> -->
-                    <div class="register">
-                        <h2 class="heder-profile">Create New Plan</h2>
+                    <!-- <div class="register"> -->
+                    <div class="profile-main-wrapper" style="width: 40%; margin: 5% auto 5% auto;">
+                        <h2 class="heder-profile" style="color: var(--primarycolor);">Create New Plan</h2>
                         <div class="profile-main-wrapper">
                             <form method="POST" action="CustomizePlans.php" autocomplete="off" enctype="multipart/form-data">
                                 <center>
@@ -96,7 +99,7 @@
                                             ?>
                                         </select>
                                     </div>
-                                    <div class="input-elements">
+                                    <!-- <div class="input-elements"> -->
                                         <select id="location" name="location" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
                                                 background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                                                 box-sizing: border-box; border: none; border-radius: 5px;
@@ -116,17 +119,17 @@
                                             }
                                             ?>
                                         </select>
-                                    </div>
-                                    <div class="input-elements">
+                                    <!-- </div> -->
+                                    <!-- <div class="input-elements"> -->
                                         <select onclick="hideParagraph()" id="destination" name="destination[]" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
                                                 background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                                                 box-sizing: border-box; border: none; border-radius: 5px;
                                                 font-size: 10px; font-weight: bold; color:#808080;" multiple required>
                                             <option value="" disabled>Destination</option>
                                         </select>
-                                    </div>
-                                    <p id="requird-destination" style="color:red;">* Destinations are required</p>
-                                    <div class="input-elements">
+                                    <!-- </div> -->
+                                    <p id="requird-destination" style="color:red; font-size: 12px;">* Destinations are required</p>
+                                    <!-- <div class="input-elements"> -->
                                         <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
                                                 background-color: var(--accentcolor); opacity: 0.75; height: 40px; box-sizing: border-box; border: none; border-radius: 5px;
                                                 font-size: 10px; font-weight: bold; color:#808080;" required>
@@ -145,7 +148,7 @@
                                             }
                                             ?>
                                         </select>
-                                    </div>
+                                    <!-- </div> -->
                                     <div class="input-elements">
                                         <input class="line-wrapper line-txt" type="text" id="noOfDays" name="noOfDays" style="width: 400px;  margin-top: 12px; 
                             background-color: var(--accentcolor); opacity: 0.75; height: 40px;
@@ -158,7 +161,7 @@
                                     <!-- <div class="input-elements">
                                         <input class="line-wrapper line-txt" type="file" name="image" id="image" accept=".jpg, .jpeg, .png" required>
                                     </div> -->
-                                    <div class="new-user">
+                                    <div class="new-user" >
                                         <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn">Next</button>
                                     </div>
 
