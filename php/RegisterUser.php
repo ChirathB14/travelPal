@@ -15,17 +15,6 @@
     <title>Travel Pal</title>
 </head>
 
-<!-- 
-                <body style="background-image: url('../images/registerBG.png')" onload="loginRegisterAccess()">
-                <div id="overlay">
-            <div>
-            <center>
-                <h2 id="heder-register">create an account</h2>
-            </center>
-
-            <form class="reg-form" method="POST" action="RegisterUser.php" onsubmit="return cheakpassword()">
-            -->
-
 <body class="registration" onload="loginRegisterAccess()">
     <div class="register">
         <form action="RegisterUser.php" method="post" onsubmit="return cheakpassword()">
@@ -58,21 +47,6 @@
             </div>
         </form>
     </div>
-
-    <!--
-                <input type="text" class="reg-input" id="fname" name="fname" placeholder="First Name" required />
-                <input type="text" class="reg-input" id="lname" name="lname" placeholder="Last Name" required />
-                <input type="text" class="reg-input" id="address" name="address" placeholder="Address" required />
-                <input type="email" class="reg-input" id="email" name="email" placeholder="Email" required />
-                <input type="password" class="reg-input" id="Pass" name="Pass" placeholder="Password" required />
-                <input type="password" class="reg-input" id="rePass" name="rePass" placeholder="Confirm Password" required />
-                <select id="usertype" name="usertype" class="reg-input" required>
-                    <option value="" disabled selected hidden>Register As:</option>
-                    <option value="3">Tourist</option>
-                    <option value="4">Service Provider</option>
-                </select>
-                <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Register</button>
-                -->
 
     <?php
     require './DbConfig.php';
@@ -113,15 +87,6 @@
     }
 
     ?>
-    <!--
-            </form>
-            <a href="./Login.php">
-                <p class="have-account">already have an account?</p>
-            </a>
-        </div>
-    </div>
--->
 
 </body>
-
 </html>
