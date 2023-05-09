@@ -6,9 +6,9 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     $providerNIC = $_POST["providerNIC"];
     $phoneNumber = $_POST["phoneNumber"];
     $email = $_POST["email"];
-    $serviceType = $_POST["serviceType"];
+    // $serviceType = $_POST["serviceType"];
     $regNumber = $_POST["regNumber"];
-    $experience = $_POST["experience"];
+    // $experience = $_POST["experience"];
     $pricePerDay = $_POST["pricePerDay"];
     $language = $_POST["language"];
     $createdDate = date('Y-m-d H:i:s');
@@ -46,8 +46,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             $newImageName .= '.' . $imageExtension;
 
             move_uploaded_file($tmpName, '../../upload/serviceImg/' . $newImageName);
-            $query = "INSERT INTO tour_guide (guide_Id, provider_name, provider_nic, phone_number, email, service_type, image,  reg_number, experience, languages, price_per_day, status, service_no, created_by, created_date, isActive) 
-            VALUES(0, '$providerName', '$providerNIC', '$phoneNumber', '$email', '$serviceType', '$newImageName', '$regNumber', '$experience', '$language', '$pricePerDay', '1', '$ref','$userID', '$createdDate', '1' )";
+            $query = "INSERT INTO tour_guide (guide_Id, provider_name, provider_nic, phone_number, email, image,  reg_number, languages, price_per_day, status, service_no, created_by, created_date, isActive) 
+            VALUES(0, '$providerName', '$providerNIC', '$phoneNumber', '$email', '$newImageName', '$regNumber', '$language', '$pricePerDay', '1', '$ref','$userID', '$createdDate', '1' )";
             $sql = "UPDATE user SET is_guide='1' WHERE user_Id= '$userID'";
             mysqli_query($conn, $query);
             mysqli_query($conn, $sql);
@@ -139,8 +139,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
 </head>
 
 <?php
-    $title = "TravePal";
-    require_once("../Common/header.php");
+$title = "TravePal";
+require_once("../Common/header.php");
 ?>
 
 <body>
@@ -164,54 +164,59 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                 ?>
-                <form class="reg-form" method="POST" action="AddNewGuide.php" autocomplete="off" enctype="multipart/form-data">
-                    <table style="width:90%">
-                        <tr VALIGN=CENTER style="text-align: center;">
-                            <td style="width: 50%;">
-                                <input pattern="[a-zA-Z\.]+\s)*[a-zA-Z\.]" type="text" class="reg-input" id="providerName" name="providerName" placeholder="Service Provider Name" value="<?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?>" required />
-                            </td>
-                            <td style="width: 50%;">
-                                <input type="text" class="reg-input" id="providerNIC" name="providerNIC" placeholder="Service Provider NIC" required />
-                            </td>
-                        </tr>
-                        <tr VALIGN=CENTER style="text-align: center;">
-                            <td style="width: 50%;">
-                                <input type="tel" class="reg-input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required />
-                            </td>
-                            <td style="width: 50%;">
-                                <input type="email" class="reg-input" id="email" name="email" placeholder="Email" value="<?php echo $row['email']; ?>" required />
-                            </td>
-                        </tr>
-                        <tr VALIGN=CENTER style="text-align: center;">
-                            <td style="width: 50%;">
-                                <input type="text" class="reg-input" id="serviceType" name="serviceType" placeholder="Service Type" required />
-                            </td>
-                            <td style="width: 50%;">
-                                <input type="file" class="reg-input" style="padding: 10px 10px;" name="image" id="image" accept=".jpg, .jpeg, .png" required />
-                            </td>
+                                <form class="reg-form" method="POST" action="AddNewGuide.php" autocomplete="off" enctype="multipart/form-data">
+                                    <table style="width:90%">
+                                        <tr VALIGN=CENTER style="text-align: center;">
+                                            <td style="width: 50%;">
+                                                <input pattern="[a-zA-Z\.]+\s)*[a-zA-Z\.]" type="text" class="reg-input" id="providerName" name="providerName" placeholder="Service Provider Name" value="<?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?>" required />
+                                            </td>
+                                            <td style="width: 50%;">
+                                                <input type="text" class="reg-input" id="providerNIC" name="providerNIC" placeholder="Service Provider NIC" required pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$" />
+                                            </td>
+                                        </tr>
+                                        <tr VALIGN=CENTER style="text-align: center;">
+                                            <td style="width: 50%;">
+                                                <input type="tel" class="reg-input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required pattern="^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$" />
+                                            </td>
+                                            <td style="width: 50%;">
+                                                <input type="email" class="reg-input" id="email" name="email" placeholder="Email" value="<?php echo $row['email']; ?>" required />
+                                            </td>
+                                        </tr>
+                                        <tr VALIGN=CENTER style="text-align: center;">
+                                            <!-- <td style="width: 50%;">
+                                                <input type="text" class="reg-input" id="serviceType" name="serviceType" placeholder="Service Type" required />
+                                            </td> -->
+                                            <td style="width: 50%;">
+                                                <input type="file" class="reg-input" style="padding: 10px 10px;" name="image" id="image" accept=".jpg, .jpeg, .png" required />
+                                            </td>
 
-                        </tr>
-                        <tr>
-                        </tr>
-                        <tr VALIGN=CENTER style="text-align: center;">
-                            <td style="width: 50%;">
-                                <input type="text" class="reg-input" id="regNumber" name="regNumber" placeholder="Registration Number" required />
-                            </td>
-                            <td style="width: 50%;">
-                                <input type="text" class="reg-input" id="" name="experience" placeholder="Experience" required />
-                            </td>
-                        </tr>
-                        <tr VALIGN=CENTER style="text-align: center;">
-                            <td style="width: 50%;">
-                                <input type="text" class="reg-input" id="pricePerDay" name="pricePerDay" placeholder="Price Per Day" required />
-                            </td>
-                            <td style="width: 50%;">
-                                <input type="text" class="reg-input" id="language" name="language" placeholder="languages" required />
-                            </td>
-                        </tr>
-                    </table>
-                    <button class="add-detail-btn" type="submit" name="submit">Add Details</button>
-                </form>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr VALIGN=CENTER style="text-align: center;">
+                                            <td style="width: 50%;">
+                                                <input type="text" class="reg-input" id="regNumber" name="regNumber" placeholder="Registration Number" required />
+                                            </td>
+                                            <!-- <td style="width: 50%;">
+                                                <input type="text" class="reg-input" id="" name="experience" placeholder="Experience" required />
+                                            </td> -->
+                                        </tr>
+                                        <tr VALIGN=CENTER style="text-align: center;">
+                                            <td style="width: 50%;">
+                                                <input type="number" class="reg-input" id="pricePerDay" name="pricePerDay" placeholder="Price Per Day" required min="100" step="100"/>
+                                            </td>
+                                            <td style="width: 50%;">
+                                                <!-- <input type="text" class="reg-input" id="language" name="language" placeholder="languages" required /> -->
+                                                <select name="language" id="language" required style="width: 420px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
+                                                    <option value="" disabled selected>Select preferred language</option>
+                                                    <option value="English">English</option>
+                                                    <option value="Sinhala">Diesel</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <button class="add-detail-btn" type="submit" name="submit">Add Details</button>
+                                </form>
                 <?php
                             }
                         }
@@ -230,6 +235,6 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     </div>
 </body>
 
-<?php require_once("../Common/footer.php");?>
+<?php require_once("../Common/footer.php"); ?>
 
 </html>

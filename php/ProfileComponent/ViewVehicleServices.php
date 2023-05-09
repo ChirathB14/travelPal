@@ -143,7 +143,7 @@ $title = "View Vehicle Services - TravePal";
             }
         } else {
             echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
         }
 
         $conn->close();

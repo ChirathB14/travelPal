@@ -222,7 +222,7 @@ require_once("../Common/header.php");
                         }
                     } else {
                         echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
                     }
 
                     $conn->close();

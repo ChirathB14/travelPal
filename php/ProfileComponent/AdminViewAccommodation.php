@@ -119,7 +119,7 @@
                                                         </tr>
                                                 <?php }
                                                 } else {
-                                                    echo "Error in " . $sql . " " . $conn->error;
+                                                    echo "Error in " . $sql . " " . $conn->$error;
                                                 }
                                                 ?>
                                             </tbody>
@@ -136,7 +136,7 @@
             }
         } else {
             echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
         }
 
         $conn->close();
