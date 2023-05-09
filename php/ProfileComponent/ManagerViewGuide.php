@@ -99,7 +99,7 @@
                                                                 <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
                                                                 <td class="td-txt">
                                                                     <a href="ManagerApproveGuide.php?id=<?php echo $acc_row['guide_Id']; ?>">
-                                                                        <center><button type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
+                                                                        <center><button type="submit" value="editBtn" style="background-color: var(--accentcolor); width:20px; height:20px;" ><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
                                                                 </td>
                                                             </tr>
