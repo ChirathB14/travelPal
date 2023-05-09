@@ -134,13 +134,6 @@
                                             <td style="width: 50%;">
                                                 <div class="line-wrapper">
                                                     <p class="line-txt">
-                                                        <?php echo $row['service_type']; ?>
-                                                    </p>
-                                                </div>
-                                            </td>
-                                            <td style="width: 50%;">
-                                                <div class="line-wrapper">
-                                                    <p class="line-txt">
                                                         <?php echo $row['reg_number']; ?>
                                                     </p>
                                                 </div>
@@ -219,7 +212,7 @@
                         }
                     } else {
                         echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
                     }
 
                     $conn->close();

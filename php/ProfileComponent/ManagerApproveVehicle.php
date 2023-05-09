@@ -134,18 +134,10 @@
                                             <td style="width: 50%;">
                                                 <div class="line-wrapper">
                                                     <p class="line-txt">
-                                                        <?php echo $row['service_type']; ?>
-                                                    </p>
-                                                </div>
-                                            </td>
-                                            <td style="width: 50%;">
-                                                <div class="line-wrapper">
-                                                    <p class="line-txt">
                                                         <?php echo $row['vehicle_num']; ?>
                                                     </p>
                                                 </div>
                                             </td>
-
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
@@ -190,7 +182,7 @@
                         }
                     } else {
                         echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
                     }
 
                     $conn->close();

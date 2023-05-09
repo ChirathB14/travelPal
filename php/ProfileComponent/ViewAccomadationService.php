@@ -88,7 +88,6 @@
                                                             <th style="min-width: 140px;">Name</th>
                                                             <th style="min-width: 140px;">Email</th>
                                                             <th style="min-width: 140px;">NIC</th>
-                                                            <th style="min-width: 140px;">Type</th>
                                                             <th style="min-width: 140px;">Status</th>
                                                         </tr>
                                                     </thead>
@@ -100,7 +99,6 @@
                                                                 <td class="td-txt"><?php echo $acc_row['provider_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['provider_nic']; ?></td>
-                                                                <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
                                                                 <td class="td-txt"><?php  
                                                                 if($acc_row['status'] == 1){
                                                                     echo "Pending";
@@ -144,7 +142,7 @@
             }
         } else {
             echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
         }
 
         $conn->close();
