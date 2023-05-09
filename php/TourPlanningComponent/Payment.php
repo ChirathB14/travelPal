@@ -19,7 +19,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     "
 <script>
 alert('Successfully Added');
-document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
+document.location.replace('./PaymentSuccuess.php?common=" . $common_id . "');
 </script>
 ";
     $conn->close();
@@ -148,7 +148,7 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
 </head>
 
 <?php
-    $title = "Payment | TravelPal";
+$title = "Payment | TravelPal";
 ?>
 
 <body style="background-color: #0E064D;">
@@ -160,7 +160,7 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
         </tr>
         <tr VALIGN=TOP>
             <td style="width: 100%;">
-            <br><br>
+                <br><br>
                 <div class="container">
                     <header>
                         <img src="../../images/logo.png" alt="Logo">
@@ -182,20 +182,20 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
                                     <form action="Payment.php?common=<?php echo $common_id ?>" method="POST" style="margin-left:15%;">
                                         <div class="form-group">
                                             <label for="card-number">Card Number:</label>
-                                            <input type="text" name="cardNumber" id="card-number" placeholder="1234 5678 9012 3456" required>
+                                            <input type="text" name="cardNumber" id="card-number" placeholder="1234 5678 9012 3456" required pattern="^[0-9]{16}$">
                                         </div>
                                         <div class="form-group">
                                             <label for="expiry-date">Expiry Date:</label>
-                                            <input type="text" id="expiry-date" name="date" placeholder="MM/YY" required>
+                                            <input type="month" id="expiry-date" name="date" placeholder="MM/YY" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="cvv">CVV:</label>
-                                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                            <input type="number" id="cvv" name="cvv" placeholder="123" required pattern="^[0-9]{3}$">
                                         </div>
                                         <div class="form-group">
                                             <label for="amount">Amount:</label>
                                             <input type="text" id="amount" name="price1" placeholder="$0.00" value="<?php echo $row['final_price'] ?>" disabled required>
-                                            <input type="text" id="amount" name="price" placeholder="$0.00" value="<?php echo $row['final_price'] ?>"  hidden>
+                                            <input type="text" id="amount" name="price" placeholder="$0.00" value="<?php echo $row['final_price'] ?>" hidden>
                                         </div>
                                         <button type="submit" name="submit">Pay Now</button>
                                     </form>
@@ -258,5 +258,6 @@ document.location.replace('./PaymentSuccuess.php?common=". $common_id ."');
     </footer>
     -->
 
-    <?php require_once("../Common/footer.php");?>
+<?php require_once("../Common/footer.php"); ?>
+
 </html>

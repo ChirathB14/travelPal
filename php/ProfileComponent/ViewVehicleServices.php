@@ -89,7 +89,6 @@ $title = "View Vehicle Services - TravePal";
                                                             <th style="min-width: 140px;">Name</th>
                                                             <th style="min-width: 140px;">Email</th>
                                                             <th style="min-width: 140px;">NIC</th>
-                                                            <th style="min-width: 140px;">Type</th>
                                                             <th style="min-width: 140px;">Status</th>
                                                         </tr>
                                                     </thead>
@@ -101,7 +100,6 @@ $title = "View Vehicle Services - TravePal";
                                                                 <td class="td-txt"><?php echo $acc_row['provider_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['provider_nic']; ?></td>
-                                                                <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
                                                                 <td class="td-txt"><?php  
                                                                 if($acc_row['status'] == 1){
                                                                     echo "Pending";

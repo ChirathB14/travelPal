@@ -58,7 +58,8 @@
             background: #EEB444;
             border-radius: 15px;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 16px;
+            padding: 0%;
             line-height: 54px;
             text-align: center;
             letter-spacing: 0.1em;
@@ -102,22 +103,26 @@
         </tr>
         <tr VALIGN=TOP>
             <td style="width: 100%;">
+                <center>
+                <br>
                 <div class="container">
-
-                    <div class="content-container">
-                        <div class="image-container">
-                            <img src="../../images/checked.png" alt="Image Description">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src="../../images/checked.png" alt="Image Description">
+                            </div>
+                            <h2 class="title">Payment Successful</h2>
+                            <p class="description">Thank you for your payment. we will be in contact with more details</p>
+                            <a href="../TourPlanningComponent/AllTourSummary.php?common=<?php echo $_GET['common'] ?>">
+                            <br>
+                            <button class="button">Click to see the summary</button>
+                            </a>
                         </div>
-                        <h2 class="title">Payement Successfull</h2>
-                        <p class="description">Thank you for your payment. we will be in contact with more details</p>
-                        <a href="../TourPlanningComponent/AllTourSummary.php?common=<?php echo $_GET['common'] ?>">
-                        <button class="button">to see the summary</button>
-                        </a>
                     </div>
-                </div>
+                </center>
             </td>
         </tr>
     </table>
+    <br>
 </body>
 
 
