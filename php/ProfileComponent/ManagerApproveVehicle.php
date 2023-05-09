@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/newService.css">
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
     <style>
@@ -67,14 +69,36 @@
         .slider.round:before {
             border-radius: 50%;
         }
+
+        .line-wrappers {
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #fff;
+            border-bottom: 1px solid #00357A;
+            position: relative;
+            padding: 0 0 0 0px;
+        }
+
+        .line-wrappers .line-txt {
+            top: 0;
+            left: 0;
+            padding: 0 10px 0 10px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #00357A;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            margin: 5px;
+        }
     </style>
     <title>Travel Pal</title>
 </head>
 
-<body style="background-image: url('../../images/registerBG.png')">
-    <div id="overlay">
+<body>
+    <div style="width: 100vw;">
         <center>
-            <div style="background-color: #00357A; width: 80%; text-align:center;padding-bottom:20px">
+            <div style="background-color: #00357A; width: 70%; text-align:center;padding-bottom:20px">
                 <center>
                     <h2 id="heder-register">Vehicle Service Details</h2>
                 </center>
@@ -90,24 +114,24 @@
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                 ?>
-                                <hr style="height:2px;background-color:aliceblue;width:100%" />
+                
                                 <center>
                                     <div>
                                         <img src="../../upload/serviceImg/<?php echo $row['image']; ?>" alt="edit" width="100" height="100">
                                     </div>
                                 </center>
                                 <form class="reg-form" method="POST" action="ManagerApproveVehicle.php?Id=<?php echo urlencode($_GET['id']); ?>" autocomplete="off">
-                                    <table style="width:90%">
+                                    <table style="width:90%;">
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <div class="line-wrapper">
+                                                <div class="line-wrappers">
                                                     <p class="line-txt">
                                                         <?php echo $row['provider_name']; ?>
                                                     </p>
                                                 </div>
                                             </td>
                                             <td style="width: 50%;">
-                                                <div class="line-wrapper">
+                                                <div class="line-wrappers">
                                                     <p class="line-txt">
                                                         <?php echo $row['provider_nic']; ?>
                                                     </p>
@@ -116,14 +140,14 @@
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <div class="line-wrapper">
+                                                <div class="line-wrappers">
                                                     <p class="line-txt">
                                                         <?php echo $row['phone_number']; ?>
                                                     </p>
                                                 </div>
                                             </td>
                                             <td style="width: 50%;">
-                                                <div class="line-wrapper">
+                                                <div class="line-wrappers">
                                                     <p class="line-txt">
                                                         <?php echo $row['email']; ?>
                                                     </p>
@@ -131,15 +155,15 @@
                                             </td>
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
-                                            <td style="width: 50%;">
-                                                <div class="line-wrapper">
+                                            <!-- <td style="width: 50%;">
+                                                <div class="line-wrappers">
                                                     <p class="line-txt">
-                                                        <?php echo $row['service_type']; ?>
+                                                        <?php //echo $row['service_type']; ?>
                                                     </p>
                                                 </div>
-                                            </td>
+                                            </td> -->
                                             <td style="width: 50%;">
-                                                <div class="line-wrapper">
+                                                <div class="line-wrappers">
                                                     <p class="line-txt">
                                                         <?php echo $row['vehicle_num']; ?>
                                                     </p>
@@ -149,14 +173,14 @@
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <div class="line-wrapper">
+                                                <div class="line-wrappers">
                                                     <p class="line-txt">
                                                         <?php echo $row['vehicle_type']; ?>
                                                     </p>
                                                 </div>
                                             </td>
                                             <td style="width: 50%;">
-                                                <div class="line-wrapper">
+                                                <div class="line-wrappers">
                                                     <p class="line-txt">
                                                         <?php echo $row['price_per_km']; ?>
                                                     </p>
@@ -165,7 +189,7 @@
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
-                                            <div class="line-wrapper">
+                                            <div class="line-wrappers">
                                                     <p class="line-txt">
                                                         <?php echo $row['fuel_type']; ?>
                                                     </p>
@@ -176,14 +200,13 @@
                                         </tr>
                                         <tr style="text-align: center;">
                                             <td style="width: 50%;">
-                                                <button class="add-detail-btn" type="submit" name="submit">Approve</button>
+                                                <button class="add-detail-btn" style="width: 200px;" type="submit" name="submit">Approve</button>
                                             </td>
                                             <td style="width: 50%;">
-                                                <button class="add-detail-btn" style="background-color: red;" type="submit" name="decline">Decline</button>
+                                                <button class="add-detail-btn" style="background-color: rgb(134, 2, 2); width: 200px;" type="submit" name="decline">Decline</button>
                                             </td>
                                         </tr>
                                     </table>
-                                    <hr style="height:2px;background-color:aliceblue;width:100%" />
                                 </form>
                 <?php
                             }
