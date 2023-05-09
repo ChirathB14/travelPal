@@ -74,7 +74,7 @@ document.location.replace('./ViewAvailability.php');
             width: 26px;
             left: 4px;
             bottom: 4px;
-            background-color: white;
+            background-color: var(--accentcolor);
             -webkit-transition: .4s;
             transition: .4s;
         }
@@ -103,16 +103,13 @@ document.location.replace('./ViewAvailability.php');
         }
 
         .label {
-            font-weight: 600;
+            font-weight: 500;
             margin-right: 5px;
             flex: 1;
-            font-size: 17px;
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
-            line-height: 30px;
+            font-size: 15px;
+            line-height: 25px;
             letter-spacing: 0.1em;
-
-            color: #FFFFFF;
+            color: var(--accentcolor);
         }
     </style>
 </head>
@@ -122,10 +119,10 @@ document.location.replace('./ViewAvailability.php');
     require_once("../Common/header.php");
 ?>
 
-<body>
-    <div>
+<body style="width:100vw; height: 100vh;">
+    <div style="width:100vw">
         <center>
-            <div style="background-color: #00357A; width: 70%; text-align:center;padding-bottom:20px">
+            <div style="background-color: #00357A; width: 60%; text-align:center;padding-bottom:20px">
                 <center>
                     <h2 id="heder-register">Add Unavailabilty Details</h2>
                 </center>
@@ -160,7 +157,7 @@ document.location.replace('./ViewAvailability.php');
                             </td>
                         </tr>
                     </table>
-                    <hr style="height:2px;background-color:aliceblue;width:100%" />
+                    <!-- <hr style="height:2px;background-color:aliceblue;width:100%" /> -->
                     <button class="add-detail-btn" type="submit" name="submit">Add Details</button>
                 </form>
             </div>
@@ -177,7 +174,7 @@ document.location.replace('./ViewAvailability.php');
                 var service = $(this).val();
                 $.ajax({
                     type: 'POST',
-                    url: './subComponent/Get_Services.php', // Replace with the URL of your PHP script that gets the cities
+                    url: './subComponent/Get_Services.php', // Replace with the URL of PHP script that gets the cities
                     data: {
                         service: service
                     },
@@ -195,6 +192,11 @@ document.location.replace('./ViewAvailability.php');
     </script>
 </body>
 
-<?php require_once("../Common/footer.php");?>
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>

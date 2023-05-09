@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/main.css">
     
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/newFooter.css">
+    <!-- <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/newFooter.css"> -->
     <script type="text/javascript" src="./js/checkAccess.js"></script>
 
     <!--
