@@ -85,7 +85,6 @@
                                                             <th style="min-width: 150px;">Name</th>
                                                             <th style="min-width: 150px;">Email</th>
                                                             <th style="min-width: 150px;">NIC</th>
-                                                            <th style="min-width: 150px;">Type</th>
                                                             <th style="min-width: 150px;">Action</th>
                                                         </tr>
                                                     </thead>
@@ -96,7 +95,6 @@
                                                                 <td class="td-txt"><?php echo $acc_row['provider_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['provider_nic']; ?></td>
-                                                                <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
                                                                 <td class="td-txt">
                                                                     <a href="ManagerApproveGuide.php?id=<?php echo $acc_row['guide_Id']; ?>">
                                                                         <center><button type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
@@ -130,7 +128,7 @@
             }
         } else {
             echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
         }
 
         $conn->close();
