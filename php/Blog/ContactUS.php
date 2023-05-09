@@ -117,9 +117,10 @@ if (isset($_POST["submit"])) {
 </head>
 
 <?php
-    $title = "Contact us";
-    require_once("../Common/header.php");
+$title = "Contact us";
+require_once("../Common/header.php");
 ?>
+
 <body onload="checkAccess(true)">
     <table>
         <!--
@@ -145,19 +146,19 @@ if (isset($_POST["submit"])) {
                     <h2 class="contact-h2">Contact us</h2>
                     <p class="contact-p">
                         Expect a premium level of service from your first point of contact to your last moments in Sri Lanka.
-                        Lanka Travel plan is a Sri Lanka luxury tour service provider with a particular emphasis on tailored 
+                        Lanka Travel plan is a Sri Lanka luxury tour service provider with a particular emphasis on tailored
                         solutions with highly personalized service that match the luxury lifestyle and the higher expectations of the privileged clients.
-                        Feel free to call, send us an email or simply complete the enquiry form to arrange your own private 
+                        Feel free to call, send us an email or simply complete the enquiry form to arrange your own private
                         tailor made luxury tour in Sri Lanka.
                     </p>
                 </div>
             </div>
             <div class="form-main-wrapper">
-                <div class="form-wrapper" >
+                <div class="form-wrapper">
                     <form method="POST" action="ContactUS.php">
                         <div class="input-elements" style="margin-left: auto; margin-right: auto;">
                             <input name="name" type="text" placeholder=" Name" required />
-                            <input type="email" name="email" placeholder="Email" required />
+                            <input type="email" name="email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
                             <textarea cols="30" rows="10" name="messege" placeholder="Enter your message..." required></textarea><br>
                             <button type="submit" name="submit">Send Message</button>
                         </div>
@@ -207,6 +208,6 @@ if (isset($_POST["submit"])) {
     -->
 
 <!-- footer -->
-<?php require_once("../Common/footer.php");?>
+<?php require_once("../Common/footer.php"); ?>
 
 </html>

@@ -36,8 +36,10 @@
                 <input type="text" name="address" id="address" placeholder="  ADDRESS" required />
                 <input type="email" name="email" id="email" placeholder="  EMAIL" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
                 <input type="password" name="Pass" id="Pass" placeholder="  PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$">
-                (Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
-                Should be more than 8 characters and less than 16 characters.)
+                <p style="font-size:14px;">
+                    (Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+                    Should be more than 8 characters and less than 16 characters.)
+                </p>
                 <input type="password" name="rePass" id="rePass" placeholder="  CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$">
                 <select id="usertype" name="usertype" required style="width: 400px;  margin-top: 12px; 
                             background-color: var(--accentcolor); opacity: 0.75; height: 40px;
