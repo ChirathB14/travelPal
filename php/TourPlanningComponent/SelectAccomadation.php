@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
-    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
 </head>
 
 <?php
@@ -28,25 +27,6 @@
                     <br>
                     <h2 class="preplanned-des">Select Accomadation Service</h2>
                     <br>
-                    <!-- <div class="box">
-                    <ul class="list">
-                        <li>
-                            <div class="image">
-                                <img src="../../images/logo.png" alt="Place image">
-                            </div>
-                            <div class=" ">
-                                <h2 class="name">Place Name</h2>
-                                <p class="nic">NIC: 123456789V</p>
-                                <p class="phone">Phone: 123-456-7890</p>
-                                <p class="email">Email: info@place.com</p>
-                                <p class="type2">Type: Restaurant</p>
-                                <p class="food">Has food: Yes</p>
-                                <p class="ac">Has AC: Yes</p>
-                                <p class="price">Price: $$$$</p>
-                            </div>
-                        </li>
-                    </ul>
-                    </div> -->
 
                     <div class="box">
                         <table style="width: 100%;border-collapse: collapse;">
@@ -120,42 +100,6 @@
     </table>
 <br><br>
 </body>
-
-<!--
-<footer class="custom-footer">
-        <div class="footer-left">
-            <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
-            <div class="footer-title">
-                <h3 class="footer-heading">Get inspired ! Recieve travel discounts, tips & behind the scene stories</h3>
-            </div>
-            <form class="footer-form">
-                <input type="text" class="footer-input" placeholder="Enter your email address">
-                <button type="submit" class="footer-button">Subscribe</button>
-            </form>
-            <table style="width: 100%;margin-top:20px">
-                <tr>
-                    <td class="footer-td-text">HOME</td>
-                    <td class="footer-td-text">ABOUT US</td>
-                    <td class="footer-td-text">CONTACT US</td>
-                </tr>
-                <tr>
-                    <td class="footer-td-text">BLOGs</td>
-                    <td class="footer-td-text">Tour plans</td>
-                    <td class="footer-td-text">Preplanned Tour</td>
-                </tr>
-                <tr>
-                    <td class="footer-td-text">Customize Tour</td>
-                    <td class="footer-td-text">BLOGs</td>
-                    <td class="footer-td-text">Create Blogs</td>
-                </tr>
-            </table>
-
-        </div>
-        <div class="footer-right">
-            <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
-        </div>
-    </footer>
-    -->
 
     <?php require_once("../Common/footer.php");?>
 

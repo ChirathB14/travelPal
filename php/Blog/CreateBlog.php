@@ -116,62 +116,6 @@ include '../Common/header.php';
     </div>
 </body>
 
-
-<!--
-        <div class="blog-form">
-            <div class="blog-form-heading">
-                <h2>START BLOGGING!</h2>
-            </div>
-
-            <div class="blog-form-body">
-                <form method="POST" action="CreateBlog.php" autocomplete="off" enctype="multipart/form-data">
-                    <input type="text" class="article-heading" id="article-heading" name="head" placeholder="ARTICLE HEADING" required/><br />
-                    <textarea cols="30" rows="10" class="article-body" id="article-body" name="body" placeholder="ARTICLE BODY" required></textarea><br />
-                    <input type="file" class="blogs-image" id="blog-image" name="image" id="image" accept=".jpg, .jpeg, .png" required /><br />
-                    <button id="btn-publish" class="btn-publish" name="submit">PUBLISH</button>
-                </form>
-                <div class="nature-beauty-experience">
-                    <h3>Nature | Beauty | Experience</h3>
-                </div>
-            </div>
-
-
-        <footer class="custom-footer" style="background-color: #0E064D;">
-    <div class="footer-left">
-        <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
-        <div class="footer-title">
-            <h3 class="footer-heading">Get inspired ! Recieve travel discounts, tips & behind the scene stories</h3>
-        </div>
-        <form class="footer-form">
-            <input type="text" class="footer-input" placeholder="Enter your email address">
-            <button type="submit" class="footer-button">Subscribe</button>
-        </form>
-        <table style="width: 100%;margin-top:20px">
-            <tr>
-                <td class="footer-td-text">HOME</td>
-                <td class="footer-td-text">ABOUT US</td>
-                <td class="footer-td-text">CONTACT US</td>
-            </tr>
-            <tr>
-                <td class="footer-td-text">BLOGs</td>
-                <td class="footer-td-text">Tour plans</td>
-                <td class="footer-td-text">Preplanned Tour</td>
-            </tr>
-            <tr>
-                <td class="footer-td-text">Customize Tour</td>
-                <td class="footer-td-text">BLOGs</td>
-                <td class="footer-td-text">Create Blogs</td>
-            </tr>
-        </table>
-
-    </div>
-    <div class="footer-right">
-        <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
-    </div>
-</footer>
-    </div>
--->
-
 <!-- footer -->
 <?php require_once("../Common/footer.php"); ?>
 

@@ -99,20 +99,6 @@ if (isset($_POST["submit"])) {
             font-size: 12px;
         }
 
-        /*
-        .messege-btn {
-            background: var(--secondarycolor);
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 24px;
-            line-height: 36px;
-            text-align: center;
-            letter-spacing: 0.1em;
-            margin-top: 16px;
-            padding: 10px;
-            color: var(--accentcolor);
-        }
-        */
     </style>
 </head>
 
@@ -123,22 +109,6 @@ require_once("../Common/header.php");
 
 <body onload="checkAccess(true)">
     <table>
-        <!--
-        <tr VALIGN=TOP>
-            <ul class="header-ul">
-                <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
-                <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
-                <li class="header-left-li"><a class="header-left-li a" href="../TourPlanningComponent/TourPlanningIndex.php">Tour Plan</a></li>
-                <li class="header-left-li"><a class="header-left-li a" href="../Blog/ContactUS.php">Contact Us</a></li>
-                <li class="header-left-li"><a class="header-left-li a" href="../Blog/ViewBlogs.php">Blogs</a></li>
-                <li class="header-left-li"><a class="header-left-li a" id="profile" href="../../php/ProfileComponent/Profile.php">Profile</a></li>
-                <li class="header-right-li"><a class="header-left-li a" id="login" href="../../php/Login.php"><button class="button-login" href="../Blog/ViewBlogs.php"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Login</button></a></li>
-                <li class="header-right-li"><a class="header-left-li a" id="register" href="../../php/RegisterUser.php"><button class="button-register" href="../Blog/ViewBlogs.php"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Register</button></a></li>
-                <li class="header-right-li"><a class="header-left-li a" id="logout" onclick="logOut()"><button class="button-login" href="../Blog/ViewBlogs.php"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
-            </ul>
-            <hr style="background-color: #327972;color:#327972" />
-        </tr>
-    -->
         <tr VALIGN=TOP>
             <img src="../../images/contact.png" alt="Image" width="100%" height="auto">
             <div class="contact-main-dev">
@@ -170,42 +140,6 @@ require_once("../Common/header.php");
     <br><br>
 
 </body>
-
-<!--
-<footer class="custom-footer">
-    <div class="footer-left">
-        <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
-        <div class="footer-title">
-            <h3 class="footer-heading">Get inspired ! Recieve travel discounts, tips & behind the scene stories</h3>
-        </div>
-        <form class="footer-form">
-            <input type="text" class="footer-input" placeholder="Enter your email address">
-            <button type="submit" class="footer-button">Subscribe</button>
-        </form>
-        <table style="width: 100%;margin-top:20px">
-            <tr>
-                <td class="footer-td-text">HOME</td>
-                <td class="footer-td-text">ABOUT US</td>
-                <td class="footer-td-text">CONTACT US</td>
-            </tr>
-            <tr>
-                <td class="footer-td-text">BLOGs</td>
-                <td class="footer-td-text">Tour plans</td>
-                <td class="footer-td-text">Preplanned Tour</td>
-            </tr>
-            <tr>
-                <td class="footer-td-text">Customize Tour</td>
-                <td class="footer-td-text">BLOGs</td>
-                <td class="footer-td-text">Create Blogs</td>
-            </tr>
-        </table>
-
-    </div>
-    <div class="footer-right">
-        <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
-    </div>
-</footer>
-    -->
 
 <!-- footer -->
 <?php require_once("../Common/footer.php"); ?>

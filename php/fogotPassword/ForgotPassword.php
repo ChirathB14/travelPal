@@ -47,15 +47,10 @@
         label {
             font-weight: bold;
             margin-top: 10px;
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 600;
             font-size: 16px;
             line-height: 30px;
-
             letter-spacing: 0.1em;
-            text-transform: uppercase;
-
             color: #FFFFFF;
         }
 
@@ -75,16 +70,10 @@
             border-radius: 15px;
             padding: 10px;
             margin: 15px 0;
-
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
             font-weight: 600;
             font-size: 14px;
             line-height: 30px;
-
             letter-spacing: 0.1em;
-            text-transform: uppercase;
-
             color: #FFFFFF;
         }
     </style>

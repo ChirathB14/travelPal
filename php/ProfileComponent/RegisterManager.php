@@ -18,8 +18,6 @@ $title = "Register Manager - TravePal";
 <body style="background-image: url('../../images/registerBG.png')">
     <div id="overlay">
         <div class="register" style="margin: 62px 0px 60px 0px;">
-            <!-- <center>               
-            </center> -->
             <form class="reg-form" method="POST" action="RegisterManager.php" onsubmit="return cheakpassword()">
                 <h2 id="heder-register">create manager account</h2>
                 <div class="input-elements">
@@ -31,7 +29,6 @@ $title = "Register Manager - TravePal";
                     (Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                     Should be more than 8 characters and less than 16 characters.)
                     <input type="password" id="rePass" name="rePass" placeholder="  Confirm Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" />
-                    <!-- <input type="password" class="reg-input" id="rePass" name="rePass" placeholder="Confirm Password" required /> -->
                     <br>
                     <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Register</button>
                 </div>

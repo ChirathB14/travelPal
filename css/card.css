@@ -29,15 +29,15 @@
 .btn-lower{
     margin-top: 30px;
     margin-bottom: 30px;
-    background-color: white;
+    background-color: var(--accentcolor);
     border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
-
 }
+
 .btn-lower :hover{
     background-color: black;
-    color: white;
+    color: var(--accentcolor);
     transition: .5s;
     cursor: pointer;
 }

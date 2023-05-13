@@ -155,13 +155,6 @@
                                             </td>
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
-                                            <!-- <td style="width: 50%;">
-                                                <div class="line-wrappers">
-                                                    <p class="line-txt">
-                                                        <?php //echo $row['service_type']; ?>
-                                                    </p>
-                                                </div>
-                                            </td> -->
                                             <td style="width: 50%;">
                                                 <div class="line-wrappers">
                                                     <p class="line-txt">
@@ -256,10 +249,7 @@
                 ?>
             </div>
         </center>
-
     </div>
-
-
 </body>
 
 </html>

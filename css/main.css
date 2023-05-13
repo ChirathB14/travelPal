@@ -50,7 +50,6 @@ button {
 button:hover {
     font-size: 22px;
     background-color: #327972 !important; 
-    /* transition: 0.2ms ease-out; */
 }
 
 /* Link styles */

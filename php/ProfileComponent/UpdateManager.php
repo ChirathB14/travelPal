@@ -19,9 +19,7 @@
 
     <div id="overlay">
         <div class="register" style="margin: 115px 0px 110px 0px;">
-            <!-- <center>
-                
-            </center> -->
+
             <?php
             require '../DbConfig.php';
             if (isset($_GET['id'])) {
