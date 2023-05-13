@@ -15,13 +15,6 @@
 </head>
 
 <body onload="loginRegisterAccess()">
-    <!--
-    <div id="overlay">
-        <div>
-            <center>
-                <h2 id="heder-login">LOGIN</h2>
-            </center>
-            <form class="log-form" method="POST" action="Login.php"> -->
 
     <div class="login">
         <form action="Login.php" method="post">
@@ -39,34 +32,6 @@
                 <a href="./RegisterUser.php">New user? Create an account</a>
             </div>
     </div>
-
-
-    <!-- 
-                <input type="email" class="log-input" id="email" name="email" placeholder="Email" required />
-                <input type="password" class="log-input" id="Pass" name="Pass" placeholder="Password" required />
-                <table>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="policy" name="policy">
-                        </td>
-                        <td>
-                            <a>
-                                <p class="remeber">REMEBER PASSWORD</p>
-
-                            </a>
-                        </td>
-                        <td>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                        </td>
-                        <td>
-                            <a href="../php/fogotPassword/ForgotPassword.php">
-                                <p class="remeber">FORGOT PASSWORD ?</p>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-                <button type="submit" id="loginbtn" name="loginbtn" value="loginbtn" class="loginbtn">Login</button>
-                -->
 
     <?php
     require 'DbConfig.php';
@@ -109,11 +74,6 @@
     ?>
     </form>
 
-    <!--
-            <a href="./RegisterUser.php">
-                <p class="new-account">new user? Create an account</p>
-            </a>
-            -->
     </div>
     </div>
 </body>

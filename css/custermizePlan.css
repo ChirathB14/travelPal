@@ -10,29 +10,25 @@
 
 .verticle-li a {
     display: block;
-    color: white;
+    color: var(--accentcolor);
     text-align: center;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 400;
     padding: 8px 16px;
-    background-color: #0E064D;
+    background-color: var(--primarycolor);
     font-size: 15px;
 }
 
 /* Change the link color on hover */
 .verticle-li a:hover {
     background-color: #327972;
-    color: white;
+    color: var(--accentcolor);
 }
 
 .user-name {
-    color: white;
+    color: var(--accentcolor);
     text-align: center;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 600;
     padding: 0px 16px;
     font-size: 15px;
@@ -40,15 +36,11 @@
 }
 
 .heder-profile {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
+    color: var(--accentcolor);
 }
 
 .profile-main-wrapper {
@@ -69,78 +61,49 @@
 }
 
 .line-wrapper {
-    /* background-color: #FFFFFF; */
-    /* padding: 6px 10px;
-    margin: 20px 0px */
     margin-top: 10px;
 }
 
 .line-txt {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 17px;
     line-height: 30px;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
     border-radius: 5px;
-    color: #0E064D;
-    border-color: #FFFFFF;
+    color: var(--primarycolor);
+    border-color: var(--accentcolor);
     padding-inline-start: 10px;
 }
 
 .delete-btn {
-
     background: rgba(209, 14, 14, 0.7);
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 16px;
     line-height: 24px;
-
-    /* identical to box height */
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
-
-
+    color: var(--accentcolor);
 }
 
 .update-btn {
-    background: #EEB444;
-    border-radius: 5px;
     width: 90%;
     height: 44.05px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
-    text-align: center;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
     margin-top: 20px;
-    color: #FFFFFF;
 }
 
 .table-header {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 800;
     font-size: 20px;
     line-height: 30px;
     text-align: center;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    color: #FFFFFF;
-
+    color: var(--accentcolor);
 }
 
 .td-txt {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;
@@ -151,30 +114,22 @@
 }
 
 .new-manager {
-    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 0.1em;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--accentcolor);
     text-decoration-line: underline;
-    text-transform: uppercase;
-
 }
 
-
 .add-service-btn {
-    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 0.1em;
     text-align: center;
-    color: #FFFFFF;
     padding: 10px 15px;
-    text-transform: uppercase;
-    background: #EEB444;
     border-radius: 15px;
     margin-top: 20px;
 }

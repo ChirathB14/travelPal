@@ -286,10 +286,7 @@
                 ?>
             </div>
         </center>
-
     </div>
-
-
 </body>
 
 </html>
