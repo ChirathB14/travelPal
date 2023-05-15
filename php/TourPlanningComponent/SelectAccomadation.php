@@ -46,7 +46,10 @@
                             <tbody>
                                 <?php
                                 require '../DbConfig.php';
-                                $acc_sql = "SELECT * FROM accomadation_service WHERE status= '" . 2 . "'";
+                                $acc_sql = "SELECT a.* 
+                                FROM accomadation_service a
+                                JOIN new_plan p ON a.address LIKE CONCAT('%', p.location, '%') LIMIT 1;";
+                                // $acc_sql = "SELECT * FROM accomadation_service WHERE status= '" . 2 . "'";
                                 $acc_result = $conn->query($acc_sql);
                                 if ($acc_result) {
                                     if ($acc_result->num_rows > 0) {

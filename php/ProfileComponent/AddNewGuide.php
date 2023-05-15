@@ -6,6 +6,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     $providerNIC = $_POST["providerNIC"];
     $phoneNumber = $_POST["phoneNumber"];
     $email = $_POST["email"];
+    $address = $_POST["address"];
     $regNumber = $_POST["regNumber"];
     $pricePerDay = $_POST["pricePerDay"];
     $language = $_POST["language"];
@@ -193,6 +194,11 @@ require_once("../Common/header.php");
                                             </td>
                                         </tr>
                                         <tr>
+                                        </tr>
+                                        <tr VALIGN=CENTER style="text-align: center;">
+                                            <td style="width: 50%;">
+                                                <input type="text" class="reg-input" id="address" name="address" placeholder="Address" required />
+                                            </td>
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
