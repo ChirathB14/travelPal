@@ -54,7 +54,7 @@
             </div>    
     </div>
 
-                    <table style="width: 100%;">
+                    <table style="width: 80%;">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile">
@@ -66,9 +66,9 @@
                                         <div class="main-wrapper">
                                             <h2 class="heder-profile">My Tour Plan</h2>
                                             <div>
-                                                <table>
+                                                <table syle="width: 65vw !important;">
                                                     <thead>
-                                                        <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
+                                                        <tr class="table-header">
                                                             <th style="min-width: 150px;">Id</th>
                                                             <th style="min-width: 150px;">Start Date</th>
                                                             <th style="min-width: 150px;">No Of People</th>

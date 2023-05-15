@@ -54,7 +54,7 @@
             </div>    
 </div>
 
-                    <table style="width:100%">
+                    <table style="width:80%">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
 
@@ -67,9 +67,9 @@
                                         <div class="main-wrapper">
                                             <h2 class="heder-profile"> Tourist Guide Services</h2>
                                             <div>
-                                                <table>
+                                                <table style="width: 65vw;">
                                                     <thead>
-                                                        <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
+                                                        <tr class="table-header">
                                                             <th style="min-width: 150px;">Name</th>
                                                             <th style="min-width: 150px;">Email</th>
                                                             <th style="min-width: 150px;">NIC</th>
@@ -100,7 +100,7 @@
 
                     </div>
                 <?php     } else { ?>
-                    <div style="width: 80%;text-align: center;padding: 100px 0px;">
+                    <div style="width: 80%;text-align: center;align-items:center; justify-content:center;padding: 100px 100px;">
                         <h3 class="new-manager">No Tourist Guide Services for approve</h3>
                     </div>
             <?php
