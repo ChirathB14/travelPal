@@ -67,9 +67,9 @@
                                         <div class="main-wrapper">
                                             <h2 class="heder-profile">Accommodation Services</h2>
                                             <div>
-                                                <table style="width: 90%;">
+                                                <table style="width: 65vw;">
                                                     <thead>
-                                                        <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
+                                                        <tr class="table-header">
                                                             <th style="min-width: 140px;">Ref No</th>
                                                             <th style="min-width: 140px;">Name</th>
                                                             <th style="min-width: 140px;">Email</th>

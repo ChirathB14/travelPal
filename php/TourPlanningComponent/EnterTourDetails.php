@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
+
+    <script type="text/javascript" src="../../js/custermizePlan.js"></script>
 </head>
 
 <?php
@@ -56,7 +58,7 @@
                 <div class="box" style="margin-top: 15px;">
                     <div class="row">
                         <div class="label">Start Date : </div>
-                        <input class="value" type="date" name="date_picker" required>
+                        <input class="value" type="date" name="date_picker" id="date_picker" required>
                     </div>
                 </div>
 
@@ -79,6 +81,36 @@
                 // Close connection
                 $conn->close();
     ?>
+
+    <script>
+        //function to validate the date entered by the user
+        document.getElementById('date_picker').addEventListener('change',validateDate);
+        
+        function validateDate(){
+            var date = document.getElementById('date_picker').value;
+            var today = new Date();
+            var selectedDate = new Date(date);
+            //calculate a date after 1 year
+            var nextYear = new Date();
+
+            //check whether the date entered is not before today 
+            if(selectedDate < today){
+                alert("Please enter a valid date");
+            } else {
+                
+            } 
+
+            //check whether the date entered is not after 1 year
+            nextYear.setFullYear(today.getFullYear() + 1);
+            if(selectedDate > nextYear){
+                alert("Please select a date within 1 year");
+                document.getElementById('date_picker').value = "";
+            } else {
+
+            }
+        }
+    </script>
+
     <?php
     require '../DbConfig.php';
     if (isset($_POST['next']) && isset($_COOKIE['user'])) {

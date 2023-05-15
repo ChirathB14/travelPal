@@ -52,7 +52,7 @@ $title = "Profile";
                         </div>
                     </div>
 
-                    <table style="width:100%">
+                    <table style="width:80%">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
 
@@ -65,9 +65,9 @@ $title = "Profile";
                                         <div class="main-wrapper">
                                             <h2 class="heder-profile">Unavailability List</h2>
                                             <div>
-                                                <table>
+                                                <table style="width: 65vw;">
                                                     <thead>
-                                                        <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
+                                                        <tr class="table-header">
                                                             <th style="min-width: 150px;">Ref No</th>
                                                             <th style="min-width: 150px;">Service</th>
                                                             <th style="min-width: 150px;">Start Date</th>

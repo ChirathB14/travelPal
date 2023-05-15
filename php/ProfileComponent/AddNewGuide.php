@@ -184,7 +184,13 @@ require_once("../Common/header.php");
                                             <td style="width: 50%;">
                                                 <input type="file" class="reg-input" style="padding: 10px 10px;" name="image" id="image" accept=".jpg, .jpeg, .png" required />
                                             </td>
-
+                                            <td style="width: 50%;">
+                                                <select name="language" id="language" required style="width: 340px;  background-color: var(--accentcolor); opacity: 0.75; height: 36px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
+                                                    <option value="" disabled selected>Select preferred language</option>
+                                                    <option value="English">English</option>
+                                                    <option value="Sinhala">Diesel</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                         </tr>
@@ -192,17 +198,8 @@ require_once("../Common/header.php");
                                             <td style="width: 50%;">
                                                 <input type="text" class="reg-input" id="regNumber" name="regNumber" placeholder="Registration Number" required />
                                             </td>
-                                        </tr>
-                                        <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
                                                 <input type="number" class="reg-input" id="pricePerDay" name="pricePerDay" placeholder="Price Per Day" required min="100" step="100"/>
-                                            </td>
-                                            <td style="width: 50%;">
-                                                <select name="language" id="language" required style="width: 420px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
-                                                    <option value="" disabled selected>Select preferred language</option>
-                                                    <option value="English">English</option>
-                                                    <option value="Sinhala">Diesel</option>
-                                                </select>
                                             </td>
                                         </tr>
                                     </table>
