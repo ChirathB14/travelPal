@@ -26,10 +26,10 @@ $title = "Register Manager - TravePal";
                     <input type="text" id="address" name="address" placeholder="  Address" required />
                     <input type="tel" id="telephone" name="telephone" placeholder="  Telephone Number" required />
                     <input type="email" id="email" name="email" placeholder="  Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
-                    <input type="password" id="Pass" name="Pass" placeholder="  Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" />
-                    (Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
-                    Should be more than 8 characters and less than 16 characters.)
-                    <input type="password" id="rePass" name="rePass" placeholder="  Confirm Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" />
+                    <input type="password" name="Pass" id="Pass" placeholder=" PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+                    Should be more than 8 characters and less than 16 characters.">
+                    <input type="password" name="rePass" id="rePass" placeholder=" CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+                    Should be more than 8 characters and less than 16 characters.">
                     <br>
                     <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Register</button>
                 </div>

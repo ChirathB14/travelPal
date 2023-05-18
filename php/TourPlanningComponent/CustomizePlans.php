@@ -66,7 +66,7 @@
                         <div class="profile-main-wrapper">
                             <form method="POST" action="CustomizePlans.php" autocomplete="off" enctype="multipart/form-data">
                                 <center>
-                                    <div class="input-elements">
+                                    <!-- <div class="input-elements">
                                         <select id="season" name="season" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
                                                     background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                                                     box-sizing: border-box; border: none; border-radius: 5px;
@@ -86,7 +86,7 @@
                                             }
                                             ?>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     <!-- <div class="input-elements"> -->
                                         <select id="location" name="location" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
                                                 background-color: var(--accentcolor); opacity: 0.75; height: 40px;
@@ -161,7 +161,7 @@
                                         $season = $_POST["season"];
                                         $createdDate = date('Y-m-d H:i:s');
 
-                                        $sqltwo = "INSERT INTO new_plan (plan_Id, season, location, no_of_day, price, type_of_package, isActive,  destination, image, created_date, created_by, by_manager) VALUES (0,'$season','$location','$noOfDays','$price','$typeOfPackage','$isActive', '$destination', 'None', '$createdDate', '$userID', '0' )";
+                                        $sqltwo = "INSERT INTO new_plan (plan_Id, location, no_of_day, price, type_of_package, isActive,  destination, image, created_date, created_by, by_manager) VALUES (0,'$location','$noOfDays','$price','$typeOfPackage','$isActive', '$destination', 'None', '$createdDate', '$userID', '0' )";
                                         if ($conn->query($sqltwo) === TRUE) {
                                             $pk = mysqli_insert_id($conn);
                                             echo '<script language = "javascript">';

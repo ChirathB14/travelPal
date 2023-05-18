@@ -23,7 +23,13 @@ $subject = $_POST['subject'];
 $message = $_POST['message'];
 $email = $_POST['email'];
 
- 
+//check if the above variables are empty
+if (empty($subject) || empty($message) || empty($email)) {
+    echo '<script language ="javascript">';
+    echo 'onError("Please fill in all the fields")';
+    echo '</script>';
+    
+} 
 
 
 // Send email using PHPMailer

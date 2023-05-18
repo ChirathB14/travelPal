@@ -38,10 +38,10 @@
                             $serializedOptions = $row["destination"];
                             $selectedOptions = unserialize($serializedOptions);
                 ?>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="label">Season :</div>
                                 <div class="value"><?php echo $row['season']; ?></div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="label">Location :</div>
                                 <div class="value"><?php echo $row['location']; ?></div>

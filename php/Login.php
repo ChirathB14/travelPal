@@ -16,6 +16,8 @@
 
 <body onload="loginRegisterAccess()">
 
+    <button onclick="history.back()">< Go Back</button>
+
     <div class="login">
         <form action="Login.php" method="post">
             <h1 id="heder-login">Login</h1>
