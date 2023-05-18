@@ -60,12 +60,12 @@
                 header('location:../index.php');
             } else {
                 echo '<script language ="javascript">';
-                echo 'alert("Incoreect Username or password1")';
+                echo 'alert("Incorrect Username or password!")';
                 echo '</script>';
             }
         } else {
             echo '<script language ="javascript">';
-            echo 'alert("Incoreect Username or password2")';
+            echo 'alert("Incorrect Username or password!")';
             echo '</script>';
         }
 
