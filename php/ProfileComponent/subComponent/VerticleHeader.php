@@ -16,6 +16,7 @@
         <li class="verticle-li"><a href="./Profile.php">My Profile</a></li>
         <li class="verticle-li"><a href="./UpdateProfile.php">Update Profile</a></li>
         <li class="verticle-li" id="VIEW_PARD_TOURS"><a href="./ViewMyTours.php">View My Tours</a></li>
+        <li class="verticle-li" id="ADMIN_USER"><a href="./AdminViewUsers.php">Users</a></li>
         <li class="verticle-li" id="ADMIN_SITE_MANAGER"><a href="./AdminViewManager.php">Site Manager</a></li>
         <li class="verticle-li" id="ADMIN_TOURIST"><a href="./AdminViewTourist.php">Tourist</a></li>
         <li class="verticle-li" id="ADMIN_ACCOMMODATION_PROVIDER"><a href="./AdminViewAccommodation.php">Accommodation Provider</a></li>

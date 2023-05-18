@@ -14,7 +14,7 @@
 </head>
 
 <?php
-    $title = "Admin View - TravePal";
+    $title = "Admin View - TravelPal";
 ?>
 
 <body onload="checkUserAccess()">
@@ -55,18 +55,7 @@
             </div>    
         </div>
 
-    <!--
-                    <ul class="header-ul">
-                        <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../TourPlanningComponent/TourPlanningIndex.php">Tour Plan</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../Blog/ContactUS.php">Contact Us</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../Blog/ViewBlogs.php">Blogs</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" style="background-color: #00357A;" id="profile" href="./Profile.php">Profile</a></li>
-                        <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
-                    </ul>
-                    <hr style="background-color: #327972;color:#327972"/>
-                --> 
+    
 
                     <table style="width:100%">
                         <tr VALIGN=TOP>
@@ -82,7 +71,7 @@
                                                     <th style="min-width: 150px;">Name</th>
                                                     <th style="min-width: 150px;">Email</th>
                                                     <th style="min-width: 150px;">Address</th>
-                                                    <th style="min-width: 150px;">Edit</th>
+                                                    <!-- <th style="min-width: 150px;">Edit</th> -->
                                                     <th style="min-width: 150px;">Delete</th>
                                                 </tr>
                                             </thead>
@@ -97,12 +86,12 @@
                                                                 <td class="td-txt"><?php echo $manager['first_name']; ?> <?php echo $manager['last_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['address']; ?></td>
-                                                                <td style="padding: 5px 5px;">
+                                                                <!-- <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewAccommodation.php">
                                                                         <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
 
-                                                                </td>
+                                                                </td> -->
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewAccommodation.php">
                                                                         <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>

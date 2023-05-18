@@ -55,18 +55,7 @@
             </div>    
         </div> 
 
-    <!--
-                    <ul class="header-ul">
-                        <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../TourPlanningComponent/TourPlanningIndex.php">Tour Plan</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../Blog/ContactUS.php">Contact Us</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../Blog/ViewBlogs.php">Blogs</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" style="background-color: #00357A;" id="profile" href="./Profile.php">Profile</a></li>
-                        <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
-                    </ul>
-                    <hr style="background-color: #327972;color:#327972"/>
-                --> 
+   
 
                     <table style="width:100%">
                         <tr VALIGN=TOP>
@@ -82,7 +71,7 @@
                                                     <th style="min-width: 150px;">Name</th>
                                                     <th style="min-width: 150px;">Email</th>
                                                     <th style="min-width: 150px;">Address</th>
-                                                    <th style="min-width: 150px;">Edit</th>
+                                                    <!-- <th style="min-width: 150px;">Edit</th> -->
                                                     <th style="min-width: 150px;">Delete</th>
                                                 </tr>
                                             </thead>
@@ -97,12 +86,12 @@
                                                                 <td class="td-txt"><?php echo $manager['first_name']; ?> <?php echo $manager['last_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['address']; ?></td>
-                                                                <td style="padding: 5px 5px;">
+                                                                <!-- <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewTouristGuide.php">
                                                                         <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
 
-                                                                </td>
+                                                                </td> -->
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewTouristGuide.php">
                                                                         <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
@@ -146,41 +135,7 @@
     ?>
 </body>
 
-<!--
-<footer class="custom-footer">
-    <div class="footer-left">
-        <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
-        <div class="footer-title">
-            <h3 class="footer-heading">Get inspired ! Recieve travel discounts, tips & behind the scene stories</h3>
-        </div>
-        <form class="footer-form">
-            <input type="text" class="footer-input" placeholder="Enter your email address">
-            <button type="submit" class="footer-button">Subscribe</button>
-        </form>
-        <table style="width: 100%;margin-top:20px">
-            <tr>
-                <td class="footer-td-text">HOME</td>
-                <td class="footer-td-text">ABOUT US</td>
-                <td class="footer-td-text">CONTACT US</td>
-            </tr>
-            <tr>
-                <td class="footer-td-text">BLOGs</td>
-                <td class="footer-td-text">Tour plans</td>
-                <td class="footer-td-text">Preplanned Tour</td>
-            </tr>
-            <tr>
-                <td class="footer-td-text">Customize Tour</td>
-                <td class="footer-td-text">BLOGs</td>
-                <td class="footer-td-text">Create Blogs</td>
-            </tr>
-        </table>
 
-    </div>
-    <div class="footer-right">
-        <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
-    </div>
-</footer>
---> 
 
 <footer>
         <hr>
