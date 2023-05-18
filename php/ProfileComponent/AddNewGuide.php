@@ -199,12 +199,19 @@ require_once("../Common/header.php");
                                             <td style="width: 50%;">
                                                 <input type="text" class="reg-input" id="address" name="address" placeholder="Address" required />
                                             </td>
+                                           
                                         </tr>
                                         <tr VALIGN=CENTER style="text-align: center;">
                                             <td style="width: 50%;">
                                                 <input type="text" class="reg-input" id="regNumber" name="regNumber" placeholder="Registration Number" required />
                                             </td>
                                             <td style="width: 50%;">
+                                                <!-- <input type="text" class="reg-input" id="language" name="language" placeholder="languages" required /> -->
+                                                <select name="language" id="language" required style="width: 420px;  background-color: var(--accentcolor); opacity: 0.75; height: 38px; box-sizing: border-box; border: none; border-radius: 5px; font-size: 14px; font-weight: bold; color:#808080;">
+                                                    <option value="" disabled selected>Select preferred language</option>
+                                                    <option value="English">English</option>
+                                                    <option value="Sinhala">Sinhala</option>
+                                                </select>
                                                 <input type="number" class="reg-input" id="pricePerDay" name="pricePerDay" placeholder="Price Per Day" required min="100" step="100"/>
                                             </td>
                                         </tr>

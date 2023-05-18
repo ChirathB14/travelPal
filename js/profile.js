@@ -43,6 +43,7 @@ function getCookie(name) {
 function checkUserAccess() {
     let VIEW_PARD_TOURS = document.getElementById("VIEW_PARD_TOURS")
     let ADMIN_SITE_MANAGER = document.getElementById('ADMIN_SITE_MANAGER')
+    let ADMIN_USER = document.getElementById('ADMIN_USER')
     let ADMIN_TOURIST = document.getElementById("ADMIN_TOURIST")
     let ADMIN_ACCOMMODATION_PROVIDER = document.getElementById('ADMIN_ACCOMMODATION_PROVIDER')
     let ADMIN_VEHICLE_PROVIDER = document.getElementById("ADMIN_VEHICLE_PROVIDER")
@@ -62,6 +63,7 @@ function checkUserAccess() {
             case 1: //admin
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'display'
+                ADMIN_USER.style.display = 'display'
                 ADMIN_ACCOMMODATION_PROVIDER.style.display = 'display'
                 ADMIN_TOURIST.style.display = 'display'
                 ADMIN_VEHICLE_PROVIDER.style.display = 'display'
@@ -86,6 +88,7 @@ function checkUserAccess() {
             case 2: //Manager
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
+                ADMIN_USER.style.display = 'none'
                 ADMIN_ACCOMMODATION_PROVIDER.style.display = 'none'
                 ADMIN_TOURIST.style.display = 'none'
                 ADMIN_VEHICLE_PROVIDER.style.display = 'none'
@@ -109,6 +112,7 @@ function checkUserAccess() {
             case 3: //Tourist
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
+                ADMIN_USER.style.display = 'none'
                 ADMIN_ACCOMMODATION_PROVIDER.style.display = 'none'
                 ADMIN_TOURIST.style.display = 'none'
                 ADMIN_VEHICLE_PROVIDER.style.display = 'none'
@@ -132,6 +136,7 @@ function checkUserAccess() {
             case 4: //Service Provider
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
+                ADMIN_USER.style.display = 'none'
                 ADMIN_ACCOMMODATION_PROVIDER.style.display = 'none'
                 ADMIN_TOURIST.style.display = 'none'
                 ADMIN_VEHICLE_PROVIDER.style.display = 'none'
