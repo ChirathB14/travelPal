@@ -5,6 +5,17 @@ function logOut() {
     }
 }
 
+function onResetSuccess() {
+    alert("Password Reset Successfully!")
+    window.location = "../login.php"
+}
+
+function onError(msg,page) {
+    alert(msg)
+    window.location = page
+}
+
+
 function delete_cookie(name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;Path=/;';
 }

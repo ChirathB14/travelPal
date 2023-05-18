@@ -1,61 +1,73 @@
+<head>
+    <script type="text/javascript" src="../../js/profile.js"></script>
+</head>
+
 <?php
 // Get the email and new password from the form
 $email = $_POST['email'];
-$password = $_POST['password'];
-$confirm_password = $_POST['confirm_password'];
 
-// Validate email and passwords
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "Invalid email format";
-} elseif ($password !== $confirm_password) {
-    echo "Passwords do not match";
-} else {
-    // Connect to the database
-    require "../DbConfig.php";
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
+require '../PHPMailer/src/Exception.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+// Connect to the database
+require "../DbConfig.php";
 
-    // Check if the email exists in the database
-    $stmt = $conn->prepare("SELECT * FROM user WHERE email=?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 0) {
-        echo "Email not found";
-    } else {
-        // Generate OTP and send it to user's email
-        $otp = rand(100000, 999999);
-        $to = $email;
-        $subject = "Password Reset OTP";
-        $message = "Your OTP is: " . $otp;
-        $headers = "From: webmaster@example.com" . "\r\n" .
-                   "Reply-To: webmaster@example.com" . "\r\n" .
-                   "X-Mailer: PHP/" . phpversion();
-
-        if (mail($to, $subject, $message, $headers)) {
-            // Store the OTP in the database
-            $stmt = $conn->prepare("UPDATE user SET otp=? WHERE email=?");
-            $stmt->bind_param("ss", $otp, $email);
-            $stmt->execute();
-            echo "An OTP has been sent to your email address. Please enter it below to reset your password.";
-            echo '<form action="reset_password_confirm.php" method="POST">
-                    <input type="hidden" name="email" value="' . $email . '">
-                    <input type="hidden" name="password" value="' . $password . '">
-                    <input type="hidden" name="confirm_password" value="' . $confirm_password . '">
-                    <label for="otp">OTP</label>
-                    <input type="text" id="otp" name="otp" required>
-                    <input type="submit" value="Submit">
-                  </form>';
-        } else {
-            echo "Failed to send OTP";
-        }
-    }
-
-    $conn->close();
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-?>
+
+// Check if the email exists in the database
+$stmt = $conn->prepare("SELECT * FROM user WHERE email=?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows == 0) {
+    echo '<script language ="javascript">';
+    echo 'onError("Invalid email","ForgotPassword.php")';
+    echo '</script>';
+} else {
+    // Generate OTP and send it to user's email
+    $otp = rand(100000, 999999);
+
+    // Send email using PHPMailer
+    $mail = new PHPMailer();
+    $mail->isSMTP();
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = "tls";
+    $mail->Port = "25";
+    $mail->Username = "system.travelpal@gmail.com";
+    $mail->Password = "xpfvfzzfmorncftc";
+    $mail->Subject = "Your verify code";
+
+    $mail->setFrom('system.travelpal@gmail.com');
+    $mail->addAddress($email);
+
+    $mail->isHTML(true);
+    $mail->Body = "<p>Hello,</p>
+                   <p>Dear user, </p> <p>Your OTP verify code is <b>$otp </b><br></p>
+                  <p>Regards,</p>
+                  <p>TravelPal</p>";
+
+    if ($mail->send()) {
+        $stmt = $conn->prepare("UPDATE user SET otp=? WHERE email=?");
+        $stmt->bind_param("ss", $otp, $email);
+        $stmt->execute();
+        // Redirect to OTP verification page passing the email as a parameter
+        header('Location: verify_otp.php?email=' . $email);
+    } else {
+        // Display an error message if email was not sent successfully
+        echo '<script language ="javascript">';
+        echo 'onError("Mail Not Sent!Try again.","ForgotPassword.php")';
+        echo '</script>';
+    }
+}
+
+$conn->close();
