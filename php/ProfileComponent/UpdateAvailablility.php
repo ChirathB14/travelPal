@@ -137,7 +137,6 @@ document.location.replace('./ViewAvailability.php');
                                     <option value="Vehicle">Vehicle</option>
                                     <option value="Tour Guide">Tour Guide</option>
                                 </select>
-                                <!-- <input pattern="[a-zA-Z\.]+\s)*[a-zA-Z\.]" type="text" class="reg-input" id="providerName" name="providerName" placeholder="Service Provider Name" required /> -->
                             </td>
                             <td style="width: 50%;">
                                 <div class="label">Service Number </div>
@@ -157,7 +156,6 @@ document.location.replace('./ViewAvailability.php');
                             </td>
                         </tr>
                     </table>
-                    <!-- <hr style="height:2px;background-color:aliceblue;width:100%" /> -->
                     <button class="add-detail-btn" type="submit" name="submit">Add Details</button>
                 </form>
             </div>

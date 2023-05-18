@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
-    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
 </head>
 
 <?php
@@ -49,7 +48,10 @@
                             <tbody>
                                 <?php
                                 require '../DbConfig.php';
-                                $acc_sql = "SELECT * FROM tour_guide WHERE status= '" . 2 . "'";
+                                $acc_sql = "SELECT t.*
+                                FROM tour_guide t
+                                JOIN new_plan p ON t.address LIKE CONCAT('%', p.location, '%') LIMIT 1;";
+                                // $acc_sql = "SELECT * FROM tour_guide WHERE status= '" . 2 . "'";
                                 $acc_result = $conn->query($acc_sql);
                                 if ($acc_result) {
                                     if ($acc_result->num_rows > 0) {
@@ -90,42 +92,6 @@
     </table>
     <br><br>
 </body>
-
-<!--
-<footer class="custom-footer">
-        <div class="footer-left">
-            <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
-            <div class="footer-title">
-                <h3 class="footer-heading">Get inspired ! Recieve travel discounts, tips & behind the scene stories</h3>
-            </div>
-            <form class="footer-form">
-                <input type="text" class="footer-input" placeholder="Enter your email address">
-                <button type="submit" class="footer-button">Subscribe</button>
-            </form>
-            <table style="width: 100%;margin-top:20px">
-                <tr>
-                    <td class="footer-td-text">HOME</td>
-                    <td class="footer-td-text">ABOUT US</td>
-                    <td class="footer-td-text">CONTACT US</td>
-                </tr>
-                <tr>
-                    <td class="footer-td-text">BLOGs</td>
-                    <td class="footer-td-text">Tour plans</td>
-                    <td class="footer-td-text">Preplanned Tour</td>
-                </tr>
-                <tr>
-                    <td class="footer-td-text">Customize Tour</td>
-                    <td class="footer-td-text">BLOGs</td>
-                    <td class="footer-td-text">Create Blogs</td>
-                </tr>
-            </table>
-
-        </div>
-        <div class="footer-right">
-            <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
-        </div>
-    </footer>
---> 
 
     <?php require_once("../Common/footer.php");?>
 </html>

@@ -2,7 +2,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 250px;
+    width: 300px;
     background-color: #00357A;
     height: 80vh;
     display: block;
@@ -20,8 +20,6 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    /* font-family: 'Poppins', sans-serif;
-    font-style: normal; */
     font-weight: 400;
     padding: 8px 16px;
     background-color: var(--primarycolor);
@@ -31,7 +29,7 @@
 .verticle-li img {
     align-items: center;
     justify-content: center;
-    margin: 8px 0px 0px 15px;
+    margin: 8px 0px 0px 45px;
     width: 50px;
     height: 50px;
 }
@@ -59,12 +57,15 @@
 .heder-profile {
     letter-spacing: 0.1em;
     color: var(--accentcolor);
+    text-align: center;
 }
 
 .profile-main-wrapper {
-    background: rgba(255, 255, 255, 0.75);
-    box-sizing: border-box;
-    padding: 20px;
+    /* background: rgba(255, 255, 255, 0.75);
+    box-sizing: border-box; */
+    padding: 10px 80px;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-wrapper {
@@ -81,18 +82,20 @@
     background-color: var(--accentcolor);
     padding: 6px 10px;
     margin: 10px 0px 0px 0px;
+    width: 500px;
+    height: 60px;
+    border-radius: 15px;
 }
 
 .line-txt {
     font-weight: 600;
-    font-size: 10px;
+    font-size: 14px !important;
     line-height: 25px;
     letter-spacing: 0.1em;
-    border-radius: 5px;
     color: var(--primarycolor);
     border-color: var(--accentcolor);
     padding-inline-start: 10px;
-    text-transform: uppercase;
+    padding: 12px;
 }
 
 .line-wrapper .line-txt {
@@ -104,7 +107,6 @@
     color: var(--primarycolor);
     border-color: var(--accentcolor);
     padding-inline-start: 10px;
-    text-transform: uppercase;
 }
 
 .delete-btn {
@@ -115,17 +117,33 @@
 }
 
 .update-btn {
-    background: var(--primarycolor);
+    background: var(--secondarycolor);
     margin-top: 15px;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 .table-header {
     font-weight: 600;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 50px;
     text-align: center;
     letter-spacing: 0.1em;
     color: var(--accentcolor);
+}
+
+tbody tr {
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    height: 40px;
+    border-bottom: 2px solid var(--primarycolor);
 }
 
 .td-txt {

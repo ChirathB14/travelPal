@@ -191,9 +191,6 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
                                         </tr>
 
                                         <tr VALIGN=CENTER style="text-align: center;">
-                                            <!-- <td style="width: 50%;">
-                                                <input type="text" class="reg-input" id="serviceType" name="serviceType" placeholder="Service Type" required />
-                                            </td> -->
                                             <td style="width: 50%;">
                                                 <input type="file" class="reg-input" style="padding: 10px 10px;" name="image" id="image" accept=".jpg, .jpeg, .png" required />
                                             </td>

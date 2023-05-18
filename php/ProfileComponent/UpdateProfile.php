@@ -17,10 +17,18 @@
             flex-direction: row;
             background-color: var(--accentcolor);
             color: var(--primarycolor);
-            border-radius: 5px;
+            border-radius: 15px;
             border: none;
             cursor: pointer;
             margin: 10px;
+            width: 500px;
+            height: 60px;
+            padding: 0px;
+        }
+
+        .update .line-txt {
+            font-size: 14px;
+            padding: 0 !important;
         }
 
         .update label {
@@ -87,7 +95,7 @@
                         <tr VALIGN=TOP>
                         <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile">
-                                <div class="main-wrapper" style="margin-top: 10px;">
+                                <div class="main-wrapper" style="margin-top: 45px;">
                                     <h2 class="heder-profile">Update Profile</h2>
                                     <div class="profile-main-wrapper">
 
@@ -109,20 +117,20 @@
                                         ?>
                                         <form method="POST" action="UpdateProfile.php">
                                             <div class="update">
-                                                <label class="line-txt" for="firstName" style="width:25%"><b>First Name:</b></label>
-                                                <input class="line-wrapper line-txt" type="text" id="firstName" name="firstName" style="width:75%" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required>
+                                                <label class="line-txt" for="firstName" style="width:30%"><b>First Name:</b></label>
+                                                <input type="text" id="firstName" name="firstName" style="width:70%" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required>
                                             </div>
                                             <div class="update">
-                                                <label class="line-txt" for="lastName" style="width:25%"><b>Last Name:</b></label>
-                                                <input class="line-wrapper line-txt" type="text" id="lastName" name="lastName" style="width:75%" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required>
+                                                <label class="line-txt" for="lastName" style="width:30%"><b>Last Name:</b></label>
+                                                <input type="text" id="lastName" name="lastName" style="width:70%" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required>
                                             </div>
                                             <div class="update">
-                                                <label class="line-txt" for="email" style="width:25%"><b>Email:</b></label>
-                                                <input class="line-wrapper line-txt" type="email" id="email" name="email" style="width:75%" placeholder="Email" value="<?php echo $row['email']; ?>" required>
+                                                <label class="line-txt" for="email" style="width:30%"><b>Email:</b></label>
+                                                <input type="email" id="email" name="email" style="width:70%" placeholder="Email" value="<?php echo $row['email']; ?>" required>
                                             </div>
                                             <div class="update">
-                                                <label class="line-txt" for="address" style="width:25%"><b>Address:</b></label>
-                                                <input class="line-wrapper line-txt" type="text" id="address" name="address" style="width:75%" placeholder="Address" value="<?php echo $row['address']; ?>" required>
+                                                <label class="line-txt" for="address" style="width:30%"><b>Address:</b></label>
+                                                <input type="text" id="address" name="address" style="width:70%" placeholder="Address" value="<?php echo $row['address']; ?>" required>
                                             </div>
                                             <center>
                                                 <button class="update-btn" type="submit" id="updateBtn" name="updateBtn" value="updateBtn">Save</button>

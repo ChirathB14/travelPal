@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
-    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
+
+    <script type="text/javascript" src="../../js/custermizePlan.js"></script>
 </head>
 
 <?php
@@ -57,7 +58,7 @@
                 <div class="box" style="margin-top: 15px;">
                     <div class="row">
                         <div class="label">Start Date : </div>
-                        <input class="value" type="date" name="date_picker" required>
+                        <input class="value" type="date" name="date_picker" id="date_picker" required>
                     </div>
                 </div>
 
@@ -80,6 +81,36 @@
                 // Close connection
                 $conn->close();
     ?>
+
+    <script>
+        //function to validate the date entered by the user
+        document.getElementById('date_picker').addEventListener('change',validateDate);
+        
+        function validateDate(){
+            var date = document.getElementById('date_picker').value;
+            var today = new Date();
+            var selectedDate = new Date(date);
+            //calculate a date after 1 year
+            var nextYear = new Date();
+
+            //check whether the date entered is not before today 
+            if(selectedDate < today){
+                alert("Please enter a valid date");
+            } else {
+                
+            } 
+
+            //check whether the date entered is not after 1 year
+            nextYear.setFullYear(today.getFullYear() + 1);
+            if(selectedDate > nextYear){
+                alert("Please select a date within 1 year");
+                document.getElementById('date_picker').value = "";
+            } else {
+
+            }
+        }
+    </script>
+
     <?php
     require '../DbConfig.php';
     if (isset($_POST['next']) && isset($_COOKIE['user'])) {
@@ -116,42 +147,6 @@
         </tr>
     </table>
 </body>
-
-<!--
-<footer class="custom-footer">
-        <div class="footer-left">
-            <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
-            <div class="footer-title">
-                <h3 class="footer-heading">Get inspired ! Recieve travel discounts, tips & behind the scene stories</h3>
-            </div>
-            <form class="footer-form">
-                <input type="text" class="footer-input" placeholder="Enter your email address">
-                <button type="submit" class="footer-button">Subscribe</button>
-            </form>
-            <table style="width: 100%;margin-top:20px">
-                <tr>
-                    <td class="footer-td-text">HOME</td>
-                    <td class="footer-td-text">ABOUT US</td>
-                    <td class="footer-td-text">CONTACT US</td>
-                </tr>
-                <tr>
-                    <td class="footer-td-text">BLOGs</td>
-                    <td class="footer-td-text">Tour plans</td>
-                    <td class="footer-td-text">Preplanned Tour</td>
-                </tr>
-                <tr>
-                    <td class="footer-td-text">Customize Tour</td>
-                    <td class="footer-td-text">BLOGs</td>
-                    <td class="footer-td-text">Create Blogs</td>
-                </tr>
-            </table>
-
-        </div>
-        <div class="footer-right">
-            <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
-        </div>
-    </footer>
--->
 
     <?php require_once("../Common/footer.php");?>
 

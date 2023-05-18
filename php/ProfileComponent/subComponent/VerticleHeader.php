@@ -6,11 +6,6 @@
                 <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="50" height="50">
                 <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
             </div>
-        <!-- </li>
-        <li class="verticle-li"> -->
-            <!-- <center> -->
-                
-            <!-- </center> -->
             <br>
         </li>
         <li class="verticle-li"><a href="./Profile.php">My Profile</a></li>
