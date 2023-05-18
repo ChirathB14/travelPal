@@ -15,6 +15,15 @@ function onError(msg,page) {
     window.location = page
 }
 
+function onErrorBack(msg) {
+    alert(msg)
+    history.back()
+}
+
+function gotToPreviousPage() {
+    history.back()
+}
+
 
 function delete_cookie(name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;Path=/;';
