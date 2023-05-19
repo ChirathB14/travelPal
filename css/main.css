@@ -268,3 +268,14 @@ footer {
     width: 100%;
 }
 
+.Report-columnLeft{
+    width: 20%;
+  }
+  .Report-column{
+    width: 80%;
+  }
+  
+.Report-row{
+    display: flex;
+  }
+
