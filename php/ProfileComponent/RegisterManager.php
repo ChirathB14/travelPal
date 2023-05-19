@@ -17,6 +17,7 @@ $title = "Register Manager - TravePal";
 
 <body style="background-image: url('../../images/registerBG.png')">
     <div id="overlay">
+        <br><br>
         <div class="register" style="margin: 62px 0px 60px 0px;">
             <form class="reg-form" method="POST" action="RegisterManager.php" onsubmit="return cheakpassword()">
                 <h2 id="heder-register">create manager account</h2>
@@ -77,6 +78,11 @@ $title = "Register Manager - TravePal";
 </body>
 
 <!-- footer -->
-<?php require_once("../Common/footer.php"); ?>
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>
