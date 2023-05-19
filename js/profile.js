@@ -5,6 +5,26 @@ function logOut() {
     }
 }
 
+function onResetSuccess() {
+    alert("Password Reset Successfully!")
+    window.location = "../login.php"
+}
+
+function onError(msg,page) {
+    alert(msg)
+    window.location = page
+}
+
+function onErrorBack(msg) {
+    alert(msg)
+    history.back()
+}
+
+function gotToPreviousPage() {
+    history.back()
+}
+
+
 function delete_cookie(name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;Path=/;';
 }
@@ -43,6 +63,7 @@ function getCookie(name) {
 function checkUserAccess() {
     let VIEW_PARD_TOURS = document.getElementById("VIEW_PARD_TOURS")
     let ADMIN_SITE_MANAGER = document.getElementById('ADMIN_SITE_MANAGER')
+    let ADMIN_USER = document.getElementById('ADMIN_USER')
     let ADMIN_TOURIST = document.getElementById("ADMIN_TOURIST")
     let ADMIN_ACCOMMODATION_PROVIDER = document.getElementById('ADMIN_ACCOMMODATION_PROVIDER')
     let ADMIN_VEHICLE_PROVIDER = document.getElementById("ADMIN_VEHICLE_PROVIDER")
@@ -55,6 +76,7 @@ function checkUserAccess() {
     let MANAGER_VIEW_VEHICLE = document.getElementById('MANAGER_VIEW_VEHICLE')
     let MANAGER_VIEW_GUIDE = document.getElementById('MANAGER_VIEW_GUIDE')
     let VIEW_AVAILABILITY = document.getElementById('VIEW_AVAILABILITY')
+    let VIEW_BOOKINGS = document.getElementById('VIEW_BOOKINGS')
 
     let user = getCookie('user')
     if (user) {
@@ -62,6 +84,7 @@ function checkUserAccess() {
             case 1: //admin
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'display'
+                ADMIN_USER.style.display = 'display'
                 ADMIN_ACCOMMODATION_PROVIDER.style.display = 'display'
                 ADMIN_TOURIST.style.display = 'display'
                 ADMIN_VEHICLE_PROVIDER.style.display = 'display'
@@ -81,11 +104,13 @@ function checkUserAccess() {
                 VIEW_VEHICLE_SERVICE.style.display = 'none'
                 VIEW_GUIDE_SERVICE.style.display = 'none'
                 VIEW_AVAILABILITY.style.display = 'none'
-
+                VIEW_BOOKINGS.style.display = 'none'
                 break;
+
             case 2: //Manager
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
+                ADMIN_USER.style.display = 'none'
                 ADMIN_ACCOMMODATION_PROVIDER.style.display = 'none'
                 ADMIN_TOURIST.style.display = 'none'
                 ADMIN_VEHICLE_PROVIDER.style.display = 'none'
@@ -105,10 +130,13 @@ function checkUserAccess() {
                 VIEW_VEHICLE_SERVICE.style.display = 'none'
                 VIEW_GUIDE_SERVICE.style.display = 'none'
                 VIEW_AVAILABILITY.style.display = 'none'
+                VIEW_BOOKINGS.style.display = 'none'
                 break;
+
             case 3: //Tourist
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
+                ADMIN_USER.style.display = 'none'
                 ADMIN_ACCOMMODATION_PROVIDER.style.display = 'none'
                 ADMIN_TOURIST.style.display = 'none'
                 ADMIN_VEHICLE_PROVIDER.style.display = 'none'
@@ -128,10 +156,13 @@ function checkUserAccess() {
                 VIEW_VEHICLE_SERVICE.style.display = 'none'
                 VIEW_GUIDE_SERVICE.style.display = 'none'
                 VIEW_AVAILABILITY.style.display = 'none'
+                VIEW_BOOKINGS.style.display = 'none'
                 break;
+
             case 4: //Service Provider
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
+                ADMIN_USER.style.display = 'none'
                 ADMIN_ACCOMMODATION_PROVIDER.style.display = 'none'
                 ADMIN_TOURIST.style.display = 'none'
                 ADMIN_VEHICLE_PROVIDER.style.display = 'none'
@@ -151,6 +182,7 @@ function checkUserAccess() {
                 VIEW_VEHICLE_SERVICE.style.display = 'display'
                 VIEW_GUIDE_SERVICE.style.display = 'display'
                 VIEW_AVAILABILITY.style.display = 'display'
+                VIEW_BOOKINGS.style.display = 'display'
                 break;
             default:
                 ADMIN_SITE_MANAGER.style.display = 'none'

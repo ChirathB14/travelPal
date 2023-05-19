@@ -68,7 +68,7 @@
                                                     <th style="min-width: 150px;">Name</th>
                                                     <th style="min-width: 150px;">Email</th>
                                                     <th style="min-width: 150px;">Address</th>
-                                                    <th style="min-width: 150px;">Edit</th>
+                                                    <!-- <th style="min-width: 150px;">Edit</th> -->
                                                     <th style="min-width: 150px;">Delete</th>
                                                 </tr>
                                             </thead>
@@ -83,11 +83,11 @@
                                                                 <td class="td-txt"><?php echo $manager['first_name']; ?> <?php echo $manager['last_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['address']; ?></td>
-                                                                <td style="padding: 5px 5px;">
+                                                                <!-- <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewTourist.php">
                                                                         <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
-                                                                </td>
+                                                                </td> -->
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewTourist.php">
                                                                         <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>

@@ -16,6 +16,8 @@
 
 <body onload="loginRegisterAccess()">
 
+    <button onclick="history.back()">< Go Back</button>
+
     <div class="login">
         <form action="Login.php" method="post">
             <h1 id="heder-login">Login</h1>
@@ -60,12 +62,12 @@
                 header('location:../index.php');
             } else {
                 echo '<script language ="javascript">';
-                echo 'alert("Incoreect Username or password1")';
+                echo 'alert("Incorrect Username or password!")';
                 echo '</script>';
             }
         } else {
             echo '<script language ="javascript">';
-            echo 'alert("Incoreect Username or password2")';
+            echo 'alert("Incorrect Username or password!")';
             echo '</script>';
         }
 
