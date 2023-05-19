@@ -76,6 +76,7 @@ function checkUserAccess() {
     let MANAGER_VIEW_VEHICLE = document.getElementById('MANAGER_VIEW_VEHICLE')
     let MANAGER_VIEW_GUIDE = document.getElementById('MANAGER_VIEW_GUIDE')
     let VIEW_AVAILABILITY = document.getElementById('VIEW_AVAILABILITY')
+    let VIEW_BOOKINGS = document.getElementById('VIEW_BOOKINGS')
 
     let user = getCookie('user')
     if (user) {
@@ -103,8 +104,9 @@ function checkUserAccess() {
                 VIEW_VEHICLE_SERVICE.style.display = 'none'
                 VIEW_GUIDE_SERVICE.style.display = 'none'
                 VIEW_AVAILABILITY.style.display = 'none'
-
+                VIEW_BOOKINGS.style.display = 'none'
                 break;
+
             case 2: //Manager
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
@@ -128,7 +130,9 @@ function checkUserAccess() {
                 VIEW_VEHICLE_SERVICE.style.display = 'none'
                 VIEW_GUIDE_SERVICE.style.display = 'none'
                 VIEW_AVAILABILITY.style.display = 'none'
+                VIEW_BOOKINGS.style.display = 'none'
                 break;
+
             case 3: //Tourist
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
@@ -152,7 +156,9 @@ function checkUserAccess() {
                 VIEW_VEHICLE_SERVICE.style.display = 'none'
                 VIEW_GUIDE_SERVICE.style.display = 'none'
                 VIEW_AVAILABILITY.style.display = 'none'
+                VIEW_BOOKINGS.style.display = 'none'
                 break;
+
             case 4: //Service Provider
                 //! Admin tabs
                 ADMIN_SITE_MANAGER.style.display = 'none'
@@ -176,6 +182,7 @@ function checkUserAccess() {
                 VIEW_VEHICLE_SERVICE.style.display = 'display'
                 VIEW_GUIDE_SERVICE.style.display = 'display'
                 VIEW_AVAILABILITY.style.display = 'display'
+                VIEW_BOOKINGS.style.display = 'display'
                 break;
             default:
                 ADMIN_SITE_MANAGER.style.display = 'none'
