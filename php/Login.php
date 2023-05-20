@@ -16,7 +16,7 @@
 
 <body onload="loginRegisterAccess()">
 
-    <button onclick="history.back()">< Go Back</button>
+    <button class="back-button" onclick="history.back()">< Back</button>
 
     <div class="login">
         <form action="Login.php" method="post">

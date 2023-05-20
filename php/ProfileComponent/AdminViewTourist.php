@@ -65,11 +65,11 @@
                                         <table>
                                             <thead>
                                                 <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
-                                                    <th style="min-width: 150px;">Name</th>
-                                                    <th style="min-width: 150px;">Email</th>
-                                                    <th style="min-width: 150px;">Address</th>
+                                                    <th style="min-width: 200px;">Name</th>
+                                                    <th style="min-width: 200px;">Email</th>
+                                                    <th style="min-width: 200px;">Address</th>
                                                     <!-- <th style="min-width: 150px;">Edit</th> -->
-                                                    <th style="min-width: 150px;">Delete</th>
+                                                    <th style="min-width: 200px;">Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
