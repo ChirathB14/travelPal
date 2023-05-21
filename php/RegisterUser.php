@@ -16,7 +16,7 @@
 </head>
 
 <body class="registration" onload="loginRegisterAccess()">
-<button onclick="history.back()">< Go Back</button>
+<button class="back-button" onclick="history.back()">< Back</button>
     <div class="register">
         <form action="RegisterUser.php" method="post" onsubmit="return cheakpassword()">
             <h1 id="heder-login">Create an Account</h1>

@@ -66,12 +66,12 @@
                                         <table>
                                             <thead>
                                                 <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
-                                                    <th style="min-width: 150px;">Name</th>
-                                                    <th style="min-width: 150px;">Email</th>
-                                                    <th style="min-width: 150px;">Address</th>
+                                                    <th style="min-width: 200px;">Name</th>
+                                                    <th style="min-width: 200px;">Email</th>
+                                                    <th style="min-width: 200px;">Address</th>
                                                     <!-- <th style="min-width: 150px;">Telephone</th> -->
-                                                    <th style="min-width: 150px;">Edit</th>
-                                                    <th style="min-width: 150px;">Delete</th>
+                                                    <!-- <th style="min-width: 150px;">Edit</th> -->
+                                                    <th style="min-width: 200px;">Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -86,10 +86,10 @@
                                                                 <td class="td-txt"><?php echo $manager['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['address']; ?></td>
                                                                 <!-- <td class="td-txt"><?php echo $manager['telephone']; ?></td> -->
-                                                                <td style="padding: 5px 5px;">
+                                                                <!-- <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewManager.php">
                                                                         <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
-                                                                    </a>
+                                                                    </a> -->
 
                                                                 </td>
                                                                 <td style="padding: 5px 5px;">

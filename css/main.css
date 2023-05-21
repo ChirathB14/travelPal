@@ -52,6 +52,16 @@ button:hover {
     background-color: #327972 !important; 
 }
 
+.back-button {
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+    margin: 10px;
+    background-color: var(--accentcolor);
+    color: var(--primarycolor);
+    border-radius: 20px;
+}
+
 /* Link styles */
 a {
     color: var(--accentcolor);
