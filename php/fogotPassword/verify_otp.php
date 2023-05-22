@@ -11,6 +11,7 @@ if (isset($_GET['email'])) {
 
         // Get the email, password, confirm password, and OTP from the form
         $email = $_POST['email'];
+        $hasedPass = password_hash($_POST["password"], null);
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
         $otp = $_POST['otp'];
@@ -42,8 +43,7 @@ if (isset($_GET['email'])) {
                 if ($otp == $row['otp']) {
                     // Update the user's password and clear the OTP
                     $stmt = $conn->prepare("UPDATE user SET password=?, otp=NULL WHERE email=?");
-                    $hashed_password = password_hash($password, null);
-                    $stmt->bind_param("ss", $hashed_password, $email);
+                    $stmt->bind_param("ss", $hasedPass, $email);
                     $stmt->execute();
                     echo '<script language ="javascript">';
                     echo 'onResetSuccess()';

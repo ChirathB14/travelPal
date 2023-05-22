@@ -16,10 +16,10 @@
 
 <body onload="loginRegisterAccess()">
 
-    <button class="back-button" onclick="history.back()">< Back</button>
-
+    
     <div class="login">
         <form action="Login.php" method="post">
+            <button class="back-button" onclick="history.back()">< Back</button>
             <h1 id="heder-login">Login</h1>
             <div class="input-elements">
                 <input type="email" id="email" name="email" placeholder="  Email" required>
