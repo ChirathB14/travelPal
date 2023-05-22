@@ -42,12 +42,12 @@ $title = "Register Manager - TravePal";
                             <input type="text" id="address" name="address" placeholder="  Address" required />
                             <input type="tel" id="telephone" name="telephone" placeholder="  Telephone Number" required />
                             <input type="email" id="email" name="email" placeholder="  Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
-                            <input type="password" name="Pass" id="Pass" placeholder=" PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+                            <!-- <input type="password" name="Pass" id="Pass" placeholder=" PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                     Should be more than 8 characters and less than 16 characters.">
                             <input type="password" name="rePass" id="rePass" placeholder=" CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
-                    Should be more than 8 characters and less than 16 characters.">
+                    Should be more than 8 characters and less than 16 characters."> -->
                             <br>
-                            <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Register</button>
+                            <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Create Manager Account</button>
                         </div>
                         <?php
                         require '../DbConfig.php';
@@ -71,8 +71,11 @@ $title = "Register Manager - TravePal";
                                     echo 'alert("Email Already Exists :( ")';
                                     echo '</script>';
                                 } else {
-                                    $sqltwo = "INSERT INTO user (user_Id, first_name, last_name, address, telephone, email, password, isActive,  user_type, created_date)
-                                    VALUES (0,'$first','$last','$address', '$telephone','$email','$psw','$isActive', '$userType', '$createdDate' )";
+                                    // Generate OTP and send it to user's email
+                                    $otp = rand(100000, 999999);
+
+                                    $sqltwo = "INSERT INTO user (user_Id, first_name, last_name, address, telephone, email, password, isActive,  user_type, created_date, otp)
+                                    VALUES (0,'$first','$last','$address', '$telephone','$email',NULL,'$isActive', '$userType', '$createdDate', '$otp' )";
 
                                     if ($conn->query($sqltwo) === TRUE) {
                                         // Send email using PHPMailer
@@ -84,18 +87,18 @@ $title = "Register Manager - TravePal";
                                         $mail->Port = "25";
                                         $mail->Username = "system.travelpal@gmail.com";
                                         $mail->Password = "xpfvfzzfmorncftc";
-                                        $mail->Subject = "You were added as a Manager to TravelPal";
+                                        $mail->Subject = "You were added as a Manager in TravelPal";
 
                                         $mail->setFrom('system.travelpal@gmail.com');
                                         $mail->addAddress($email);
 
                                         $mail->isHTML(true);
-                                        $mail->Body = "<p>Hello,</p>
-                   <p>Dear user, </p> 
-                   <p>You were added as a Manager.</p> 
-                  <p>Regards,</p>
-                  <p>TravelPal</p>";
-
+                                        $mail->Body = "<p>Hi $first $last,</p>
+                                                       <p>You were added as a Manager.</p> 
+                                                       <p>Your OTP verify code is <b>$otp </b><br></p>
+                                                       <p>Use this link to create your password:  <a href='http://localhost/travelPal/php/fogotPassword/verify_otp.php?email=$email'> Click here</a><br></p>
+                                                       <p>Regards,</p>
+                                                       <a href='http://localhost/travelPal'>TravelPal</a>";
                                         if ($mail->send()) {
                                             echo '<script language = "javascript">';
                                             echo 'success()';
