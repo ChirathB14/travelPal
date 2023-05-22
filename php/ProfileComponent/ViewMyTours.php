@@ -80,9 +80,7 @@
                                                         <?php while ($acc_row = $acc_result->fetch_assoc()) { ?>
                                                             <tr style="background-color: #FFFFFFCC;">
                                                                 <td class="td-txt"><?php echo $acc_row['user_tours_id']; ?></td>
-                                                                <td class="td-txt"><?php $date = DateTime::createFromFormat('Y-m-d H:i:s.u', $acc_row['start_date']); // create a DateTime object from the timestamp
-                                                                                    $formatted_date = $date->format('Y-m-d'); // format the DateTime object
-                                                                                    echo $formatted_date; ?></td>
+                                                                <td class="td-txt"><?php echo $acc_row['start_date']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['no_of_tourist']; ?></td>
                                                                 <td class="td-txt"><?php if ($acc_row['status'] == 1) { ?>
                                                                         Pending Details
