@@ -16,9 +16,9 @@
 </head>
 
 <body class="registration" onload="loginRegisterAccess()">
-<button class="back-button" onclick="history.back()">< Back</button>
     <div class="register">
         <form action="RegisterUser.php" method="post" onsubmit="return cheakpassword()">
+            <button class="back-button" onclick="history.back()">< Back</button>
             <h1 id="heder-login">Create an Account</h1>
             <div class="input-elements">
                 <input type="text" name="fname" id="fname" placeholder=" FIRST NAME" required oninvalid="this.setCustomValidity('Enter first name')" oninput="this.setCustomValidity('')">

@@ -63,6 +63,11 @@ $title = "Admin View - TravePal";
                                 <div class="main-wrapper">
                                     <h2 class="heder-profile">Site Manager</h2>
                                     <div>
+                                        <div>
+                                            <a href="./RegisterManager.php">
+                                                <h2 class="new-manager-add">+ Add New Manager</h2>
+                                            </a>
+                                        </div>
                                         <table>
                                             <thead>
                                                 <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
@@ -70,7 +75,7 @@ $title = "Admin View - TravePal";
                                                     <th style="min-width: 200px;">Email</th>
                                                     <th style="min-width: 200px;">Address</th>
                                                     <!-- <th style="min-width: 150px;">Telephone</th> -->
-                                                    <!-- <th style="min-width: 150px;">Edit</th> -->
+                                                    <th style="min-width: 150px;">Edit</th>
                                                     <th style="min-width: 200px;">Delete</th>
                                                 </tr>
                                             </thead>
@@ -86,91 +91,37 @@ $title = "Admin View - TravePal";
                                                                 <td class="td-txt"><?php echo $manager['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['address']; ?></td>
                                                                 <!-- <td class="td-txt"><?php echo $manager['telephone']; ?></td> -->
-                                                                <!-- <td style="padding: 5px 5px;">
+                                                                <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewManager.php">
                                                                         <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
-                                                                    </a> -->
-
-                                                                </td>
-                                                                <td style="padding: 5px 5px;">
-                                                                    <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewManager.php">
-                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
                                                                     </a>
 
-                                                                </td>
-                                                            </tr>
-                                                        <?php }
-                                                    } else { ?>
-                                                        <tr style="background-color: #FFFFFFCC;">
-                                                           <td class="td-txt" colspan="4"><center>No data available.</center></td>
-                                                        </tr>
-                                                <?php }
-                                                } else {
-                                                    echo "Error in " . $sql . " " . $conn->error;
-                                                }
-                                                ?>
-                                            </tbody>
+                            </td>
+                            <td style="padding: 5px 5px;">
+                                <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewManager.php">
+                                    <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
+                                </a>
 
-                                        </table>
-                                        <div>
-                                            <a href="./RegisterManager.php">
-                                                <h2 class="new-manager-add">+ Add New Manager</h2>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <table>
-                                        <thead>
-                                            <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
-                                                <th style="min-width: 150px;">Name</th>
-                                                <th style="min-width: 150px;">Email</th>
-                                                <th style="min-width: 150px;">Address</th>
-                                                <!-- <th style="min-width: 150px;">Telephone</th> -->
-                                                <th style="min-width: 150px;">Edit</th>
-                                                <th style="min-width: 150px;">Delete</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $getManagers = "SELECT * FROM user WHERE user_type= '" . 2 . "'";
-                                            $manage_result = $conn->query($getManagers);
-                                            if ($manage_result) {
-                                                if ($manage_result->num_rows > 0) {
-                                                    while ($manager = $manage_result->fetch_assoc()) { ?>
-                                                        <tr style="background-color: #FFFFFFCC;">
-                                                            <td class="td-txt"><?php echo $manager['first_name']; ?> <?php echo $manager['last_name']; ?></td>
-                                                            <td class="td-txt"><?php echo $manager['email']; ?></td>
-                                                            <td class="td-txt"><?php echo $manager['address']; ?></td>
-                                                            <!-- <td class="td-txt"><?php echo $manager['telephone']; ?></td> -->
-                                                            <td style="padding: 5px 5px;">
-                                                                <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewManager.php">
-                                                                    <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
-                                                                </a>
-
-                                                            </td>
-                                                            <td style="padding: 5px 5px;">
-                                                                <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewManager.php">
-                                                                    <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
-                                                                </a>
-
-                                                            </td>
-                                                        </tr>
-                                                    <?php }
-                                                } else { ?>
-                                                    <tr style="background-color: #FFFFFFCC;">
-                                                        <td class="td-txt" colspan="4">
-                                                            <center>No data available.</center>
-                                                        </td>
-                                                    </tr>
-                                            <?php }
-                                            } else {
-                                                echo "Error in " . $sql . " " . $conn->$error;
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </td>
                         </tr>
+                    <?php }
+                                                    } else { ?>
+                    <tr style="background-color: #FFFFFFCC;">
+                        <td class="td-txt" colspan="4">
+                            <center>No data available.</center>
+                        </td>
+                    </tr>
+            <?php }
+                                                } else {
+                                                    echo "Error in " . $sql . " " . $conn->$error;
+                                                }
+            ?>
+            </tbody>
+                    </table>
+                    </div>
+                    </div>
+                    </td>
+                    </tr>
                     </table>
 
     <?php
