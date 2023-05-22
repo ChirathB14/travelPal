@@ -111,7 +111,7 @@ $title = "Register Manager - TravePal";
                                         }
                                     } else {
                                         echo '<script language = "javascript">';
-                                        echo 'alert("Unsuccessfully :( ")';
+                                        echo 'alert("Unsuccessful :( ")';
                                         echo '</script>';
                                     }
                                     $conn->close();
