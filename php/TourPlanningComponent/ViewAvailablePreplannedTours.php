@@ -48,7 +48,7 @@
                                 <p class="subtitle"><?php foreach ($selectedOptions as $option) {
                                                         echo $option . "| ";
                                                     } ?></p>
-                                <div class="price-row"  style="flex:direction:row;">
+                                <div class="price-row"  style="flex-direction:row;">
                                 <div>
                                     <!-- <span class="price">LKR<?php echo $row['price']; ?></span> -->
                                     <span class="text-right"><?php echo $row['no_of_day']; ?> Days</span>

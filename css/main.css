@@ -6,6 +6,7 @@
     --primarycolor: #0E064D;
     --secondarycolor: #EEB444;
     --accentcolor: #FFFFFF;
+    --warncolor: #8A241E;
 }
 
 * {
@@ -50,6 +51,16 @@ button {
 button:hover {
     font-size: 22px;
     background-color: #327972 !important; 
+}
+
+.back-button {
+    width: 200px;
+    height: 30px;
+    font-size: 14px;
+    margin: 10px;
+    background-color: var(--warncolor);
+    color: var(--accentcolor);
+    border-radius: 20px;
 }
 
 /* Link styles */

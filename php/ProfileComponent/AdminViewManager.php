@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../../css/main.css">  
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
     <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
 <?php
-    $title = "Admin View - TravePal";
+$title = "Admin View - TravePal";
 ?>
 
 <body onload="checkUserAccess()">
@@ -33,28 +33,28 @@
                 while ($row = $result->fetch_assoc()) {
     ?>
 
-<div class="header">
-            <div class="navigationbar">
-                <div class="nav-Logo">
-                    <a href="/travelPal/index.php">
-                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
-                    </a>
-                </div>
-                <div class="menu">
-                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
-                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
-                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
-                </div>            
-            </div>
-            <div class="navigationbarfoot">
-                <hr>  
-            </div>    
-        </div>
+                    <div class="header">
+                        <div class="navigationbar">
+                            <div class="nav-Logo">
+                                <a href="/travelPal/index.php">
+                                    <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                                </a>
+                            </div>
+                            <div class="menu">
+                                <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                                <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                            </div>
+                        </div>
+                        <div class="navigationbarfoot">
+                            <hr>
+                        </div>
+                    </div>
 
-    
+
                     <table style="width:100%">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
@@ -63,15 +63,20 @@
                                 <div class="main-wrapper">
                                     <h2 class="heder-profile">Site Manager</h2>
                                     <div>
+                                        <div>
+                                            <a href="./RegisterManager.php">
+                                                <h2 class="new-manager-add">+ Add New Manager</h2>
+                                            </a>
+                                        </div>
                                         <table>
                                             <thead>
                                                 <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
-                                                    <th style="min-width: 150px;">Name</th>
-                                                    <th style="min-width: 150px;">Email</th>
-                                                    <th style="min-width: 150px;">Address</th>
+                                                    <th style="min-width: 200px;">Name</th>
+                                                    <th style="min-width: 200px;">Email</th>
+                                                    <th style="min-width: 200px;">Address</th>
                                                     <!-- <th style="min-width: 150px;">Telephone</th> -->
                                                     <th style="min-width: 150px;">Edit</th>
-                                                    <th style="min-width: 150px;">Delete</th>
+                                                    <th style="min-width: 200px;">Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -91,36 +96,32 @@
                                                                         <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
 
-                                                                </td>
-                                                                <td style="padding: 5px 5px;">
-                                                                    <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewManager.php">
-                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
-                                                                    </a>
+                            </td>
+                            <td style="padding: 5px 5px;">
+                                <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewManager.php">
+                                    <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
+                                </a>
 
-                                                                </td>
-                                                            </tr>
-                                                        <?php }
-                                                    } else { ?>
-                                                        <tr style="background-color: #FFFFFFCC;">
-                                                           <td class="td-txt" colspan="4"><center>No data available.</center></td>
-                                                        </tr>
-                                                <?php }
-                                                } else {
-                                                    echo "Error in " . $sql . " " . $conn->error;
-                                                }
-                                                ?>
-                                            </tbody>
-
-                                        </table>
-                                        <div>
-                                            <a href="./RegisterManager.php">
-                                                <h2 class="new-manager-add">+ New USER</h2>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
                             </td>
                         </tr>
+                    <?php }
+                                                    } else { ?>
+                    <tr style="background-color: #FFFFFFCC;">
+                        <td class="td-txt" colspan="4">
+                            <center>No data available.</center>
+                        </td>
+                    </tr>
+            <?php }
+                                                } else {
+                                                    echo "Error in " . $sql . " " . $conn->$error;
+                                                }
+            ?>
+            </tbody>
+                    </table>
+                    </div>
+                    </div>
+                    </td>
+                    </tr>
                     </table>
 
     <?php
@@ -128,7 +129,7 @@
             }
         } else {
             echo "Error in " . $sql . "
-                    " . $conn->error;
+                    " . $conn->$error;
         }
 
         $conn->close();
@@ -136,13 +137,13 @@
         header('location:../../index.php');
     }
     ?>
-</body> 
+</body>
 
 <footer>
-        <hr>
-        <div class="footer-bottom">
-                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
-        </div>
+    <hr>
+    <div class="footer-bottom">
+        © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+    </div>
 </footer>
 
 </html>

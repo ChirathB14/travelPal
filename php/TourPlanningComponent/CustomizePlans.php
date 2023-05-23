@@ -159,7 +159,7 @@
                                         $typeOfPackage = $_POST["typeOfPackage"];
                                         $isActive = true;
                                         $season = $_POST["season"];
-                                        $createdDate = date('Y-m-d H:i:s');
+                                        $createdDate = date('Y-m-d');
 
                                         $sqltwo = "INSERT INTO new_plan (plan_Id, location, no_of_day, price, type_of_package, isActive,  destination, image, created_date, created_by, by_manager) VALUES (0,'$location','$noOfDays','$price','$typeOfPackage','$isActive', '$destination', 'None', '$createdDate', '$userID', '0' )";
                                         if ($conn->query($sqltwo) === TRUE) {

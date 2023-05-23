@@ -80,9 +80,7 @@
                                                         <?php while ($acc_row = $acc_result->fetch_assoc()) { ?>
                                                             <tr style="background-color: #FFFFFFCC;">
                                                                 <td class="td-txt"><?php echo $acc_row['user_tours_id']; ?></td>
-                                                                <td class="td-txt"><?php $date = DateTime::createFromFormat('Y-m-d H:i:s.u', $acc_row['start_date']); // create a DateTime object from the timestamp
-                                                                                    $formatted_date = $date->format('Y-m-d'); // format the DateTime object
-                                                                                    echo $formatted_date; ?></td>
+                                                                <td class="td-txt"><?php echo $acc_row['start_date']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['no_of_tourist']; ?></td>
                                                                 <td class="td-txt"><?php if ($acc_row['status'] == 1) { ?>
                                                                         Pending Details
@@ -94,9 +92,9 @@
                                                                     ?> </td>
 
                                                                 <td class="td-txt">
-                                                                    <a href="<?php
+                                                                <a href="<?php
                                                                                 if ($acc_row['status'] == 2) { ?>
-                                                                       ../TourPlanningComponent/Payment.php?common=<?php echo $acc_row['common_id']; ?>
+                                                                       ../TourPlanningComponent/TourSummary.php?common=<?php echo $acc_row['common_id']; ?>&acc=<?php echo $acc_row['accomadation_id'] ?>&veh=<?php echo $acc_row['vehicle_id'] ?>&guide=<?php echo $acc_row['guide_id'] ?>
                                                                     <?php } else if ($acc_row['status'] == 1) { ?>
                                                                         ../TourPlanningComponent/SelectAccomadation.php?common=<?php echo $acc_row['common_id']; ?>
                                                                     <?php } else { ?>

@@ -84,7 +84,7 @@
                                     } else { ?>
 
                                         <tr>
-                                            <td class="td-txt" colspan="9">No Data Found</td>
+                                            <td class="td-txt" colspan="9">Sorry! Currently there's no available services</td>
                                         </tr>
                                 <?php }
                                 }

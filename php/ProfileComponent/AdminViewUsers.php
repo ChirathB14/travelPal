@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- <link rel="stylesheet" href="../../css/header.css"> -->
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
-    <!-- <link rel="stylesheet" href="../../css/newFooter.css"> -->
+
     <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
@@ -26,8 +25,7 @@
 
         $sql = "SELECT first_name, last_name, email, address FROM user WHERE user_Id= '" . $userID . "'";
         $result = $conn->query($sql);
-        // echo $conn->query($sql);
-        // $data = json_encode($result->user);
+
         if ($result) {
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -63,19 +61,6 @@
             </div>    
         </div>
 
-    <!--
-                    <ul class="header-ul">
-                        <li class="header-left-li"><img class="headerbtm" src="../../images/logo.png" alt="logo" width="150" height="50"></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../../index.php">Home</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../TourPlanningComponent/TourPlanningIndex.php">Tour Plan</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../Blog/ContactUS.php">Contact Us</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" href="../Blog/ViewBlogs.php">Blogs</a></li>
-                        <li class="header-left-li"><a class="header-left-li a" style="background-color: #00357A;" id="profile" href="./Profile.php">Profile</a></li>
-                        <li class="header-right-li"><a class="header-left-li a" id="logout"><button class="button-login" onclick="logOut()"><img src="../../images/User-Icon.png" alt="logo" width="20" height="20" style="margin-right: 10px;">Logout</button></a></li>
-                    </ul>
-                    <hr style="background-color: #327972;color:#327972"/>
-                --> 
-
                     <table style="width:100%">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
@@ -86,8 +71,8 @@
 
                                     <div class="search">
                                         <form action="AdminViewUsers.php" method="get">
-                                            <p>
-                                                <input type="text" name="search" id="" placeholder="Search for users..." >
+                                            <p style="margin:12px;">
+                                                <input style="width:100%; height:40px; border-radius:5px;" type="search" name="search" id="" placeholder="  Search for users..." >
                                             </p>
                                         </form>
                                     </div>
@@ -96,12 +81,12 @@
                                         <table>
                                             <thead>
                                                 <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
-                                                    <th style="min-width: 150px;">Name</th>
-                                                    <th style="min-width: 150px;">Email</th>
-                                                    <th style="min-width: 150px;">Address</th>
-                                                    <th style="min-width: 150px;">Type</th>
+                                                    <th style="min-width: 160px;">Name</th>
+                                                    <th style="min-width: 160px;">Email</th>
+                                                    <th style="min-width: 160px;">Address</th>
+                                                    <th style="min-width: 160px;">Type</th>
                                                     <!-- <th style="min-width: 150px;">Edit</th> -->
-                                                    <th style="min-width: 150px;">Delete</th>
+                                                    <th style="min-width: 160px;">Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -175,42 +160,6 @@
     }
     ?>
 </body>
-
-<!--
-<footer class="custom-footer">
-    <div class="footer-left">
-        <img src="../../images/logo.png" alt="Company logo" class="footer-logo">
-        <div class="footer-title">
-            <h3 class="footer-heading">Get inspired ! Recieve travel discounts, tips & behind the scene stories</h3>
-        </div>
-        <form class="footer-form">
-            <input type="text" class="footer-input" placeholder="Enter your email address">
-            <button type="submit" class="footer-button">Subscribe</button>
-        </form>
-        <table style="width: 100%;margin-top:20px">
-            <tr>
-                <td class="footer-td-text">HOME</td>
-                <td class="footer-td-text">ABOUT US</td>
-                <td class="footer-td-text">CONTACT US</td>
-            </tr>
-            <tr>
-                <td class="footer-td-text">BLOGs</td>
-                <td class="footer-td-text">Tour plans</td>
-                <td class="footer-td-text">Preplanned Tour</td>
-            </tr>
-            <tr>
-                <td class="footer-td-text">Customize Tour</td>
-                <td class="footer-td-text">BLOGs</td>
-                <td class="footer-td-text">Create Blogs</td>
-            </tr>
-        </table>
-
-    </div>
-    <div class="footer-right">
-        <img src="../../images/footerimg.png" alt="Image description" class="footer-image">
-    </div>
-</footer>
---> 
 
 <footer>
         <hr>

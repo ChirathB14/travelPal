@@ -169,7 +169,7 @@
                                                     $typeOfPackage = $_POST["typeOfPackage"];
                                                     $isActive = true;
                                                     $season = $_POST["season"];
-                                                    $createdDate = date('Y-m-d H:i:s');
+                                                    $createdDate = date('Y-m-d');
 
                                                     if ($_FILES["image"]["error"] == 4) {
                                                         echo

@@ -73,7 +73,7 @@
                                     } else { ?>
 
                                         <tr>
-                                            <td class="td-txt" colspan="10">No Data Found</td>
+                                            <td class="td-txt" colspan="10">Sorry! Currently there's no available services</td>
                                         </tr>
                                 <?php }
                                 }
