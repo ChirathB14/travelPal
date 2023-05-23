@@ -51,10 +51,10 @@ if ($result->num_rows == 0) {
     $mail->addAddress($email);
 
     $mail->isHTML(true);
-    $mail->Body = "<p>Hello,</p>
-                   <p>Dear user, </p> <p>Your OTP verify code is <b>$otp </b><br></p>
-                  <p>Regards,</p>
-                  <p>TravelPal</p>";
+    $mail->Body = "<p>Dear user, </p> 
+                   <p>Your OTP verify code is <b>$otp</b><br></p>
+                   <p>Regards,</p>
+                   <p>TravelPal</p>";
 
     if ($mail->send()) {
         $stmt = $conn->prepare("UPDATE user SET otp=? WHERE email=?");

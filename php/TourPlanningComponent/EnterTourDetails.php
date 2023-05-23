@@ -119,10 +119,10 @@
 
         $date_picker = $_POST['date_picker'];
         $date_time = DateTime::createFromFormat('Y-m-d', $date_picker);
-        $startDate = $date_time->format('Y-m-d H:i:s.u');
+        $startDate = $date_time->format('Y-m-d');
 
         $noOfTourist = $_POST['no_tourist'];
-        $createdDate = date('Y-m-d H:i:s');
+        $createdDate = date('Y-m-d');
         $common = uniqid();
         $isActive = true;
 

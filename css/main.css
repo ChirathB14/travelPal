@@ -6,6 +6,7 @@
     --primarycolor: #0E064D;
     --secondarycolor: #EEB444;
     --accentcolor: #FFFFFF;
+    --warncolor: #8A241E;
 }
 
 * {
@@ -53,12 +54,12 @@ button:hover {
 }
 
 .back-button {
-    width: 70px;
+    width: 200px;
     height: 30px;
     font-size: 14px;
     margin: 10px;
-    background-color: var(--accentcolor);
-    color: var(--primarycolor);
+    background-color: var(--warncolor);
+    color: var(--accentcolor);
     border-radius: 20px;
 }
 
