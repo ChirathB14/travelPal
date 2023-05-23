@@ -53,10 +53,10 @@
 
             ?>
                         <div class="box">
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="label">Season :</div>
                                 <div class="value"><?php echo $newPlan_row['season']; ?></div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="label">Location :</div>
                                 <div class="value"><?php echo $newPlan_row['location']; ?></div>
@@ -73,9 +73,7 @@
                             <div class="title">Duration</div>
                             <div class="row">
                                 <div class="label">Start Date :</div>
-                                <div class="value"><?php $date = DateTime::createFromFormat('Y-m-d H:i:s.u', $original_date); // create a DateTime object from the timestamp
-                                                    $formatted_date = $date->format('Y-m-d'); // format the DateTime object
-                                                    echo $formatted_date; ?></div>
+                                <div class="value"><?php echo $original_date; ?></div>
                             </div>
                             <div class="row">
                                 <div class="label">End Date :</div>
