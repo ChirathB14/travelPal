@@ -16,8 +16,6 @@
 
 <body onload="loginRegisterAccess()">
 
-    <button class="back-button" onclick="history.back()">< Back</button>
-
     <div class="login">
         <form action="Login.php" method="post">
             <h1 id="heder-login">Login</h1>
@@ -36,6 +34,7 @@
     </div>
 
     <?php
+    session_start();
     require 'DbConfig.php';
     if (isset($_POST['loginbtn'])) {
         $log = $_POST['email'];
@@ -49,6 +48,8 @@
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $password_hash = $row['password'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['name'] = $row['last_name'];
             if (password_verify($pword, $password_hash)) {
                 $cookie_name = "user";
 
@@ -62,12 +63,12 @@
                 header('location:../index.php');
             } else {
                 echo '<script language ="javascript">';
-                echo 'alert("Incorrect Username or password!")';
+                echo 'alert("Incoreect Username or password1")';
                 echo '</script>';
             }
         } else {
             echo '<script language ="javascript">';
-            echo 'alert("Incorrect Username or password!")';
+            echo 'alert("Incoreect Username or password2")';
             echo '</script>';
         }
 

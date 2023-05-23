@@ -94,9 +94,9 @@
                                                                     ?> </td>
 
                                                                 <td class="td-txt">
-                                                                    <a href="<?php
+                                                                <a href="<?php
                                                                                 if ($acc_row['status'] == 2) { ?>
-                                                                       ../TourPlanningComponent/Payment.php?common=<?php echo $acc_row['common_id']; ?>
+                                                                       ../TourPlanningComponent/TourSummary.php?common=<?php echo $acc_row['common_id']; ?>&acc=<?php echo $acc_row['accomadation_id'] ?>&veh=<?php echo $acc_row['vehicle_id'] ?>&guide=<?php echo $acc_row['guide_id'] ?>
                                                                     <?php } else if ($acc_row['status'] == 1) { ?>
                                                                         ../TourPlanningComponent/SelectAccomadation.php?common=<?php echo $acc_row['common_id']; ?>
                                                                     <?php } else { ?>
