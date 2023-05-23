@@ -26,5 +26,7 @@
         <li class="verticle-li" id="MANAGER_VIEW_GUIDE"><a href="./ManagerViewGuide.php">Tourist Guide</a></li>
         <li class="verticle-li" id="VIEW_AVAILABILITY"><a href="./ViewAvailability.php">View Availability</a></li>
         <li class="verticle-li" id="VIEW_BOOKINGS"><a href="./ViewBookings.php">View Bookings</a></li>
+        <li class="verticle-li" id="REPORT_GENERATION"><a href="./ManagerGenerateReport.php">Generate Reports</a></li>
+
     </ul>
 </td>

@@ -16,7 +16,7 @@
     $title = "Generate Report - TravePal";
 ?>
 <body onload="checkUserAccess();">
-    <script>
+    <!-- <script>
         function hideParagraph() {
             document.getElementById("requird-destination").style.display = "none";
         }
@@ -24,7 +24,7 @@
         function showParagraph() {
             document.getElementById("requird-destination").style.display = "display";
         }
-    </script>
+    </script> -->
     <?php
     require '../DbConfig.php';
     if (isset($_COOKIE['user'])) {
@@ -68,7 +68,7 @@
     </div>
     <div class="Report-column"style="margin-left:15% ; margin-right:15%; background-color: #D9D9D9;">
     <div class="profile-main-wrapper" >
-                                        <form method="POST" action="ManagerNewPlan.php" autocomplete="off" enctype="multipart/form-data">
+                                        <form method="POST" action="report.php" autocomplete="off" enctype="multipart/form-data">
                                             <center>
                                             <h2 class="heder-profile" style="color: var(--primarycolor);">Service Details</h2>
                                                 <div class="input-elements">
@@ -146,8 +146,10 @@
                                                     $serviceType = trim($_POST['serviceType']);
                                                     $startDate = trim($_POST['startDate']);
                                                     $endDate = trim($_POST['endDate']);
+
+                
                                                         //checking required fields
-                                                        if (empty($user_id) || empty($firstName) || empty($email) || empty($nic) || empty($phoneNo) || empty($startDate) || empty($endDate)) {
+                                                        if (empty($userID) || empty($firstName) || empty($email) || empty($nic) || empty($phoneNo) || empty($startDate) || empty($endDate)) {
                                                             array_push($errors, "All the fields are required");
                                                         }
 
@@ -163,11 +165,7 @@
                                                         $errors = array_merge($errors, check_max_length($max_len_fields));
 
                                                         if (empty($errors)) {
-                                                            $sqltwo = "INSERT INTO report (
-                                                                `userID`, `startDate`, `endDate`
-                                                            ) VALUES (
-                                                                '{$user_id}', '{$startDate}', '{$endDate}'
-                                                            )";
+                                                            $sqltwo = "INSERT INTO report(userID, startDate, endDate) VALUES ($userID, $startDate, $endDate)";
                                                         }
                                                             if ($conn->query($sqltwo) === TRUE) {
                                                                 header('location: report.php');
@@ -175,7 +173,7 @@
                                                                 echo 'newPlanCreated()';
                                                                 echo '</script>';
                                                             } else {
-                                                                header('Location: sm-GenerateReport.php?failed=yes');
+                                                                header('Location: ManagerGenerateReport.php?failed=yes');
                                                                 echo '<script language = "javascript">';
                                                                 echo 'alert("Unsuccessfull :( ")';
                                                                 echo '</script>';
@@ -210,30 +208,6 @@
     // 1111111
     ?>
 
-
-    <script>
-        $(document).ready(function() {
-            // When the country select changes, send an AJAX request to get the corresponding cities
-            $('#location').change(function() {
-                var location = $(this).val();
-                $.ajax({
-                    type: 'POST',
-                    url: './subComponent/Get_Destination.php', // Replace with the URL of your PHP script that gets the cities
-                    data: {
-                        location: location
-                    },
-                    dataType: 'json',
-                    success: function(data) {
-                        // Clear the city select and add the new options
-                        $('#destination').html('<option value="" disabled selected hidden>Destination</option>');
-                        $.each(data, function(index, value) {
-                            $('#destination').append('<option value="' + value + '">' + value + '</option>');
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 <footer>
