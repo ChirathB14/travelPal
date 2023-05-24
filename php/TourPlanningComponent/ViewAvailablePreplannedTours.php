@@ -51,7 +51,7 @@
                                 <div class="price-row"  style="flex-direction:row;">
                                 <div>
                                     <!-- <span class="price">LKR<?php echo $row['price']; ?></span> -->
-                                    <span class="text-right"><?php echo $row['no_of_day']; ?> Days</span>
+                                    <span class="text-right"><?php echo $row['no_of_day']; ?> Day/s</span>
                                 </div>                                   
 
                                     <div>

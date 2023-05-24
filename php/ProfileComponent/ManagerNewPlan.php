@@ -83,10 +83,10 @@
                                         </tr>
                                     </table>
 
-                                    <div class="profile-main-wrapper" style="width: 85%; margin: 0 15% 0 15%; background-color: #D9D9D9;">
+                                    <div class="profile-main-wrapper" style="width: 85%; margin: 0 15% 0 15%;">
                                         <form method="POST" action="ManagerNewPlan.php" autocomplete="off" enctype="multipart/form-data">
                                             <center>
-                                            <h2 class="heder-profile" style="color: var(--primarycolor);">Create New Plan</h2>
+                                            <h2 class="heder-profile">Create New Plan</h2>
                                                 <div class="input-elements">
                                                     <select id="season" name="season" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
                                                     background-color: var(--accentcolor); opacity: 0.75; height: 40px;
@@ -154,7 +154,7 @@
                                                     </select>
                                                     <input type="text" id="noOfDays" name="noOfDays" placeholder="No Of Days" pattern="^\d+$" required>
                                                     <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" style="padding: 10px;" required>
-                                                <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn">Save</button>
+                                                <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn" style="margin-left: 90px;">Save</button>
                                             </center>
                                             <?php
                                             if (isset($_POST['SaveBtn'])) {
