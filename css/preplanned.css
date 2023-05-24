@@ -76,11 +76,13 @@
 .product-box {
     width: calc(33.33% - 20px);
     margin-bottom: 40px;
+    margin-top: 40px;
     text-align: center;
     background-color: #00357A;
     border-style: solid;
     border-radius: 15px;
     overflow: hidden;
+    padding-top: 40px;
 }
 
 .product-box img {
@@ -120,7 +122,6 @@
     justify-content: space-between;
     align-items: center;
     padding-inline: 15px;
-    margin-bottom: 10px;
 }
 
 .product-box .text-right {
