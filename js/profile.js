@@ -77,6 +77,7 @@ function checkUserAccess() {
     let MANAGER_VIEW_GUIDE = document.getElementById('MANAGER_VIEW_GUIDE')
     let VIEW_AVAILABILITY = document.getElementById('VIEW_AVAILABILITY')
     let VIEW_BOOKINGS = document.getElementById('VIEW_BOOKINGS')
+    let DASHBOARD = document.getElementById('DASHBOARD')
 
     let user = getCookie('user')
     if (user) {
@@ -98,6 +99,7 @@ function checkUserAccess() {
                 MANAGER_VIEW_ACCOMADATION.style.display = 'none'
                 MANAGER_VIEW_VEHICLE.style.display = 'none'
                 MANAGER_VIEW_GUIDE.style.display = 'none'
+                DASHBOARD.style.display = 'none'
 
                 //! Service Proiders tabs
                 ACCOMADATION_PROVIDER_SERVICE.style.display = 'none'
@@ -124,6 +126,7 @@ function checkUserAccess() {
                 MANAGER_VIEW_ACCOMADATION.style.display = 'display'
                 MANAGER_VIEW_VEHICLE.style.display = 'display'
                 MANAGER_VIEW_GUIDE.style.display = 'display'
+                DASHBOARD.style.display = 'display'
 
                 //! Service Proiders tabs
                 ACCOMADATION_PROVIDER_SERVICE.style.display = 'none'
@@ -150,6 +153,7 @@ function checkUserAccess() {
                 MANAGER_VIEW_ACCOMADATION.style.display = 'none'
                 MANAGER_VIEW_VEHICLE.style.display = 'none'
                 MANAGER_VIEW_GUIDE.style.display = 'none'
+                DASHBOARD.style.display = 'none'
 
                 //! Service Proiders tabs
                 ACCOMADATION_PROVIDER_SERVICE.style.display = 'none'
@@ -176,6 +180,7 @@ function checkUserAccess() {
                 MANAGER_VIEW_ACCOMADATION.style.display = 'none'
                 MANAGER_VIEW_VEHICLE.style.display = 'none'
                 MANAGER_VIEW_GUIDE.style.display = 'none'
+                DASHBOARD.style.display = 'none'
 
                 //! Service Proiders tabs
                 ACCOMADATION_PROVIDER_SERVICE.style.display = 'display'
