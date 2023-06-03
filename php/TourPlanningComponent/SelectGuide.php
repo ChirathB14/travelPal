@@ -37,10 +37,10 @@
                                     <th class="th-txt">NIC</th>
                                     <th class="th-txt">Number</th>
                                     <th class="th-txt">Email</th>
-                                    <th class="th-txt">Type</th>
+                                    <!-- <th class="th-txt">Type</th> -->
                                     <th class="th-txt">Price Per Day</th>
                                     <th class="th-txt">Register Number</th>
-                                    <th class="th-txt">Experience</th>
+                                    <!-- <th class="th-txt">Experience</th> -->
                                     <th class="th-txt">Languages</th>
 
                                 </tr>
@@ -62,10 +62,10 @@
                                                 <td class="td-txt"><?php echo $acc_row['provider_nic']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['phone_number']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['email']; ?></td>
-                                                <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
+                                                <!-- <td class="td-txt"><?php echo $acc_row['service_type']; ?></td> -->
                                                 <td class="td-txt"><?php echo $acc_row['price_per_day']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['reg_number']; ?></td>
-                                                <td class="td-txt"><?php echo $acc_row['experience']; ?></td>
+                                                <!-- <td class="td-txt"><?php echo $acc_row['experience']; ?></td> -->
                                                 <td class="td-txt"><?php echo $acc_row['languages']; ?></td>
                                             </tr>
                                         <?php

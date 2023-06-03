@@ -34,6 +34,76 @@
             width: 100%;
             height: 400px;
         }
+
+        .dashboard-bottom button {
+            width: 25%;
+            height: 15%;
+            border: none;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .dashboard-bottom button:hover {
+            background-color: var(--secondarycolor) !important;
+        }
+
+        canvas {
+            width: 30% !important;
+            height: 30% !important;
+        }
+
+        .labels {
+            color: var(--accentcolor) !important;
+        }
+
+        /* Style the tab */
+        .tab {
+        overflow: hidden;
+        width: 100%;
+        }
+
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+        background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+        background-color: #ccc;
+        color: var(--primarycolor);
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border-top: none;
+        margin-left: 150px;
+        }
+
+        .tabcontent {
+        animation: fadeEffect 1s; /* Fading effect takes 1 second */
+        }
+
+        /* Go from zero to full opacity */
+        @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+        }
     </style>
 </head>
 
@@ -130,11 +200,48 @@
                                             </div>
                                         </div>
 
+                                        <br>
                                         <h1 class="profile-title">Reports</h1>
+
+                                        <script>
+                                            function openReport(evt, reportName) {
+                                            // Declare all variables
+                                            var i, tabcontent, tablinks;
+
+                                            // Get all elements with class="tabcontent" and hide them
+                                            tabcontent = document.getElementsByClassName("tabcontent");
+                                            for (i = 0; i < tabcontent.length; i++) {
+                                                tabcontent[i].style.display = "none";
+                                            }
+
+                                            // Get all elements with class="tablinks" and remove the class "active"
+                                            tablinks = document.getElementsByClassName("tablinks");
+                                            for (i = 0; i < tablinks.length; i++) {
+                                                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                            }
+
+                                            // Show the current tab, and add an "active" class to the button that opened the tab
+                                            document.getElementById(reportName).style.display = "block";
+                                            evt.currentTarget.className += " active";
+
+                                            // Get the element with id="defaultOpen" and click on it
+                                            // document.getElementById("defaultOpen").click();
+                                        }
+                                        </script>
+
                                         <div class="dashboard-bottom">
-                                                <div>
+                                            <!-- Tab links -->
+                                            <div class="tab">
+                                            <button class="tablinks" onclick="openReport(event, 'Service Providers')" id="defaultOpen">Service Providers</button>
+                                            <button class="tablinks" onclick="openReport(event, 'Tour Plans Vs Service Providers')">Tour Plans Vs Service Providers</button>
+                                            <button class="tablinks" onclick="openReport(event, 'Tours Vs Type of package')">Tours Vs Type of package</button>
+
+                                            <br>
+                                            
+                                            <!-- Tab content -->
+                                            <div id="Service Providers" class="tabcontent">
                                                 <!-- pie graph to show the 3 types of service providers -->
-                                                <h2>Service Providers</h2>
+                                                <!-- <h2>Service Providers</h2> -->
                                                 <br>
                                                     <canvas id="myChart" width="300" height="300">
                                                     </canvas>
@@ -177,11 +284,11 @@
                                                             options: {}
                                                         });
                                                     </script>
-                                                </div>
+                                            </div>
 
-                                                <div>
-                                                <!-- pie graph to show Tour Plans Vs Service Providers -->
-                                                <h2>Tour Plans Vs Service Providers</h2>
+                                            <div id="Tour Plans Vs Service Providers" class="tabcontent">
+                                            <!-- pie graph to show Tour Plans Vs Service Providers -->
+                                            <!-- <h2>Tour Plans Vs Service Providers</h2> -->
                                                 <br>
                                                     <canvas id="TourPlanVsSPChart" width="300" height="300">
                                                     </canvas>
@@ -236,11 +343,11 @@
                                                             options: {}
                                                         });
                                                     </script>
-                                                </div>
+                                            </div>
 
-                                                <div>
-                                                <!-- pie graph to show the Tours Vs type of package -->
-                                                <h2>Tours Vs Type of package</h2>
+                                            <div id="Tours Vs Type of package" class="tabcontent">
+                                            <!-- pie graph to show the Tours Vs type of package -->
+                                            <!-- <h2>Tours Vs Type of package</h2> -->
                                                 <br>
                                                     <canvas id="ToursVsTypeChart" width="300" height="300">
                                                     </canvas>
@@ -294,7 +401,10 @@
                                                             options: {}
                                                         });
                                                     </script>
-                                                </div>
+                                            </div>
+                                            </div>
+
+                                                
                                         </div>
                                     </div>
                                 </div>

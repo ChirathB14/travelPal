@@ -46,8 +46,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             $newImageName .= '.' . $imageExtension;
 
             move_uploaded_file($tmpName, '../../upload/serviceImg/' . $newImageName);
-            $query = "INSERT INTO vehicle_service (vehicle_Id, provider_name, provider_nic, phone_number, email, image,  vehicle_num, vehicle_type, fuel_type, price_per_km, status, service_no, created_by, created_date, isActive) 
-            VALUES(0, '$providerName', '$providerNIC', '$phoneNumber', '$email', '$newImageName', '$vehiNumber', '$vehiType', '$fuelType', '$pricePerKm', '1', '$ref', '$userID', '$createdDate', '1' )";
+            $query = "INSERT INTO vehicle_service (vehicle_Id, provider_name, provider_nic, phone_number, email, address, image,  vehicle_num, vehicle_type, fuel_type, price_per_km, status, service_no, created_by, created_date, isActive) 
+            VALUES(0, '$providerName', '$providerNIC', '$phoneNumber', '$email', '$address', '$newImageName', '$vehiNumber', '$vehiType', '$fuelType', '$pricePerKm', '1', '$ref', '$userID', '$createdDate', '1' )";
             $sql = "UPDATE user SET is_vehicle_provider='1' WHERE user_Id= '$userID'";
 
             mysqli_query($conn, $query);
