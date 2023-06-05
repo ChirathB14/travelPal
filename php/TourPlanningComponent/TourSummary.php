@@ -215,10 +215,10 @@ $title = "Customize Tour | TravelPal";
                                     <div class="label">Reagister Number :</div>
                                     <div class="value"><?php echo $guide_row['reg_number']; ?></div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="label">Experience :</div>
                                     <div class="value"><?php echo $guide_row['experience']; ?></div>
-                                </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="label">Languages :</div>
                                     <div class="value"><?php echo $guide_row['languages']; ?></div>

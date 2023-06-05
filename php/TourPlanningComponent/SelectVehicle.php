@@ -37,7 +37,7 @@
                                     <th class="th-txt">NIC</th>
                                     <th class="th-txt">Number</th>
                                     <th class="th-txt">Email</th>
-                                    <th class="th-txt">Type</th>
+                                    <!-- <th class="th-txt">Type</th> -->
                                     <th class="th-txt">Price Per km</th>
                                     <th class="th-txt">Vehicle Number</th>
                                     <th class="th-txt">Vehicle Type</th>
@@ -50,7 +50,8 @@
                                 require '../DbConfig.php';
                                 $acc_sql = "SELECT v.*
                                 FROM vehicle_service v
-                                JOIN new_plan p ON v.address LIKE CONCAT('%', p.location, '%') LIMIT 1;";
+                                JOIN new_plan p ON v.address LIKE CONCAT('%', p.location, '%') 
+                                LIMIT 1;";
                                 // $acc_sql = "SELECT * FROM vehicle_service WHERE status= '" . 2 . "'";
                                 $acc_result = $conn->query($acc_sql);
                                 if ($acc_result) {
@@ -62,7 +63,7 @@
                                                 <td class="td-txt"><?php echo $acc_row['provider_nic']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['phone_number']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['email']; ?></td>
-                                                <td class="td-txt"><?php echo $acc_row['service_type']; ?></td>
+                                                <!-- <td class="td-txt"><?php echo $acc_row['service_type']; ?></td> -->
                                                 <td class="td-txt"><?php echo $acc_row['price_per_km']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['vehicle_num']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['vehicle_type']; ?></td>

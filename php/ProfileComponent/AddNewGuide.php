@@ -45,8 +45,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             $newImageName .= '.' . $imageExtension;
 
             move_uploaded_file($tmpName, '../../upload/serviceImg/' . $newImageName);
-            $query = "INSERT INTO tour_guide (guide_Id, provider_name, provider_nic, phone_number, email, image,  reg_number, languages, price_per_day, status, service_no, created_by, created_date, isActive) 
-            VALUES(0, '$providerName', '$providerNIC', '$phoneNumber', '$email', '$newImageName', '$regNumber', '$language', '$pricePerDay', '1', '$ref','$userID', '$createdDate', '1' )";
+            $query = "INSERT INTO tour_guide (guide_Id, provider_name, provider_nic, phone_number, email, address, image,  reg_number, languages, price_per_day, status, service_no, created_by, created_date, isActive) 
+            VALUES(0, '$providerName', '$providerNIC', '$phoneNumber', '$email', '$address', '$newImageName', '$regNumber', '$language', '$pricePerDay', '1', '$ref','$userID', '$createdDate', '1' )";
             $sql = "UPDATE user SET is_guide='1' WHERE user_Id= '$userID'";
             mysqli_query($conn, $query);
             mysqli_query($conn, $sql);
