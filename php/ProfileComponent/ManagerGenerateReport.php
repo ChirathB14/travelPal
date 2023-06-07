@@ -68,7 +68,7 @@
     </div>
     <div class="Report-column"style="margin-left:15% ; margin-right:15%; background-color: #D9D9D9;">
     <div class="profile-main-wrapper" >
-                                        <form method="POST" action="report.php" autocomplete="off" enctype="multipart/form-data">
+                                        <form method="POST" action="ManagerGenerateReport.php" autocomplete="off" enctype="multipart/form-data">
                                             <center>
                                             <h2 class="heder-profile" style="color: var(--primarycolor);">Service Details</h2>
                                                 <div class="input-elements">
@@ -78,7 +78,7 @@
                                                             <input type="text" name="user_id">
                                                         </p> 
                                                     </div>
-                                                    <div class="line-wrapper line-txt">
+                                                    <!-- <div class="line-wrapper line-txt">
                                                         <p>
                                                             &nbsp; Name : 
                                                             <input type="text" name="firstName">
@@ -113,7 +113,7 @@
                                                                 <option value="Tour Guide">Tour Guide</option>
                                                             </select>
                                                         </p> 
-                                                    </div>
+                                                    </div> -->
                                                     <div class="line-wrapper line-txt" >
                                                         <p>
                                                             &nbsp; Start Date : 
@@ -139,33 +139,45 @@
 
                                             if (isset($_POST['Reportbtn'])) {
                                                     $userID = $_POST["user_id"];
-                                                    $firstName =$_POST['firstName'];
-                                                    $email = trim($_POST['email']);
-                                                    $nic = trim($_POST['nic']);
-                                                    $phoneNo = trim($_POST['phoneNo']);
-                                                    $serviceType = trim($_POST['serviceType']);
-                                                    $startDate = trim($_POST['startDate']);
-                                                    $endDate = trim($_POST['endDate']);
+                                                    // $firstName =$_POST['firstName'];
+                                                    // $email = trim($_POST['email']);
+                                                    // $nic = trim($_POST['nic']);
+                                                    // $phoneNo = trim($_POST['phoneNo']);
+                                                    // $serviceType = ($_POST['serviceType']);
+                                                    // $startDate = $_POST['startDate'];
+                                                    $date_picker1 = $_POST['startDate'];
+                                                    $date_time1 = DateTime::createFromFormat('Y-m-d', $date_picker1);
+                                                    $startDate = $date_time1->format('Y-m-d');
+
+                                                    $date_picker2 = $_POST['endDate'];
+                                                    $date_time2 = DateTime::createFromFormat('Y-m-d', $date_picker2);
+                                                    $endDate = $date_time2->format('Y-m-d');
+
+
+
+                                                    
 
                 
-                                                        //checking required fields
-                                                        if (empty($userID) || empty($firstName) || empty($email) || empty($nic) || empty($phoneNo) || empty($startDate) || empty($endDate)) {
-                                                            array_push($errors, "All the fields are required");
-                                                        }
+                                                        // //checking required fields
+                                                        // if (empty($userID) || empty($firstName) || empty($email) || empty($nic) || empty($phoneNo) || empty($startDate) || empty($endDate)) {
+                                                        //     array_push($errors, "All the fields are required");
+                                                        // }
 
-                                                        //checking whether the service type is selected
-                                                        if (empty($serviceType)) {
-                                                            array_push($errors, "Service Type is not selected");
-                                                        }
+                                                        // //checking whether the service type is selected
+                                                        // if (empty($serviceType)) {
+                                                        //     array_push($errors, "Service Type is not selected");
+                                                        // }
 
-                                                        //checking maxlength
-                                                        $max_len_fields = array('firstName' => 50, 'email' => 50);
+                                                        // //checking maxlength
+                                                        // $max_len_fields = array('firstName' => 50, 'email' => 50);
 
-                                                        //checking max length fields
-                                                        $errors = array_merge($errors, check_max_length($max_len_fields));
+                                                        // //checking max length fields
+                                                        // $errors = array_merge($errors, check_max_length($max_len_fields));
 
                                                         if (empty($errors)) {
-                                                            $sqltwo = "INSERT INTO report(userID, startDate, endDate) VALUES ($userID, $startDate, $endDate)";
+                                                            $sqltwo = "INSERT INTO report(userID, startDate, endDate) VALUES ($userID, '$startDate', '$endDate)";
+                                                            echo($sqltwo);
+                                                            die();
                                                         }
                                                             if ($conn->query($sqltwo) === TRUE) {
                                                                 header('location: report.php');
@@ -173,7 +185,7 @@
                                                                 echo 'newPlanCreated()';
                                                                 echo '</script>';
                                                             } else {
-                                                                header('Location: ManagerGenerateReport.php?failed=yes');
+                                                                // header('Location: ManagerGenerateReport.php?failed=yes');
                                                                 echo '<script language = "javascript">';
                                                                 echo 'alert("Unsuccessfull :( ")';
                                                                 echo '</script>';
