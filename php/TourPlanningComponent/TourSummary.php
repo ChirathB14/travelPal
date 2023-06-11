@@ -5,16 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
 </head>
+
+
 
 <?php
 $title = "Customize Tour | TravelPal";
 ?>
 
 <body>
+
+    <script type="text/javascript">
+     $(document).ready(function hello(){
+        swal("Hello");
+     });
+    </script>
     <table>
         <tr VALIGN=TOP>
             <?php include '../Common/header.php'; ?>
@@ -76,7 +87,7 @@ $title = "Customize Tour | TravelPal";
                             <div class="title">Duration</div>
                             <div class="row">
                                 <div class="label">Start Date :</div>
-                                <div class="value"><?php echo $original_date;?></div>
+                                <div class="value"><?php echo $original_date; ?></div>
                             </div>
                             <div class="row">
                                 <div class="label">End Date :</div>
@@ -251,9 +262,9 @@ $title = "Customize Tour | TravelPal";
 
                         </div>
                         <div style="width:87%;text-align:right;margin-top:20px;margin-bottom:20px">
+                            <button type="button" onclick="openPopup_confirmation()" style="width: 300px; background-color:red;">Cancel Tour</button>
                             <button onclick="window.location='./SubComponent/UpdateUserTours.php?common=<?php echo $_GET['common'] ?>&acc=<?php echo $_GET['acc'] ?>&veh=<?php echo $_GET['veh'] ?>&guide=<?php echo $_GET['guide'] ?>&price=<?php echo $sum ?>'" type="submit" name="next" value="next" class="nxt_btn" style="width: 300px;">Procced To Payment</button>
                         </div>
-
             <?php
                     }
                 } else {
@@ -266,7 +277,34 @@ $title = "Customize Tour | TravelPal";
         </tr>
     </table>
 
+    <div class="popup confirmation" id="popup_confirmation">
+            <h2>Cancel This TOUR.</h2>
+            <h2>Are You Sure ?</h2>
+            <div style="display: flex;">
+                <div style="width:50%; margin:10px;" ><button type="button" onclick="closePopup_confirmation()" id="cancle_confirmation">CANCLE</button></div>
+                <div style="width:50%; margin:10px;"><button type="button" id="ok_confirmation">OK</button></div>
+            </div>
+        </div>
+
+        <script> 
+        function openPopup_confirmation(){
+           const popup_confirmation = document.getElementById("popup_confirmation");
+        popup_confirmation.classList.add("open-popup");
+        window.scrollTo(0, 0);
+        const ok_btn = document.getElementById("ok_confirmation");
+        ok_btn.onclick = ()=> {
+            location.href='pharmacy-delete-rejected?id='+order_id; //delete karana thana form
+        }
+    }
+    function closePopup_confirmation(){
+        popup_confirmation.classList.remove("open-popup");
+    }
+
+    </script>
+
 </body>
+
+
 
 <?php require_once("../Common/footer.php"); ?>
 
