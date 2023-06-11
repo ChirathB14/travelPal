@@ -6,29 +6,31 @@
 }
 
 .home img {
-    width: 98.5vw;
-    height: 82vh;
+    width: 100vw;
+    height: auto;
+    opacity: 0.8;
 }
 
 .welcome {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 86px;
-    left: 40px;
+    top: 200px;
+    right: 80px;
 }
 
 .welcome h3 {
-    text-align: left;
     font-size: 18px;
+    text-align: right;
+    margin-right: 20px;
 }
 
 .welcome h1 {
-    text-align: left;
     font-weight: 900;
     font-size: 60px;
     line-height: 90px;
     letter-spacing: 0.15em;
+    text-align: right;
 }
 
 .welcome mark {
@@ -37,9 +39,10 @@
 }
 
 .welcome h5 {
-    text-align: left;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: none;
+    text-align: right;
+    margin-right: 20px;
 }
 
 .selection {
