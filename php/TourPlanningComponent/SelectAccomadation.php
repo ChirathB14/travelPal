@@ -51,6 +51,7 @@
                                 JOIN new_plan p ON a.address LIKE CONCAT('%', p.location, '%') LIMIT 1;";
                                 // $acc_sql = "SELECT * FROM accomadation_service WHERE status= '" . 2 . "'";
                                 $acc_result = $conn->query($acc_sql);
+
                                 if ($acc_result) {
                                     if ($acc_result->num_rows > 0) {
                                         while ($acc_row = $acc_result->fetch_assoc()) { ?>

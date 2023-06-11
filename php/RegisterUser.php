@@ -8,18 +8,22 @@
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/registration.css">
+
     <script type="text/javascript" src="../js/register.js"></script>
     <script type="text/javascript" src="../js/checkAccess.js"></script>
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
-
-    <title>Travel Pal</title>
 </head>
+
+<?php
+    $title = "TravePal";
+    require_once("Common/header.php");
+?>
 
 <body class="registration" onload="loginRegisterAccess()">
     <div class="register">
         <form action="RegisterUser.php" method="post" onsubmit="return cheakpassword()">
-            <button class="back-button" onclick="history.back()">
-                < Back</button>
+            <!-- <button class="back-button" onclick="history.back()">
+                < Back</button> -->
                     <h1 id="heder-login">Create an Account</h1>
                     <div class="input-elements">
                         <input type="text" name="fname" id="fname" placeholder=" FIRST NAME" required oninvalid="this.setCustomValidity('Enter first name')" oninput="this.setCustomValidity('')">
@@ -92,5 +96,12 @@
     ?>
 
 </body>
+
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>
