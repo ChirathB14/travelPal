@@ -21,7 +21,7 @@
 <body onload="checkAccess(true)">
 
     <div class="home">
-        <img src="./images/home.png" alt="home-bg">
+        <img src="./images/home.jpg" alt="home-bg">
         <div class="welcome">
             <h3>&nbsp; welcome to travelPal</h3>
             <h1>plan your next<br> trip with <br> <mark> travelpal</mark></h1>

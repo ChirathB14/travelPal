@@ -83,7 +83,7 @@ $title = "Customize Tour | TravelPal";
                                 <div class="value"><?php echo $new_date ?></div>
                             </div>
                             <div class="row">
-                                <div class="label">No Of Dates :</div>
+                                <div class="label">No Of Days :</div>
                                 <div class="value"><?php echo $newPlan_row['no_of_day']; ?></div>
                             </div>
 
