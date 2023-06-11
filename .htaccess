@@ -1,4 +1,4 @@
-# RewriteEngine 
+# RewriteEngine On
 
 # RewriteRule ^users$ users.php [NC,L]
 # RewriteRule ^modify-user/(\d+)$ modify-user.php?user_id=$1 [NC,L]
