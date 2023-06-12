@@ -20,7 +20,7 @@ include '../Common/header.php';
 <!-- Tour plan page content -->
 <div class="page-content">
     <div class="tour-plan-top-container">
-        <img src="../../images/tourPlan.png" alt="Tour Plan">
+        <img src="../../images/tourPlan.jpg" alt="Tour Plan"style="opacity: 0.5; width:100%; height:80vh;">
         <div class="Title-Tourplan">
             <h1>Welcome to </h1> <img src="../../images/logo.png" alt="TravelPal">
         </div>
