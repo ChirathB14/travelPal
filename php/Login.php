@@ -8,11 +8,15 @@
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/login.css">
+
     <script type="text/javascript" src="../js/checkAccess.js"></script>
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
-
-    <title>Travel Pal | Login</title>
 </head>
+
+<?php
+    $title = "TravePal";
+    require_once("Common/header.php");
+?>
 
 <body onload="loginRegisterAccess()">
 
@@ -80,5 +84,16 @@
     </div>
     </div>
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>

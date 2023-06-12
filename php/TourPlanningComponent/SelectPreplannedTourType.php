@@ -14,7 +14,19 @@
     $title = "PrePlanned Tour | TravePal";
 ?>
 
-<body>
+<body onload="checkUserAccess()">
+    <?php
+    require '../DbConfig.php';
+    if (isset($_COOKIE['user'])) {
+
+        $userID = json_decode($_COOKIE['user'])->user_Id;
+        $sql = "SELECT first_name, last_name, email, address FROM user WHERE user_Id= '" . $userID . "'";
+        $result = $conn->query($sql);
+
+        if ($result) {
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+    ?>
     <table>
         <tr VALIGN=TOP>
             <?php include '../Common/header.php'; ?>
@@ -63,6 +75,20 @@
             </div>
         </tr>
     </table>
+    
+    <?php
+                }
+            }
+        } else {
+            echo "Error in " . $sql . "
+                    " . $conn->$error;
+        }
+
+        $conn->close();
+    } else {
+        header('location:../../index.php');
+    }
+    ?>
 
 </body>
  

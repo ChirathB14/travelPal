@@ -54,7 +54,16 @@
                                 LIMIT 1;";
                                 // $acc_sql = "SELECT * FROM vehicle_service WHERE status= '" . 2 . "'";
                                 $acc_result = $conn->query($acc_sql);
-                                if ($acc_result) {
+
+                                //from vehicle providers display according to the no of tourists . check like this, if it is a car no of tourists should be less than 4 and if it is a van no of tourists should be less than 8
+                                $veh_sql = "SELECT * 
+                                FROM vehicle_service v
+                                JOIN user_tours u ON 
+                                u.no_of_tourist <= 4 AND v.vehicle_type = 'Car'
+                                OR u.no_of_tourist <= 8 AND v.vehicle_type = 'Van' LIMIT 1;";
+                                $veh_result = $conn->query($veh_sql);
+
+                                if ($acc_result && $veh_result) {
                                     if ($acc_result->num_rows > 0) {
                                         while ($acc_row = $acc_result->fetch_assoc()) { ?>
                                             <tr onclick="window.location='./SelectGuide.php?common=<?php echo $_GET['common'] ?>&acc=<?php echo $_GET['acc'] ?>&veh=<?php echo $acc_row['vehicle_Id'] ?>'" class="table-row">
