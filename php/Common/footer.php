@@ -6,7 +6,7 @@
     || $title == "Service Details" || $title == "View Tours"|| $title =="View My Tours - TravePal" || $title = "Payment | TravelPal" ||$title = "Payment Successfull" || $title == "Register Manager - TravePal" )
     
     {
-    echo" 
+    echo " 
     <hr>
     <div class=\"footer\">
             <div class=\"foot-left\">
@@ -49,7 +49,7 @@
         <?php require_once(\"./inc/footer.php\");?>
         <hr>
         <div class=\"footer-bottom\">
-                © <?php echo date(\"Y\"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+            <?php echo date(\"Y\"); ?> © TRAVEL PAL - ALL RIGHTS RESERVED
         </div>
     </div>
     </body>
@@ -59,7 +59,7 @@
         <footer>
         <hr>
         <div class=\"footer-bottom\">
-                © <?php echo date(\"Y\"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+                <?php echo date(\"Y\"); ?> © TRAVEL PAL - ALL RIGHTS RESERVED
         </div>
         </footer>
     </body>
