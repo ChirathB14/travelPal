@@ -80,17 +80,18 @@
                                                     <thead>
                                                         <tr class="table-header">
                                                             <th style="min-width: 150px;">Tour Id</th>
+                                                            <th style="min-width: 150px;">Created Date</th>
                                                             <th style="min-width: 150px;">Start Date</th>
                                                             <th style="min-width: 150px;">No Of People</th>
                                                             <th style="min-width: 150px;">Status</th>
                                                             <th style="min-width: 150px;">View Detail</th>
-                                                            <!-- <th style="min-width: 150px;">Action</th> -->
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php while ($acc_row = $acc_result->fetch_assoc()) { ?>
                                                             <tr style="background-color: #FFFFFFCC;">
                                                                 <td class="td-txt"><?php echo $acc_row['user_tours_id']; ?></td>
+                                                                <td class="td-txt"><?php echo $acc_row['created_date']; ?></td>
                                                                 <td class="td-txt"><?php $date = DateTime::createFromFormat('Y-m-d H:i:s.u', $acc_row['start_date']); // create a DateTime object from the timestamp
                                                                                     $formatted_date = $date->format('Y-m-d'); // format the DateTime object
                                                                                     echo $formatted_date; ?></td>
@@ -105,22 +106,14 @@
                                                                     ?> </td>
 
                                                                     <td>
-                                                                    <center><button type="submit" value="editBtn" style="background-color: var(--accentcolor); width:20px; height:20px;"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
+                                                                    <center>
+                                                                        <a href="ViewTourDetails.php?tour_id=<?php echo $acc_row['user_tours_id']; ?>">
+                                                                            <button type="submit" value="editBtn" style="background-color: var(--accentcolor); width:20px; height:20px;">
+                                                                                <img src="../../images/view.png" alt="view" width="16" height="16">
+                                                                            </button>
+                                                                        </a>
+                                                                    </center>
                                                                     </td>
-
-                                                                <!-- <td class="td-txt">
-                                                                    <a href="<?php
-                                                                                if ($acc_row['status'] == 2) { ?>
-                                                                       ../TourPlanningComponent/Payment.php?common=<?php echo $acc_row['common_id']; ?>
-                                                                    <?php } else if ($acc_row['status'] == 1) { ?>
-                                                                        ../TourPlanningComponent/SelectAccomadation.php?common=<?php echo $acc_row['common_id']; ?>
-                                                                    <?php } else { ?>
-                                                                        ../TourPlanningComponent/AllTourSummary.php?common=<?php echo $acc_row['common_id'] ?>
-                                                                   <?php }
-                                                                    ?>">
-                                                                        <center><button type="submit" value="editBtn" style="background-color: var(--accentcolor); width:20px; height:20px;"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
-                                                                    </a>
-                                                                </td> -->
                                                             </tr>
                                                         <?php } ?>
                                                     </tbody>
