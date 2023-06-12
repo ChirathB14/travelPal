@@ -1,5 +1,6 @@
 <?php
     $year = date("Y");
+    
     if($title == "Contact us" || $title == "Tour plan | TravePal" || $title == "Home - TravePal" || $title == "Blogs | TravePal" 
     || $title == "Create Blog - TravePal" || $title == "PrePlanned Tour | TravePal" || $title == "Blogs_View more | TravePal" || $title == "Pre-made tour plans -TravelPal"
     || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" || $title == "Customize Tour | TravelPal" 
