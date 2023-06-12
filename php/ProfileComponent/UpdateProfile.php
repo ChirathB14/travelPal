@@ -11,6 +11,9 @@
 
     <script type="text/javascript" src="../../js/profile.js"></script>
 
+    <script type="text/javascript" src="../../js/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-3.6.4.min.js"></script>
+
     <style>
         .update {
             display: flex;
@@ -50,7 +53,7 @@
 
 
 <?php
-    $title = "Update Profile - TravePal";
+$title = "Update Profile - TravePal";
 ?>
 
 <body onload="checkUserAccess()">
@@ -70,30 +73,30 @@
                 while ($row = $result->fetch_assoc()) {
     ?>
 
-<div class="header">
-            <div class="navigationbar">
-                <div class="nav-Logo">
-                    <a href="/travelPal/index.php">
-                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
-                    </a>
-                </div>
-                <div class="menu">
-                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
-                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
-                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
-                </div>            
-            </div>
-            <div class="navigationbarfoot">
-                <hr>  
-            </div>    
-</div>
+                    <div class="header">
+                        <div class="navigationbar">
+                            <div class="nav-Logo">
+                                <a href="/travelPal/index.php">
+                                    <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                                </a>
+                            </div>
+                            <div class="menu">
+                                <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                                <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                            </div>
+                        </div>
+                        <div class="navigationbarfoot">
+                            <hr>
+                        </div>
+                    </div>
 
                     <table style="width:100%; height: 100%; overflow-y: hidden;">
                         <tr VALIGN=TOP>
-                        <?php include './subComponent/VerticleHeader.php'; ?>
+                            <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile">
                                 <div class="main-wrapper" style="margin-top: 45px;">
                                     <h2 class="heder-profile">Update Profile</h2>
@@ -156,9 +159,11 @@
                                                     echo 'alert("Unsuccessfull :( ")';
                                                     echo '</script>';
                                                 }
-                                                $conn->close();
+                                                // $conn->close();
                                             }
                                             ?>
+
+
                                         </form>
                                     </div>
                                 </div>
@@ -180,12 +185,12 @@
     }
     ?>
 </body>
-    
+
 <footer>
-        <hr>
-        <div class="footer-bottom">
-                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
-        </div>
+    <hr>
+    <div class="footer-bottom">
+        © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+    </div>
 </footer>
 
 </html>

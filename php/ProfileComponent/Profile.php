@@ -11,10 +11,12 @@
 
     <script type="text/javascript" src="../../js/profile.js"></script>
 
+    <script type="text/javascript" src="../../js/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-3.6.4.min.js"></script>
 </head>
 
 <?php
-    $title = "Profile - TravePal";
+$title = "Profile - TravePal";
 ?>
 
 <body onload="checkUserAccess()">
@@ -25,7 +27,6 @@
 
         $userID = json_decode($_COOKIE['user'])->user_Id;
 
-
         $sql = "SELECT first_name, last_name, email, address FROM user WHERE user_Id= '" . $userID . "'";
         $result = $conn->query($sql);
         // echo $conn->query($sql);
@@ -35,26 +36,26 @@
                 while ($row = $result->fetch_assoc()) {
     ?>
 
-<div class="header">
-            <div class="navigationbar">
-                <div class="nav-Logo">
-                    <a href="/travelPal/index.php">
-                        <img src="/travelPal/images/logo.png" alt="TRAVELPal">
-                    </a>
-                </div>
-                <div class="menu">
-                    <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
-                    <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
-                    <button class="nav"onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
-                    <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
-                </div>            
-            </div>
-            <div class="navigationbarfoot">
-                <hr>  
-            </div>    
-        </div>
+                    <div class="header">
+                        <div class="navigationbar">
+                            <div class="nav-Logo">
+                                <a href="/travelPal/index.php">
+                                    <img src="/travelPal/images/logo.png" alt="TRAVELPal">
+                                </a>
+                            </div>
+                            <div class="menu">
+                                <button class="nav" onclick="location.href = '/travelPal/index.php';">HOME</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';">TOUR PLAN</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ContactUS.php';">CONTACT US</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/Blog/ViewBlogs.php';">BLOGS</button>
+                                <button class="nav" onclick="location.href = '/travelPal/php/ProfileComponent/Profile.php';">PROFILE</button>
+                                <button class="logout-btn" id="logout" onclick="logOut()"><i class="fa fa-user fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</button>
+                            </div>
+                        </div>
+                        <div class="navigationbarfoot">
+                            <hr>
+                        </div>
+                    </div>
 
                     <table style="width:100%">
                         <tr VALIGN=TOP>
@@ -79,7 +80,7 @@
                                             }
                                             $conn->close();
                                         }
-                                        ?> 
+                                        ?>
                                         <div class="line-wrapper">
                                             <p class="line-txt">
                                                 First Name : <?php echo $row['first_name']; ?>
@@ -124,9 +125,10 @@
 </body>
 
 <footer>
-        <hr>
-        <div class="footer-bottom">
-                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
-        </div>
+    <hr>
+    <div class="footer-bottom">
+        <?php echo date("Y"); ?> © TRAVEL PAL - ALL RIGHTS RESERVED
+    </div>
 </footer>
+
 </html>
