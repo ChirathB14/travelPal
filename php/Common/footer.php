@@ -1,4 +1,6 @@
 <?php
+    $year = date("Y");
+    
     if($title == "Contact us" || $title == "Tour plan | TravePal" || $title == "Home - TravePal" || $title == "Blogs | TravePal" 
     || $title == "Create Blog - TravePal" || $title == "PrePlanned Tour | TravePal" || $title == "Blogs_View more | TravePal" || $title == "Pre-made tour plans -TravelPal"
     || $title == "Add Service Details" || $title == "Add Services" || $title == "Update Password" || $title == "Customize Tour | TravelPal" 
@@ -6,7 +8,8 @@
     || $title == "Service Details" || $title == "View Tours"|| $title =="View My Tours - TravePal" || $title = "Payment | TravelPal" ||$title = "Payment Successfull" || $title == "Register Manager - TravePal" )
     
     {
-    echo" 
+    echo
+    " 
     <hr>
     <div class=\"footer\">
             <div class=\"foot-left\">
@@ -49,7 +52,7 @@
         <?php require_once(\"./inc/footer.php\");?>
         <hr>
         <div class=\"footer-bottom\">
-                © <?php echo date(\"Y\"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+            ". $year. " © TRAVEL PAL - ALL RIGHTS RESERVED
         </div>
     </div>
     </body>
@@ -59,7 +62,7 @@
         <footer>
         <hr>
         <div class=\"footer-bottom\">
-                © <?php echo date(\"Y\"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+            " . $year . " © TRAVEL PAL - ALL RIGHTS RESERVED
         </div>
         </footer>
     </body>
