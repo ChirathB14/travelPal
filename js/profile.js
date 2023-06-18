@@ -1,8 +1,28 @@
 function logOut() {
-  if (confirm("Are You Sure,\nDo You Want To Logout?")) {
-    delete_cookie("user");
-    window.location = "/travelPal/index.php";
-  }
+  // if (confirm("Are You Sure,\nDo You Want To Logout?")) {
+  //   delete_cookie("user");
+  //   window.location = "/travelPal/index.php";
+  // }
+
+  swal({
+    title: "Do You Want To Logout?",
+    icon: "warning",
+    buttons: ["No, cancel it!", "Yes, I am sure!"],
+    dangerMode: true,
+  }).then(function (isConfirm) {
+    if (isConfirm) {
+      swal({
+        title: "Success!",
+        text: "You successfully logged out!",
+        icon: "success",
+      }).then(function () {
+        delete_cookie("user");
+        window.location = "/travelPal/index.php";
+      });
+    } else {
+      swal("Log out cancelled!", "error");
+    }
+  });
 }
 
 function onResetSuccess() {
@@ -207,25 +227,25 @@ function onUpdateSuccess() {
   }).then(function () {
     window.location = "./Profile.php";
   });
-    
-//  swal({
-//    title: "User Details updated!",
-//    text: "User details updated successfully!!",
-//    icon: "success",
-//    buttons: ["No, cancel it!", "Yes, I am sure!"],
-//  }).then(function (isConfirm) {
-//    if (isConfirm) {
-//      swal({
-//        title: "Shortlisted!",
-//        text: "Candidates are successfully shortlisted!",
-//        icon: "success",
-//      }).then(function () {
-//        navigateToPage("./Profile.php");
-//      });
-//    } else {
-//      swal("Cancelled", "Your imaginary file is safe :)", "error");
-//    }
-//  });
+
+  //  swal({
+  //    title: "User Details updated!",
+  //    text: "User details updated successfully!!",
+  //    icon: "success",
+  //    buttons: ["No, cancel it!", "Yes, I am sure!"],
+  //  }).then(function (isConfirm) {
+  //    if (isConfirm) {
+  //      swal({
+  //        title: "Shortlisted!",
+  //        text: "Candidates are successfully shortlisted!",
+  //        icon: "success",
+  //      }).then(function () {
+  //        navigateToPage("./Profile.php");
+  //      });
+  //    } else {
+  //      swal("Cancelled", "Your imaginary file is safe :)", "error");
+  //    }
+  //  });
 }
 
 function newPlanCreated() {

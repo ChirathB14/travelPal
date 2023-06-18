@@ -13,8 +13,7 @@ if (isset($_POST["submit"])) {
     echo
     "
     <script>
-    alert('Successfully Added');
-    document.location.replace('./ContactUS.php');
+    contactSubmitSuccess();
     </script>
     ";
     $conn->close();
@@ -34,6 +33,7 @@ if (isset($_POST["submit"])) {
     <link rel="stylesheet" href="../../css/header.css">
     <!-- <script src="https://kit.fontawesome.com/c82cd88752.js" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="../../js/checkAccess.js"></script>
+    <script type="text/javascript" src="../../js/alerts.js"></script>
     <style>
         .contact-dev {
             width: 80%;

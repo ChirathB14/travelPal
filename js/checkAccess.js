@@ -9,33 +9,30 @@ function checkAccess(isIndex) {
   // x.style.display = 'none'
   // j.style.display = 'none'
 
-  let user = getCookie('user')
+  let user = getCookie("user");
   if (user !== undefined && user !== null && user.length > 0) {
-    profile.style.display = 'display'
-    login.style.display = 'display'
-    register.style.display = 'none'
-    logout.style.display = 'none'
-    
-    // checkUserType()
-  }
-  else {
-    profile.style.display = 'none'
-    login.style.display = 'none'
-    register.style.display = 'display'
-    logout.style.display = 'display'
-    if (!isIndex) {
-      alert("Please Login To Continue")
-      window.location = "../index.php"
+    profile.style.display = "display";
+    login.style.display = "display";
+    register.style.display = "none";
+    logout.style.display = "none";
 
+    // checkUserType()
+  } else {
+    profile.style.display = "none";
+    login.style.display = "none";
+    register.style.display = "display";
+    logout.style.display = "display";
+    if (!isIndex) {
+      alert("Please Login To Continue");
+      window.location = "../index.php";
     }
   }
-
 }
 
 function loginRegisterAccess() {
-  let user = getCookie('user')
-  if(user){
-    window.location = "../../index.php"
+  let user = getCookie("user");
+  if (user) {
+    window.location = "../../index.php";
   }
 }
 
@@ -44,43 +41,60 @@ function checkTypeAccess() {
   var y = document.getElementById("login");
   var z = document.getElementById("portal");
 
-  let user = getCookie('user')
+  let user = getCookie("user");
   if (user !== undefined && user !== null && user.length > 0 && JSON.parse(user).user_type === "2") {
-    y.style.display = 'display'
-    x.style.display = 'none'
-    z.style.display = 'display'
+    y.style.display = "display";
+    x.style.display = "none";
+    z.style.display = "display";
     // checkUserType()
+  } else {
+    y.style.display = "none";
+    x.style.display = "display";
+    z.style.display = "none";
+    window.location = "../../index.php";
   }
-  else {
-    y.style.display = 'none'
-    x.style.display = 'display'
-    z.style.display = 'none'
-    window.location = '../../index.php'
-  }
-
 }
 
 function logOut() {
-    var txt;
-    if (confirm("Are You Sure,\nDo You Want To Logout?")) {
-        delete_cookie('user')
-        window.location.reload()
+  // if (confirm("Are You Sure,\nDo You Want To Logout?")) {
+  //   delete_cookie("user");
+  //   window.location = "/travelPal/index.php";
+  // }
+
+  swal({
+    title: "Do You Want To Logout?",
+    icon: "warning",
+    buttons: ["No, cancel it!", "Yes, I am sure!"],
+    dangerMode: true,
+  }).then(function (isConfirm) {
+    if (isConfirm) {
+      swal({
+        title: "Success!",
+        text: "You successfully logged out!",
+        icon: "success",
+      }).then(function () {
+        delete_cookie("user");
+        window.location = "/travelPal/index.php";
+      });
+    } else {
+      swal("Log out cancelled!", "error");
     }
+  });
 }
 
 function delete_cookie(name) {
-    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 UTC;Path=/;';
+  document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;Path=/;";
 }
 
 function onDeleteSuccess() {
-    alert("Deleted Success")
-    delete_cookie('user')
-    window.location = "../../index.php"
+  alert("Deleted Success");
+  delete_cookie("user");
+  window.location = "../../index.php";
 }
 
 function onItemDelete() {
-    alert("Deleted Success")
-    window.location.reload()
+  alert("Deleted Success");
+  window.location.reload();
 }
 
 function getCookie(name) {

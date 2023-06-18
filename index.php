@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="./css/main.css">
 
     <script type="text/javascript" src="./js/checkAccess.js"></script>
+    <script type="text/javascript" src="../../js/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-3.6.4.min.js"></script>
 
 </head>
 
 <?php
-    $title = "Home - TravePal";
-    require_once("php/Common/header.php");
+$title = "Home - TravePal";
+require_once("php/Common/header.php");
 ?>
 
 <body onload="checkAccess(true)">
@@ -32,41 +34,41 @@
     <div class="selection">
         <div class="btn-left">
             <h2>Are you a tourist ?</h2>
-            <p>Join with us today to make your dreams true. We offer you preplanned tour 
-                plans with several packages which ease planning a tour and make the moments 
-                precious. Customize tours with us, we help you to acheive your destination and make 
+            <p>Join with us today to make your dreams true. We offer you preplanned tour
+                plans with several packages which ease planning a tour and make the moments
+                precious. Customize tours with us, we help you to acheive your destination and make
                 golden memories in your life. <br></p>
-                <a href="/travelPal/php/RegisterUser.php">
-                    <button class="Register">Register Now</button>
-                </a>
+            <a href="/travelPal/php/RegisterUser.php">
+                <button class="Register">Register Now</button>
+            </a>
         </div>
         <div class="btn-right">
             <h2>Are you a service provider ?</h2>
-            <p>Do your business need a highest a rank in Sri Lankan Tourism industry? Do you like 
-                to levelup your business? Grab this opportunity now. You can be an Accommodation 
-                provider, Vehicle provider or you might be a tour guide. We are with you to promote 
+            <p>Do your business need a highest a rank in Sri Lankan Tourism industry? Do you like
+                to levelup your business? Grab this opportunity now. You can be an Accommodation
+                provider, Vehicle provider or you might be a tour guide. We are with you to promote
                 your business. <br></p>
-                <a href="/travelPal/php/RegisterUser.php">
-                    <button class="Register">Register Now</button>
-                </a>
+            <a href="/travelPal/php/RegisterUser.php">
+                <button class="Register">Register Now</button>
+            </a>
         </div>
     </div>
     <h1><mark> travel pal </mark> offers You...</h1>
     <div class="offers">
-            <div class="left">
-                <h2>Get a personalized trip</h2>
-                <p>A full day by day itinerary based on your preferences</p>
-            </div>
-            <div class="left">
-                <h2>Customize it</h2>
-                <br>
-                <p>Refine your trip. We'll find the best routes and schedules</p>
-            </div>
-            <div class="left">
-                <h2>Book & manage it</h2>
-                <br>
-                <p>Choose from the best hotels. Everything in one place.</p>
-            </div>
+        <div class="left">
+            <h2>Get a personalized trip</h2>
+            <p>A full day by day itinerary based on your preferences</p>
+        </div>
+        <div class="left">
+            <h2>Customize it</h2>
+            <br>
+            <p>Refine your trip. We'll find the best routes and schedules</p>
+        </div>
+        <div class="left">
+            <h2>Book & manage it</h2>
+            <br>
+            <p>Choose from the best hotels. Everything in one place.</p>
+        </div>
     </div>
     <div class="popular">
         <h1>popular</h1>
@@ -116,5 +118,6 @@
     <br>
 
     <!-- footer -->
-    <?php require_once("php/Common/footer.php");?>
+    <?php require_once("php/Common/footer.php"); ?>
+
 </html>

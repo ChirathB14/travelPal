@@ -16,7 +16,8 @@
     <script src="https://kit.fontawesome.com/c82cd88752.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../js/checkAccess.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="../../js/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-3.6.4.min.js"></script>
 
     <title>Travel Pal</title>
 </head>
