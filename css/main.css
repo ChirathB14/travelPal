@@ -276,6 +276,12 @@ hr {
 }
 
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
-}
+    background-color: #0a0433;
+    color: white;
+    text-align: center;
+  }
 

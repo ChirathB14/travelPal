@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../../js/profile.js"></script>
 
 </head>
@@ -62,7 +64,7 @@
 
                             <td class="td-profile">
                                 <div class="main-wrapper">
-                                    <h2 class="heder-profile">Profile</h2>
+                                    <h1 class="heder-profile">Profile</h1>
                                     <div class="profile-main-wrapper">
                                         <?php
                                         if (isset($_POST['deleteBtn'])) {
@@ -82,7 +84,8 @@
                                         ?> 
                                         <div class="line-wrapper">
                                             <p class="line-txt">
-                                                First Name : <?php echo $row['first_name']; ?>
+                                                <label for="">First Name : </label>
+                                                <?php echo $row['first_name']; ?>
                                             </p>
                                         </div>
                                         <div class="line-wrapper">

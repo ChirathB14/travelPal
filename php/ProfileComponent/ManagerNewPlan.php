@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
 </head>
@@ -68,25 +71,16 @@
                             <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile" style="text-align:left">
                                 <div class="main-wrapper" style="margin-top:10px;">
-                                    <table style="width: 100%;">
-                                        <tr style="width: 100%;">
-                                            <td style="width: 50%;">
+                                    <div>
+                                        <a href="./ManagerAddNewDestination.php">
+                                            <button class="add-service-btn" style="width:280px; margin: 10px;">Add New Destination</button>
+                                        </a>
+                                    </div>
 
-                                            </td>
-                                            <td style="width: 50%;text-align: right;">
-                                                <div>
-                                                    <a href="./ManagerAddNewDestination.php">
-                                                        <button class="add-service-btn" style="width:280px; padding: 0px; margin: 10px;">Add New Destination</button>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    <div class="profile-main-wrapper" style="width: 85%; margin: 0 15% 0 15%;">
+                                    <div class="profile-main-wrapper" style="width: 85%; margin: 0 5% 0 5%;">
                                         <form method="POST" action="ManagerNewPlan.php" autocomplete="off" enctype="multipart/form-data">
                                             <center>
-                                            <h2 class="heder-profile">Create New Plan</h2>
+                                            <h1>Create New Plan</h1>
                                                 <div class="input-elements">
                                                     <select id="season" name="season" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
                                                     background-color: var(--accentcolor); opacity: 0.75; height: 40px;
