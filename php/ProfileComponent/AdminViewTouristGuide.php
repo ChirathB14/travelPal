@@ -73,7 +73,7 @@
                                         </div>
                                         <table>
                                             <thead>
-                                                <tr class="table-header" style="background-color: var(--primarycolor); border:1px solid rgb(255, 255, 255);">
+                                                <tr class="table-header" style="background-color: var(--accentcolor); opacity: 0.9; border-bottom:1px solid #D9D9D9;">
                                                     <th style="min-width: 200px;">Name</th>
                                                     <th style="min-width: 200px;">Email</th>
                                                     <th style="min-width: 200px;">Address</th>
@@ -100,7 +100,7 @@
                                                                 </td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewTouristGuide.php">
-                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
+                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.jpg" alt="delete" width="16" height="16"></button> </center>
                                                                     </a>
 
                                                                 </td>

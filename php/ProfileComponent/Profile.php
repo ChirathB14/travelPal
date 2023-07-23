@@ -63,10 +63,14 @@ $title = "Profile - TravePal";
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
 
-                            <td class="td-profile">
+                            <td class="td-profile" style="width:100%">
                                 <div class="main-wrapper">
                                     <h1 class="heder-profile">Profile</h1>
                                     <div class="profile-main-wrapper">
+                                        <div>
+                                            <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="120" height="120">
+                                            <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
+                                        </div>
                                         <?php
                                         if (isset($_POST['deleteBtn'])) {
                                             $sql = "DELETE FROM user WHERE user_Id= '$userID'";
@@ -82,29 +86,25 @@ $title = "Profile - TravePal";
                                             }
                                             $conn->close();
                                         }
-                                        ?>
+                                        ?> 
                                         <div class="line-wrapper">
                                             <p class="line-txt">
                                                 <label for="">First Name : </label>
-                                                <?php echo $row['first_name']; ?>
-                                            </p>
+                                                <input type="text" value="<?php echo $row['first_name']; ?>" disabled>
+                                            </div>
+                                            <div class="line-wrapper">
+                                                <label for="">Last Name : </label>
+                                                <input type="text" value="<?php echo $row['last_name']; ?>" disabled>
+                                            </div>
+                                            <div class="line-wrapper">
+                                                <label for="">Email : </label>
+                                                <input type="text" value="<?php echo $row['email']; ?>" disabled>
+                                            </div>
+                                            <div class="line-wrapper">
+                                                <label for="">Address : </label>
+                                                <input type="text" value="<?php echo $row['address']; ?>" disabled>
+                                            </div>
                                         </div>
-                                        <div class="line-wrapper">
-                                            <p class="line-txt">
-                                                Last Name : <?php echo $row['last_name']; ?>
-                                            </p>
-                                        </div>
-                                        <div class="line-wrapper">
-                                            <p class="line-txt">
-                                                Email : <?php echo $row['email']; ?>
-                                            </p>
-                                        </div>
-                                        <div class="line-wrapper">
-                                            <p class="line-txt">
-                                                Address : <?php echo $row['address']; ?>
-                                            </p>
-                                        </div>
-
 
                                     </div>
                                 </div>
