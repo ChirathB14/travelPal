@@ -9,10 +9,23 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--primarycolor);
+            margin: 10px;
+        }
+
+        .container-profile {
+            margin-left: 40px;
+            width: 95%;
+        }
 
         .dashboard-top {
             display: flex;
@@ -29,7 +42,8 @@
             border-radius: 5px;
             width: 96%;
             height: 180px;
-            background-color: #00357A;
+            background-color: var(--accentcolor);
+            color: var(--primarycolor);
             padding: 10px; 
         }
 
@@ -40,8 +54,8 @@
             margin: 0 20px 20px 0;
             border-radius: 5px;
             width: 96%;
-            /* height: 70%; */
-            background-color: #00357A;
+            background-color: var(--accentcolor);
+            color: var(--primarycolor);
             padding: 10px; 
         }
 
@@ -53,7 +67,8 @@
             border-radius: 5px;
             margin-bottom: 20px;
             width: 50%;
-            background-color: #00357A;
+            background-color: var(--accentcolor);
+            color: var(--primarycolor);
         }
 
         .dashboard-style {
@@ -75,7 +90,7 @@
             width: 25%;
             /* height: 15%; */
             border: none;
-            background-color: #fff;
+            background-color: var(--primarycolor);
             border-radius: 4px;
             padding: 20px;
             cursor: pointer;
@@ -84,6 +99,10 @@
 
         .dashboard-bottom button:hover {
             background-color: var(--secondarycolor) !important;
+        }
+
+        h2 {
+            color: var(--primarycolor);
         }
 
         canvas {
@@ -106,6 +125,7 @@
         /* Style the buttons that are used to open the tab content */
         .tab button {
         background-color: inherit;
+        color: var(--primarycolor);
         float: left;
         border: none;
         outline: none;
@@ -113,17 +133,19 @@
         padding: 14px 16px;
         transition: 0.3s;
         height: 100%;
+        width: max-content;
         }
 
         /* Change background color of buttons on hover */
         .tab button:hover {
-        background-color: #ddd;
+        background-color: var(--secondarycolor);
+        color: var(--accentcolor);
         }
 
         /* Create an active/current tablink class */
         .tab button.active {
         background-color: #ccc;
-        color: var(--primarycolor);
+        color: var(--accentcolor);
         }
 
         /* Style the tab content */
@@ -217,7 +239,7 @@
             </div>    
 </div>
 
-                    <table style="width:95%">
+                    <table style="width:100%">
                         <tr VALIGN=TOP>
                             <td style="">
                                 <?php include './subComponent/VerticleHeader.php'; ?>
@@ -228,7 +250,7 @@
                                 
                                     <div class="container-profile">
                                         <br>
-                                        <h1 class="profile-title">Dashboard</h1>
+                                        <h1>Dashboard</h1>
                                         <div class="dashboard-top">
 
                                         <div>
@@ -297,7 +319,7 @@
                                                 </div>
 
                                                 <!-- View Tourist List -->
-                                                <h2 class="heder-profile">Tourist</h2>
+                                                <h2>Tourist</h2>
                                                 <div>
                                                     <table>
                                                         <thead>
@@ -337,7 +359,7 @@
 
                                                 <br>
                                                 <!-- View Accommodation provider List -->
-                                                <h2 class="heder-profile">Accommodation Provider</h2>
+                                                <h2>Accommodation Provider</h2>
                                                 <div>
                                                     <table>
                                                         <thead>
@@ -378,7 +400,7 @@
 
                                                 <br>
                                                 <!-- View Vehicle Provider list -->
-                                                <h2 class="heder-profile">Vehicle Provider</h2>
+                                                <h2>Vehicle Provider</h2>
                                                 <div>
                                                     <table>
                                                         <thead>
@@ -419,7 +441,7 @@
 
                                                 <br>
                                                 <!-- View Tour Guide list -->
-                                                <h2 class="heder-profile">Tourist Guide</h2>
+                                                <h2>Tourist Guide</h2>
                                                 <div>
                                                     <table>
                                                         <thead>

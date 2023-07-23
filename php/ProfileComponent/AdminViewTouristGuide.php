@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
@@ -62,15 +64,20 @@
 
                             <td class="td-profile">
                                 <div class="main-wrapper">
-                                    <h2 class="heder-profile">Tourist Guide</h2>
+                                    <h1>Tourist Guide</h1>
                                     <div>
+                                        <div>
+                                            <a href="./AdminRegisterUser.php">
+                                                <h2 class="new-manager-add">+ Add New Tour guide</h2>
+                                            </a>
+                                        </div>
                                         <table>
                                             <thead>
-                                                <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
+                                                <tr class="table-header" style="background-color: var(--primarycolor); border:1px solid rgb(255, 255, 255);">
                                                     <th style="min-width: 200px;">Name</th>
                                                     <th style="min-width: 200px;">Email</th>
                                                     <th style="min-width: 200px;">Address</th>
-                                                    <!-- <th style="min-width: 150px;">Edit</th> -->
+                                                    <th style="min-width: 150px;">Edit</th>
                                                     <th style="min-width: 200px;">Delete</th>
                                                 </tr>
                                             </thead>
@@ -85,12 +92,12 @@
                                                                 <td class="td-txt"><?php echo $manager['first_name']; ?> <?php echo $manager['last_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $manager['address']; ?></td>
-                                                                <!-- <td style="padding: 5px 5px;">
+                                                                <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewTouristGuide.php">
                                                                         <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
 
-                                                                </td> -->
+                                                                </td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewTouristGuide.php">
                                                                         <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>

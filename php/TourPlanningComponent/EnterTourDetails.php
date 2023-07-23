@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="../../css/preplanned.css">
 
     <script type="text/javascript" src="../../js/custermizePlan.js"></script>
+
+    <style>
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            filter: invert(0.8);
+}
+    </style>
 </head>
 
 <?php

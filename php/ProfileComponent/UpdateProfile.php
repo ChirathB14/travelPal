@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../../js/profile.js"></script>
 
     <script type="text/javascript" src="../../js/sweetalert2.min.js"></script>
@@ -99,7 +101,7 @@ $title = "Update Profile - TravePal";
                             <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile">
                                 <div class="main-wrapper" style="margin-top: 45px;">
-                                    <h2 class="heder-profile">Update Profile</h2>
+                                    <h1 class="heder-profile">Update Profile</h1>
                                     <div class="profile-main-wrapper">
 
                                         <?php

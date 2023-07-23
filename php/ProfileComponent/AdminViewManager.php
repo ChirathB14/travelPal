@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../../js/profile.js"></script>
 </head>
 
@@ -61,7 +63,7 @@ $title = "Admin View - TravePal";
 
                             <td class="td-profile">
                                 <div class="main-wrapper">
-                                    <h2 class="heder-profile">Site Manager</h2>
+                                    <h1>Site Manager</h1>
                                     <div>
                                         <div>
                                             <a href="./RegisterManager.php">
@@ -70,7 +72,7 @@ $title = "Admin View - TravePal";
                                         </div>
                                         <table>
                                             <thead>
-                                                <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
+                                                <tr class="table-header" style="background-color: var(--primarycolor); border:1px solid rgb(255, 255, 255);">
                                                     <th style="min-width: 200px;">Name</th>
                                                     <th style="min-width: 200px;">Email</th>
                                                     <th style="min-width: 200px;">Address</th>
