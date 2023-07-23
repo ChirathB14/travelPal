@@ -13,7 +13,7 @@
 
     <script type="text/javascript" src="../../js/profile.js"></script>
 
-    <style>
+    <!-- <style>
         .update {
             display: flex;
             flex-direction: row;
@@ -47,7 +47,7 @@
             border: 2px solid gray;
             padding: 5px 10px;
         }
-    </style>
+    </style> -->
 </head>
 
 
@@ -100,7 +100,10 @@
                                 <div class="main-wrapper" style="margin-top: 45px;">
                                     <h1 class="heder-profile">Update Profile</h1>
                                     <div class="profile-main-wrapper">
-
+                                        <div>
+                                            <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="120" height="120">
+                                            <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
+                                        </div>
                                         <?php
                                         if (isset($_POST['deleteBtn'])) {
                                             $sql = "DELETE FROM user WHERE user_Id= '$userID'";
@@ -118,7 +121,26 @@
                                         }
                                         ?>
                                         <form method="POST" action="UpdateProfile.php">
-                                            <div class="update">
+                                            <div>
+                                                <div class="line-wrapper">
+                                                    <label for="">First Name : </label>
+                                                    <input type="text" value="<?php echo $row['first_name']; ?>">
+                                                </div>
+                                                <div class="line-wrapper">
+                                                    <label for="">Last Name : </label>
+                                                    <input type="text" value="<?php echo $row['last_name']; ?>">
+                                                </div>
+                                                <div class="line-wrapper">
+                                                    <label for="">Email : </label>
+                                                    <input type="text" value="<?php echo $row['email']; ?>">
+                                                </div>
+                                                <div class="line-wrapper">
+                                                    <label for="">Address : </label>
+                                                    <input type="text" value="<?php echo $row['address']; ?>">
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="update">
                                                 <label class="line-txt" for="firstName" style="width:30%"><b>First Name:</b></label>
                                                 <input type="text" id="firstName" name="firstName" style="width:70%" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required>
                                             </div>
@@ -133,7 +155,7 @@
                                             <div class="update">
                                                 <label class="line-txt" for="address" style="width:30%"><b>Address:</b></label>
                                                 <input type="text" id="address" name="address" style="width:70%" placeholder="Address" value="<?php echo $row['address']; ?>" required>
-                                            </div>
+                                            </div> -->
                                             <center>
                                                 <button class="update-btn" type="submit" id="updateBtn" name="updateBtn" value="updateBtn">Save</button>
                                             </center>

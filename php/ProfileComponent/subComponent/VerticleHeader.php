@@ -3,7 +3,7 @@
         <li class="verticle-li">
             <br>
             <div class="vl-profile">
-                <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="50" height="50">
+                <img class="headerbtm" src="../../images/Profile1.png" alt="logo" width="50" height="50">
                 <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
             </div>
             <br>
