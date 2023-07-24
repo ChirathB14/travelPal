@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script type="text/javascript" src="../../js/profile.js"></script>
-
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/sweetalert2.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-3.6.4.min.js"></script>
 </head>
@@ -81,14 +81,20 @@ $title = "Profile - TravePal";
                                                 echo '</script>';
                                             } else {
                                                 echo '<script language = "javascript">';
-                                                echo 'alert("Unsuccessfull :( ")';
+                                                echo 'Swal.fire({
+                                                    title: "Unsuccessfull :( ",
+                                                    text: "Please try again",
+                                                    icon: "error",
+                                                    confirmButtonText: "OK"
+                                                    })';
+                                                // echo 'alert("Unsuccessfull :( ")';
                                                 echo '</script>';
                                             }
                                             $conn->close();
                                         }
                                         ?> 
-                                        <div class="line-wrapper">
-                                            <p class="line-txt">
+                                        <div>
+                                            <div class="line-wrapper">
                                                 <label for="">First Name : </label>
                                                 <input type="text" value="<?php echo $row['first_name']; ?>" disabled>
                                             </div>
@@ -104,6 +110,7 @@ $title = "Profile - TravePal";
                                                 <label for="">Address : </label>
                                                 <input type="text" value="<?php echo $row['address']; ?>" disabled>
                                             </div>
+                                        </div>
                                         </div>
 
                                     </div>

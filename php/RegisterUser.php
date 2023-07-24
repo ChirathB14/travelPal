@@ -11,6 +11,8 @@
 
     <script type="text/javascript" src="../js/register.js"></script>
     <script type="text/javascript" src="../js/checkAccess.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
 </head>
 
@@ -72,7 +74,13 @@
         if ($result) {
             if ($result->num_rows > 0) {
                 echo '<script language = "javascript">';
-                echo 'alert("Email Already Exists :( ")';
+                echo 'Swal.fire({
+                    title: "Email Already Exists :( ",
+                    text: "Please try again",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                    })';
+                // echo 'alert("Email Already Exists :( ")';
                 echo '</script>';
             } else {
                 $sqltwo = "INSERT INTO user (user_Id, first_name, last_name, address, email, password, isActive,  user_type, created_date)
@@ -85,7 +93,13 @@
 
                 } else {
                     echo '<script language = "javascript">';
-                    echo 'alert("Unsuccessfully :( ")';
+                    echo 'Swal.fire({
+                        title: "Unsuccessfull :( ",
+                        text: "Please try again",
+                        icon: "error",
+                        confirmButtonText: "OK"
+                        })';
+                    // echo 'alert("Unsuccessfully :( ")';
                     echo '</script>';
                 }
                 $conn->close();

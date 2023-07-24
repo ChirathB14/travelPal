@@ -6,7 +6,13 @@ function logOut() {
 }
 
 function onResetSuccess() {
-  alert("Password Reset Successfully!");
+  Swal.fire({
+    title: "Password Reset Successfully! ",
+    text: "You will be redirected to login page.",
+    icon: "success",
+    confirmButtonText: "OK"
+    })
+  // alert("Password Reset Successfully!");
   window.location = "../login.php";
 }
 
@@ -29,13 +35,25 @@ function delete_cookie(name) {
 }
 
 function onDeleteSuccess() {
-  alert("Deleted Success");
+  Swal.fire({
+    title: "Deleted Successfully! ",
+    text: "You will be redirected to Home page.",
+    icon: "success",
+    confirmButtonText: "OK"
+    })
+  // alert("Deleted Success");
   delete_cookie("user");
   window.location = "../../index.php";
 }
 
 function onItemDelete() {
-  alert("Deleted Success");
+  Swal.fire({
+    title: "Deleted Successfully! ",
+    text: "You will be redirected to Home page.",
+    icon: "success",
+    confirmButtonText: "OK"
+    })
+  // alert("Deleted Success");
   window.location.reload();
 }
 
@@ -205,7 +223,7 @@ function onUpdateSuccess() {
     icon: "success",
     button: "Ok",
   }).then(function () {
-    window.location = "./Profile.php";
+    window.location = "../index.php";
   });
     
 //  swal({
@@ -229,7 +247,13 @@ function onUpdateSuccess() {
 }
 
 function newPlanCreated() {
-  alert("New Plan Created Successfully");
+  Swal.fire({
+    title: "New Plan Created Successfully! ",
+    text: "You will be redirected to New Plan page.",
+    icon: "success",
+    confirmButtonText: "OK"
+    })
+  // alert("New Plan Created Successfully");
   window.location.replace("./ManagerNewPlan.php");
 }
 

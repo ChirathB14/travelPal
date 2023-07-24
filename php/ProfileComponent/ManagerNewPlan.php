@@ -83,8 +83,7 @@
                                             <h1>Create New Plan</h1>
                                                 <div class="input-elements">
                                                     <select id="season" name="season" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    border: 2px solid gray; height: 40px; padding: 2px; box-sizing: border-box; border-radius: 5px;
                                                     font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled selected hidden>Season</option>
                                                         <?php
@@ -102,8 +101,7 @@
                                                         ?>
                                                     </select>
                                                     <select id="location" name="location" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    height: 40px; box-sizing: border-box; border: 2px solid gray; border-radius: 5px; padding: 2px;
                                                     font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled selected hidden>Location</option>
                                                         <?php
@@ -121,15 +119,13 @@
                                                         ?>
                                                     </select>
                                                     <select onclick="hideParagraph()" id="destination" name="destination[]" class="line-wrapper line-txt" multiple style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    height: 40px; box-sizing: border-box; border: 2px solid gray; border-radius: 5px; padding: 8px;
                                                     font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled>Destination</option>
                                                     </select>
                                                 <p id="requird-destination" style="color:red; font-size: 12px;">* Destinations are required</p>
                                                     <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    height: 40px; box-sizing: border-box; border: 2px solid gray; border-radius: 5px; padding: 2px;
                                                     font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled selected hidden>Type Of Package</option>
                                                         <?php
@@ -146,7 +142,10 @@
                                                         }
                                                         ?>
                                                     </select>
-                                                    <input type="text" id="noOfDays" name="noOfDays" placeholder="No Of Days" pattern="^\d+$" required>
+                                                    <input type="text" id="noOfDays" name="noOfDays" placeholder="  No Of Days" pattern="^\d+$" required style="width: 400px;  margin-top: 12px; 
+                                                    height: 40px; box-sizing: border-box; border: 2px solid gray; border-radius: 5px; padding: 2px;
+                                                    font-size: 10px; font-weight: bold; color:#808080;">
+                                                    <label for="" style="color: var(--primarycolor); font-size: 14px; font-weight: bold;">Upload Photo: </label>
                                                     <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" style="padding: 10px;" required>
                                                 <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn" style="margin-left: 90px;">Save</button>
                                             </center>
