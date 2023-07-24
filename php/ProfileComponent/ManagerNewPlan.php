@@ -13,6 +13,7 @@
     
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 
 <?php
@@ -165,8 +166,17 @@
                                                     $createdDate = date('Y-m-d');
 
                                                     if ($_FILES["image"]["error"] == 4) {
-                                                        echo
-                                                        "<script> alert('Image Does Not Exist'); </script>";
+                                                        echo '<script>'; 
+                                                        echo 'swal.fire ({
+                                                            title: "Image Does Not Exist",
+                                                            text: "",
+                                                            icon: "error",
+                                                            confirmButtonText: "OK",
+                                                            confirmButtonColor: "var(--primarycolor)",
+                                                            footer: "TravelPal"
+                                                        })';
+                                                        // echo 'alert("Image Does Not Exist");'
+                                                        echo '</script>';
                                                     } else {
                                                         $fileName = $_FILES["image"]["name"];
                                                         $fileSize = $_FILES["image"]["size"];
@@ -176,19 +186,29 @@
                                                         $imageExtension = explode('.', $fileName);
                                                         $imageExtension = strtolower(end($imageExtension));
                                                         if (!in_array($imageExtension, $validImageExtension)) {
-                                                            echo
-                                                            "
-                                                      <script>
-                                                        alert('Invalid Image Extension');
-                                                      </script>
-                                                      ";
+                                                            echo '<script>';
+                                                            echo 'swal.fire ({
+                                                                title: "Invalid Image Extension",
+                                                                text: "",
+                                                                icon: "error",
+                                                                confirmButtonText: "OK",
+                                                                confirmButtonColor: "var(--primarycolor)",
+                                                                footer: "TravelPal"
+                                                            })';
+                                                            // echo 'alert("Invalid Image Extension");'
+                                                            echo '</script>';
                                                         } else if ($fileSize > 2000000) {
-                                                            echo
-                                                            "
-                                                      <script>
-                                                        alert('Image Size Is Too Large');
-                                                      </script>
-                                                      ";
+                                                            echo '<script>';
+                                                            echo 'swal.fire ({
+                                                                title: "Image Size Is Too Large",
+                                                                text: "",
+                                                                icon: "error",
+                                                                confirmButtonText: "OK",
+                                                                confirmButtonColor: "var(--primarycolor)",
+                                                                footer: "TravelPal"
+                                                            })';
+                                                            // echo 'alert("Image Size Is Too Large");'
+                                                            echo '</script>';
                                                         } else {
                                                             $newImageName = uniqid();
                                                             $newImageName .= '.' . $imageExtension;
@@ -203,7 +223,15 @@
                                                                 echo '</script>';
                                                             } else {
                                                                 echo '<script language = "javascript">';
-                                                                echo 'alert("Unsuccessfull :( ")';
+                                                                echo 'swal.fire ({
+                                                                    title: "Unsuccessfull :(",
+                                                                    text: "",
+                                                                    icon: "error",
+                                                                    confirmButtonText: "OK",
+                                                                    confirmButtonColor: "var(--primarycolor)",
+                                                                    footer: "TravelPal"
+                                                                })';
+                                                                // echo 'alert("Unsuccessfull :( ")';
                                                                 echo '</script>';
                                                             }
                                                         }

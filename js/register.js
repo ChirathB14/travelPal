@@ -15,7 +15,9 @@ function cheakpassword() {
       title: "Passwords Are mismatched!",
       text: "Please try again",
       icon: "error",
-      confirmButtonText: "OK"
+      confirmButtonText: "OK",
+      confirmButtonColor: "var(--primarycolor)",
+      footer: "TravelPal"
       })
     // alert("Passwords Are mismatched");
     return false;
@@ -31,7 +33,9 @@ function success() {
     title: "Register Successfully!",
     text: "Welcome to TravelPal",
     icon: "success",
-    confirmButtonText: "OK"
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
     })
   // alert("Register Successfully")
   window.location = './login.php'

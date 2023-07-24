@@ -9,7 +9,15 @@ function reFunction() {
   
   function cheakpassword() {
     if (document.getElementById("Pass").value != document.getElementById("rePass").value) {
-      alert("Passwords Are mismatched");
+      swal.fire({
+        title: "Passwords Are mismatched!",
+        text: "Please try again",
+        icon: "error",
+        confirmButtonText: "OK",
+        confirmButtonColor: "var(--primarycolor)",
+        footer: "TravelPal"
+      });
+      // alert("Passwords Are mismatched");
       return false;
     }
     else {
@@ -19,12 +27,28 @@ function reFunction() {
   
   
   function success() {
-    alert("Manager added Successfully")
+    swal.fire({
+      title: "Manager added Successfully!",
+      text: "Welcome to TravelPal",
+      icon: "success",
+      confirmButtonText: "OK",
+      confirmButtonColor: "var(--primarycolor)",
+      footer: "TravelPal"
+    });
+    // alert("Manager added Successfully")
     window.location = './AdminViewManager.php'
   }
 
   function onUpdateSuccessManager () {
-    alert("Updated Successfully")
+    swal.fire({
+      title: "Updated Successfully!",
+      text: "",
+      icon: "success",
+      confirmButtonText: "OK",
+      confirmButtonColor: "var(--primarycolor)",
+      footer: "TravelPal"
+    });
+    // alert("Updated Successfully")
     window.location = './AdminViewManager.php'
 
 }

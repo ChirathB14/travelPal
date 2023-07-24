@@ -1,3 +1,5 @@
+<script src="sweetalert2.all.min.js"></script>
+
 <?php
 session_start();
 require "../../DbConfig.php";
@@ -12,12 +14,28 @@ $update = "UPDATE user_tours SET accomadation_id='$accID', vehicle_id='$vehID', 
 
 if ($conn->query($update) === TRUE) {
     echo '<script language = "javascript">';
-    echo 'alert("Update Success")';
+    echo 'Swal.fire({
+        title: "Successfully Updated",
+        text: "",
+        icon: "success",
+        confirmButtonText: "OK",
+        confirmButtonColor: "var(--primarycolor)",
+        footer: "TravelPal"
+        })';
+    // echo 'alert("Update Success")';
     echo '</script>';
     header("location:../stripe/checkout.php");
 } else {
     echo '<script language = "javascript">';
-    echo 'alert("Unsuccessfull :( ")';
+    echo 'Swal.fire({
+        title: "Unsuccessfull :( ",
+        text: "Please try again",
+        icon: "error",
+        confirmButtonText: "OK",
+        confirmButtonColor: "var(--primarycolor)",
+        footer: "TravelPal"
+        })';
+    // echo 'alert("Unsuccessfull :( ")';
     echo '</script>';
 }
 $conn->close();

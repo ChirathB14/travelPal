@@ -85,7 +85,9 @@ $title = "Profile - TravePal";
                                                     title: "Unsuccessfull :( ",
                                                     text: "Please try again",
                                                     icon: "error",
-                                                    confirmButtonText: "OK"
+                                                    confirmButtonText: "OK",
+                                                    confirmButtonColor: "var(--primarycolor)",
+                                                    footer: "TravelPal"
                                                     })';
                                                 // echo 'alert("Unsuccessfull :( ")';
                                                 echo '</script>';

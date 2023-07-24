@@ -10,7 +10,9 @@ function onResetSuccess() {
     title: "Password Reset Successfully! ",
     text: "You will be redirected to login page.",
     icon: "success",
-    confirmButtonText: "OK"
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
     })
   // alert("Password Reset Successfully!");
   window.location = "../login.php";
@@ -39,7 +41,9 @@ function onDeleteSuccess() {
     title: "Deleted Successfully! ",
     text: "You will be redirected to Home page.",
     icon: "success",
-    confirmButtonText: "OK"
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
     })
   // alert("Deleted Success");
   delete_cookie("user");
@@ -51,7 +55,9 @@ function onItemDelete() {
     title: "Deleted Successfully! ",
     text: "You will be redirected to Home page.",
     icon: "success",
-    confirmButtonText: "OK"
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
     })
   // alert("Deleted Success");
   window.location.reload();
@@ -218,10 +224,12 @@ function checkUserAccess() {
 
 function onUpdateSuccess() {
   swal({
-    title: "User Details updated!",
-    text: "You will be redirected to home page.",
+    title: "Success!",
+    text: "User Details updated!",
     icon: "success",
-    button: "Ok",
+    confirmButtonText: "Ok",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"    
   }).then(function () {
     window.location = "../index.php";
   });
@@ -248,10 +256,12 @@ function onUpdateSuccess() {
 
 function newPlanCreated() {
   Swal.fire({
-    title: "New Plan Created Successfully! ",
-    text: "You will be redirected to New Plan page.",
+    title: "Success!",
+    text: "New Plan Created Successfully! ",
     icon: "success",
-    confirmButtonText: "OK"
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
     })
   // alert("New Plan Created Successfully");
   window.location.replace("./ManagerNewPlan.php");

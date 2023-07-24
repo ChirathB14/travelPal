@@ -74,7 +74,9 @@ $title = "Register Manager - TravePal";
                                         title: "Email Already Exists :( ",
                                         text: "Please try again",
                                         icon: "error",
-                                        confirmButtonText: "OK"
+                                        confirmButtonText: "OK",
+                                        confirmButtonColor: "var(--primarycolor)",
+                                        footer: "TravelPal"
                                         })';
                                     // echo 'alert("Email Already Exists :( ")';
                                     echo '</script>';
@@ -118,7 +120,9 @@ $title = "Register Manager - TravePal";
                                                 title: "Email send failed! :( ",
                                                 text: "Please try again",
                                                 icon: "error",
-                                                confirmButtonText: "OK"
+                                                confirmButtonText: "OK",
+                                                confirmButtonColor: "var(--primarycolor)",
+                                                footer: "TravelPal"
                                                 })';
                                             // echo 'alert("Email send failed! :( ")';
                                             echo '</script>';
@@ -129,7 +133,9 @@ $title = "Register Manager - TravePal";
                                             title: "Unsuccessful :( ",
                                             text: "Please try again",
                                             icon: "error",
-                                            confirmButtonText: "OK"
+                                            confirmButtonText: "OK",
+                                            confirmButtonColor: "var(--primarycolor)",
+                                            footer: "TravelPal"
                                             })';
                                         // echo 'alert("Unsuccessful :( ")';
                                         echo '</script>';

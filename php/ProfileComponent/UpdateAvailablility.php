@@ -17,17 +17,22 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     $query = "INSERT INTO unavailability (unavailability_Id, service_ref, service_type, start_date, end_date, created_by, created_date,  isActive) 
     VALUES(0, '$serviceDetails[0]', '$service', '$startDate', '$endDate', '$userID', '$createdDate', '1' )";
     mysqli_query($conn, $query);
-    echo
-
-    "
-<script>
-alert('Successfully Added');
-document.location.replace('./ViewAvailability.php');
-</script>
-";
+    echo '<script>';
+    echo 'swal.fire ({
+        title: "Successfully Added",
+        text: "New Unavailability Added",
+        icon: "success",
+        confirmButtonText: "OK",
+        confirmButtonColor: "var(--primarycolor)",
+        footer: "TravelPal"
+    })';
+    // echo 'alert("Successfully Added");'
+    echo 'document.location.replace("./ViewAvailability.php")';
+    echo '</script>';
     $conn->close();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +43,8 @@ document.location.replace('./ViewAvailability.php');
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/newService.css">
+
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
 

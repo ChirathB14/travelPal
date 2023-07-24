@@ -14,14 +14,17 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     $update = "UPDATE user_tours SET status ='3'  WHERE common_id= '$common_id'";
     mysqli_query($conn, $query);
     mysqli_query($conn, $update);
-    echo
-
-    "
-<script>
-alert('Successfully Added');
-document.location.replace('./PaymentSuccuess.php?common=" . $common_id . "');
-</script>
-";
+    echo '<script>';
+    echo 'swal.fire ({
+        title: "Successfully Added",
+        icon: "success",
+        confirmButtonText: "OK",
+        confirmButtonColor: "var(--primarycolor)",
+        footer: "TravelPal"
+    })';
+    // echo 'alert("Successfully Added")';
+    echo 'document.location.replace("./PaymentSuccuess.php?common=" . $common_id . "")';
+    echo '</script>';
     $conn->close();
 }
 ?>
@@ -34,6 +37,8 @@ document.location.replace('./PaymentSuccuess.php?common=" . $common_id . "');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../../css/main.css">
+
+    <script src="sweetalert2.all.min.js"></script>
 
     <style>
         .container {

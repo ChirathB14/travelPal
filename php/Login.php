@@ -73,7 +73,9 @@
                     title: "Incorrect Username or Password!",
                     text: "Do you want to continue",
                     icon: "error",
-                    confirmButtonText: "Yes"
+                    confirmButtonText: "Yes",
+                    confirmButtonColor: "var(--primarycolor)",
+                    footer: "TravePal";
                     })';
                 // echo 'alert("Incorrect Username or Password")';
                 echo '</script>';
@@ -84,7 +86,9 @@
                 title: "Incorrect Username or Password!",
                 text: "Do you want to continue",
                 icon: "error",
-                confirmButtonText: "Yes"
+                confirmButtonText: "Yes",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravePal";
                 })';
             // echo 'alert("Incorrect Username or Password")';
             echo '</script>';

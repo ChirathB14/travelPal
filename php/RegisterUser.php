@@ -78,7 +78,9 @@
                     title: "Email Already Exists :( ",
                     text: "Please try again",
                     icon: "error",
-                    confirmButtonText: "OK"
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "var(--primarycolor)",
+                    footer: "TravelPal"
                     })';
                 // echo 'alert("Email Already Exists :( ")';
                 echo '</script>';
@@ -97,7 +99,9 @@
                         title: "Unsuccessfull :( ",
                         text: "Please try again",
                         icon: "error",
-                        confirmButtonText: "OK"
+                        confirmButtonText: "OK",
+                        confirmButtonColor: "var(--primarycolor)",
+                        footer: "TravelPal"
                         })';
                     // echo 'alert("Unsuccessfully :( ")';
                     echo '</script>';

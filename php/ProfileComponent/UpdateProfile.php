@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script type="text/javascript" src="../../js/profile.js"></script>
-
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/sweetalert2.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-3.6.4.min.js"></script>
 
@@ -117,7 +117,13 @@ $title = "Update Profile - TravePal";
                                                 echo '</script>';
                                             } else {
                                                 echo '<script language = "javascript">';
-                                                echo 'alert("Unsuccessfull :( ")';
+                                                echo 'swal.fire ({
+                                                    title: "Unsuccessfull :( ",
+                                                    text: "Something went wrong!",
+                                                    icon: "error",
+                                                    confirmButtonText: "Try again"
+                                                })';
+                                                // echo 'alert("Unsuccessfull :( ")';
                                                 echo '</script>';
                                             }
                                             $conn->close();
@@ -180,7 +186,15 @@ $title = "Update Profile - TravePal";
                                                     echo '</script>';
                                                 } else {
                                                     echo '<script language = "javascript">';
-                                                    echo 'alert("Unsuccessfull :( ")';
+                                                    echo 'swal.fire ({
+                                                        title: "Unsuccessfull :( ",
+                                                        text: "Something went wrong!",
+                                                        icon: "error",
+                                                        confirmButtonText: "Try again",
+                                                        confirmButtonColor: "var(--primarycolor)",
+                                                        footer: "TravelPal"
+                                                    })';
+                                                    // echo 'alert("Unsuccessfull :( ")';
                                                     echo '</script>';
                                                 }
                                                 // $conn->close();
