@@ -1,3 +1,5 @@
+<script src="sweetalert2.all.min.js"></script>
+
 function showPw() {
   var x = document.getElementById("Pass");
   if (x.type === "password") {
@@ -9,7 +11,15 @@ function showPw() {
 
 function cheakpassword() {
   if (document.getElementById("Pass").value != document.getElementById("rePass").value) {
-    alert("Passwords Are mismatched");
+    Swal.fire({
+      title: "Passwords Are mismatched!",
+      text: "Please try again",
+      icon: "error",
+      confirmButtonText: "OK",
+      confirmButtonColor: "var(--primarycolor)",
+      footer: "TravelPal"
+      })
+    // alert("Passwords Are mismatched");
     return false;
   }
   else {
@@ -19,6 +29,14 @@ function cheakpassword() {
 
 
 function success() {
-  alert("Register Successfully")
+  Swal.fire({
+    title: "Register Successfully!",
+    text: "Welcome to TravelPal",
+    icon: "success",
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+    })
+  // alert("Register Successfully")
   window.location = './login.php'
 }

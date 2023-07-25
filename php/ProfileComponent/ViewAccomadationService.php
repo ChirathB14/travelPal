@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/profile.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
 
 <?php
@@ -54,7 +58,7 @@
             </div>    
         </div>
 
-                    <table style="width:80%">
+                    <table style="width:100%">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
 
@@ -67,7 +71,7 @@
                                         <div class="main-wrapper">
                                             <h2 class="heder-profile">Accommodation Services</h2>
                                             <div>
-                                                <table style="width: 65vw;">
+                                                <table style="width: 85vw;">
                                                     <thead>
                                                         <tr class="table-header">
                                                             <th style="min-width: 140px;">Ref No</th>

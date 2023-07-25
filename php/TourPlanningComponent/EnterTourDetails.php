@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="../../css/preplanned.css">
 
     <script type="text/javascript" src="../../js/custermizePlan.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
+    <style>
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+            filter: invert(0.8);
+        }
+    </style>
 </head>
 
 <?php
@@ -95,7 +103,15 @@
 
             //check whether the date entered is not before today 
             if(selectedDate < today){
-                alert("Please enter a valid date");
+                swal.fire ({
+                    title: "Please enter a valid date",
+                    text: "Date should not be before today",
+                    icon: "error",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "var(--primarycolor)",
+                    footer: "TravelPal"
+                });
+                // alert("Please enter a valid date");
             } else {
                 
             } 
@@ -103,7 +119,14 @@
             //check whether the date entered is not after 1 year
             nextYear.setFullYear(today.getFullYear() + 1);
             if(selectedDate > nextYear){
-                alert("Please select a date within 1 year");
+                swal.fire ({
+                    title: "Please select a date within 1 year",
+                    icon: "error",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "var(--primarycolor)",
+                    footer: "TravelPal"
+                });
+                // alert("Please select a date within 1 year");
                 document.getElementById('date_picker').value = "";
             } else {
 
@@ -130,13 +153,28 @@
                     VALUES (0,'$tourID','$startDate','$noOfTourist','$userID','$createdDate','$isActive', '1', '$common' )";
 
         if ($conn->query($sqltwo) === TRUE) {
-            echo '<script language = "javascript">
-            alert("Details Saved Success. Now you can add services")
-            window.location = "./SelectAccomadation.php?common=' . $common . '"';
+            echo '<script language = "javascript">';
+            echo 'swal.fire ({
+                title: "Details Saved Success. Now you can add services",
+                icon: "success",
+                confirmButtonText: "OK",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravelPal"
+            })';
+            // echo' alert("Details Saved Success. Now you can add services")';
+            echo 'window.location = "./SelectAccomadation.php?common=' . $common . '"';
             echo '</script>';
         } else {
             echo '<script language = "javascript">';
-            echo 'alert("Unsuccessfully :( ")';
+            echo 'swal.fire ({
+                title: "Unsuccessfully",
+                text: "Please try again",
+                icon: "error",
+                confirmButtonText: "OK",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravelPal"
+            })';
+            // echo 'alert("Unsuccessfully :( ")';
             echo '</script>';
         }
         $conn->close();

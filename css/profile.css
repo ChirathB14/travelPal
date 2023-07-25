@@ -1,11 +1,27 @@
+/* verticle header */
 .vertical-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 300px;
-    background-color: #00357A;
-    height: 80vh;
+    width: 350px;
+    height: 90vh;
     display: block;
+}
+
+.verticle-li {
+    float: left !important;
+    width: 100%;
+}
+
+.verticle-li i {
+    float: left;
+    padding: 5px;
+    margin-right: 30px;
+    color: var(--accentcolor);
+}
+
+i:hover, i:active {
+    color: var(--primarycolor);
 }
 
 .vl-profile {
@@ -16,9 +32,6 @@
 .verticle-li a {
     display: block;
     color: var(--accentcolor);
-    text-align: center;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
     font-weight: 400;
     padding: 8px 16px;
@@ -38,9 +51,11 @@
     margin-top: 20px;
 }
 
+
 /* Style the active class (and buttons on mouse-over) */
 .verticle-li a.active, .verticle-li a:hover{
     background-color: #D9D9D9 !important;
+    opacity: 0.9;
     color: var(--primarycolor);
 }
 
@@ -60,64 +75,103 @@
     text-align: center;
 }
 
-.profile-main-wrapper {
-    /* background: rgba(255, 255, 255, 0.75);
-    box-sizing: border-box; */
-    padding: 10px 80px;
+/* profile tab styles */
+.main-wrapper {
     align-items: center;
     justify-content: center;
+    width: 50%;
+    margin: 2% 2% 2% 10%;
 }
 
-.main-wrapper {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 70%;
-    margin: 10% 2% 10% 5%;
+.main-wrapper h1{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primarycolor);
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+.profile-main-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15% 75% 15% 75%;
+    background-color: var(--accentcolor);
+    opacity: 0.9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px var(--primarycolor);
+}
+
+.td-profile {
+    background-color: #D9D9D9;
+    opacity: 0.9;
+    width: 100% !important;
+}
+
+/* profile page styles */
+.profile-main-wrapper .user-name {
+    color: var(--primarycolor);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 20px 16px;
+    font-size: 15px;
 }
 
 .line-wrapper {
     display: flex;
     flex-direction: row;
-    background-color: var(--accentcolor);
-    padding: 6px 10px;
+    padding: 10px 10px;
     margin: 10px 0px 0px 0px;
     width: 500px;
-    height: 60px;
-    border-radius: 15px;
+    height: 50px;
+    float: left;
+}
+
+.line-wrapper label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--primarycolor);
+    border-color: var(--accentcolor);
+    padding-inline-start: 10px;
+    padding: 10px;
+    width: 40%;
+}
+
+.line-wrapper input {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    color: var(--primarycolor);
+    padding-inline-start: 10px;
+    padding: 12px;
+    width: 60%;
+    border-radius: 5px;
+    border: 2px solid gray;
 }
 
 .line-txt {
     font-weight: 600;
-    font-size: 14px !important;
-    line-height: 25px;
-    letter-spacing: 0.1em;
+    font-size: 16px !important;
     color: var(--primarycolor);
-    border-color: var(--accentcolor);
+    width: 100%;
+    background-color: var(--accentcolor);
     padding-inline-start: 10px;
-    padding: 12px;
-}
-
-.line-wrapper .line-txt {
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 25px;
-    letter-spacing: 0.1em;
-    border-radius: 5px;
-    color: var(--primarycolor);
-    border-color: var(--accentcolor);
-    padding-inline-start: 10px;
+    padding: 15px;
 }
 
 .delete-btn {
     background: rgba(209, 14, 14, 0.7);
-
     /* identical to box height */
     letter-spacing: 0.1em;
 }
 
 .update-btn {
-    background: var(--secondarycolor);
+    background: var(--primarycolor);
     margin-top: 15px;
     width: 200px;
     align-items: center;
@@ -134,7 +188,7 @@ table {
     line-height: 50px;
     text-align: center;
     letter-spacing: 0.1em;
-    color: var(--accentcolor);
+    color: var(--primarycolor);
 }
 
 tbody tr {
@@ -143,7 +197,7 @@ tbody tr {
     text-align: center;
     letter-spacing: 0.1em;
     height: 40px;
-    border-bottom: 2px solid var(--primarycolor);
+    /* border-bottom: 2px solid var(--primarycolor); */
 }
 
 .td-txt {
@@ -163,7 +217,7 @@ tbody tr {
     letter-spacing: 0.1em;
     text-align: center;
     color: var(--primarycolor);
-    background-color: #D9D9D9;
+    /* background-color: #D9D9D9; */
     width: 500px;
     height: max-content;
     border-radius: 5px;
@@ -195,9 +249,9 @@ tbody tr {
     font-size: 16px;
     text-align: center;
     color: var(--accentcolor);
-    background: var(--secondarycolor);
+    background: var(--primarycolor);
     width: 220px;
-    height: 30px;
+    height: 40px;
     border-radius: 10px;
     margin-top: 20px;
 }
@@ -205,4 +259,16 @@ tbody tr {
 .add-service-btn :hover {
     font-size: 16px !important;
     background: #327972;
+}
+
+/* Admin search users styles */
+.search form {
+    display: flex; 
+    flex-direction: row;
+}
+
+.search form p {
+    margin:12px; 
+    width:100%; 
+    float: left;
 }

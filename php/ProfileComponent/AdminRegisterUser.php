@@ -17,10 +17,10 @@ use PHPMailer\PHPMailer\Exception;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script type="text/javascript" src="../js/profile.js"></script>
-    <script src="sweetalert2.all.min.js"></script>
-
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/registration.css">
+
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
 </head>
 
@@ -36,7 +36,7 @@ $title = "Register Manager - TravePal";
                 <button class="back-button" onclick="history.back()">
                     < Back</button>
                         <center>
-                            <h2 id="heder-register">Create a manager account</h2>
+                            <h2 id="heder-register">Create account</h2>
                         </center>
                         <div class="input-elements">
                             <input type="text" id="fname" name="fname" placeholder="  First Name" required />
@@ -49,7 +49,7 @@ $title = "Register Manager - TravePal";
                             <input type="password" name="rePass" id="rePass" placeholder=" CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                     Should be more than 8 characters and less than 16 characters."> -->
                             <br>
-                            <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Create Manager Account</button>
+                            <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Create Account</button>
                         </div>
                         <?php
                         require '../DbConfig.php';
@@ -117,7 +117,7 @@ $title = "Register Manager - TravePal";
                                             // Display an error message if email was not sent successfully
                                             echo '<script language = "javascript">';
                                             echo 'Swal.fire({
-                                                title: "Email send failed! :( ",
+                                                title: "Email send failed! :(",
                                                 text: "Please try again",
                                                 icon: "error",
                                                 confirmButtonText: "OK",
@@ -130,7 +130,7 @@ $title = "Register Manager - TravePal";
                                     } else {
                                         echo '<script language = "javascript">';
                                         echo 'Swal.fire({
-                                            title: "Unsuccessful :( ",
+                                            title: "Unsuccessfull :( ",
                                             text: "Please try again",
                                             icon: "error",
                                             confirmButtonText: "OK",

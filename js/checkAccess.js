@@ -24,7 +24,15 @@ function checkAccess(isIndex) {
     register.style.display = 'display'
     logout.style.display = 'display'
     if (!isIndex) {
-      alert("Please Login To Continue")
+      swal.fire ({
+        title: "Please Login To Continue!",
+        text: "",
+        icon: "error",
+        confirmButtonText: "OK",
+        confirmButtonColor: "var(--primarycolor)",
+        footer: "TravelPal"
+      });
+      // alert("Please Login To Continue")
       window.location = "../index.php"
 
     }
@@ -73,13 +81,28 @@ function delete_cookie(name) {
 }
 
 function onDeleteSuccess() {
-    alert("Deleted Success")
+  swal.fire ({
+    title: "Deleted Successfully! ",
+    text: "You will be redirected to Home page.",
+    icon: "success",
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+  });
+    // alert("Deleted Success")
     delete_cookie('user')
     window.location = "../../index.php"
 }
 
 function onItemDelete() {
-    alert("Deleted Success")
+  swal.fire ({
+    title: "Deleted Successfully! ",
+    icon: "success",
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+  });
+    // alert("Deleted Success")
     window.location.reload()
 }
 

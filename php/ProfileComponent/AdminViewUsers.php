@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../../js/profile.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 
 <?php
@@ -67,25 +70,26 @@
 
                             <td class="td-profile">
                                 <div class="main-wrapper">
-                                    <h2 class="heder-profile">All Users</h2>
+                                    <h1>All Users</h1>
 
                                     <div class="search">
                                         <form action="AdminViewUsers.php" method="get">
-                                            <p style="margin:12px;">
-                                                <input style="width:100%; height:40px; border-radius:5px;" type="search" name="search" id="" placeholder="  Search for users..." >
+                                            <p>
+                                                <input style="width:70%; height:40px; border-radius:5px;" type="search" name="search" id="" placeholder="  Search for users..." >
+                                                <button style="width: 120px; font-size: 13px; margin-top: 30px; height: 40px;">Search</button>
                                             </p>
                                         </form>
                                     </div>
 
                                     <div>
-                                        <table>
+                                        <table style="margin-left: 30px;">
                                             <thead>
-                                                <tr class="table-header" style="border:1px solid rgb(255, 255, 255);">
+                                                <tr class="table-header" style="background-color: var(--accentcolor); opacity: 0.9; border-bottom:1px solid #D9D9D9;">
                                                     <th style="min-width: 160px;">Name</th>
                                                     <th style="min-width: 160px;">Email</th>
                                                     <th style="min-width: 160px;">Address</th>
                                                     <th style="min-width: 160px;">Type</th>
-                                                    <!-- <th style="min-width: 150px;">Edit</th> -->
+                                                    <th style="min-width: 150px;">Edit</th>
                                                     <th style="min-width: 160px;">Delete</th>
                                                 </tr>
                                             </thead>
@@ -115,14 +119,14 @@
                                                                     
                                                                     ?>
                                                                 </td>
-                                                                <!-- <td style="padding: 5px 5px;">
+                                                                <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewTourist.php">
                                                                         <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
-                                                                </td> -->
+                                                                </td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewUsers.php">
-                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.png" alt="delete" width="16" height="16"></button> </center>
+                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.jpg" alt="delete" width="16" height="16"></button> </center>
                                                                     </a>
                                                                 </td>
                                                             </tr>
@@ -140,6 +144,7 @@
                                                 ?>
                                             </tbody>
                                         </table>
+                                        <br><br>br
                                     </div>
                                 </div>
                             </td>

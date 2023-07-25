@@ -8,7 +8,12 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/newService.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    
     <style>
         .switch {
             position: relative;
@@ -218,13 +223,29 @@
                     $approved = "UPDATE vehicle_service SET status='2' WHERE vehicle_Id= '$approvedServiceID'";
 
                     if ($conn->query($approved) === TRUE) {
-                        echo "<script language = 'javascript'>
-                        alert('Approved Success')
-                        document.location.replace('./ManagerViewVehicle.php');
-                        </script>";
+                        echo '<script language = "javascript">';
+                        echo 'swal.fire ({
+                            title: "Approved Success",
+                            text: "",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Approved Success")';
+                        echo 'document.location.replace("./ManagerViewVehicle.php")';
+                        echo '</script>';
                     } else {
                         echo '<script language = "javascript">';
-                        echo 'alert("Unsuccessfull :( ")';
+                        echo 'swal.fire ({
+                            title: "Unsuccessfull :(",
+                            text: "",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Unsuccessfull :( ")';
                         echo '</script>';
                     }
                     $conn->close();
@@ -234,13 +255,29 @@
                     $decline = "UPDATE vehicle_service SET status='3' WHERE vehicle_Id= '$declineServiceID'";
 
                     if ($conn->query($decline) === TRUE) {
-                        echo "<script language = 'javascript'>
-                        alert('Decline Success')
-                        document.location.replace('./ManagerViewVehicle.php');
-                        </script>";
+                        echo '<script language = "javascript">';
+                        echo 'swal.fire ({
+                            title: "Decline Success",
+                            text: "",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Decline Success")';
+                        echo 'document.location.replace("./ManagerViewVehicle.php")';
+                        echo '</script>';
                     } else {
                         echo '<script language = "javascript">';
-                        echo 'alert("Unsuccessfull :( ")';
+                        echo 'swal.fire ({
+                            title: "Unsuccessfull :( ",
+                            text: "",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Unsuccessfull :( ")';
                         echo '</script>';
                     }
                     $conn->close();

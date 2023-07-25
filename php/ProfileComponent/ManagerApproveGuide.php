@@ -8,6 +8,8 @@
 
     <Link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/newService.css">
+
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
     <style>
         .switch {
@@ -212,13 +214,29 @@
                     $approved = "UPDATE tour_guide SET status='2' WHERE guide_Id= '$approvedServiceID'";
 
                     if ($conn->query($approved) === TRUE) {
-                        echo "<script language = 'javascript'>
-                        alert('Approved Success')
-                        document.location.replace('./ManagerViewGuide.php');
-                        </script>";
+                        echo '<script language = "javascript">';
+                        echo 'swal.fire ({
+                            title: "Approved Success",
+                            text: "",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Approved Success")';
+                        echo 'document.location.replace("./ManagerViewGuide.php")';
+                        echo '</script>';
                     } else {
                         echo '<script language = "javascript">';
-                        echo 'alert("Unsuccessfull :( ")';
+                        echo 'swal.fire ({
+                            title: "Unsuccessfull :(",
+                            text: "",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Unsuccessfull :( ")';
                         echo '</script>';
                     }
                     $conn->close();
@@ -228,13 +246,29 @@
                     $decline = "UPDATE tour_guide SET status='3' WHERE guide_Id= '$declineServiceID'";
 
                     if ($conn->query($decline) === TRUE) {
-                        echo "<script language = 'javascript'>
-                        alert('Decline Success')
-                        document.location.replace('./ManagerViewGuide.php');
-                        </script>";
+                        echo '<script language = "javascript">';
+                        echo 'swal.fire ({
+                            title: "Decline Success",
+                            text: "",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Decline Success")';
+                        echo 'document.location.replace("./ManagerViewGuide.php")';
+                        echo '</script>';
                     } else {
                         echo '<script language = "javascript">';
-                        echo 'alert("Unsuccessfull :( ")';
+                        echo 'swal.fire ({
+                            title: "Unsuccessfull :( ",
+                            text: "",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            confrimButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Unsuccessfull :( ")';
                         echo '</script>';
                     }
                     $conn->close();

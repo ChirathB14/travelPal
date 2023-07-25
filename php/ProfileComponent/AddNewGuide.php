@@ -16,8 +16,17 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     $ref = $unique_number;
 
     if ($_FILES["image"]["error"] == 4) {
-        echo
-        "<script> alert('Image Does Not Exist'); </script>";
+        echo '<script>';
+        echo 'Swal.fire({
+            title: "Image Does Not Exist",
+            text: "Please try again",
+            icon: "error",
+            confirmButtonText: "OK",
+            confirmButtonColor: "var(--primarycolor)",
+            footer: "TravelPal"
+            })';
+        // alert('Image Does Not Exist'); 
+        echo '</script>';
     } else {
         $fileName = $_FILES["image"]["name"];
         $fileSize = $_FILES["image"]["size"];
@@ -27,19 +36,29 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
         $imageExtension = explode('.', $fileName);
         $imageExtension = strtolower(end($imageExtension));
         if (!in_array($imageExtension, $validImageExtension)) {
-            echo
-            "
-      <script>
-        alert('Invalid Image Extension');
-      </script>
-      ";
+            echo '<script>';
+            echo 'Swal.fire({
+                title: "Invalid Image Extension",
+                text: "Please try again",
+                icon: "error",
+                confirmButtonText: "OK",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravelPal"
+                })';
+            // alert('Invalid Image Extension');
+            echo '</script>';
         } else if ($fileSize > 1000000) {
-            echo
-            "
-      <script>
-        alert('Image Size Is Too Large');
-      </script>
-      ";
+            echo '<script>';
+            echo 'Swal.fire({
+                title: "Image Size Is Too Large",
+                text: "Please try again",
+                icon: "error",
+                confirmButtonText: "OK",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravelPal"
+                })';
+            // alert('Image Size Is Too Large');
+            echo '</script>';
         } else {
             $newImageName = uniqid();
             $newImageName .= '.' . $imageExtension;
@@ -50,14 +69,18 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             $sql = "UPDATE user SET is_guide='1' WHERE user_Id= '$userID'";
             mysqli_query($conn, $query);
             mysqli_query($conn, $sql);
-            echo
-
-            "
-      <script>
-        alert('Successfully Added');
-        document.location.replace('./ViewGuideServices.php');
-      </script>
-      ";
+            echo  '<script>';
+            echo 'Swal.fire({
+                title: "Successfully Added",
+                text: "",
+                icon: "success",
+                confirmButtonText: "OK",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravelPal"
+                })';
+            // alert('Successfully Added');
+            echo 'document.location.replace("./ViewGuideServices.php")';
+            echo '</script>';
             $conn->close();
         }
     }
@@ -73,7 +96,10 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
 
 
     <link rel="stylesheet" href="../../css/newService.css">
+
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
     <style>
         .switch {
             position: relative;

@@ -8,8 +8,12 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 
 <?php
@@ -68,29 +72,19 @@
                             <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile" style="text-align:left">
                                 <div class="main-wrapper" style="margin-top:10px;">
-                                    <table style="width: 100%;">
-                                        <tr style="width: 100%;">
-                                            <td style="width: 50%;">
+                                    <div>
+                                        <a href="./ManagerAddNewDestination.php">
+                                            <button class="add-service-btn" style="width:280px; margin: 10px;">Add New Destination</button>
+                                        </a>
+                                    </div>
 
-                                            </td>
-                                            <td style="width: 50%;text-align: right;">
-                                                <div>
-                                                    <a href="./ManagerAddNewDestination.php">
-                                                        <button class="add-service-btn" style="width:280px; padding: 0px; margin: 10px;">Add New Destination</button>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    <div class="profile-main-wrapper" style="width: 85%; margin: 0 15% 0 15%;">
+                                    <div class="profile-main-wrapper" style="width: 85%; margin: 0 5% 0 5%;">
                                         <form method="POST" action="ManagerNewPlan.php" autocomplete="off" enctype="multipart/form-data">
                                             <center>
-                                            <h2 class="heder-profile">Create New Plan</h2>
+                                            <h1>Create New Plan</h1>
                                                 <div class="input-elements">
                                                     <select id="season" name="season" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    border: 2px solid gray; height: 40px; padding: 2px; box-sizing: border-box; border-radius: 5px;
                                                     font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled selected hidden>Season</option>
                                                         <?php
@@ -108,8 +102,7 @@
                                                         ?>
                                                     </select>
                                                     <select id="location" name="location" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    height: 40px; box-sizing: border-box; border: 2px solid gray; border-radius: 5px; padding: 2px;
                                                     font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled selected hidden>Location</option>
                                                         <?php
@@ -127,15 +120,13 @@
                                                         ?>
                                                     </select>
                                                     <select onclick="hideParagraph()" id="destination" name="destination[]" class="line-wrapper line-txt" multiple style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    height: 40px; box-sizing: border-box; border: 2px solid gray; border-radius: 5px; padding: 8px;
                                                     font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled>Destination</option>
                                                     </select>
                                                 <p id="requird-destination" style="color:red; font-size: 12px;">* Destinations are required</p>
                                                     <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
+                                                    height: 40px; box-sizing: border-box; border: 2px solid gray; border-radius: 5px; padding: 2px;
                                                     font-size: 10px; font-weight: bold; color:#808080;" required>
                                                         <option value="" disabled selected hidden>Type Of Package</option>
                                                         <?php
@@ -152,7 +143,10 @@
                                                         }
                                                         ?>
                                                     </select>
-                                                    <input type="text" id="noOfDays" name="noOfDays" placeholder="No Of Days" pattern="^\d+$" required>
+                                                    <input type="text" id="noOfDays" name="noOfDays" placeholder="  No Of Days" pattern="^\d+$" required style="width: 400px;  margin-top: 12px; 
+                                                    height: 40px; box-sizing: border-box; border: 2px solid gray; border-radius: 5px; padding: 2px;
+                                                    font-size: 10px; font-weight: bold; color:#808080;">
+                                                    <label for="" style="color: var(--primarycolor); font-size: 14px; font-weight: bold;">Upload Photo: </label>
                                                     <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" style="padding: 10px;" required>
                                                 <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn" style="margin-left: 90px;">Save</button>
                                             </center>
@@ -172,8 +166,17 @@
                                                     $createdDate = date('Y-m-d');
 
                                                     if ($_FILES["image"]["error"] == 4) {
-                                                        echo
-                                                        "<script> alert('Image Does Not Exist'); </script>";
+                                                        echo '<script>'; 
+                                                        echo 'swal.fire ({
+                                                            title: "Image Does Not Exist",
+                                                            text: "",
+                                                            icon: "error",
+                                                            confirmButtonText: "OK",
+                                                            confirmButtonColor: "var(--primarycolor)",
+                                                            footer: "TravelPal"
+                                                        })';
+                                                        // echo 'alert("Image Does Not Exist");'
+                                                        echo '</script>';
                                                     } else {
                                                         $fileName = $_FILES["image"]["name"];
                                                         $fileSize = $_FILES["image"]["size"];
@@ -183,19 +186,29 @@
                                                         $imageExtension = explode('.', $fileName);
                                                         $imageExtension = strtolower(end($imageExtension));
                                                         if (!in_array($imageExtension, $validImageExtension)) {
-                                                            echo
-                                                            "
-                                                      <script>
-                                                        alert('Invalid Image Extension');
-                                                      </script>
-                                                      ";
+                                                            echo '<script>';
+                                                            echo 'swal.fire ({
+                                                                title: "Invalid Image Extension",
+                                                                text: "",
+                                                                icon: "error",
+                                                                confirmButtonText: "OK",
+                                                                confirmButtonColor: "var(--primarycolor)",
+                                                                footer: "TravelPal"
+                                                            })';
+                                                            // echo 'alert("Invalid Image Extension");'
+                                                            echo '</script>';
                                                         } else if ($fileSize > 2000000) {
-                                                            echo
-                                                            "
-                                                      <script>
-                                                        alert('Image Size Is Too Large');
-                                                      </script>
-                                                      ";
+                                                            echo '<script>';
+                                                            echo 'swal.fire ({
+                                                                title: "Image Size Is Too Large",
+                                                                text: "",
+                                                                icon: "error",
+                                                                confirmButtonText: "OK",
+                                                                confirmButtonColor: "var(--primarycolor)",
+                                                                footer: "TravelPal"
+                                                            })';
+                                                            // echo 'alert("Image Size Is Too Large");'
+                                                            echo '</script>';
                                                         } else {
                                                             $newImageName = uniqid();
                                                             $newImageName .= '.' . $imageExtension;
@@ -210,7 +223,15 @@
                                                                 echo '</script>';
                                                             } else {
                                                                 echo '<script language = "javascript">';
-                                                                echo 'alert("Unsuccessfull :( ")';
+                                                                echo 'swal.fire ({
+                                                                    title: "Unsuccessfull :(",
+                                                                    text: "",
+                                                                    icon: "error",
+                                                                    confirmButtonText: "OK",
+                                                                    confirmButtonColor: "var(--primarycolor)",
+                                                                    footer: "TravelPal"
+                                                                })';
+                                                                // echo 'alert("Unsuccessfull :( ")';
                                                                 echo '</script>';
                                                             }
                                                         }

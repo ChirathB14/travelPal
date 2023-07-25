@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script type="text/javascript" src="../../js/checkAccess.js"></script>
 </head>
@@ -54,7 +56,7 @@
             </div>    
     </div>
 
-                    <table style="width: 80%;">
+                    <table style="width: 100%;">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile">
@@ -64,16 +66,16 @@
                                 if ($acc_result) {
                                     if ($acc_result->num_rows > 0) { ?>
                                         <div class="main-wrapper">
-                                            <h2 class="heder-profile">My Tour Plan</h2>
+                                            <h1 class="heder-profile">My Tour Plan</h1>
                                             <div>
-                                                <table syle="width: 65vw !important;">
+                                                <table syle="width: 85vw !important;">
                                                     <thead>
                                                         <tr class="table-header">
-                                                            <th style="min-width: 150px;">Id</th>
-                                                            <th style="min-width: 150px;">Start Date</th>
-                                                            <th style="min-width: 150px;">No Of People</th>
-                                                            <th style="min-width: 150px;">Status</th>
-                                                            <th style="min-width: 150px;">Action</th>
+                                                            <th style="min-width: 160px;">Id</th>
+                                                            <th style="min-width: 160px;">Start Date</th>
+                                                            <th style="min-width: 160px;">No Of People</th>
+                                                            <th style="min-width: 160px;">Status</th>
+                                                            <th style="min-width: 160px;">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -89,9 +91,20 @@
                                                                     <?php } else { ?>
                                                                         Complete
                                                                     <?php }
-                                                                    ?> </td>
+                                                                    ?> 
+                                                                </td>
 
-                                                                <td class="td-txt">
+                                                                <td>
+                                                                    <center>
+                                                                        <a href="ViewTourDetails.php?tour_id=<?php echo $acc_row['user_tours_id']; ?>">
+                                                                            <button type="submit" value="editBtn" style="background-color: var(--accentcolor); width:20px; height:20px;">
+                                                                                <img src="../../images/view.png" alt="view" width="16" height="16">
+                                                                            </button>
+                                                                        </a>
+                                                                    </center>
+                                                                </td>
+
+                                                                <!-- <td class="td-txt">
                                                                 <a href="<?php
                                                                                 if ($acc_row['status'] == 2) { ?>
                                                                        ../TourPlanningComponent/TourSummary.php?common=<?php echo $acc_row['common_id']; ?>&acc=<?php echo $acc_row['accomadation_id'] ?>&veh=<?php echo $acc_row['vehicle_id'] ?>&guide=<?php echo $acc_row['guide_id'] ?>
@@ -103,7 +116,7 @@
                                                                     ?>">
                                                                         <center><button type="submit" value="editBtn" style="background-color: var(--accentcolor); width:20px; height:20px;"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
                                                                     </a>
-                                                                </td>
+                                                                </td> -->
                                                             </tr>
                                                         <?php } ?>
                                                     </tbody>

@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
     <title>Travel Pal</title>
 
@@ -113,23 +114,44 @@
                     if ($result) {
                         if ($result->num_rows > 0) {
                             echo '<script language = "javascript">';
-                            echo 'alert("Destination Already Exists :( ")';
+                            echo 'swal.fire ({
+                                title: "Destination Already Exists",
+                                text: "Please try again",
+                                icon: "error",
+                                confirmButtonText: "OK",
+                                confirmButtonColor: "var(--primarycolor)",
+                                footer: "TravelPal"
+                            })';
+                            // echo 'alert("Destination Already Exists :( ")';
                             echo '</script>';
                         } else {
                             $sqltwo = "INSERT INTO destinations (destination_Id, location, experience, destination, created_by, created_date, isActive)
                                     VALUES (0,'$location','$experience','$destination','$userID','$createdDate','$isActive' )";
 
                             if ($conn->query($sqltwo) === TRUE) {
-                                echo
-                                "
-                                <script>
-                                    alert('Successfully Added');
-                                    document.location.replace('./ManagerNewPlan.php');
-                                </script>
-                                ";
+                                echo '<script>';
+                                echo 'swal.fire ({
+                                    title: "Successfully Added",
+                                    text: "New Destination Added",
+                                    icon: "success",
+                                    confirmButtonText: "OK",
+                                    confirmButtonColor: "var(--primarycolor)",
+                                    footer: "TravelPal"
+                                })';
+                                // echo 'alert("Successfully Added")';
+                                echo 'document.location.replace("./ManagerNewPlan.php")';
+                                echo '</script>';
                             } else {
                                 echo '<script language = "javascript">';
-                                echo 'alert("Unsuccessfully :( ")';
+                                echo 'swal.fire ({
+                                    title: "Unsuccessfull :( ",
+                                    text: "Please try again",
+                                    icon: "error",
+                                    confirmButtonText: "OK",
+                                    confirmButtonColor: "var(--primarycolor)",
+                                    footer: "TravelPal"
+                                })';
+                                // echo 'alert("Unsuccessfully :( ")';
                                 echo '</script>';
                             }
                             $conn->close();
