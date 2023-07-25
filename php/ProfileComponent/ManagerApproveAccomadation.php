@@ -8,6 +8,8 @@
 
     <link rel='stylesheet' href='../../css/main.css'/>
     <link rel="stylesheet" href="../../css/newService.css">
+
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
     <style>
         .switch {
@@ -255,13 +257,29 @@
                     $approved = "UPDATE accomadation_service SET status='2' WHERE accomadation_Id= '$approvedServiceID'";
 
                     if ($conn->query($approved) === TRUE) {
-                        echo "<script language = 'javascript'>
-                        alert('Approved Success')
-                        document.location.replace('./ManagerViewAccomadations.php');
-                        </script>";
+                        echo '<script language = "javascript">';
+                        echo 'swal.fire ({
+                            title: "Approved Successfully",
+                            text: "",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Approved Success")';
+                        echo 'document.location.replace("./ManagerViewAccomadations.php")';
+                        echo '</script>';
                     } else {
                         echo '<script language = "javascript">';
-                        echo 'alert("Unsuccessfull :( ")';
+                        echo 'swal.fire ({
+                            title: "Unsuccessfull",
+                            text: "Try Again",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Unsuccessfull :( ")';
                         echo '</script>';
                     }
                     $conn->close();
@@ -271,13 +289,29 @@
                     $decline = "UPDATE accomadation_service SET status='3' WHERE accomadation_Id= '$declineServiceID'";
 
                     if ($conn->query($decline) === TRUE) {
-                        echo "<script language = 'javascript'>
-                        alert('Decline Success')
-                        document.location.replace('./ManagerViewAccomadations.php');
-                        </script>";
+                        echo '<script language = "javascript">';
+                        echo 'swal.fire ({
+                            title: "Declined Successfully",
+                            text: "",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Decline Success")';
+                        echo 'document.location.replace("./ManagerViewAccomadations.php")';
+                        echo '</script>';
                     } else {
                         echo '<script language = "javascript">';
-                        echo 'alert("Unsuccessfull :( ")';
+                        echo 'swal.fire ({
+                            title: "Unsuccessfull",
+                            text: "Try Again",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            confirmButtonColor: "var(--primarycolor)",
+                            footer: "TravelPal"
+                        })';
+                        // echo 'alert("Unsuccessfull :( ")';
                         echo '</script>';
                     }
                     $conn->close();

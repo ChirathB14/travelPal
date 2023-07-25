@@ -6,7 +6,15 @@ function logOut() {
 }
 
 function onResetSuccess() {
-  alert("Password Reset Successfully!");
+  Swal.fire({
+    title: "Password Reset Successfully! ",
+    text: "You will be redirected to login page.",
+    icon: "success",
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+    })
+  // alert("Password Reset Successfully!");
   window.location = "../login.php";
 }
 
@@ -29,13 +37,29 @@ function delete_cookie(name) {
 }
 
 function onDeleteSuccess() {
-  alert("Deleted Success");
+  Swal.fire({
+    title: "Deleted Successfully! ",
+    text: "You will be redirected to Home page.",
+    icon: "success",
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+    })
+  // alert("Deleted Success");
   delete_cookie("user");
   window.location = "../../index.php";
 }
 
 function onItemDelete() {
-  alert("Deleted Success");
+  Swal.fire({
+    title: "Deleted Successfully! ",
+    text: "You will be redirected to Home page.",
+    icon: "success",
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+    })
+  // alert("Deleted Success");
   window.location.reload();
 }
 
@@ -200,12 +224,14 @@ function checkUserAccess() {
 
 function onUpdateSuccess() {
   swal({
-    title: "User Details updated!",
-    text: "You will be redirected to home page.",
+    title: "Success!",
+    text: "User Details updated!",
     icon: "success",
-    button: "Ok",
+    confirmButtonText: "Ok",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"    
   }).then(function () {
-    window.location = "./Profile.php";
+    window.location = "../index.php";
   });
     
 //  swal({
@@ -229,7 +255,15 @@ function onUpdateSuccess() {
 }
 
 function newPlanCreated() {
-  alert("New Plan Created Successfully");
+  Swal.fire({
+    title: "Success!",
+    text: "New Plan Created Successfully! ",
+    icon: "success",
+    confirmButtonText: "OK",
+    confirmButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+    })
+  // alert("New Plan Created Successfully");
   window.location.replace("./ManagerNewPlan.php");
 }
 

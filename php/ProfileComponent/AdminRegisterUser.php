@@ -19,6 +19,8 @@ use PHPMailer\PHPMailer\Exception;
     <script type="text/javascript" src="../js/profile.js"></script>
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/registration.css">
+
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
 </head>
 
@@ -68,7 +70,15 @@ $title = "Register Manager - TravePal";
                             if ($result) {
                                 if ($result->num_rows > 0) {
                                     echo '<script language = "javascript">';
-                                    echo 'alert("Email Already Exists :( ")';
+                                    echo 'Swal.fire({
+                                        title: "Email Already Exists :( ",
+                                        text: "Please try again",
+                                        icon: "error",
+                                        confirmButtonText: "OK",
+                                        confirmButtonColor: "var(--primarycolor)",
+                                        footer: "TravelPal"
+                                        })';
+                                    // echo 'alert("Email Already Exists :( ")';
                                     echo '</script>';
                                 } else {
                                     // Generate OTP and send it to user's email
@@ -106,12 +116,28 @@ $title = "Register Manager - TravePal";
                                         } else {
                                             // Display an error message if email was not sent successfully
                                             echo '<script language = "javascript">';
-                                            echo 'alert("Email send failed! :( ")';
+                                            echo 'Swal.fire({
+                                                title: "Email send failed! :(",
+                                                text: "Please try again",
+                                                icon: "error",
+                                                confirmButtonText: "OK",
+                                                confirmButtonColor: "var(--primarycolor)",
+                                                footer: "TravelPal"
+                                                })';
+                                            // echo 'alert("Email send failed! :( ")';
                                             echo '</script>';
                                         }
                                     } else {
                                         echo '<script language = "javascript">';
-                                        echo 'alert("Unsuccessful :( ")';
+                                        echo 'Swal.fire({
+                                            title: "Unsuccessfull :( ",
+                                            text: "Please try again",
+                                            icon: "error",
+                                            confirmButtonText: "OK",
+                                            confirmButtonColor: "var(--primarycolor)",
+                                            footer: "TravelPal"
+                                            })';
+                                        // echo 'alert("Unsuccessful :( ")';
                                         echo '</script>';
                                     }
                                     $conn->close();

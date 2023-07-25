@@ -11,6 +11,7 @@
 
     <script type="text/javascript" src="../../js/custermizePlan.js"></script>
     <script src="../../js/jquery-3.6.4.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
 
     <style>        
         ::-webkit-file-upload-button {
@@ -169,7 +170,15 @@
                                             echo '</script>';
                                         } else {
                                             echo '<script language = "javascript">';
-                                            echo 'alert("Unsuccessfull :( ")';
+                                            echo 'swal.fire ({
+                                                    title: "Unsuccessfull",
+                                                    text: "Something went wrong",
+                                                    icon: "error",
+                                                    confirmButtonText: "Retry",
+                                                    confirmButtonColor: "#0E064D",
+                                                    footer: "TravelPal"
+                                                    })';
+                                            // echo 'alert("Unsuccessfull :( ")';
                                             echo '</script>';
                                         }
                                     } else {

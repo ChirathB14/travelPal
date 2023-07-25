@@ -28,19 +28,29 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
         $imageExtension = explode('.', $fileName);
         $imageExtension = strtolower(end($imageExtension));
         if (!in_array($imageExtension, $validImageExtension)) {
-            echo
-            "
-      <script>
-        alert('Invalid Image Extension');
-      </script>
-      ";
+            echo '<script>';
+            echo 'Swal.fire({
+                title: "Invalid Image Extension",
+                text: "Please try again",
+                icon: "error",
+                confirmButtonText: "OK",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravelPal"
+                })';
+            // alert('Invalid Image Extension');
+            echo '</script>';
         } else if ($fileSize > 1000000) {
-            echo
-            "
-      <script>
-        alert('Image Size Is Too Large');
-      </script>
-      ";
+            echo '<script>';
+            echo 'Swal.fire({
+                title: "Image Size Is Too Large",
+                text: "Please try again",
+                icon: "error",
+                confirmButtonText: "OK",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravelPal"
+                })';
+            // alert('Image Size Is Too Large');
+            echo '</script>';
         } else {
             $newImageName = uniqid();
             $newImageName .= '.' . $imageExtension;
@@ -52,14 +62,18 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
 
             mysqli_query($conn, $query);
             mysqli_query($conn, $sql);
-            echo
-
-            "
-      <script>
-        alert('Successfully Added');
-        document.location.replace('./ViewVehicleServices.php');
-      </script>
-      ";
+            echo '<script>';
+            echo 'Swal.fire({
+                title: "Successfully Added",
+                text: "View Services",
+                icon: "success",
+                confirmButtonText: "OK",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravelPal"
+                })';
+            // alert('Successfully Added');
+            echo 'document.location.replace("./ViewVehicleServices.php")';
+            echo '</script>';
             $conn->close();
         }
     }
@@ -79,6 +93,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
     <style>
         .switch {
             position: relative;

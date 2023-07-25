@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
+
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 
 <?php

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../css/login.css">
 
     <script type="text/javascript" src="../js/checkAccess.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
 </head>
 
@@ -67,12 +69,28 @@
                 header('location:../index.php');
             } else {
                 echo '<script language ="javascript">';
-                echo 'alert("Incorrect Username or Password")';
+                echo 'Swal.fire({
+                    title: "Incorrect Username or Password!",
+                    text: "Do you want to continue",
+                    icon: "error",
+                    confirmButtonText: "Yes",
+                    confirmButtonColor: "var(--primarycolor)",
+                    footer: "TravePal";
+                    })';
+                // echo 'alert("Incorrect Username or Password")';
                 echo '</script>';
             }
         } else {
             echo '<script language ="javascript">';
-            echo 'alert("Incorrect Username or Password")';
+            echo 'Swal.fire({
+                title: "Incorrect Username or Password!",
+                text: "Do you want to continue",
+                icon: "error",
+                confirmButtonText: "Yes",
+                confirmButtonColor: "var(--primarycolor)",
+                footer: "TravePal";
+                })';
+            // echo 'alert("Incorrect Username or Password")';
             echo '</script>';
         }
 

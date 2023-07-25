@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/registration.css">
+
+    <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
 </head>
 
@@ -68,12 +70,28 @@ $title = "Register Manager - TravePal";
 
                         if ($conn->query($update) === TRUE) {
                             echo '<script language = "javascript">';
-                            echo 'alert("Update Success")';
+                            echo 'swal.fire ({
+                                title: "Success!",
+                                text: "Update Successfull",
+                                icon: "success",
+                                confirmButtonText: "OK",
+                                confirmButtonColor: "var(--primarycolor)",
+                                footer: "TravelPal"
+                            });'
+                            // echo 'alert("Update Success")';
                             echo '</script>';
                             header($updatePage);
                         } else {
                             echo '<script language = "javascript">';
-                            echo 'alert("Unsuccessfull :( ")';
+                            echo 'swal.fire ({
+                                title: "Error!",
+                                text: "Update Unsuccessfull",
+                                icon: "error",
+                                confirmButtonText: "OK",
+                                confirmButtonColor: "var(--primarycolor)",
+                                footer: "TravelPal"
+                            });'
+                            // echo 'alert("Unsuccessfull :( ")';
                             echo '</script>';
                         }
                         $conn->close();

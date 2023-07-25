@@ -97,7 +97,7 @@ i:hover, i:active {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 2% 60% 2% 60%;
+    padding: 15% 75% 15% 75%;
     background-color: var(--accentcolor);
     opacity: 0.9;
     border-radius: 5px;
@@ -154,7 +154,7 @@ i:hover, i:active {
     border: 2px solid gray;
 }
 
-/* .line-txt {
+.line-txt {
     font-weight: 600;
     font-size: 16px !important;
     color: var(--primarycolor);
@@ -162,7 +162,7 @@ i:hover, i:active {
     background-color: var(--accentcolor);
     padding-inline-start: 10px;
     padding: 15px;
-} */
+}
 
 .delete-btn {
     background: rgba(209, 14, 14, 0.7);
