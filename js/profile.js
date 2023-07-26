@@ -223,16 +223,17 @@ function checkUserAccess() {
 }
 
 function onUpdateSuccess() {
-  swal({
-    title: "Success!",
-    text: "User Details updated!",
-    icon: "success",
-    confirmButtonText: "Ok",
-    confirmButtonColor: "var(--primarycolor)",
-    footer: "TravelPal"    
-  }).then(function () {
-    window.location = "../index.php";
-  });
+  // alert("User Details updated!");
+  // Swal.fire({
+  //   title: "Success!",
+  //   text: "User Details updated!",
+  //   icon: "success",
+  //   confirmButtonText: "Ok",
+  //   confirmButtonColor: "var(--primarycolor)",
+  //   footer: "TravelPal"  
+  // })
+window.location = "./Profile.php";
+};
     
 //  swal({
 //    title: "User Details updated!",
@@ -252,7 +253,7 @@ function onUpdateSuccess() {
 //      swal("Cancelled", "Your imaginary file is safe :)", "error");
 //    }
 //  });
-}
+
 
 function newPlanCreated() {
   Swal.fire({

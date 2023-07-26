@@ -79,7 +79,8 @@
     margin-top: 40px;
     text-align: center;
     background-color: #00357A;
-    border-style: solid;
+    border-style: none;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.65);
     border-radius: 15px;
     overflow: hidden;
     padding-top: 40px;

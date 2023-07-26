@@ -55,7 +55,7 @@
                                 </div>                                   
 
                                     <div>
-                                        <h2>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-heart" aria-hidden="true"></i></h2>
+                                        <h2>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true" style="color: lightgreen;"></i>&nbsp;&nbsp;<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i></h2>
                                         
                                     </div>
                                 </div>

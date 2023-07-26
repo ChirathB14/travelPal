@@ -62,38 +62,18 @@
         require_once("../Common/header.php");
         ?>
 
-                    <div class="profile-main-wrapper" style="width: 40%; margin: 5% auto 5% auto;">
-                        <h2 class="heder-profile" style="color: var(--primarycolor);">Create New Plan</h2>
-                        <div class="profile-main-wrapper">
+                    <div  style="width: 50%; margin: 8% auto;">
+                        <h2 class="heder-profile" style="color: var(--accentcolor);">Create New Plan</h2>
+                        <div>
                             <form method="POST" action="CustomizePlans.php" autocomplete="off" enctype="multipart/form-data">
                                 <center>
-                                    <!-- <div class="input-elements">
-                                        <select id="season" name="season" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                    background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                    box-sizing: border-box; border: none; border-radius: 5px;
-                                                    font-size: 10px; font-weight: bold; color:#808080;" required>
-                                            <option value="" disabled selected hidden>Season</option>
-                                            <?php
-                                            $season_sql = "SELECT * FROM season WHERE isActive= '" . 1 . "'";
-                                            $season_result = $conn->query($season_sql);
-                                            if ($season_result) {
-                                                if ($season_result->num_rows > 0) {
-                                                    while ($season = $season_result->fetch_assoc()) {
-                                            ?>
-                                                        <option value="<?php echo ($season["season_name"]) ?>"><?php echo ($season["season_name"]) ?></option>
-                                            <?php
-                                                    }
-                                                }
-                                            }
-                                            ?>
-                                        </select>
-                                    </div> -->
-                                    <!-- <div class="input-elements"> -->
+                                        <br>
+                                        <!-- <p style="color: var(--accentcolor); font-size: 14px; text-align: left;">Select the location*</p> -->
                                         <select id="location" name="location" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                background-color: var(--accentcolor); opacity: 0.75; height: 40px;
+                                                background-color: var(--accentcolor); opacity: 0.75; height: 40px; padding: 0px 0px 0px 10px;
                                                 box-sizing: border-box; border: none; border-radius: 5px;
-                                                font-size: 10px; font-weight: bold; color:#808080;" required>
-                                            <option value="" disabled selected hidden>Location</option>
+                                                font-size: 10px; font-weight: bold; color:#808080; margin-left: 195px;" required>
+                                            <option value="" disabled selected hidden>LOCATION</option>
                                             <?php
                                             $location_sql = "SELECT * FROM districts WHERE isActive= '" . 1 . "'";
                                             $location_result = $conn->query($location_sql);
@@ -109,18 +89,21 @@
                                             ?>
                                         </select>
 
+                                        <br>
+                                        <!-- <p style="color: var(--accentcolor); font-size: 14px; text-align: left;">Select the destination*</p> -->
                                         <select onclick="hideParagraph()" id="destination" name="destination[]" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
                                                 background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                                                 box-sizing: border-box; border: none; border-radius: 5px;
-                                                font-size: 10px; font-weight: bold; color:#808080;" multiple required>
-                                            <option value="" disabled>Destination</option>
+                                                font-size: 10px; font-weight: bold; color:#808080; margin-left: 195px;" multiple required>
+                                            <option value="" disabled>DESTINATION</option>
                                         </select>
 
-                                    <p id="requird-destination" style="color:red; font-size: 12px;">* Destinations are required</p>
-                                        <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
+                                        <br>
+                                        <!-- <p id="requird-destination" style="color: red; font-size: 14px; text-align: left; display: none;">Select Type of the package*</p> -->
+                                        <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; padding: 0px 0px 0px 10px;
                                                 background-color: var(--accentcolor); opacity: 0.75; height: 40px; box-sizing: border-box; border: none; border-radius: 5px;
-                                                font-size: 10px; font-weight: bold; color:#808080;" required>
-                                            <option value="" disabled selected hidden>Type Of Package</option>
+                                                font-size: 10px; font-weight: bold; color:#808080; margin-left: 195px;" required>
+                                            <option value="" disabled selected hidden>TYPE OF PACKAGE</option>
                                             <?php
                                             $type_sql = "SELECT * FROM plan_types WHERE isActive= '" . 1 . "'";
                                             $type_result = $conn->query($type_sql);
@@ -135,16 +118,17 @@
                                             }
                                             ?>
                                         </select>
-                                    <!-- </div> -->
-                                    <div class="input-elements">
-                                        <input class="line-wrapper line-txt" type="number" id="noOfDays" name="noOfDays" style="width: 400px;  margin-top: 12px; 
-                            background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                            box-sizing: border-box; border: none; border-radius: 5px;
-                            font-size: 10px; font-weight: bold; color:#808080;" min="1" placeholder="No Of Days" pattern="^\d+$" required>
-                                    </div>
-                                    <div class="new-user" >
-                                        <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn">Next</button>
-                                    </div>
+                                    
+                                        <br>
+                                        <!-- <p style="color: var(--accentcolor); font-size: 14px; text-align: left;">Select no of days*</p> -->
+                                        <div class="input-elements">
+                                            <input class="line-wrapper line-txt" type="number" id="noOfDays" name="noOfDays" style="width: 400px;  margin-top: 12px; 
+                                                background-color: var(--accentcolor); opacity: 0.75; height: 40px; box-sizing: border-box; border: none; border-radius: 5px;
+                                                font-size: 10px; font-weight: bold; color:#808080;" min="1" placeholder="No Of Days" pattern="^\d+$" required>
+                                        </div>
+                                        <div class="new-user" >
+                                            <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn" style="background-color: var(--secondarycolor);">Next</button>
+                                        </div>
 
                                     </center>
                                 <?php
