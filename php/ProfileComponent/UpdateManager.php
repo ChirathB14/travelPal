@@ -77,7 +77,7 @@ $title = "Register Manager - TravePal";
                                 confirmButtonText: "OK",
                                 confirmButtonColor: "var(--primarycolor)",
                                 footer: "TravelPal"
-                            });'
+                            });';
                             // echo 'alert("Update Success")';
                             echo '</script>';
                             header($updatePage);
@@ -90,7 +90,7 @@ $title = "Register Manager - TravePal";
                                 confirmButtonText: "OK",
                                 confirmButtonColor: "var(--primarycolor)",
                                 footer: "TravelPal"
-                            });'
+                            });';
                             // echo 'alert("Unsuccessfull :( ")';
                             echo '</script>';
                         }

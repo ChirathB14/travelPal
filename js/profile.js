@@ -1,8 +1,28 @@
+// function logOut() {
+//   if (confirm("Are You Sure,\nDo You Want To Logout?")) {
+//     delete_cookie("user");
+//     window.location = "/travelPal/index.php";
+//   }
+// }
+
 function logOut() {
-  if (confirm("Are You Sure,\nDo You Want To Logout?")) {
-    delete_cookie("user");
-    window.location = "/travelPal/index.php";
-  }
+  Swal.fire({
+    title: "Are You Sure, Do You Want To Logout? ",
+    text: "",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes, Logout!",
+    confirmButtonColor: "var(--primarycolor)",
+    cancelButtonText: "No!",
+    cancelButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        delete_cookie("user");
+        window.location = "/travelPal/index.php";
+      }
+    }
+  )
 }
 
 function onResetSuccess() {

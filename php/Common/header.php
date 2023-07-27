@@ -18,7 +18,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <title>Travel Pal</title>
+    <title>TravelPal</title>
 </head>
 
 <body onload="checkAccess(false)">
@@ -46,8 +46,17 @@
             </div>    
         </div> ";
     } else {
+
+        $userJson = $_COOKIE['user'];
+        $userData = json_decode($userJson, true);
+        $firstName = isset($userData['FIRST_NAME']) ? $userData['FIRST_NAME'] : '';
+        $firstName = trim($firstName);
+
         echo "
         <div class=\"header\">
+            <div class=\"welcome-message\">
+                Welcome, $firstName!
+            </div>
             <div class=\"navigationbar\">
                 <div class=\"nav-Logo\">
                     <a href=\"/travelPal/index.php\">
