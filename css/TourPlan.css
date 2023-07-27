@@ -16,10 +16,17 @@
 
 .Title-Tourplan {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     position: absolute;
-    top: 400px;
-    left: 380px;
+    top: 150px;
+    left: 100px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    /* position: absolute; */
+    width: 100%;
 }
 
 h1 {
@@ -32,33 +39,44 @@ h1 {
     height: auto;
 }
 
+.title-content p {
+    text-align: left;
+    margin: 40px 0 40px 20px;
+    font-size: 16px;
+    top: 200px;
+    left: 50px;
+    width: 40%;
+}
+
 p {
     text-align: center;
-    margin: 50px 80px 0 80px;
-    font-size: 20px;
+    margin: 40px 0 40px 20px;
+    font-size: 16px;
 }
 
 .features {
     display: flex;
     flex-direction: row;
-    margin: 30px 100px 30px 100px;
+    margin: 30px 80px 30px 80px;
 }
 
 .feature-content {
     box-sizing: border-box;
+    box-shadow: white 0px 0px 6px 0px;
     border-radius: 10px;
     text-align: center;
     background-color: var(--accentcolor);
     opacity: 75%;
-    width: 340px;
-    height:200px;
+    width: 300px;
+    height:180px;
     margin: 10px auto 10px auto;
-    padding: 30px;
+    padding: 10px;
 }
 
-.feature-content:hover {
-    width: 380px;
-}
+/* .feature-content:hover {
+    width: 340px;
+    height: 240px;
+} */
 
 .feature-content h4 {
     font-size: 20px;

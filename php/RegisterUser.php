@@ -14,6 +14,35 @@
     <script src="sweetalert2.all.min.js"></script>
     
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
+
+    <style>
+        .input-elements {
+            width: 650px;
+        }
+
+        .register-inputs {
+            display: inline-block;
+        }
+
+        .register-inputs label {
+            padding-top: 20px !important;
+            font-size: 18px;
+        }
+
+        .register-inputs input {
+            float: right;
+            width: 400px;
+        }
+
+        .register-inputs select {
+            float: right;
+            width: 400px;
+        }
+
+        .new-user { 
+            align-items: center;
+        }
+    </style>
 </head>
 
 <?php
@@ -28,22 +57,49 @@
                 < Back</button> -->
                     <h1 id="heder-login">Create an Account</h1>
                     <div class="input-elements">
-                        <input type="text" name="fname" id="fname" placeholder=" FIRST NAME" required oninvalid="this.setCustomValidity('Enter first name')" oninput="this.setCustomValidity('')">
-                        <input type="text" name="lname" id="lname" placeholder=" LAST NAME" required oninvalid="this.setCustomValidity('Enter last name')" oninput="this.setCustomValidity('')">
-                        <input type="text" name="address" id="address" placeholder=" ADDRESS" required oninvalid="this.setCustomValidity('Enter address')" oninput="this.setCustomValidity('')" />
-                        <input type="email" name="email" id="email" placeholder=" EMAIL" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                        <input type="password" name="Pass" id="Pass" placeholder=" PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
-                        Should be more than 8 characters and less than 16 characters.">
-                        <input type="password" name="rePass" id="rePass" placeholder=" CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
-                        Should be more than 8 characters and less than 16 characters.">
-                        <select id="usertype" name="usertype" required style="width: 400px;  margin-top: 12px; 
-                            background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                            box-sizing: border-box; border: none; border-radius: 5px;
-                            font-size: 14px; font-weight: bold; color:#808080;">
-                            <option value="" disabled selected hidden> &nbsp;REGISTER AS</option>
-                            <option value="3">Tourist</option>
-                            <option value="4">Service Provider</option>
-                        </select>
+                        <div class="register-inputs">
+                            <label for="">First Name :</label>
+                            <input type="text" name="fname" id="fname" placeholder=" FIRST NAME" required oninvalid="this.setCustomValidity('Enter first name')" oninput="this.setCustomValidity('')">
+                        </div>
+
+                        <div class="register-inputs">
+                            <label for="">Last Name :</label>
+                            <input type="text" name="lname" id="lname" placeholder=" LAST NAME" required oninvalid="this.setCustomValidity('Enter last name')" oninput="this.setCustomValidity('')">
+                        </div>
+
+                        <div class="register-inputs">
+                            <label for="">Address :</label>
+                            <input type="text" name="address" id="address" placeholder=" ADDRESS" required oninvalid="this.setCustomValidity('Enter address')" oninput="this.setCustomValidity('')" />
+                        </div>
+                        
+                        <div class="register-inputs">
+                            <label for="">Email :</label>
+                            <input type="email" name="email" id="email" placeholder=" EMAIL" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                        </div>
+                        
+                        <div class="register-inputs">
+                            <label for="">Password :</label>
+                            <input type="password" name="Pass" id="Pass" placeholder=" PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+                            Should be more than 8 characters and less than 16 characters.">
+                        </div>
+                        
+                        <div class="register-inputs">
+                            <label for="">Confirm Password :</label>
+                            <input type="password" name="rePass" id="rePass" placeholder=" CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+                            Should be more than 8 characters and less than 16 characters.">
+                        </div>
+                        
+                        <div class="register-inputs">
+                            <label for="">User Type :</label>
+                            <select id="usertype" name="usertype" required style="width: 400px;  margin-top: 12px; 
+                                background-color: var(--accentcolor); opacity: 0.75; height: 40px;
+                                box-sizing: border-box; border: none; border-radius: 5px;
+                                font-size: 14px; font-weight: bold; color:#808080;">
+                                <option value="" disabled selected hidden> &nbsp;REGISTER AS</option>
+                                <option value="3">Tourist</option>
+                                <option value="4">Service Provider</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="new-user">
                         <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn">

@@ -1,8 +1,28 @@
+// function logOut() {
+//   if (confirm("Are You Sure,\nDo You Want To Logout?")) {
+//     delete_cookie("user");
+//     window.location = "/travelPal/index.php";
+//   }
+// }
+
 function logOut() {
-  if (confirm("Are You Sure,\nDo You Want To Logout?")) {
-    delete_cookie("user");
-    window.location = "/travelPal/index.php";
-  }
+  Swal.fire({
+    title: "Are You Sure, Do You Want To Logout? ",
+    text: "",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes, Logout!",
+    confirmButtonColor: "var(--primarycolor)",
+    cancelButtonText: "No!",
+    cancelButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        delete_cookie("user");
+        window.location = "/travelPal/index.php";
+      }
+    }
+  )
 }
 
 function onResetSuccess() {
@@ -223,16 +243,17 @@ function checkUserAccess() {
 }
 
 function onUpdateSuccess() {
-  swal({
-    title: "Success!",
-    text: "User Details updated!",
-    icon: "success",
-    confirmButtonText: "Ok",
-    confirmButtonColor: "var(--primarycolor)",
-    footer: "TravelPal"    
-  }).then(function () {
-    window.location = "../index.php";
-  });
+  // alert("User Details updated!");
+  // Swal.fire({
+  //   title: "Success!",
+  //   text: "User Details updated!",
+  //   icon: "success",
+  //   confirmButtonText: "Ok",
+  //   confirmButtonColor: "var(--primarycolor)",
+  //   footer: "TravelPal"  
+  // })
+window.location = "./Profile.php";
+};
     
 //  swal({
 //    title: "User Details updated!",
@@ -252,7 +273,7 @@ function onUpdateSuccess() {
 //      swal("Cancelled", "Your imaginary file is safe :)", "error");
 //    }
 //  });
-}
+
 
 function newPlanCreated() {
   Swal.fire({

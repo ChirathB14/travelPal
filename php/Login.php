@@ -102,11 +102,6 @@
     </div>
     </div>
 </body>
-<br>
-<br>
-<br>
-<br>
-<br>
 <footer>
         <hr>
         <div class="footer-bottom">
