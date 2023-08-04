@@ -68,12 +68,30 @@ function checkTypeAccess() {
 
 }
 
+// function logOut() {
+//     var txt;
+//     if (confirm("Are You Sure,\nDo You Want To Logout?")) {
+//         delete_cookie('user')
+//         window.location.reload()
+//     }
+// }
+
 function logOut() {
-    var txt;
-    if (confirm("Are You Sure,\nDo You Want To Logout?")) {
-        delete_cookie('user')
-        window.location.reload()
+  swal.fire ({
+    title: "Are You Sure, Do You Want To Logout?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes",
+    confirmButtonColor: "var(--primarycolor)",
+    cancelButtonText: "No",
+    cancelButtonColor: "var(--primarycolor)",
+    footer: "TravelPal"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      delete_cookie('user')
+      window.location.reload()
     }
+  })
 }
 
 function delete_cookie(name) {

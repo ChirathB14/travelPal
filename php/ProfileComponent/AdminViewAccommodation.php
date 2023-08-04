@@ -95,12 +95,20 @@
                                                                 <td class="td-txt"><?php echo $manager['address']; ?></td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="UpdateManager.php?id=<?php echo $manager['user_Id']; ?>&page=location:./AdminViewAccommodation.php">
-                                                                        <center><button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="editBtn"><img src="../../images/edit-text.png" alt="edit" width="16" height="16"></button></center>
+                                                                        <center>
+                                                                            <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" name="edit" value="editBtn">
+                                                                                <img src="../../images/edit-text.png" alt="edit" width="16" height="16">
+                                                                            </button>
+                                                                        </center>
                                                                     </a>
                                                                 </td>
                                                                 <td style="padding: 5px 5px;">
                                                                     <a href="./subComponent/DeleteUserItem.php?id=<?php echo $manager['user_Id']; ?>&page=location:../AdminViewAccommodation.php">
-                                                                        <center> <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');"><img src="../../images/delete.jpg" alt="delete" width="16" height="16"></button> </center>
+                                                                        <center> 
+                                                                            <button style="background-color: var(--accentcolor); width:20px; height:20px;" type="submit" value="deleteBtn" onclick="return confirm('Are you sure?\n Do You Want To Delete This User ?');">
+                                                                                <img src="../../images/delete.jpg" alt="delete" width="16" height="16">
+                                                                            </button> 
+                                                                        </center>
                                                                     </a>
 
                                                                 </td>
@@ -117,6 +125,49 @@
                                                     echo "Error in " . $sql . " " . $conn->$error;
                                                 }
                                                 ?>
+
+                                        <?php
+                                        //     if (isset($_POST['editBtn'])) {
+                                        //        $first = $_POST["first_name"];
+                                        //        $last = $_POST["last_name"];
+                                        //        $email = $_POST["email"];
+                                        //        $address = $_POST["address"];
+                                              
+                                        //        $sql = "UPDATE user SET first_name='$first', last_name='$last', email='$email', address ='$address' WHERE user_Id= '$userID'";
+
+                                        //        function alert() {
+                                        //            echo '<script>
+                                        //            Swal.fire({
+                                        //                    title: "Success!",
+                                        //                    text: "User Details updated!",
+                                        //                    icon: "success",
+                                        //                    confirmButtonText: "Ok",
+                                        //                    confirmButtonColor: "var(--primarycolor)",
+                                        //                    footer: "TravelPal"  
+                                        //                 }).then(() => {
+                                        //                    window.location.href = "/travelPal/php/ProfileComponent/Profile.php";
+                                        //                  })
+                                        //                  </script>';
+                                        //        }
+                                        //        if ($conn->query($sql) === TRUE) {
+                                        //            alert();   
+                                        //        } else {
+                                        //            echo '<script language = "javascript">';
+                                        //            echo 'swal.fire ({
+                                        //                title: "Unsuccessfull :( ",
+                                        //                text: "Something went wrong!",
+                                        //                icon: "error",
+                                        //                confirmButtonText: "Try again",
+                                        //                confirmButtonColor: "var(--primarycolor)",
+                                        //                footer: "TravelPal"
+                                        //            })';
+                                        //            // echo 'alert("Unsuccessfull :( ")';
+                                        //            echo '</script>';
+                                        //        }
+                                        //        // $conn->close();
+                                        //    }
+                                           ?>
+
                                             </tbody>
 
                                         </table>

@@ -10,47 +10,12 @@
     <link rel="stylesheet" href="../../css/profile.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javascript" src="../../js/profile.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/sweetalert2.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-3.6.4.min.js"></script>
-
-<!--     <style>
-        .update {
-            display: flex;
-            flex-direction: row;
-            background-color: var(--accentcolor);
-            color: var(--primarycolor);
-            border-radius: 15px;
-            border: none;
-            cursor: pointer;
-            margin: 10px;
-            width: 500px;
-            height: 60px;
-            padding: 0px;
-        }
-
-        .update .line-txt {
-            font-size: 14px;
-            padding: 0 !important;
-        }
-
-        .update label {
-            font-size: 14px;
-            font-weight: 500;
-            margin: 25px 10px 25px 15px;
-        }
-
-        .update input {
-            font-size: 14px;
-            font-weight: 500;
-            margin: 15px;
-            border-radius: 5px;
-            border: 2px solid gray;
-            padding: 5px 10px;
-        }
-    </style> -->
 </head>
 
 
@@ -107,83 +72,68 @@ $title = "Update Profile - TravePal";
                                             <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="120" height="120">
                                             <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
                                         </div>
-                                        <?php
-                                        if (isset($_POST['deleteBtn'])) {
-                                            $sql = "DELETE FROM user WHERE user_Id= '$userID'";
-
-                                            if ($conn->query($sql) === TRUE) {
-                                                echo '<script language = "javascript">';
-                                                echo 'onDeleteSuccess()';
-                                                echo '</script>';
-                                            } else {
-                                                echo '<script language = "javascript">';
-                                                echo 'swal.fire ({
-                                                    title: "Unsuccessfull :( ",
-                                                    text: "Something went wrong!",
-                                                    icon: "error",
-                                                    confirmButtonText: "Try again"
-                                                })';
-                                                // echo 'alert("Unsuccessfull :( ")';
-                                                echo '</script>';
-                                            }
-                                            $conn->close();
-                                        }
-                                        ?>
-                                        <form method="POST" action="UpdateProfile.php">
+                                      
+                                        <form method="POST" action="">
                                             <div>
                                                 <div class="line-wrapper">
                                                     <label for="">First Name : </label>
-                                                    <input type="text" value="<?php echo $row['first_name']; ?>">
+                                                    <input type="text" name="first_name" value="<?php echo $row['first_name']; ?>">
                                                 </div>
                                                 <div class="line-wrapper">
                                                     <label for="">Last Name : </label>
-                                                    <input type="text" value="<?php echo $row['last_name']; ?>">
+                                                    <input type="text" name="last_name" value="<?php echo $row['last_name']; ?>">
                                                 </div>
                                                 <div class="line-wrapper">
                                                     <label for="">Email : </label>
-                                                    <input type="text" value="<?php echo $row['email']; ?>">
+                                                    <input type="text" name="email" value="<?php echo $row['email']; ?>">
                                                 </div>
                                                 <div class="line-wrapper">
                                                     <label for="">Address : </label>
-                                                    <input type="text" value="<?php echo $row['address']; ?>">
+                                                    <input type="text" name="address" value="<?php echo $row['address']; ?>">
                                                 </div>
                                             </div>
 
-                                            <!-- <div class="update">
-                                                <label class="line-txt" for="firstName" style="width:30%"><b>First Name:</b></label>
-                                                <input type="text" id="firstName" name="firstName" style="width:70%" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required>
-                                            </div>
-                                            <div class="update">
-                                                <label class="line-txt" for="lastName" style="width:30%"><b>Last Name:</b></label>
-                                                <input type="text" id="lastName" name="lastName" style="width:70%" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required>
-                                            </div>
-                                            <div class="update">
-                                                <label class="line-txt" for="email" style="width:30%"><b>Email:</b></label>
-                                                <input type="email" id="email" name="email" style="width:70%" placeholder="Email" value="<?php echo $row['email']; ?>" required>
-                                            </div>
-                                            <div class="update">
-                                                <label class="line-txt" for="address" style="width:30%"><b>Address:</b></label>
-                                                <input type="text" id="address" name="address" style="width:70%" placeholder="Address" value="<?php echo $row['address']; ?>" required>
-                                            </div> -->
+                                            
                                             <center>
-                                                <button class="update-btn" type="submit" id="updateBtn" name="updateBtn" value="updateBtn">Save</button>
+                                                <button class="update-btn" type="submit" id="updateBtn" name="updateBtn">Save</button>
                                             </center>
                                             <?php
+                                           
                                             if (isset($_POST['updateBtn'])) {
 
-                                                $first = $_POST["firstName"];
-                                                $last = $_POST["lastName"];
+                                                $first = $_POST["first_name"];
+                                                $last = $_POST["last_name"];
                                                 $email = $_POST["email"];
                                                 $address = $_POST["address"];
-
-
+                                               
+                                                
 
                                                 $sql = "UPDATE user SET first_name='$first', last_name='$last', email='$email', address ='$address' WHERE user_Id= '$userID'";
 
+                                                function alert() {
+                                                    echo '<script>
+                                                    Swal.fire({
+                                                            title: "Success!",
+                                                            text: "User Details updated!",
+                                                            icon: "success",
+                                                            confirmButtonText: "Ok",
+                                                            confirmButtonColor: "var(--primarycolor)",
+                                                            footer: "TravelPal"  
+                                                         }).then(() => {
+                                                            window.location.href = "/travelPal/php/ProfileComponent/Profile.php";
+                                                          })
+                                                          </script>';
+                                                }
+                                              
+                                                
+
                                                 if ($conn->query($sql) === TRUE) {
-                                                    echo '<script language = "javascript">';
-                                                    echo 'onUpdateSuccess()';
-                                                    echo '</script>';
+                                                 
+                                                    alert();
+                                                   
+                                                    
+                                                    
+                                                    
                                                 } else {
                                                     echo '<script language = "javascript">';
                                                     echo 'swal.fire ({

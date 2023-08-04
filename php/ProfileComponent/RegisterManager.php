@@ -42,7 +42,7 @@ $title = "Register Manager - TravePal";
                             <input type="text" id="fname" name="fname" placeholder="  First Name" required />
                             <input type="text" id="lname" name="lname" placeholder="  Last Name" required />
                             <input type="text" id="address" name="address" placeholder="  Address" required />
-                            <input type="tel" id="telephone" name="telephone" placeholder="  Telephone Number" required />
+                            <!-- <input type="tel" id="telephone" name="telephone" placeholder="  Telephone Number" required /> -->
                             <input type="email" id="email" name="email" placeholder="  Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
                             <!-- <input type="password" name="Pass" id="Pass" placeholder=" PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                     Should be more than 8 characters and less than 16 characters.">
@@ -54,13 +54,13 @@ $title = "Register Manager - TravePal";
                         <?php
                         require '../DbConfig.php';
                         if (isset($_POST['registerbtn'])) {
-                            $hasedPass = password_hash($_POST["Pass"], null);
+                            // $hasedPass = password_hash($_POST["Pass"], null);
                             $first = $_POST["fname"];
                             $last = $_POST["lname"];
                             $address = $_POST["address"];
-                            $telephone = $_POST["telephone"];
+                            // $telephone = $_POST["telephone"];
                             $email = $_POST["email"];
-                            $psw = $hasedPass;
+                            // $psw = $hasedPass;
                             $isActive = true;
                             $userType = 2;
                             $createdDate = date('Y-m-d H:i:s');
@@ -84,8 +84,8 @@ $title = "Register Manager - TravePal";
                                     // Generate OTP and send it to user's email
                                     $otp = rand(100000, 999999);
 
-                                    $sqltwo = "INSERT INTO user (user_Id, first_name, last_name, address, telephone, email, password, isActive,  user_type, created_date, otp)
-                                    VALUES (0,'$first','$last','$address', '$telephone','$email',NULL,'$isActive', '$userType', '$createdDate', '$otp' )";
+                                    $sqltwo = "INSERT INTO user (user_Id, first_name, last_name, address, email, password, isActive,  user_type, created_date, otp)
+                                    VALUES (0,'$first','$last','$address','$email',NULL,'$isActive', '$userType', '$createdDate', '$otp' )";
 
                                     if ($conn->query($sqltwo) === TRUE) {
                                         // Send email using PHPMailer
