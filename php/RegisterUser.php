@@ -28,14 +28,21 @@
                 < Back</button> -->
                     <h1 id="heder-login">Create an Account</h1>
                     <div class="input-elements">
+                        <label for="fname">First Name</label>
                         <input type="text" name="fname" id="fname" placeholder=" FIRST NAME" required oninvalid="this.setCustomValidity('Enter first name')" oninput="this.setCustomValidity('')">
+                        <label for="fname">First Name</label>                        
                         <input type="text" name="lname" id="lname" placeholder=" LAST NAME" required oninvalid="this.setCustomValidity('Enter last name')" oninput="this.setCustomValidity('')">
+                        <label for="fname">First Name</label>
                         <input type="text" name="address" id="address" placeholder=" ADDRESS" required oninvalid="this.setCustomValidity('Enter address')" oninput="this.setCustomValidity('')" />
+                        <label for="fname">First Name</label>
                         <input type="email" name="email" id="email" placeholder=" EMAIL" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                        <label for="fname">First Name</label>
                         <input type="password" name="Pass" id="Pass" placeholder=" PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                         Should be more than 8 characters and less than 16 characters.">
+                        <label for="fname">First Name</label>
                         <input type="password" name="rePass" id="rePass" placeholder=" CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                         Should be more than 8 characters and less than 16 characters.">
+                        <label for="fname">First Name</label>
                         <select id="usertype" name="usertype" required style="width: 400px;  margin-top: 12px; 
                             background-color: var(--accentcolor); opacity: 0.75; height: 40px;
                             box-sizing: border-box; border: none; border-radius: 5px;
