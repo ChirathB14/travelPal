@@ -126,6 +126,34 @@ input::placeholder {
     font-weight: lighter;
     height: 60px;
 }
+
+.menu .nav-welcome {
+    border: none;
+    background-color: var(--primarycolor);
+    color: var(--accentcolor);
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 0%;
+    cursor: pointer;
+    width: 240px;
+    font-weight: bold;
+    height: 60px;
+}
+
+.menu .nav-welcome:hover {
+    background-color: var(--primarycolor) !important;
+    color: var(--accentcolor);
+}
+
+.nav-Logo {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
   
 .nav a {
     text-decoration: none;

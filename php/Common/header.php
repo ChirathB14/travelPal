@@ -60,11 +60,9 @@
                     <a href=\"/travelPal/index.php\">
                         <img src=\"/travelPal/images/logo.png\" alt=\"TRAVELPal\">
                     </a>
-                    <div class=\"welcome-message\">
-                        <p>WELCOME, $first_name</p>
-                    </div>
                 </div>
                 <div class=\"menu\">
+                    <button class=\"nav-welcome\" onclick=\"\">WELCOME, $first_name</button>
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
                     <button class=\"nav\"onclick=\"location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';\">TOUR PLAN</button>
                     <button class=\"nav\"onclick=\"location.href = '/travelPal/php/Blog/ContactUS.php';\">CONTACT US</button>

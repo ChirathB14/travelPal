@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="../../css/profile.css">
     <link rel="stylesheet" href="../../css/main.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script type="text/javascript" src="../../js/profile.js"></script>
@@ -56,7 +57,7 @@
             </div>    
         </div> 
 
-                    <table style="width:80%">
+                    <table style="width:100%">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
 

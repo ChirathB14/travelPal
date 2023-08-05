@@ -6,31 +6,33 @@
 }
 
 .home img {
-    width: 100vw;
+    width: 20vw;
     height: auto;
-    opacity: 0.8;
+    padding-top: 20px;
+    padding-right: 40px;
 }
 
 .welcome {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 200px;
-    right: 80px;
+    float: left;
+    align-items: flex-start;
+    padding-top: 80px;
+    padding-left: 140px;
 }
 
 .welcome h3 {
-    font-size: 18px;
-    text-align: right;
+    font-size: 24px;
     margin-right: 20px;
+    text-align: left;
 }
 
 .welcome h1 {
     font-weight: 900;
-    font-size: 60px;
-    line-height: 90px;
-    letter-spacing: 0.15em;
-    text-align: right;
+    font-size: 54px;
+    line-height: 70px;
+    letter-spacing: 0.25em;
+    text-align: left;
 }
 
 .welcome mark {
@@ -39,10 +41,11 @@
 }
 
 .welcome h5 {
-    font-size: 14px;
+    font-size: 18px;
     text-transform: none;
     text-align: right;
     margin-right: 20px;
+    letter-spacing: 0.12em;
 }
 
 .selection {

@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -71,7 +72,7 @@
                                         <div class="main-wrapper">
                                             <h2 class="heder-profile">Accommodation Services</h2>
                                             <div>
-                                                <table style="width: 85vw;">
+                                                <table style="width: 65vw;">
                                                     <thead>
                                                         <tr class="table-header">
                                                             <th style="min-width: 140px;">Ref No</th>

@@ -21,11 +21,19 @@
 <body onload="checkAccess(true)">
 
     <div class="home">
-        <img src="./images/home.jpg" alt="home-bg">
+        <img src="./images/home.png" alt="home-bg">
         <div class="welcome">
             <h3>&nbsp; welcome to travelPal</h3>
+            <br>
             <h1>plan your next<br> trip with <br> <mark> travelpal</mark></h1>
+            <br>
             <h5>&nbsp; &nbsp; We support you to travel within Sri Lanka with the superb experience</h5>
+            <br>
+            <button style="border: 3px solid white; background-color: transparent; font-size: 16px; width: 240px; margin-left: 20px;">
+                        <a href="../TourPlanningComponent/TourPlanningIndex.php">
+                            Join with us
+                        </a>
+                    </button>
         </div>
     </div>
     <br> <br>

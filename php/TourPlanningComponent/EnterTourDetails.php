@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javascript" src="../../js/custermizePlan.js"></script>
     <script src="sweetalert2.all.min.js"></script>
@@ -152,18 +153,22 @@
         $sqltwo = "INSERT INTO user_tours (user_tours_id, tour_id, start_date, no_of_tourist, created_by, created_date, isActive,  status, common_id)
                     VALUES (0,'$tourID','$startDate','$noOfTourist','$userID','$createdDate','$isActive', '1', '$common' )";
 
+
+    function alert() {
+    echo '<script>
+    Swal.fire({
+        title: "Details Saved Success. Now you can add services",
+        icon: "success",
+        confirmButtonText: "OK",
+        confirmButtonColor: "var(--primarycolor)",
+        footer: "TravelPal" 
+         }).then(() => {
+            window.location = "./SelectAccomadation.php?common=' . $common . '";
+          })
+          </script>';
+}
         if ($conn->query($sqltwo) === TRUE) {
-            echo '<script language = "javascript">';
-            echo 'swal.fire ({
-                title: "Details Saved Success. Now you can add services",
-                icon: "success",
-                confirmButtonText: "OK",
-                confirmButtonColor: "var(--primarycolor)",
-                footer: "TravelPal"
-            })';
-            // echo' alert("Details Saved Success. Now you can add services")';
-            echo 'window.location = "./SelectAccomadation.php?common=' . $common . '"';
-            echo '</script>';
+           alert();
         } else {
             echo '<script language = "javascript">';
             echo 'swal.fire ({

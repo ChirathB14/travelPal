@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -165,18 +166,21 @@
                                                     $season = $_POST["season"];
                                                     $createdDate = date('Y-m-d');
 
-                                                    if ($_FILES["image"]["error"] == 4) {
-                                                        echo '<script>'; 
-                                                        echo 'swal.fire ({
+                                                    function alert() {
+                                                        echo '<script>
+                                                        Swal.fire({
                                                             title: "Image Does Not Exist",
                                                             text: "",
                                                             icon: "error",
                                                             confirmButtonText: "OK",
                                                             confirmButtonColor: "var(--primarycolor)",
-                                                            footer: "TravelPal"
-                                                        })';
-                                                        // echo 'alert("Image Does Not Exist");'
-                                                        echo '</script>';
+                                                            footer: "TravelPal" 
+                                                             })
+                                                              </script>';
+                                                    }
+
+                                                    if ($_FILES["image"]["error"] == 4) {
+                                                        alert();
                                                     } else {
                                                         $fileName = $_FILES["image"]["name"];
                                                         $fileSize = $_FILES["image"]["size"];
