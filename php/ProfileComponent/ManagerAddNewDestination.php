@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../../css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
@@ -128,19 +129,22 @@
                             $sqltwo = "INSERT INTO destinations (destination_Id, location, experience, destination, created_by, created_date, isActive)
                                     VALUES (0,'$location','$experience','$destination','$userID','$createdDate','$isActive' )";
 
+function alert() {
+    echo '<script>
+    Swal.fire({
+        title: "Successfully Added",
+        text: "New Destination Added",
+        icon: "success",
+        confirmButtonText: "OK",
+        confirmButtonColor: "var(--primarycolor)",
+        footer: "TravelPal"
+         }).then(() => {
+            document.location.replace("./ManagerNewPlan.php");
+          })
+          </script>';
+}
                             if ($conn->query($sqltwo) === TRUE) {
-                                echo '<script>';
-                                echo 'swal.fire ({
-                                    title: "Successfully Added",
-                                    text: "New Destination Added",
-                                    icon: "success",
-                                    confirmButtonText: "OK",
-                                    confirmButtonColor: "var(--primarycolor)",
-                                    footer: "TravelPal"
-                                })';
-                                // echo 'alert("Successfully Added")';
-                                echo 'document.location.replace("./ManagerNewPlan.php")';
-                                echo '</script>';
+                               alert();
                             } else {
                                 echo '<script language = "javascript">';
                                 echo 'swal.fire ({

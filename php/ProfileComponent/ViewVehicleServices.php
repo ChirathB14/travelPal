@@ -56,7 +56,7 @@ $title = "View Vehicle Services - TravePal";
             </div>    
         </div>
 
-                    <table style="width:80%">
+                    <table style="width:100%">
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
 

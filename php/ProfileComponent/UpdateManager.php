@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/registration.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="../../js/mangerRegister.js"></script>
@@ -36,7 +37,7 @@ $title = "Register Manager - TravePal";
                                 while ($row = $result->fetch_assoc()) {
                                     ?>
                                     <form class="reg-form" method="POST" action="UpdateManager.php?userId=<?php echo urlencode($_GET['id']); ?>&newPage=<?php echo urlencode($_GET['page']); ?>">
-                                        <h2 id="heder-register">&nbsp;&nbsp;&nbsp; update manager account</h2>
+                                        <h2 id="heder-register" style="font-size: 30px">&nbsp;&nbsp;&nbsp; update account</h2>
                                         <div class="input-elements">
                                             <input type="text" class="reg-input" id="fname" name="fname" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required />
                                             <input type="text" class="reg-input" id="lname" name="lname" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required />
@@ -68,18 +69,21 @@ $title = "Register Manager - TravePal";
                         $updatePage = $_GET['newPage'];
                         $update = "UPDATE user SET first_name='$first', last_name='$last', email='$email', address ='$address' WHERE user_Id= '$updateUserID'";
 
-                        if ($conn->query($update) === TRUE) {
-                            echo '<script language = "javascript">';
-                            echo 'swal.fire ({
+                        function alert() {
+                            echo '<script>
+                            Swal.fire({
                                 title: "Success!",
                                 text: "Update Successfull",
                                 icon: "success",
                                 confirmButtonText: "OK",
                                 confirmButtonColor: "var(--primarycolor)",
                                 footer: "TravelPal"
-                            });';
-                            // echo 'alert("Update Success")';
-                            echo '</script>';
+                                })
+                                </script>';
+                        }
+
+                        if ($conn->query($update) === TRUE) {
+                            alert();
                             header($updatePage);
                         } else {
                             echo '<script language = "javascript">';
