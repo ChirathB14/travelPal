@@ -110,7 +110,7 @@ require_once("../Common/header.php");
 <body onload="checkAccess(true)">
     <table>
         <tr VALIGN=TOP>
-            <img src="../../images/contact.png" alt="Image" width="100%" height="auto">
+            <img src="../../images/contact.jpg" alt="Image" width="100%" height="50%">
             <div class="contact-main-dev">
                 <div class="contact-dev">
                     <h2 class="contact-h2">Contact us</h2>
