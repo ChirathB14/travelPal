@@ -1,3 +1,8 @@
+<?php 
+    $title = "Tour plan | TravePal";
+    require_once("../Common/header.php"); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,17 +13,9 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/TourPlan.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
-    <title>Travel Pal</title>
 </head>
 
-<?php 
-$title = "Tour plan | TravePal";
-include '../Common/header.php'; 
-?>
-
 <!-- Tour plan page content -->
-<div class="page-content">
     <div class="tour-plan-top-container">
         <img src="../../images/tourPlan.png" alt="Tour Plan">
         <div class="Title-Tourplan">
@@ -70,12 +67,12 @@ include '../Common/header.php';
         <button><a href="../TourPlanningComponent/CustomizePlans.php">Customize Tour</a></button>
     </div> -->
 
-    <p>
+    <!-- <p>
                     The fascination of Sri Lanka never ends. Astonishment, awe and amazement are just a few
                     emotions that are used to describe travel in this paradise island. Blend these with the
                     lavish and sumptuous accommodation, exquisite and unrivalled levels of gastronomy; a real
                     luxuries experience enjoyed by those who are privileged.
-                </p>
+                </p> -->
 </div>
 
 <!-- footer -->

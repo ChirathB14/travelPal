@@ -48,20 +48,21 @@
     } else {
 
         $userJson = $_COOKIE['user'];
+        // echo $userJson;
         $userData = json_decode($userJson, true);
-        $firstName = isset($userData['FIRST_NAME']) ? $userData['FIRST_NAME'] : '';
-        $firstName = trim($firstName);
+        $first_name = $userData['first_name'];
 
         echo "
         <div class=\"header\">
-            <div class=\"welcome-message\">
-                Welcome, $firstName!
-            </div>
+            
             <div class=\"navigationbar\">
                 <div class=\"nav-Logo\">
                     <a href=\"/travelPal/index.php\">
                         <img src=\"/travelPal/images/logo.png\" alt=\"TRAVELPal\">
                     </a>
+                    <div class=\"welcome-message\">
+                        <p>WELCOME, $first_name</p>
+                    </div>
                 </div>
                 <div class=\"menu\">
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
