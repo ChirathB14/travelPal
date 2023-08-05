@@ -60,7 +60,6 @@
                     <a href=\"/travelPal/index.php\">
                         <img src=\"/travelPal/images/logo.png\" alt=\"TRAVELPal\">
                     </a>
-                    
                 </div>
                 <div class=\"menu\">
                     <button class=\"nav-welcome\" onclick=\"\">WELCOME, $first_name</button>
