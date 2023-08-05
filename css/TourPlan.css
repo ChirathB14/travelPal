@@ -12,6 +12,7 @@
 .tour-plan-top-container img {
     width: 100vw;
     height: 85vh;
+    opacity: 50%;
 }
 
 .Title-Tourplan {

@@ -106,8 +106,6 @@ $title = "Update Profile - TravePal";
                                                 $email = $_POST["email"];
                                                 $address = $_POST["address"];
                                                
-                                                
-
                                                 $sql = "UPDATE user SET first_name='$first', last_name='$last', email='$email', address ='$address' WHERE user_Id= '$userID'";
 
                                                 function alert() {
@@ -125,15 +123,8 @@ $title = "Update Profile - TravePal";
                                                           </script>';
                                                 }
                                               
-                                                
-
                                                 if ($conn->query($sql) === TRUE) {
-                                                 
-                                                    alert();
-                                                   
-                                                    
-                                                    
-                                                    
+                                                    alert();   
                                                 } else {
                                                     echo '<script language = "javascript">';
                                                     echo 'swal.fire ({

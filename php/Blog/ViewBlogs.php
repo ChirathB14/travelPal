@@ -38,9 +38,10 @@ include '../Common/header.php';
                 <button class="create-blog" onclick="loadBlog()">Create Blog</button>
             </div>
             <div class="search">
-                <form action="ViewBlogs.php" method="get">
+                <form action="ViewBlogs.php" method="get" style="display: flex; flex-direction: column;">
                     <p style="margin-top: 40px;">
                         <input style="width:50%; height:40px; border-radius:5px; margin-left:160px;" type="search" name="search" placeholder="  Search Blog..." >
+                        <button style="width: 200px; margin-top: 10px; font-size: 16px;">Search</button>
                     </p>
                 </form>
             </div>

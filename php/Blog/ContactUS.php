@@ -1,25 +1,3 @@
-<?php
-require '../DbConfig.php';
-if (isset($_POST["submit"])) {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $messege = $_POST["messege"];
-    $createdDate = date('Y-m-d H:i:s');
-    $contact_id = 0;
-
-    $stmt = $conn->prepare("INSERT INTO contact (contact_id, name, messege, email, created_date) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param('issss', $contact_id, $name, $messege, $email, $createdDate);
-    $stmt->execute();
-    echo
-    "
-    <script>
-    alert('Successfully Added');
-    document.location.replace('./ContactUS.php');
-    </script>
-    ";
-    $conn->close();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,9 +6,10 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/preplanned.css">
-    <link rel="stylesheet" href="../../css/newFooter.css">
     <link rel="stylesheet" href="../../css/header.css">
     <!-- <script src="https://kit.fontawesome.com/c82cd88752.js" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="../../js/checkAccess.js"></script>
@@ -101,6 +80,45 @@ if (isset($_POST["submit"])) {
 
     </style>
 </head>
+
+<?php
+require '../DbConfig.php';
+if (isset($_POST["submit"])) {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $messege = $_POST["messege"];
+    $createdDate = date('Y-m-d H:i:s');
+    $contact_id = 0;
+
+    $stmt = $conn->prepare("INSERT INTO contact (contact_id, name, messege, email, created_date) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param('issss', $contact_id, $name, $messege, $email, $createdDate);
+    $stmt->execute();
+
+    echo "<script>
+        alert('Successfully Added');
+        document.location.replace('./ContactUS.php');
+        </script>";
+
+    // function alert() {
+    //     echo '<script>
+    //     Swal.fire({
+    //             title: "Success!",
+    //             text: "Successfully Added",
+    //             icon: "success",
+    //             confirmButtonText: "Ok",
+    //             confirmButtonColor: "var(--primarycolor)",
+    //             footer: "TravelPal"  
+    //          }).then(() => {
+    //             document.location.replace("./ContactUS.php");
+    //           })
+    //           </script>';
+    // }
+ 
+    // alert();
+
+    $conn->close();
+}
+?>
 
 <?php
 $title = "Contact us";
