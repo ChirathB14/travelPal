@@ -17,7 +17,7 @@
 
 <!-- Tour plan page content -->
     <div class="tour-plan-top-container">
-        <img src="../../images/tourPlan.png" alt="Tour Plan">
+        <img src="../../images/tourPlan.jpg" alt="Tour Plan"style="opacity: 0.5; width:100%; height:80vh;">
         <div class="Title-Tourplan">
             <div class="title-content">
                 <div  class="title">

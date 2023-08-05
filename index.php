@@ -72,44 +72,52 @@
         <h1>popular</h1>
         <div class="tourist">
             <div class="plans">
-                <img src="./images/jaffna.png" alt="jaffna">
-                <div class="cont">
-                    <h3>Jaffna</h3>
-                    <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                <a href="./php/Blog/popular/ViewPopular-Jaffna.php">
+                    <img src="./images/jaffna.png" alt="jaffna">
+                    <div class="cont">
+                        <h3>Jaffna</h3>
+                        <div class="fav">
+                            <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="plans">
-                <img src="./images/trinco.png" alt="jaffna">
-                <div class="cont">
-                    <h3>Trincomalee</h3>
-                    <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                <a href="./php/Blog/popular/ViewPopular-Kandy.php">
+                    <img src="./images/kandy.jpg" alt="Kandy">
+                    <div class="cont">
+                        <h3>Kandy</h3>
+                        <div class="fav">
+                            <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="plans">
-                <img src="./images/nuwra.png" alt="jaffna">
-                <div class="cont">
-                    <h3>Nuwaraeliya</h3>
-                    <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                <a href="./php/Blog/popular/ViewPopular-Galle.php">
+                    <img src="./images/galle.jpg" alt="Galle">
+                    <div class="cont">
+                        <h3>Galle</h3>
+                        <div class="fav">
+                            <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="plans">
-                <img src="./images/kandy.png" alt="jaffna">
-                <div class="cont">
-                    <h3>Kandy</h3>
-                    <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                <a href="./php/Blog/popular/ViewPopular-Nuwaraeliya.php">
+                    <img src="./images/nuwra.png" alt="Nuwara Eliya">
+                    <div class="cont">
+                        <h3>Nuwara Eliya</h3>
+                        <div class="fav">
+                            <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
