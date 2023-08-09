@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!--CSS-->
     <link rel="stylesheet" href="../../../css/popular.css">
     <link rel="stylesheet" href="../../../css/main.css">
@@ -51,7 +53,6 @@ include '../../Common/header.php';
                 <div class="cont">
                     <h3>Jaffna Library</h3>
                     <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -61,7 +62,6 @@ include '../../Common/header.php';
                 <div class="cont">
                     <h3>Nallur Temple</h3>
                     <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -71,7 +71,6 @@ include '../../Common/header.php';
                 <div class="cont">
                     <h3>Jaffna Fort</h3>
                     <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -81,7 +80,6 @@ include '../../Common/header.php';
                 <div class="cont">
                     <h3>Casuarina Beach</h3>
                     <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -91,7 +89,6 @@ include '../../Common/header.php';
                 <div class="cont">
                     <h3>Dambakola Patuna</h3>
                     <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                     </div>
                 </div>
@@ -101,7 +98,6 @@ include '../../Common/header.php';
                 <div class="cont">
                     <h3>Charty Beach</h3>
                     <div class="fav">
-                        <h5><mark>&nbsp;view&nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></mark></h5>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                     </div>
                 </div>
