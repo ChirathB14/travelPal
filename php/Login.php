@@ -1,46 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script type="text/javascript" src="../js/checkAccess.js"></script>
-    <script src="sweetalert2.all.min.js"></script>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../css/loginNew.css" />
+        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script type="text/javascript" src="../js/checkAccess.js"></script>
 
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
-</head>
-
-<?php
-    $title = "TravePal";
-    require_once("Common/header.php");
-?>
-
-<body onload="loginRegisterAccess()">
-
-    <div class="login">
-        <form action="Login.php" method="post">
-            <h1 id="heder-login">Login</h1>
-            <div class="input-elements">
-                <input type="email" id="email" name="email" placeholder="  Email" required>
-                <input type="password" id="Pass" name="Pass" placeholder="  Password" required>
-            </div>
-            <div class="password">
-                <div><input type="checkbox" name="viewPw" id="viewPw" onclick="showPw()"> Show password</div>
-                <a href="../php/fogotPassword/ForgotPassword.php">Forgot Password?</a>
-            </div>
-            <div class="new-user">
-                <button type="submit" id="loginbtn" name="loginbtn" value="loginbtn">Login</button>
-                <a href="./RegisterUser.php">New user? Create an account</a>
-            </div>
-    </div>
+    </head>
 
     <?php
+    $title = "TravePal";
+    // require_once("Common/header.php");
+?>
+
+    <body onload="loginRegisterAccess()">
+        <div class="center">
+            <!-- <input type="checkbox" id="show" /> -->
+            <!-- <label for="show" class="show-btn">View Form</label> -->
+            <div class="container">
+                <!-- <label
+                    for="show"
+                    class="close-btn fas fa-times"
+                    title="close"
+                ></label> -->
+                <div class="text" id="heder-login">Login Form</div>
+                <form action="Login.php" method="post">
+                    <div class="data">
+                        <label>Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="data">
+                        <label>Password</label>
+                        <input type="password" id="Pass" name="Pass" required />
+                    </div>
+                    <div class="forgot-pass">
+                        <div><input type="checkbox" name="viewPw" id="viewPw" onclick="showPw()"> Show password</div>
+                        <div><a href="../php/fogotPassword/ForgotPassword.php">Forgot Password?</a></div>
+                    </div>
+                    <div class="btn">
+                        <div class="inner"></div>
+                        <button type="submit" id="loginbtn" name="loginbtn" value="loginbtn">Login</button>
+                    </div>
+                    <div class="signup-link">
+                        New user? <a href="./RegisterUser.php">Create an account</a>
+                    </div>
+                
+                    </form>
+            </div>
+        </div>
+
+<?php
     session_start();
     require 'DbConfig.php';
     if (isset($_POST['loginbtn'])) {
@@ -82,32 +94,22 @@
                 echo '</script>';
             }
         } else {
-            echo '<script language ="javascript">';
-            echo 'Swal.fire({
-                title: "Incorrect Username or Password!",
-                text: "Do you want to continue",
-                icon: "error",
-                confirmButtonText: "Yes",
-                confirmButtonColor: "var(--primarycolor)",
-                footer: "TravePal";
-                })';
-            // echo 'alert("Incorrect Username or Password")';
-            echo '</script>';
+            // echo '<script language ="javascript">';
+            // echo 'Swal.fire({
+            //     title: "Incorrect Username or Password!",
+            //     text: "Do you want to continue",
+            //     icon: "error",
+            //     confirmButtonText: "Yes",
+            //     confirmButtonColor: "var(--primarycolor)",
+            //     footer: "TravePal";
+            //     })';
+            echo 'alert("Incorrect Username or Password")';
+            // echo '</script>';
         }
 
         $conn->close();
     }
     ?>
-    </form>
 
-    </div>
-    </div>
-</body>
-<footer>
-        <hr>
-        <div class="footer-bottom">
-                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
-        </div>
-</footer>
-
+    </body>
 </html>
