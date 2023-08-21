@@ -1,119 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/registration.css">
+    
+    <link rel="stylesheet" href="../css/register.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javascript" src="../js/register.js"></script>
     <script type="text/javascript" src="../js/checkAccess.js"></script>
-    <script src="sweetalert2.all.min.js"></script>
-    
     <link rel="icon" type="image/x-icon" href="/travelPal/favicon.ico">
 
-    <style>
-        .input-elements {
-            width: 650px;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
 
-        .register-inputs {
-            display: inline-block;
-        }
-
-        .register-inputs label {
-            padding-top: 20px !important;
-            font-size: 18px;
-        }
-
-        .register-inputs input {
-            float: right;
-            width: 400px;
-        }
-
-        .register-inputs select {
-            float: right;
-            width: 400px;
-        }
-
-        .new-user { 
-            align-items: center;
-        }
-    </style>
-</head>
-
-<?php
+   <?php
     $title = "TravePal";
-    require_once("Common/header.php");
-?>
+    // require_once("Common/header.php");
+    ?>
 
-<body class="registration" onload="loginRegisterAccess()">
-    <div class="register">
-        <form action="RegisterUser.php" method="post" onsubmit="return cheakpassword()">
-            <!-- <button class="back-button" onclick="history.back()">
-                < Back</button> -->
-                    <h1 id="heder-login">Create an Account</h1>
-                    <div class="input-elements">
-                        <div class="register-inputs">
-                            <label for="">First Name :</label>
-                            <input type="text" name="fname" id="fname" placeholder=" FIRST NAME" required oninvalid="this.setCustomValidity('Enter first name')" oninput="this.setCustomValidity('')">
-                        </div>
-
-                        <div class="register-inputs">
-                            <label for="">Last Name :</label>
-                            <input type="text" name="lname" id="lname" placeholder=" LAST NAME" required oninvalid="this.setCustomValidity('Enter last name')" oninput="this.setCustomValidity('')">
-                        </div>
-
-                        <div class="register-inputs">
-                            <label for="">Address :</label>
-                            <input type="text" name="address" id="address" placeholder=" ADDRESS" required oninvalid="this.setCustomValidity('Enter address')" oninput="this.setCustomValidity('')" />
-                        </div>
-                        
-                        <div class="register-inputs">
-                            <label for="">Email :</label>
-                            <input type="email" name="email" id="email" placeholder=" EMAIL" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                        </div>
-                        
-                        <div class="register-inputs">
-                            <label for="">Password :</label>
-                            <input type="password" name="Pass" id="Pass" placeholder=" PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+<body>
+  <div class="container" onload="loginRegisterAccess()">
+    <div class="title" id="heder-login">Registration</div>
+    <div class="content">
+      <form action="RegisterUser.php" method="post" onsubmit="return cheakpassword()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" name="fname" id="fname" placeholder="Enter your name" required oninvalid="this.setCustomValidity('Enter first name')" oninput="this.setCustomValidity('')">
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" name="lname" id="lname" placeholder="Enter your username" required oninvalid="this.setCustomValidity('Enter last name')" oninput="this.setCustomValidity('')">
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" name="email" id="email" placeholder="Enter your email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" name="address" id="address" placeholder="Enter your number" required oninvalid="this.setCustomValidity('Enter address')" oninput="this.setCustomValidity('')">
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" name="Pass" id="Pass" placeholder="Enter your password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                             Should be more than 8 characters and less than 16 characters.">
-                        </div>
-                        
-                        <div class="register-inputs">
-                            <label for="">Confirm Password :</label>
-                            <input type="password" name="rePass" id="rePass" placeholder=" CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" name="rePass" id="rePass" placeholder="Confirm your password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                             Should be more than 8 characters and less than 16 characters.">
-                        </div>
-                        
-                        <div class="register-inputs">
-                            <label for="">User Type :</label>
-                            <select id="usertype" name="usertype" required style="width: 400px;  margin-top: 12px; 
-                                background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                box-sizing: border-box; border: none; border-radius: 5px;
-                                font-size: 14px; font-weight: bold; color:#808080;">
-                                <option value="" disabled selected hidden> &nbsp;REGISTER AS</option>
+          </div>
+          <div class="input-box">
+            <span class="details">User Type</span>
+            <select id="usertype" name="usertype" required style="width: 640px; 
+                                opacity: 0.75; height: 45px;box-sizing: border-box; border-radius: 5px;
+                                font-size: 14px; color: grey;">
+                                <option value="" disabled selected hidden> &nbsp;Register as</option>
                                 <option value="3">Tourist</option>
                                 <option value="4">Service Provider</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="new-user">
-                        <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn">
+            </select>
+          </div>
+        </div>
+        <button class="button" type="submit" id="registerbtn" name="registerbtn" value="registerbtn">
                             Register
-                        </button>
-                        <P>
-                            <a href="./Login.php"> Already have an Account? Log in</a>
-                        </P>
-                    </div>
-        </form>
+        </button>
+        <!-- <div class="button">
+          <input type="submit" id="registerbtn" name="registerbtn" value="Register">
+        </div> -->
+        <center>
+        <P>
+            <a href="./Login.php"> Already have an Account? Log in</a>
+        </P>
+        </center>
+      </form>
     </div>
+  </div>
 
-    <?php
+  <?php
     require './DbConfig.php';
     if (isset($_POST['registerbtn'])) {
         $hasedPass = password_hash($_POST["Pass"], null);
@@ -147,7 +110,16 @@
 
                 if ($conn->query($sqltwo) === TRUE) {
                     echo '<script language = "javascript">';
-                    echo 'success()';
+                    echo 'Swal.fire({
+                      title: "Register Successfully!",
+                      text: "Welcome to TravelPal",
+                      icon: "success",
+                      confirmButtonText: "OK",
+                      confirmButtonColor: "var(--primarycolor)",
+                      footer: "TravelPal"
+                      })
+                    window.location = "Login.php";';
+                    // echo 'success()';
                     echo '</script>';
 
                 } else {
@@ -171,12 +143,4 @@
     ?>
 
 </body>
-
-<footer>
-        <hr>
-        <div class="footer-bottom">
-                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
-        </div>
-</footer>
-
 </html>
