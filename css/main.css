@@ -17,6 +17,8 @@
 
 body {
     background-color: var(--primarycolor) !important;
+    /* background-color: var(--accentcolor); */
+    /* color: var(--primarycolor); */
     text-transform: uppercase;
     color: var(--accentcolor);
     font-family: poppins;

@@ -89,10 +89,11 @@ include '../Common/header.php';
 
 <!--body-->
 
-<body class="block-background">
+<body class="block-background" style="background-color: white !important;">
     <div>
         <center>
             <div class="blog-heading">
+                <br>
                 <h1>CREATE YOUR OWN BLOG HERE</h1>
                 <h3>TRAVEL PAL PROVIDES YOU THE OPPORTUNITY TO SHARE YOUR TRAVEL EXPERIENCES WITH THE PEOPLE ALL AROUND THE WORLD.</h3>
             </div>
@@ -100,23 +101,25 @@ include '../Common/header.php';
 
         <div class="create-blog-form">
             <center>
-                <h3>Start Blogging!</h3>
+                <h3 style="color: var(--primarycolor); font-size: 18px;">Start Blogging!</h3>
             </center>
             <form action="CreateBlog.php" method="POST" autocomplete="off" enctype="multipart/form-data">
                 <div class="form-elements">
                     <input type="text" id="article-heading" name="head" placeholder="Article Heading" required>
                     <textarea id="article-body" name="body" cols="30" rows="10" placeholder="Article Body" required></textarea>
                     <input type="file" placeholder="Add Photos" id="blog-image" name="image" id="image" accept=".jpg, .jpeg, .png" required>
-                    <br><p><strong>Note:</strong> Only .jpg, .jpeg, .png formats allowed to a max size of 5 MB.</p><br>
-                    <button type="submit" name="submit" id="btn-publish">Publish</button>
+                    <p style="color: var(--primarycolor); font-size: 14px;"><strong>Note:</strong> Only .jpg, .jpeg, .png formats allowed to a max size of 5 MB.</p><br>
+                    <button type="submit" name="submit" id="btn-publish" style="background-color: var(--primarycolor) !important;">Publish</button>
                 </div>
             </form>
         </div>
-        <h5 style="text-align: center;">Nature | beauty | experience</h5>
     </div>
 </body>
 
-<!-- footer -->
-<?php require_once("../Common/footer.php"); ?>
+<footer>
+        <div class="footer-bottom" style="height: 5px !important;">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 
 </html>

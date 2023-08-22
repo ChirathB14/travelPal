@@ -81,6 +81,9 @@
                                                         <img src="../../images/cancel.png" alt="Place image">
                                                     <?php } ?>
                                                 </td>
+                                                <td>
+                                                    <button style="width: 80px; height: 30px; font-size: 14px; margin-left: 20px;">select</button>
+                                                </td>
                                             </tr>
                                         <?php
                                         }

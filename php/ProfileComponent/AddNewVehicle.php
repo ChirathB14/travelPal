@@ -74,7 +74,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['user'])) {
             // alert('Successfully Added');
             echo 'document.location.replace("./ViewVehicleServices.php")';
             echo '</script>';
-            $conn->close();
+            // $conn->close();
         }
     }
 }

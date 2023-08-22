@@ -69,6 +69,9 @@
                                                 <td class="td-txt"><?php echo $acc_row['reg_number']; ?></td>
                                                 <!-- <td class="td-txt"><?php echo $acc_row['experience']; ?></td> -->
                                                 <td class="td-txt"><?php echo $acc_row['languages']; ?></td>
+                                                <td>
+                                                    <button style="width: 80px; height: 30px; font-size: 14px; margin-left: 20px;">select</button>
+                                                </td>
                                             </tr>
                                         <?php
                                         }

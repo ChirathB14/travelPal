@@ -324,7 +324,7 @@
                                                 <div>
                                                     <table>
                                                         <thead>
-                                                            <tr class="table-header" style="background-color: var(--primarycolor);">
+                                                            <tr class="table-header" style="background-color: var(--primarycolor); color: var(--accentcolor);">
                                                                 <th style="min-width: 195px;">Name</th>
                                                                 <th style="min-width: 195px;">Email</th>
                                                                 <th style="min-width: 195px;">Address</th>
@@ -364,7 +364,7 @@
                                                 <div>
                                                     <table>
                                                         <thead>
-                                                            <tr class="table-header" style="background-color: var(--primarycolor);">
+                                                            <tr class="table-header" style="background-color: var(--primarycolor); color: var(--accentcolor);">
                                                                 <th style="min-width: 195px;">Name</th>
                                                                 <th style="min-width: 195px;">Email</th>
                                                                 <th style="min-width: 195px;">Address</th>
@@ -405,7 +405,7 @@
                                                 <div>
                                                     <table>
                                                         <thead>
-                                                            <tr class="table-header" style="background-color: var(--primarycolor);">
+                                                            <tr class="table-header" style="background-color: var(--primarycolor); color: var(--accentcolor);">
                                                                 <th style="min-width: 200px;">Name</th>
                                                                 <th style="min-width: 200px;">Email</th>
                                                                 <th style="min-width: 200px;">Address</th>
@@ -446,7 +446,7 @@
                                                 <div>
                                                     <table>
                                                         <thead>
-                                                            <tr class="table-header" style="background-color: var(--primarycolor);">
+                                                            <tr class="table-header" style="background-color: var(--primarycolor); color: var(--accentcolor);">
                                                                 <th style="min-width: 200px;">Name</th>
                                                                 <th style="min-width: 200px;">Email</th>
                                                                 <th style="min-width: 200px;">Address</th>
