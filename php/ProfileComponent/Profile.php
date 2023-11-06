@@ -67,12 +67,12 @@ $title = "Profile - TravePal";
 
                             <td class="td-profile" style="width:100%">
                                 <div class="main-wrapper">
-                                    <h1 class="heder-profile">Profile</h1>
+                                    <!-- <h1 class="heder-profile">Profile</h1> -->
                                     <div class="profile-main-wrapper">
-                                        <div>
+                                        <!-- <div>
                                             <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="120" height="120">
                                             <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
-                                        </div>
+                                        </div> -->
                                         <?php
                                         if (isset($_POST['deleteBtn'])) {
                                             $sql = "DELETE FROM user WHERE user_Id= '$userID'";
@@ -98,6 +98,10 @@ $title = "Profile - TravePal";
                                         }
                                         ?> 
                                         <div>
+                                        <h1 class="heder-profile">Profile</h1>
+                                        <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="120" height="120">
+                                            <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
+
                                             <div class="line-wrapper">
                                                 <label for="">First Name : </label>
                                                 <input type="text" value="<?php echo $row['first_name']; ?>" disabled>
