@@ -77,7 +77,11 @@
                                                 <td class="td-txt"><?php echo $acc_row['vehicle_num']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['vehicle_type']; ?></td>
                                                 <td class="td-txt"><?php echo $acc_row['fuel_type']; ?></td>
+                                                <td>
+                                                    <button style="width: 80px; height: 30px; font-size: 14px; margin-left: 20px;">select</button>
+                                                </td>
                                             </tr>
+                                            
                                         <?php
                                         }
                                     } else { ?>

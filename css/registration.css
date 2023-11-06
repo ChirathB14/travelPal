@@ -1,9 +1,10 @@
 
 
 body {
-    background-image: url(../images/registerBG.png);
+    /* background-image: url(../images/registerBG.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background-color: var(--accentcolor);
 }
 
 .register {
@@ -11,8 +12,35 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 5vh;
+    width: 30vw;
+    margin-left: 35vw !important;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
 }
+
+.back-button {
+    width: 20%;
+}
+
+.register h2 {
+    color: var(--primarycolor);
+}
+
+.register input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .register input:focus,
+  .register input:valid {
+    border-color: var(--primarycolor);
+  }
 
 .new-user {
     display: flex;
@@ -52,3 +80,6 @@ body {
 .select-items div:hover, .same-as-selected {
     background-color: var(--secondarycolor);
 }
+
+
+

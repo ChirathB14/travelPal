@@ -46,6 +46,7 @@
             background-color: var(--accentcolor);
             color: var(--primarycolor);
             padding: 10px; 
+            box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
         }
 
         .dashboard-top-left-bottom {
@@ -58,6 +59,7 @@
             background-color: var(--accentcolor);
             color: var(--primarycolor);
             padding: 10px; 
+            box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
         }
 
         .dashboard-top-right {
@@ -70,6 +72,7 @@
             width: 50%;
             background-color: var(--accentcolor);
             color: var(--primarycolor);
+            box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
         }
 
         .dashboard-style {
@@ -324,7 +327,7 @@
                                                 <div>
                                                     <table>
                                                         <thead>
-                                                            <tr class="table-header" style="background-color: var(--primarycolor);">
+                                                            <tr class="table-header" style="background-color: var(--primarycolor); color: var(--accentcolor);">
                                                                 <th style="min-width: 195px;">Name</th>
                                                                 <th style="min-width: 195px;">Email</th>
                                                                 <th style="min-width: 195px;">Address</th>
@@ -364,7 +367,7 @@
                                                 <div>
                                                     <table>
                                                         <thead>
-                                                            <tr class="table-header" style="background-color: var(--primarycolor);">
+                                                            <tr class="table-header" style="background-color: var(--primarycolor); color: var(--accentcolor);">
                                                                 <th style="min-width: 195px;">Name</th>
                                                                 <th style="min-width: 195px;">Email</th>
                                                                 <th style="min-width: 195px;">Address</th>
@@ -405,7 +408,7 @@
                                                 <div>
                                                     <table>
                                                         <thead>
-                                                            <tr class="table-header" style="background-color: var(--primarycolor);">
+                                                            <tr class="table-header" style="background-color: var(--primarycolor); color: var(--accentcolor);">
                                                                 <th style="min-width: 200px;">Name</th>
                                                                 <th style="min-width: 200px;">Email</th>
                                                                 <th style="min-width: 200px;">Address</th>
@@ -446,7 +449,7 @@
                                                 <div>
                                                     <table>
                                                         <thead>
-                                                            <tr class="table-header" style="background-color: var(--primarycolor);">
+                                                            <tr class="table-header" style="background-color: var(--primarycolor); color: var(--accentcolor);">
                                                                 <th style="min-width: 200px;">Name</th>
                                                                 <th style="min-width: 200px;">Email</th>
                                                                 <th style="min-width: 200px;">Address</th>

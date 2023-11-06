@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--CSS-->
-    <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/blog.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../css/blog.css" />
+    <link rel="stylesheet" href="../../css/header.css">
 
     <script crossorigin="anonymous">
         function loadBlog() {
             window.location.href = "CreateBlog.php";
         }
     </script>
-
+    <script type="text/javascript" src="../../js/checkAccess.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
 
-</head>
-
-<!--header-->
 <?php
 $title = "Blogs | TravePal";
 include '../Common/header.php';
 ?>
 
-<!--body-->
-<body style="background-color:rgba(14, 6, 77, 0.7);">
-    <div>
-        <div class="blog-view-heading">
+  <body>
+    <main style="background-color: white;">
+      <div class="blog-view-heading">
             <div class="blog-view-top">
                 <center>
                     <h1>WELCOME TO THE TRAVEL PAL BLOG!</h1>
@@ -40,13 +33,14 @@ include '../Common/header.php';
             <div class="search">
                 <form action="ViewBlogs.php" method="get" style="display: flex; flex-direction: column;">
                     <p style="margin-top: 40px;">
-                        <input style="width:50%; height:40px; border-radius:5px; margin-left:160px;" type="search" name="search" placeholder="  Search Blog..." >
-                        <button style="width: 200px; margin-top: 10px; font-size: 16px;">Search</button>
+                        <input style="width:20%; height:40px; border-radius:5px; margin-left:40px;" type="search" name="search" placeholder="  Search Blog..." >
+                        <button style="width: 100px; margin-top: 10px; font-size: 16px;">Search</button>
                     </p>
                 </form>
             </div>
         </div>
 
+        <div class="blog-card-container">
         <?php
         require '../DbConfig.php';
 
@@ -82,14 +76,7 @@ include '../Common/header.php';
                                                 <h1><?php echo $row1['heading']; ?></h1>
                                             </div>
                                         </div>
-                                        <div class="sub-items">
-                                            <div class="date">
-                                                <h4><?php echo $row1['created_date']; ?></h4>
-                                            </div>
-                                            <div class="author">
-                                                <h4><?php echo $row1['name']; ?></h4>
-                                            </div>
-                                        </div>
+                                    
                                         <div>
                                             <img class="blog-image" src="../../upload/BlogImg/<?php echo $row1['image'];  ?>" />
                                         </div>
@@ -99,7 +86,21 @@ include '../Common/header.php';
                                                 <?php echo $row1['body']; ?>
                                             </p>
                                         </div>
+                                        <div class="sub-items">
+                                            <div class="date">
+                                                <h4><?php echo $row1['created_date']; ?></h4>
+                                            </div>
+                                            <div class="author">
+                                                <h4><?php echo $row1['name']; ?></h4>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <?php
+                // Close the row after every 3 cards
+                if ($count % 3 === 0) {
+                    echo '</div><div class="blog-card-container">';
+                } ?>
                                     <br />
         <?php
                                     } 
@@ -117,14 +118,7 @@ include '../Common/header.php';
                             </div>
 
                         </div>
-                        <div class="sub-items">
-                            <div class="date">
-                                <h4><?php echo $row['created_date']; ?></h4>
-                            </div>
-                            <div class="author">
-                                <h4><?php echo $row['name']; ?></h4>
-                            </div>
-                        </div>
+                        
                         <div>
                             <img class="blog-image" src="../../upload/BlogImg/<?php echo $row['image'];  ?>" />
                         </div>
@@ -135,8 +129,17 @@ include '../Common/header.php';
                             </p>
 
                         </div>
+                        <div class="sub-items">
+                            <div class="date">
+                                <h4><?php echo $row['created_date']; ?></h4>
+                            </div>
+                            <div class="author">
+                                <h4><?php echo $row['name']; ?></h4>
+                            </div>
+                        </div>
                     </div>
                     <br />
+                    <br>
         <?php
                     } 
                 }
@@ -150,10 +153,12 @@ include '../Common/header.php';
         }
         $conn->close();
         ?>
-    </div>
-</body>
+        </div>
+    </div> 
+    <br><br><br>    
+    </main>
+  </body>
 
-<!-- footer -->
-<?php require_once("../Common/footer.php"); ?>
+  <?php require_once("../Common/footer.php"); ?>
 
 </html>

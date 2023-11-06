@@ -10,7 +10,44 @@
     <link rel="stylesheet" href="./css/main.css">
 
     <script type="text/javascript" src="./js/checkAccess.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+            }
+
+            .title {
+            color: grey;
+            font-size: 18px;
+            }
+
+            .pre {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: var(--primarycolor);
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            }
+
+            a {
+            text-decoration: none;
+            font-size: 22px;
+            color: white;
+            }
+
+            .pre:hover, a:hover {
+            opacity: 0.7;
+            }
+    </style>
 </head>
 
 <?php
@@ -18,7 +55,7 @@
     require_once("php/Common/header.php");
 ?>
 
-<body onload="checkAccess(true)">
+<body onload="checkAccess(true)" style="background-color: var(--accentcolor) !important; color: var(--primarycolor);">
 
     <div class="home">
         <img src="./images/home.png" alt="home-bg">
@@ -29,10 +66,15 @@
             <br>
             <h5>&nbsp; &nbsp; We support you to travel within Sri Lanka with the superb experience</h5>
             <br>
-            <button style="border: 3px solid white; background-color: transparent; font-size: 16px; width: 240px; margin-left: 20px;" onclick="location.href = './php/TourPlanningComponent/TourPlanningIndex.php';">Join with us</button>
+
+            <button style="border: 3px solid white; background-color: var(--primarycolor); font-size: 16px; width: 240px; margin-left: 20px; color:white !important;">
+                        <a href="./php/TourPlanningComponent/SelectPreplannedTourType.php">
+                            Join with us
+                        </a>
+                    </button>
         </div>
+        <br><br>
     </div>
-    <br> <br>
     <div class="selection">
         <div class="btn-left">
             <h2>Are you a tourist ?</h2>
@@ -55,6 +97,7 @@
                 </a>
         </div>
     </div>
+    <div>
     <h1><mark> travel pal </mark> offers You...</h1>
     <div class="offers">
             <div class="left">
@@ -62,16 +105,54 @@
                 <p>A full day by day itinerary based on your preferences</p>
             </div>
             <div class="left">
-                <h2>Customize it</h2>
+                <h2>Customize trip</h2>
                 <br>
                 <p>Refine your trip. We'll find the best routes and schedules</p>
             </div>
             <div class="left">
-                <h2>Book & manage it</h2>
+                <h2>Book & manage trip</h2>
                 <br>
                 <p>Choose from the best hotels. Everything in one place.</p>
             </div>
     </div>
+    <br>
+    <!-- <p style="width: 80vw; margin-left: 100px; font-size: 18px; font-weight: 400px;">
+                    Explore, experience and enjoy the most amazing destinations and take in the magnificence of
+                    most unique Sri Lankan socio-cultural and historical splendour with TRAVEL PAL – a luxury
+                    tour operator with a promise of truly a premium luxury travel experience in Sri Lanka.
+                </p>
+                <br><br> -->
+    <div style="display: flex; flex-direction: row; width: 100vw; padding-left: 100px;">
+    <div class="card">
+        <img src="./images/preplanned.png" alt="" style="width:100%">
+        <h1>Willing to travel?</h1>
+        <!-- <p class="title">Willing to travel?</p> -->
+        <br>
+        <p>We have preplanned tours for you with specialized packages!</p>
+        <br>
+        <p><button class="pre">
+            <a href="./php/TourPlanningComponent/SelectPreplannedTourType.php">
+                            Preplanned Tours
+                        </a>
+            </button></p>
+    </div>
+
+    <div class="card">
+        <img src="./images/preplanned.png" alt="" style="width:100%">
+        <h1>personalization?</h1>
+        <!-- <p class="title">Willing to travel?</p> -->
+        <br>
+        <p>Here's the opportunity for you to plan trip on your own!</p>
+        <br>
+        <p><button class="pre">
+        <a href="./php/TourPlanningComponent/CustomizePlans.php">
+                            Customize Tour
+                        </a>
+            </button></p>
+    </div>
+                </div>
+    </div>
+    <br><br>
     <div class="popular">
         <h1>popular</h1>
         <div class="tourist">

@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="../../css/preplanned.css">
     <link rel="stylesheet" href="../../css/main.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -33,16 +33,18 @@
             if (isset($_GET['tour_id']) && !empty($_GET['tour_id'])) {
                 // require "../DbConfig.php";
                 $tour_id = $_GET['tour_id'];
-                $sql = "SELECT * FROM user_tours WHERE tour_id = '$tour_id' LIMIT 1";
+                $sql = "SELECT * FROM user_tours WHERE user_tours_id = '$tour_id' LIMIT 1";
                 // echo $sql;
                 
                 $result = $conn->query($sql);
+                // echo $result -> num_rows;
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $plan_Id =  $row["tour_id"];
-                        $sql_newPlan = "SELECT * FROM new_plan WHERE plan_Id= '" . $plan_Id . "'";
+                        $plan_Id = $row["tour_id"];
+                        // $plan_Id = 23;
                         
+                        $sql_newPlan = "SELECT * FROM new_plan WHERE plan_Id= '" . $plan_Id . "'";
                         
                         $result_newPlan = $conn->query($sql_newPlan);
 
@@ -121,6 +123,10 @@
 
 </body>
 <br><br>
-<!-- footer -->
-<?php require_once("../Common/footer.php");?>
+<footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 </html>

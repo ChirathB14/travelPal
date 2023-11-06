@@ -21,7 +21,7 @@
     <title>TravelPal</title>
 </head>
 
-<body onload="checkAccess(false)">
+<body onload="checkAccess(false)" >
     <?php
     if (!isset($_COOKIE['user'])) {
         echo "
@@ -34,7 +34,7 @@
                 </div>
                 <div class=\"menu\">
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
-                    <button class=\"nav\"onclick=\"location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';\">TOUR PLAN</button>
+                    
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/php/Blog/ContactUS.php';\">CONTACT US</button>
                     <button class=\"nav\"onclick=\"location.href = '/travelPal/php/Blog/ViewBlogs.php';\">BLOGS</button>
                     <button class=\"logout-btn\" id=\"register\"  onclick=\"location.href = '/travelPal/php/RegisterUser.php';\" >REGISTER</button>
@@ -64,7 +64,7 @@
                 <div class=\"menu\">
                     <button class=\"nav-welcome\" onclick=\"\">WELCOME, $first_name</button>
                     <button class=\"nav\" onclick=\"location.href = '/travelPal/index.php';\">HOME</button>
-                    <button class=\"nav\"onclick=\"location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';\">TOUR PLAN</button>
+                    
                     <button class=\"nav\"onclick=\"location.href = '/travelPal/php/Blog/ContactUS.php';\">CONTACT US</button>
                     <button class=\"nav\"onclick=\"location.href = '/travelPal/php/Blog/ViewBlogs.php';\">BLOGS</button>
                     <button class=\"nav\"onclick=\"location.href = '/travelPal/php/ProfileComponent/Profile.php';\">PROFILE</button>
@@ -80,3 +80,6 @@
 </body>
 
 </html>
+
+<!-- <button class=\"nav\"onclick=\"location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';\">TOUR PLAN</button> -->
+<!-- <button class=\"nav\"onclick=\"location.href = '/travelPal/php/TourPlanningComponent/TourPlanningIndex.php';\">TOUR PLAN</button> -->

@@ -86,7 +86,7 @@
                                                     <tbody>
                                                         <?php while ($acc_row = $acc_result->fetch_assoc()) { ?>
 
-                                                            <tr style="background-color: #FFFFFFCC;">
+                                                            <tr style="background-color: #D9D9D9;">
                                                                 <td class="td-txt"><?php echo $acc_row['provider_name']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['email']; ?></td>
                                                                 <td class="td-txt"><?php echo $acc_row['provider_nic']; ?></td>

@@ -65,16 +65,20 @@ $title = "Update Profile - TravePal";
                         <tr VALIGN=TOP>
                             <?php include './subComponent/VerticleHeader.php'; ?>
                             <td class="td-profile">
-                                <div class="main-wrapper" style="margin-top: 45px;">
-                                    <h1 class="heder-profile">Update Profile</h1>
+                                <div class="main-wrapper" style="margin-top: 25px;">
+                                    <!-- <h1 class="heder-profile">Update Profile</h1> -->
                                     <div class="profile-main-wrapper">
-                                        <div>
+                                        <!-- <div>
                                             <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="120" height="120">
                                             <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
-                                        </div>
+                                        </div> -->
                                       
                                         <form method="POST" action="">
                                             <div>
+                                            <h1 class="heder-profile">Update Profile</h1>
+                                            <img class="headerbtm" src="../../images/Profile.png" alt="logo" width="120" height="120">
+                                            <p class="user-name"><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></p>
+
                                                 <div class="line-wrapper">
                                                     <label for="">First Name : </label>
                                                     <input type="text" name="first_name" value="<?php echo $row['first_name']; ?>">
