@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="../../css/preplanned.css">
     <link rel="stylesheet" href="../../css/main.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -34,7 +34,7 @@
                 // require "../DbConfig.php";
                 $tour_id = $_GET['tour_id'];
                 $sql = "SELECT * FROM user_tours WHERE tour_id = '$tour_id' LIMIT 1";
-                // echo $sql;
+                echo $sql;
                 
                 $result = $conn->query($sql);
 
@@ -42,6 +42,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $plan_Id =  $row["tour_id"];
                         $sql_newPlan = "SELECT * FROM new_plan WHERE plan_Id= '" . $plan_Id . "'";
+                        // echo $sql_newPlan;
                         
                         
                         $result_newPlan = $conn->query($sql_newPlan);

@@ -87,12 +87,12 @@
     <div style="display: flex; flex-direction: row; width: 100vw; padding-left: 100px;">
     
                     <button style="border: 3px solid var(--primarycolor); background-color: var(--primarycolor); font-size: 16px; width: 300px; margin-right: 30px;">
-                        <a href="../TourPlanningComponent/SelectPreplannedTourType.php">
+                        <a href="./php/TourPlanningComponent/SelectPreplannedTourType.php">
                             Preplanned Tours
                         </a>
                     </button>
                     <button style="border: 1px solid var(--primarycolor); background-color: var(--primarycolor); font-size: 16px; width: 300px;">
-                        <a href="../TourPlanningComponent/CustomizePlans.php">
+                        <a href="./php/TourPlanningComponent/CustomizePlans.php">
                             Customize Tour
                         </a>
                     </button>

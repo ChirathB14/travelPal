@@ -152,38 +152,58 @@
 
         $sqltwo = "INSERT INTO user_tours (user_tours_id, tour_id, start_date, no_of_tourist, created_by, created_date, isActive,  status, common_id)
                     VALUES (0,'$tourID','$startDate','$noOfTourist','$userID','$createdDate','$isActive', '1', '$common' )";
-
-
-    function alert() {
-    echo '<script>
-    Swal.fire({
-        title: "Details Saved Success. Now you can add services",
-        icon: "success",
-        confirmButtonText: "OK",
-        confirmButtonColor: "var(--primarycolor)",
-        footer: "TravelPal" 
-         }).then(() => {
-            window.location = "./SelectAccomadation.php?common=' . $common . '";
-          })
-          </script>';
-}
+        
         if ($conn->query($sqltwo) === TRUE) {
-           alert();
+            echo
+            "
+            <script>
+                alert('Successfully Added');
+                document.location.replace('./SelectAccomadation.php?common=" . $common . "');
+            </script>
+            ";
         } else {
-            echo '<script language = "javascript">';
-            echo 'swal.fire ({
-                title: "Unsuccessfully",
-                text: "Please try again",
-                icon: "error",
-                confirmButtonText: "OK",
-                confirmButtonColor: "var(--primarycolor)",
-                footer: "TravelPal"
-            })';
-            // echo 'alert("Unsuccessfully :( ")';
-            echo '</script>';
+            echo
+            "
+            <script>
+                alert('Unsuccessfully');
+            </script>
+            ";
         }
+
         $conn->close();
     }
+//     function alert() {
+//     echo '<script>
+//     Swal.fire({
+//         title: "Details Saved Success. Now you can add services",
+//         icon: "success",
+//         confirmButtonText: "OK",
+//         confirmButtonColor: "var(--primarycolor)",
+//         footer: "TravelPal" 
+//          }).then(() => {
+//             window.location = "./SelectAccomadation.php?common=' . $common . '";
+//           })
+//           </script>';
+// }
+
+    //     if ($conn->query($sqltwo) === TRUE) {
+    //         // alert();
+    //         echo 'alert("Details Saved Success. Now you can add services")';
+    //     } else {
+    //         echo '<script language = "javascript">';
+    //         echo 'swal.fire ({
+    //             title: "Unsuccessfully",
+    //             text: "Please try again",
+    //             icon: "error",
+    //             confirmButtonText: "OK",
+    //             confirmButtonColor: "var(--primarycolor)",
+    //             footer: "TravelPal"
+    //         })';
+    //         // echo 'alert("Unsuccessfully :( ")';
+    //         echo '</script>';
+    //     }
+    //     $conn->close();
+    // }
 
     ?>
             </form>
