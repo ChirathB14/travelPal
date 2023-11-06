@@ -30,7 +30,7 @@
             <h5>&nbsp; &nbsp; We support you to travel within Sri Lanka with the superb experience</h5>
             <br>
             <button style="border: 3px solid white; background-color: var(--primarycolor); font-size: 16px; width: 240px; margin-left: 20px;">
-                        <a href="../TourPlanningComponent/TourPlanningIndex.php">
+                        <a href="./php/TourPlanningComponent/SelectPreplannedTourType.php">
                             Join with us
                         </a>
                     </button>
