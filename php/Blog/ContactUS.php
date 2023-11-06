@@ -181,12 +181,13 @@
         }
 
         .contact-p {
-            font-weight: 800;
+            font-weight: 500;
             font-size: 16px;
             line-height: 110%;
             text-align: center;
             letter-spacing: 0.1em;
             color: var(--primarycolor);
+            width: 80%;
         }
 
         .contact-h2 {
@@ -275,13 +276,17 @@ $title = "Contact us";
 require_once("../Common/header.php");
 ?>
 
-<body onload="checkAccess(true)">
+<body onload="checkAccess(true)" style="background-color: white !important;">
     <table>
         <tr VALIGN=TOP>
-            <img src="../../images/contact.jpg" alt="Image" width="100%" height="50%">
-            <div class="contact-main-dev">
+            <!-- <img src="../../images/contact.jpg" alt="Image" width="100%" height="50%"> -->
+            <!-- <div class="contact-main-dev">
                 <div class="contact-dev">
-                    <h2 class="contact-h2">Contact us</h2>
+                    
+                </div>
+            </div> -->
+            <br><br>
+            <h2 class="contact-h2">Contact us</h2>
                     <p class="contact-p">
                         Expect a premium level of service from your first point of contact to your last moments in Sri Lanka.
                         Lanka Travel plan is a Sri Lanka luxury tour service provider with a particular emphasis on tailored
@@ -289,8 +294,6 @@ require_once("../Common/header.php");
                         Feel free to call, send us an email or simply complete the enquiry form to arrange your own private
                         tailor made luxury tour in Sri Lanka.
                     </p>
-                </div>
-            </div>
             <br><br>
             
             <!-- <div class="form-main-wrapper">
