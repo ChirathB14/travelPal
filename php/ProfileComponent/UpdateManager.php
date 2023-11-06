@@ -18,7 +18,7 @@
 $title = "Register Manager - TravePal";
 ?>
 
-<body style="background-image: url('../../images/registerBG.png')">
+<body style="background-color: var(--accentcolor) !important;">
 
     <div id="overlay">
         <div class="register" style="margin: 115px 0px 110px 0px;">
@@ -44,7 +44,8 @@ $title = "Register Manager - TravePal";
                                             <input type="text" class="reg-input" id="address" name="address" placeholder="Address" value="<?php echo $row['address']; ?>" required />
                                             <input type="email" class="reg-input" id="email" name="email" placeholder="Email" value="<?php echo $row['email']; ?>" required />
                                             <br>
-                                            <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Update</button>
+                                            <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn" style="background-color: var(--primarycolor);">Update</button>
+                                            <br>
                                         </div>
                                     </form>
                     <?php

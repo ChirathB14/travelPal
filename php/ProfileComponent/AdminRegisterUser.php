@@ -29,7 +29,7 @@ use PHPMailer\PHPMailer\Exception;
 $title = "Register Manager - TravePal";
 ?>
 
-<body style="background-image: url('../../images/registerBG.png')">
+<body style="background-color: var(--accentcolor) !important;">
     <div id="overlay">
         <br><br>
         <div class="register" style="margin: 62px 0px 60px 0px;">
@@ -50,7 +50,8 @@ $title = "Register Manager - TravePal";
                             <input type="password" name="rePass" id="rePass" placeholder=" CONFIRM PASSWORD" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Must include atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
                     Should be more than 8 characters and less than 16 characters."> -->
                             <br>
-                            <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn">Create Account</button>
+                            <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn" style="background-color: var(--primarycolor);">Create Account</button>
+                            <br>
                         </div>
                         <?php
                         require '../DbConfig.php';
