@@ -18,7 +18,7 @@
     require_once("php/Common/header.php");
 ?>
 
-<body onload="checkAccess(true)">
+<body onload="checkAccess(true)" style="background-color: var(--accentcolor) !important; color: var(--primarycolor);">
 
     <div class="home">
         <img src="./images/home.png" alt="home-bg">
@@ -29,14 +29,14 @@
             <br>
             <h5>&nbsp; &nbsp; We support you to travel within Sri Lanka with the superb experience</h5>
             <br>
-            <button style="border: 3px solid white; background-color: transparent; font-size: 16px; width: 240px; margin-left: 20px;">
+            <button style="border: 3px solid white; background-color: var(--primarycolor); font-size: 16px; width: 240px; margin-left: 20px;">
                         <a href="../TourPlanningComponent/TourPlanningIndex.php">
                             Join with us
                         </a>
                     </button>
         </div>
+        <br><br>
     </div>
-    <br> <br>
     <div class="selection">
         <div class="btn-left">
             <h2>Are you a tourist ?</h2>
@@ -59,6 +59,7 @@
                 </a>
         </div>
     </div>
+    <div>
     <h1><mark> travel pal </mark> offers You...</h1>
     <div class="offers">
             <div class="left">
@@ -66,16 +67,38 @@
                 <p>A full day by day itinerary based on your preferences</p>
             </div>
             <div class="left">
-                <h2>Customize it</h2>
+                <h2>Customize trip</h2>
                 <br>
                 <p>Refine your trip. We'll find the best routes and schedules</p>
             </div>
             <div class="left">
-                <h2>Book & manage it</h2>
+                <h2>Book & manage trip</h2>
                 <br>
                 <p>Choose from the best hotels. Everything in one place.</p>
             </div>
     </div>
+    <br>
+    <p style="width: 80vw; margin-left: 100px; font-size: 18px; font-weight: 400px;">
+                    Explore, experience and enjoy the most amazing destinations and take in the magnificence of
+                    most unique Sri Lankan socio-cultural and historical splendour with TRAVEL PAL – a luxury
+                    tour operator with a promise of truly a premium luxury travel experience in Sri Lanka.
+                </p>
+                <br><br>
+    <div style="display: flex; flex-direction: row; width: 100vw; padding-left: 100px;">
+    
+                    <button style="border: 3px solid var(--primarycolor); background-color: var(--primarycolor); font-size: 16px; width: 300px; margin-right: 30px;">
+                        <a href="../TourPlanningComponent/SelectPreplannedTourType.php">
+                            Preplanned Tours
+                        </a>
+                    </button>
+                    <button style="border: 1px solid var(--primarycolor); background-color: var(--primarycolor); font-size: 16px; width: 300px;">
+                        <a href="../TourPlanningComponent/CustomizePlans.php">
+                            Customize Tour
+                        </a>
+                    </button>
+                </div>
+    </div>
+    <br><br>
     <div class="popular">
         <h1>popular</h1>
         <div class="tourist">

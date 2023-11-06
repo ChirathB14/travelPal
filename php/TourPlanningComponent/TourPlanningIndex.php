@@ -16,6 +16,7 @@
 </head>
 
 <!-- Tour plan page content -->
+<div class="page">
     <div class="tour-plan-top-container">
         <img src="../../images/tourPlan.jpg" alt="Tour Plan"style="opacity: 0.5; width:100%; height:80vh;">
         <div class="Title-Tourplan">
@@ -49,15 +50,15 @@
     <div class="features">
         <h1>TravelPal <br> offers <br> you...</h1>
         <div class="feature-content">
-            <h4>Get a personalized trip</h4>
+            <h4>Get a personalized Trip</h4>
             <p>A full day by day <br> itinerary based on your <br> preferences</p>
         </div>
         <div class="feature-content">
-            <h4>Customize it</h4>
+            <h4>Customize Trip</h4>
             <p>Refine your trip. We'll <br> find the <br> best routes and <br> schedules</p>
         </div>
         <div class="feature-content">
-            <h4>Book it & manage it</h4>
+            <h4>Book & manage Trip</h4>
             <p>Choose from the best <br> hotels. Everything in <br> one place.</p>
         </div>
     </div>
