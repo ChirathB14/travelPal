@@ -33,17 +33,18 @@
             if (isset($_GET['tour_id']) && !empty($_GET['tour_id'])) {
                 // require "../DbConfig.php";
                 $tour_id = $_GET['tour_id'];
-                $sql = "SELECT * FROM user_tours WHERE tour_id = '$tour_id' LIMIT 1";
-                echo $sql;
+                $sql = "SELECT * FROM user_tours WHERE user_tours_id = '$tour_id' LIMIT 1";
+                // echo $sql;
                 
                 $result = $conn->query($sql);
+                // echo $result -> num_rows;
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $plan_Id =  $row["tour_id"];
-                        $sql_newPlan = "SELECT * FROM new_plan WHERE plan_Id= '" . $plan_Id . "'";
-                        // echo $sql_newPlan;
+                        $plan_Id = $row["tour_id"];
+                        // $plan_Id = 23;
                         
+                        $sql_newPlan = "SELECT * FROM new_plan WHERE plan_Id= '" . $plan_Id . "'";
                         
                         $result_newPlan = $conn->query($sql_newPlan);
 

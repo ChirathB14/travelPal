@@ -29,10 +29,22 @@
             background: #438a5e;
             cursor: progress;
         }
+
+        input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
     </style>
 </head>
 
-<body style="background-color: #0E064D;">
+<body style="background-color: white !important;">
     <script>
         function hideParagraph() {
             document.getElementById("requird-destination").style.display = "none";
@@ -62,17 +74,27 @@
         require_once("../Common/header.php");
         ?>
 
-                    <div  style="width: 50%; margin: 8% auto;">
-                        <h2 class="heder-profile" style="color: var(--accentcolor);">Create New Plan</h2>
+                    <div  style="width: 50%; margin: 8% auto; box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);">
+                    <br>
+                        <h2 class="heder-profile" style="color: var(--primarycolor);">Create New Plan</h2>
                         <div>
                             <form method="POST" action="CustomizePlans.php" autocomplete="off" enctype="multipart/form-data">
                                 <center>
                                         <br>
                                         <!-- <p style="color: var(--accentcolor); font-size: 14px; text-align: left;">Select the location*</p> -->
-                                        <select id="location" name="location" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                background-color: var(--accentcolor); opacity: 0.75; height: 40px; padding: 0px 0px 0px 10px;
-                                                box-sizing: border-box; border: none; border-radius: 5px;
-                                                font-size: 10px; font-weight: bold; color:#808080; margin-left: 195px;" required>
+                                        <select id="location" name="location" class="line-wrapper line-txt" 
+                                                style="
+                                                height: 45px;
+                                                width: 400px;
+                                                outline: none;
+                                                font-size: 12px;
+                                                border-radius: 5px;
+                                                padding-left: 15px;
+                                                border: 1px solid #ccc;
+                                                border-bottom-width: 2px;
+                                                transition: all 0.3s ease;
+                                                margin-left: 195px;
+                                                " required>
                                             <option value="" disabled selected hidden>LOCATION</option>
                                             <?php
                                             $location_sql = "SELECT * FROM districts WHERE isActive= '" . 1 . "'";
@@ -91,18 +113,33 @@
 
                                         <br>
                                         <!-- <p style="color: var(--accentcolor); font-size: 14px; text-align: left;">Select the destination*</p> -->
-                                        <select onclick="hideParagraph()" id="destination" name="destination[]" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; 
-                                                background-color: var(--accentcolor); opacity: 0.75; height: 40px;
-                                                box-sizing: border-box; border: none; border-radius: 5px;
-                                                font-size: 10px; font-weight: bold; color:#808080; margin-left: 195px;" multiple required>
+                                        <select onclick="hideParagraph()" id="destination" name="destination[]" class="line-wrapper line-txt" 
+                                                style="height: 45px;
+                                                width: 400px;
+                                                outline: none;
+                                                font-size: 12px;
+                                                border-radius: 5px;
+                                                padding-left: 15px;
+                                                border: 1px solid #ccc;
+                                                border-bottom-width: 2px;
+                                                transition: all 0.3s ease;
+                                                margin-left: 195px;" multiple required>
                                             <option value="" disabled>DESTINATION</option>
                                         </select>
 
                                         <br>
                                         <!-- <p id="requird-destination" style="color: red; font-size: 14px; text-align: left; display: none;">Select Type of the package*</p> -->
-                                        <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" style="width: 400px;  margin-top: 12px; padding: 0px 0px 0px 10px;
-                                                background-color: var(--accentcolor); opacity: 0.75; height: 40px; box-sizing: border-box; border: none; border-radius: 5px;
-                                                font-size: 10px; font-weight: bold; color:#808080; margin-left: 195px;" required>
+                                        <select id="typeOfPackage" name="typeOfPackage" class="line-wrapper line-txt" 
+                                                style="height: 45px;
+                                                width: 400px;
+                                                outline: none;
+                                                font-size: 12px;
+                                                border-radius: 5px;
+                                                padding-left: 15px;
+                                                border: 1px solid #ccc;
+                                                border-bottom-width: 2px;
+                                                transition: all 0.3s ease;
+                                                margin-left: 195px;" required>
                                             <option value="" disabled selected hidden>TYPE OF PACKAGE</option>
                                             <?php
                                             $type_sql = "SELECT * FROM plan_types WHERE isActive= '" . 1 . "'";
@@ -122,12 +159,21 @@
                                         <br>
                                         <!-- <p style="color: var(--accentcolor); font-size: 14px; text-align: left;">Select no of days*</p> -->
                                         <div class="input-elements">
-                                            <input class="line-wrapper line-txt" type="number" id="noOfDays" name="noOfDays" style="width: 400px;  margin-top: 12px; 
-                                                background-color: var(--accentcolor); opacity: 0.75; height: 40px; box-sizing: border-box; border: none; border-radius: 5px;
-                                                font-size: 10px; font-weight: bold; color:#808080;" min="1" placeholder="No Of Days" pattern="^\d+$" required>
+                                            <input class="line-wrapper line-txt" type="number" id="noOfDays" name="noOfDays" 
+                                                style="height: 45px;
+                                                width: 400px;
+                                                outline: none;
+                                                font-size: 14px;
+                                                border-radius: 5px;
+                                                padding-left: 15px;
+                                                border: 1px solid #ccc;
+                                                border-bottom-width: 2px;
+                                                transition: all 0.3s ease;
+                                                margin-left: 0px;" min="1" placeholder="No Of Days" pattern="^\d+$" required>
                                         </div>
                                         <div class="new-user" >
-                                            <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn" style="background-color: var(--secondarycolor);">Next</button>
+                                            <button class="update-btn" type="submit" id="SaveBtn" name="SaveBtn" value="SaveBtn" style="background-color: var(--primarycolor);">Next</button>
+                                            <br><br>
                                         </div>
 
                                     </center>
@@ -221,5 +267,10 @@
 </body>
 
     <!-- footer -->
-    <?php require_once("../Common/footer.php");?>
+    <footer>
+        <hr>
+        <div class="footer-bottom">
+                © <?php echo date("Y"); ?> TRAVEL PAL ALL RIGHTS RESERVED
+        </div>
+</footer>
 </html>
