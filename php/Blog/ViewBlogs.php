@@ -13,6 +13,13 @@
     </script>
     <script type="text/javascript" src="../../js/checkAccess.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // JavaScript function to toggle between full content and truncated content
+        function toggleContent() {
+            // Replace the content with the full content
+            document.write('<?php echo addslashes($row['body']); ?>');
+        }
+    </script>
   </head>
 
 <?php
@@ -73,7 +80,7 @@ include '../Common/header.php';
                                         <div class="blog-card-heading">
                                             <div class="card-hedding">
                                                 <br>
-                                                <h1><?php echo $row1['heading']; ?></h1>
+                                                <h2><?php echo $row1['heading']; ?></h2>
                                             </div>
                                         </div>
                                     
@@ -83,7 +90,19 @@ include '../Common/header.php';
                                         <div class="card-body">
 
                                             <p class="card-para">
-                                                <?php echo $row1['body']; ?>
+                                            <?php 
+                                                
+                                                if (strlen($row['body']) > 400) {
+                                                    // Display a portion of the content
+                                                    echo  substr( $row['body'], 0, 400); 
+                                                    
+                                                    // Display "View More" button
+                                                    echo '...';
+                                                } else {
+                                                    // Display the entire content if it's shorter than the maximum length
+                                                    echo $row['body'];
+                                                }
+                                                ?>
                                             </p>
                                         </div>
                                         <div class="sub-items">
@@ -110,6 +129,7 @@ include '../Common/header.php';
                                 }
                     } else {
         ?>
+                    
                     <div class="blog-card">
                         <div class="blog-card-heading">
                             <div class="card-hedding">
@@ -119,14 +139,27 @@ include '../Common/header.php';
 
                         </div>
                         
-                        <div>
+                        <div class="blog-card-image">
                             <img class="blog-image" src="../../upload/BlogImg/<?php echo $row['image'];  ?>" />
                         </div>
                         <div class="card-body">
 
                             <p class="card-para">
-                                <?php echo $row['body']; ?>
+                                <?php 
+                                
+                                if (strlen($row['body']) > 400) {
+                                    // Display a portion of the content
+                                    echo  substr( $row['body'], 0, 400); 
+                                    
+                                    // Display "View More" button
+                                    echo '...';
+                                } else {
+                                    // Display the entire content if it's shorter than the maximum length
+                                    echo $row['body'];
+                                }
+                                ?>
                             </p>
+                            
 
                         </div>
                         <div class="sub-items">

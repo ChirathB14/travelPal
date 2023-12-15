@@ -494,7 +494,7 @@ footer a {
 
 .blog-card {
     width: calc(33.33% - 40px);
-    height: 20%;
+    height: 800px;
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -526,9 +526,10 @@ footer a {
   }
 
 .card-hedding {
+  height: 100px;
     color: var(--primarycolor) !important;
-    font-weight: 800;
-    word-spacing: 8px;
+    font-weight: 600;
+    word-spacing: 10px;
     margin: 5% 2% 25px 2%;
 }
 
@@ -555,6 +556,11 @@ footer a {
     word-spacing: 8px;
     margin-left: 8%;
     opacity: 70%;   
+}
+
+.blog-card-image{
+  width: auto;
+  height: 300px;
 }
 
 .blog-image{
